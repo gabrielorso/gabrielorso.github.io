@@ -1,0 +1,10 @@
+---
+title: "index"
+---
+
+[Clique aqui](MQO.html) para acessar uma breve explicação sobre os Mínimos Quadrados Ordinários (MQO).
+
+[Clique aqui](ggplot.html) para acessar uma breve explicação sobre o pacote ggplot2. O banco de dados pode ser acessado [aqui](data).
+
+
+

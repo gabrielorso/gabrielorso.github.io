@@ -1,0 +1,10 @@
+name: "Site"
+navbar:
+  title: "My Website"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "GGplot"
+      href: ggplot.html
+    - text: 'MQO'
+      href: MQO.html

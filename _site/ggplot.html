@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Visualização de Dados Florestais no R</title>
+
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">My Website</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="ggplot.html">GGplot</a>
+</li>
+<li>
+  <a href="MQO.html">MQO</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Visualização de Dados Florestais no R</h1>
+
+</div>
+
+
+<pre class="r"><code>library(ggplot2)
+library(ggcorrplot)
+library(ggthemes)
+library(gridExtra)
+library(MASS)
+library(ggalt)
+
+
+dados.brutos &lt;- read.csv2(&quot;data/dados.csv&quot;,
+                   header = TRUE,
+                   sep = &quot;;&quot;,
+                   dec = &quot;,&quot;)
+
+str(dados.brutos)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    100 obs. of  15 variables:
+##  $ ua     : int  24 149 89 114 5 35 105 138 93 117 ...
+##  $ projeto: chr  &quot;Campo Alto&quot; &quot;Campina&quot; &quot;Campina&quot; &quot;Lageadinho&quot; ...
+##  $ npragas: int  2 0 2 4 0 3 0 4 1 3 ...
+##  $ idade  : num  12 7.6 8.5 4.5 10 5.5 4.5 4 6.5 5.5 ...
+##  $ nha    : int  1444 2246 1900 3600 1050 1593 2800 4185 2800 2700 ...
+##  $ vha    : num  134 65.9 77 49.1 77 ...
+##  $ gha    : num  18.96 11.81 12.67 8.29 13.14 ...
+##  $ d      : num  12.4 7.9 8.8 8.6 12 7.6 8.8 6 8.2 8.7 ...
+##  $ h      : num  13.7 10.5 11.7 11.6 11.3 ...
+##  $ v      : num  0.0927 0.03 0.0405 0.0369 0.0733 0.0254 0.0274 0.01 0.0302 0.0327 ...
+##  $ g      : num  0.013 0.01 0.007 0.006 0.013 0.005 0.007 0 0.006 0.006 ...
+##  $ dg     : num  12.9 8.2 9.2 8.9 12.6 7.8 9.2 6.4 8.5 8.9 ...
+##  $ hdom   : num  15.6 12.6 13 13 12.6 ...
+##  $ sitio  : int  12 12 12 14 10 12 10 14 12 10 ...
+##  $ classe : chr  &quot;Classe II&quot; &quot;Classe II&quot; &quot;Classe II&quot; &quot;Classe I&quot; ...</code></pre>
+<pre class="r"><code># View(dados.brutos)
+
+ggplot(dados.brutos, aes(d,v)) + geom_point()</code></pre>
+<pre><code>## Warning: Removed 6 rows containing missing values (geom_point).</code></pre>
+<p><img src="ggplot_files/figure-html/Carregando%20dados-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Removendo as linhas com valores ausentes
+dados &lt;- subset(dados.brutos,!is.na(dados.brutos$d))
+
+str(dados)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    94 obs. of  15 variables:
+##  $ ua     : int  24 149 89 114 5 35 105 138 93 117 ...
+##  $ projeto: chr  &quot;Campo Alto&quot; &quot;Campina&quot; &quot;Campina&quot; &quot;Lageadinho&quot; ...
+##  $ npragas: int  2 0 2 4 0 3 0 4 1 3 ...
+##  $ idade  : num  12 7.6 8.5 4.5 10 5.5 4.5 4 6.5 5.5 ...
+##  $ nha    : int  1444 2246 1900 3600 1050 1593 2800 4185 2800 2700 ...
+##  $ vha    : num  134 65.9 77 49.1 77 ...
+##  $ gha    : num  18.96 11.81 12.67 8.29 13.14 ...
+##  $ d      : num  12.4 7.9 8.8 8.6 12 7.6 8.8 6 8.2 8.7 ...
+##  $ h      : num  13.7 10.5 11.7 11.6 11.3 ...
+##  $ v      : num  0.0927 0.03 0.0405 0.0369 0.0733 0.0254 0.0274 0.01 0.0302 0.0327 ...
+##  $ g      : num  0.013 0.01 0.007 0.006 0.013 0.005 0.007 0 0.006 0.006 ...
+##  $ dg     : num  12.9 8.2 9.2 8.9 12.6 7.8 9.2 6.4 8.5 8.9 ...
+##  $ hdom   : num  15.6 12.6 13 13 12.6 ...
+##  $ sitio  : int  12 12 12 14 10 12 10 14 12 10 ...
+##  $ classe : chr  &quot;Classe II&quot; &quot;Classe II&quot; &quot;Classe II&quot; &quot;Classe I&quot; ...</code></pre>
+<pre class="r"><code>#Definindo tema padrao para os gráficos
+theme_set(theme_bw())</code></pre>
+<div id="relação-entre-variáveis" class="section level1">
+<h1>RELAÇÃO ENTRE VARIÁVEIS</h1>
+<p>Criando a base para os gráficos futuros</p>
+<pre class="r"><code>g.base &lt;- ggplot(dados, aes(x = d, y = v)) + 
+  labs(x = &quot;DAP (cm)&quot;, y = &quot;Volume (m³)&quot;)</code></pre>
+<div id="dispersão-entre-variáveis" class="section level2">
+<h2>Dispersão entre variáveis</h2>
+<div id="disposição-mais-simples" class="section level3">
+<h3>Disposição mais simples</h3>
+<pre class="r"><code>g.base +  #*
+  
+  geom_point() + #Puxa x e y do argumento aes() inserido no gráfico base
+  
+  labs(subtitle = &quot;Dispersão Volume x DAP&quot;) #Adiciona mais argumentos à função labs()</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-1-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#* Notar a possibilidade de adicionar mais comandos ao gráfico criado anteriormente</code></pre>
+</div>
+<div id="adicionando-uma-terceira-variável" class="section level3">
+<h3>Adicionando uma terceira variável</h3>
+<pre class="r"><code>g.base + 
+  
+  geom_point(aes(color = classe)) + 
+  
+  labs(subtitle = &quot;Adicionando uma terceira variável&quot;)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="adicionando-uma-quarta-variável" class="section level3">
+<h3>Adicionando uma quarta variável</h3>
+<pre class="r"><code>g.base + 
+  
+  geom_point(aes(color = classe, size = nha)) + 
+  
+  labs(subtitle = &quot;Adicionando uma quarta variável&quot;)  </code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="adicionando-uma-variável-contínua" class="section level3">
+<h3>Adicionando uma variável contínua*</h3>
+<pre class="r"><code>g.base + 
+  
+  geom_point(aes(color = idade)) + 
+  
+  labs(subtitle = &quot;Exemplo com variável contínua&quot;)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#* a variável idade pode ser transformada em categorias por meio de factor(idade)</code></pre>
+</div>
+<div id="quando-há-muita-sobreposição-de-pontos" class="section level3">
+<h3>Quando há muita sobreposição de pontos</h3>
+<pre class="r"><code>g.base &lt;- ggplot(dados, aes(x = idade, y = g)) + labs(x = &quot;Idade&quot;, y = &quot;Área Transversal (m²)&quot;)
+
+#Vários pontos estão agrupados na mesma posição
+g.base + geom_point(color = &quot;darkblue&quot;)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#jitter() &quot;agita&quot; os pontos com base no argumento &quot;width&quot;
+g.base + geom_jitter(width = 0.1, color = &quot;firebrick&quot;)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-5-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#count() acumula os pontos agrupados e informa na escala quantos pontos estão representado pelo respectivo tamanho.
+g.base + geom_count(color = &quot;red&quot;)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-5-3.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#Notar que, ao contrário dos gráficos anteriores, o argumento &quot;color&quot; foi inserido fora da função &quot;aes()&quot;. Isso ocorre pois antes as cores iriam variar de acordo com uma variável, e variáveis devem ser mapeadas dentro da função &quot;aes()&quot;. Como agora foi usada uma cor pré-definida, o argumento &quot;color&quot; fica fora da função &quot;aes()&quot;. Essa lógica se aplica para todas as demais estéticas mapeáveis (color, fill, shape, size, alpha...)
+
+#Outra opção é atribuir uma transparência aos pontos, criando a sensacao de densidade de pontos. A transparência é definida pelo argumento &quot;alpha&quot;
+ggplot(dados, aes(x = d, y = v)) + geom_point(alpha = 0.5)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-5-4.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#Outro exemplo com transparência com o banco de dados &quot;diamonds&quot;.
+###Pode demorar###
+ggplot(diamonds, aes(x = carat, y = price)) + geom_point(alpha = 0.1)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="correlograma" class="section level2">
+<h2>Correlograma</h2>
+<p>Outra forma de apresentar a relação entre variáveis é por meio de um correlograma.</p>
+<p>Nesse caso, será utilizado o pacote <code>ggcorrplot</code>, que possibilita a criação de correlogramas no ggplot2.</p>
+<pre class="r"><code>#install.packages(&quot;ggcorrplot&quot;)
+#library(ggcorrplot)
+
+#Calculando a correlação entre as variáveis (apenas as numéricas)
+correl &lt;- cor(dados[!is.na(dados$d),c(&quot;idade&quot;,&quot;nha&quot;,&quot;vha&quot;,&quot;gha&quot;,&quot;d&quot;,&quot;h&quot;,&quot;v&quot;,&quot;g&quot;,&quot;dg&quot;,&quot;hdom&quot;)])
+
+#Arredondando para 1 casa decimal
+correl &lt;- round(correl,1) 
+
+#Criando o correlograma
+#______________________________________________________________
+ggcorrplot(corr = correl,      #Informando a matriz de correlação calculada acima
+           method = &quot;circle&quot;,  #Forma da visualização
+           type = &quot;lower&quot;,     #Mostrar apenas a parte inferior da matriz
+           lab = TRUE,lab_size = 3, #Inserir os valores da correlação e o tamanho da fonte
+           colors = c(&quot;firebrick&quot;,&quot;white&quot;,&quot;steelblue&quot;))#Cores. -1, 0 e 1</code></pre>
+<pre><code>## Warning: `guides(&lt;scale&gt; = FALSE)` is deprecated. Please use `guides(&lt;scale&gt; =
+## &quot;none&quot;)` instead.</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#Nesse caso, a escala criada é um tanto redundante, uma vez que os números indicam claramente a ordem das cores no sinal da correlação.</code></pre>
+</div>
+</div>
+<div id="distribuição" class="section level1">
+<h1>DISTRIBUIÇÃO</h1>
+<pre class="r"><code>#Gráfico Base
+g.base &lt;- ggplot(dados, aes(x = d))</code></pre>
+<div id="histogramas" class="section level2">
+<h2>Histogramas</h2>
+<div id="apenas-uma-variável" class="section level3">
+<h3>Apenas uma variável</h3>
+<pre class="r"><code>g.base + 
+  geom_histogram(bins = 9, fill = &quot;lightblue&quot;, color = &quot;red&quot;) # fill != color</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#bin é o número de barras ou classes. Outra opção seria utilizar &quot;binwidth&quot;, que especifica a amplitude da barra ou classe
+
+#Notar que no ggplot o argumento &quot;color&quot; se refere à linhas, contornos e traços; enquanto o argumento &quot;fill&quot; se refere ao preenchimento de objetos. Normalmente, pontos também não possuem o parâmetro &quot;fill&quot;, pois, bem, são apenas pontos; com exceção dos formatos (shape) 21-25, que possuem preenchimento. </code></pre>
+</div>
+<div id="incluindo-outra-variavel" class="section level3">
+<h3>Incluindo outra variavel</h3>
+<pre class="r"><code>g.base + 
+  geom_histogram(aes(fill = projeto), 
+                 bins = 9, 
+                 color = &quot;black&quot;)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="histogramas-de-variáveis-categóricas" class="section level3">
+<h3>Histogramas de variáveis categóricas</h3>
+<p>Tambem é possível fazer histogramas de variáveis categóricas</p>
+<pre class="r"><code>ggplot(dados) + 
+  geom_bar(aes(x = projeto, fill = classe),
+           color = &quot;black&quot;)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#OU
+
+ggplot(dados) + 
+  geom_histogram(aes(x = projeto, fill = classe),
+                 color = &quot;black&quot;,
+                 stat = &quot;count&quot;)</code></pre>
+<pre><code>## Warning: Ignoring unknown parameters: binwidth, bins, pad</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-11-2.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="densidade" class="section level2">
+<h2>Densidade</h2>
+<p>Similar ao histograma</p>
+<div id="versão-sem-graça" class="section level3">
+<h3>Versão sem graça</h3>
+<pre class="r"><code>g.base + 
+  geom_density()</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="mais-elaborado-e-dividindo-por-classe-de-sítio" class="section level3">
+<h3>Mais elaborado, e dividindo por classe de sítio</h3>
+<pre class="r"><code>g.base + 
+  geom_density(aes(fill = classe), alpha = 0.7)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="boxplot" class="section level2">
+<h2>Boxplot</h2>
+<p>Por padrão, a função <code>geom_boxplot()</code> recebe apenas uma variável categórica no eixo X e uma contínua no eixo Y. O exemplo abaixo é a fórmula mais simples, e é utilizado o diâmetro no eixo Y.</p>
+<div id="forma-mais-simples" class="section level3">
+<h3>Forma mais simples</h3>
+<pre class="r"><code>ggplot(dados) + geom_boxplot(aes(y = d))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="adicionando-uma-variável-categórica" class="section level3">
+<h3>Adicionando uma variável categórica</h3>
+<pre class="r"><code>ggplot(dados) + 
+  geom_boxplot(aes(x = projeto, y = v)) + 
+  labs(x = &quot;Projeto&quot; , y = &quot;Volume (m³)&quot;)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="espessura-variável" class="section level3">
+<h3>Espessura variável</h3>
+<pre class="r"><code>ggplot(dados) + 
+  geom_boxplot(aes(x = projeto, y = v), varwidth = TRUE) +
+  labs(x = &quot;Projeto&quot;, y = &quot;Volume (m³)&quot;)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#O argumento varwidth torna as caixas com espessura proporcional ao número de observações por classe. Mais especificamente, proporcional à raiz quadrada do número de observações.</code></pre>
+</div>
+<div id="tufte-boxplot" class="section level3">
+<h3>Tufte Boxplot</h3>
+<p>usando o pacote <code>ggthemes</code>.</p>
+<pre class="r"><code>#install.packages(ggthemes)
+#library(ggthemes)
+
+ggplot(dados) + 
+  geom_tufteboxplot(aes(projeto, y = v), size = 1) + 
+  labs(x = &quot;Projeto&quot;, y = &quot;Volume(m³)&quot;)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+<div id="ranking" class="section level1">
+<h1>RANKING</h1>
+<p>Normalmente uma variável categórica e uma contínua ou discreta.</p>
+<p>Por vezes é interessante apresentar as melhores ou piores classes avaliadas, comparando-as graficamente.</p>
+<p>Como exemplo será calculado o volume por hectare médio de cada classe de sítio</p>
+<pre class="r"><code>vha.classe &lt;- tapply(dados$vha, dados$classe, mean, na.rm=T)
+vha.classe</code></pre>
+<pre><code>##   Classe I  Classe II Classe III 
+##  106.09795   80.20125   77.40722</code></pre>
+<pre class="r"><code>#Como o ggplot recebe a classe de dados data frame, será criado um data.frame para o gráfico.
+df.ranking &lt;- data.frame(classe = names(vha.classe), vha = vha.classe)
+
+df.ranking</code></pre>
+<pre><code>##                classe       vha
+## Classe I     Classe I 106.09795
+## Classe II   Classe II  80.20125
+## Classe III Classe III  77.40722</code></pre>
+<div id="barras" class="section level2">
+<h2>Barras</h2>
+<pre class="r"><code>ggplot(df.ranking) + 
+  geom_bar(aes(x = classe, y = vha), stat = &quot;identity&quot;) + 
+  
+  geom_hline(yintercept = mean(df.ranking$vha), color = &quot;red&quot;)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#O argumento stat = &quot;identity&quot; precisa ser inserido pois caso contrário o ggplot tenteria somar os valores. stat se refere à transformação dos dados, nesse caso, os dados serão usados na forma como estão no data frame.
+
+#Também foi inserida uma linha horizontal, cujo intercepto no eixo Y é a média dos três volumes acima calculados. Isso serve para mostrar que é possível também realizar pequenos cálculos ou transformações nas variáveis mesmo dentro do ambiente do ggplot.</code></pre>
+<p>O exemplo acima exemplifica uma situação comum na confecção de gráficos, que é a manipulação e adequação dos dados, para que então possam ser inseridos no ggplot. É imprescindível que o usuário tenha em mente que, para que sejam plotados os valores desejados, esses valores precisam antes ser calculados e arranjados de uma maneira adequada para inclusão no ggplot, tal como no exemplo acima.</p>
+<div id="barras-coloridas" class="section level3">
+<h3>Barras coloridas</h3>
+<pre class="r"><code>ggplot(df.ranking) + 
+  geom_bar(aes(x = classe, y = vha, fill = classe), stat = &quot;identity&quot;) + 
+  labs(x = &quot;Classe de Sítio&quot;, y = &quot;Volume (m³/ha)&quot;)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-20-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="barras-ordenadas" class="section level3">
+<h3>Barras ordenadas</h3>
+<p>Caso seja de interesse ordenar as barras na ordem crescente ou decrescente, é preciso realizar dois procedimentos. O primeiro é ordenar o banco de dados na ordem desejada, e o segundo é ordenar os níveis dos fatores (quando presentes) da mesma forma. O segundo passo é necessário pois, mesmo quando os valores estão ordenados, o ggplot dá preferência de plotagem para a ordem dos níveis (que normalmente estão na ordem alfabética). Em outras palavras, o segundo passo “fixa” a nova ordem dos níveis.</p>
+<pre class="r"><code>#Observe na estrutura do banco de dados `df.ranking` que há três níveis para a variável classe (`&quot;Classe I&quot;`, `&quot;Classe &quot;II&quot;`, `&quot;Classe III&quot;`)
+
+str(df.ranking)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    3 obs. of  2 variables:
+##  $ classe: chr  &quot;Classe I&quot; &quot;Classe II&quot; &quot;Classe III&quot;
+##  $ vha   : num  106.1 80.2 77.4</code></pre>
+<pre class="r"><code>#Passo 1 - ordenando o banco de dados com base na variável vha, em ordem crescente
+df.ranking &lt;- df.ranking[order(df.ranking$vha),]
+
+#Passo 2 - redefinindo os níveis da variável classe na ordem que foram realocados com o ordenamento acima
+df.ranking$classe &lt;- factor(df.ranking$classe, levels = df.ranking$classe)
+
+#Note como a ordem dos níveis mudou
+str(df.ranking)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    3 obs. of  2 variables:
+##  $ classe: Factor w/ 3 levels &quot;Classe III&quot;,&quot;Classe II&quot;,..: 1 2 3
+##  $ vha   : num  77.4 80.2 106.1</code></pre>
+<pre class="r"><code>#___________________________________________________
+ggplot(df.ranking) + 
+  geom_bar(aes(x = classe, y = vha, fill = classe), stat = &quot;identity&quot;) + 
+  labs(x = &quot;Classe de Sítio&quot;, y = &quot;Volume (m³/ha)&quot;)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-21-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="gráfico-de-pirulito" class="section level2">
+<h2>Gráfico de Pirulito</h2>
+<pre class="r"><code>ggplot(df.ranking) + 
+  geom_point(aes(x = classe, y = vha), size = 9, alpha = 0.7) +
+  
+  geom_segment(aes(x = classe, xend = classe, 
+                   y = 50, yend = vha)) + 
+  
+  geom_text(aes(x = classe, y = vha, label = round(vha,0)), color = &quot;white&quot;) +
+  
+  labs(x = &quot;Classe de Sítio&quot;, y = &quot;Volume(m³/ha)&quot;) + 
+  
+  ylim(50,120)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-22-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#geom_segment cria segmentos de reta do ponto (x,y) até o ponto (xend,yend). No exemplo acima, os segmentos de reta, no eixo x, vão de classe até classe, ou seja, não se deslocam no eixo x. E como são 3 classes, são criados três segmentos de reta. Para as posições no eixo Y, foi indicado para os segmentos de reta iniciarem na posição 50, e ir até vha. Como são três valores de vha, são criados três segmentos que vão até seu respectivo valor.
+
+#geom_text insere textos no gráfico. A posição é definida por x e y dentro de aes(), e o texto a ser inserido fica contido em label (rótulo). Como se pode perceber, são fornecidos três valores de x (3 classes), 3 de y (3 vha&#39;s) e 3 rótulos (3 vha&#39;s).
+
+#Por fim, foi definido um limite para o eixo Y de 50-120. Caso contrário, o gráfico define como valor máximo o maior valor de Y plotado (104 nesse caso), e a terceira coluna ficaria tocando o teto do gráfico.</code></pre>
+</div>
+</div>
+<div id="escalas" class="section level1">
+<h1>ESCALAS</h1>
+<p>Essa seção mostra como manipular e alterar atributos das escalas (legendas) dos gráficos. Sempre que uma variável é mapeada em alguma estética (quando é inserida dentro de aes()) ela recebe uma escala no gráfico; isso ocorre desde as estéticas X e Y (que geram as escalas dos eixos) até estéticas de cores, preenchimentos, tamanhos, formas, etc.</p>
+<p>A manipulação de escalas é algo corriqueiro e frequentemente utilizado na confecção de gráficos. As funções de escala seguem a estrutura <code>scale_estética_tipo()</code>, onde <code>estética</code> é a estética mapeada: <code>color</code>, <code>fill</code>, <code>size</code>, <code>shape</code>, etc; <code>tipo</code> é o tipo da escala utilizada, e pode assumir: <code>continuous</code>, <code>divergent</code>, <code>discrete</code>, <code>brewer</code>, <code>gradient</code>, <code>manual</code>, etc., e se refere ao padrão da escala, podendo assumir uma escala contínua, uma escala de cores divergentes quando se deseja realçar diferenças entre variáveis, escala discreta quando são mapeadas variáveis categóricas, dentre outras opções.</p>
+<div id="color" class="section level2">
+<h2>Color</h2>
+<p>Talvez a escala mais frequentemente utilizada, a escala de cores é utilizada com o grupo de funções <code>scale_color_</code>, e pode receber variáveis numéricas ou categóricas.</p>
+<pre class="r"><code>g.base &lt;- ggplot(dados, aes(d,h)) + 
+  labs(x = &quot;DAP (cm)&quot;, y = &quot;H (m)&quot;,caption = &quot;Fonte: O autor.&quot;)</code></pre>
+<div id="scale_color_brewer" class="section level3">
+<h3>scale_color_brewer()</h3>
+<p>A primeira função apresentada é a <code>scale_color_brewer()</code>. As funções terminadas em brewer usam paletas de cores pré-definidas, e isso é extremamente útil para escolher de forma rápida as cores das classes. Existem paletas específicas para mostrar realces entre classes, escalas sequenciais, escalas para dados qualitativos, etc. É possível conferir cada paleta de cores no site <a href="http://colorbrewer2.org/#type=sequential&amp;scheme=BuGn&amp;n=3">colorbrewer.org</a>.</p>
+<p>Note que para utilizar as funções <code>_brewer()</code>, a variável mapeada precisa ser categórica. Caso seja declarada uma variável numérica, ela precisa ser convertida em fator para poder ser utilizada; vide o exemplo com <code>npragas</code> abaixo.</p>
+<pre class="r"><code>g.base + geom_point(aes(color = projeto))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-24-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#Note que, ao utilizar uma variável para compor as cores do gráfico, uma escala de cores é automaticamente criada
+
+#Utilizando scale_color_brewer()
+g.base + geom_point(aes(color = projeto)) + 
+  labs(subtitle = &quot;scale_color_brewer()&quot;) + 
+  
+  scale_color_brewer(palette = &quot;Set1&quot;) #Tente também &quot;Dark2&quot;, &quot;Spectral&quot; e &quot;Paired&quot;.</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-24-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#&quot;palette&quot; define a paleta de cores utilizada.</code></pre>
+<p>Outro exemplo com número de ataques de pragas (npragas). npragas é uma variável numérica, e precisa ser convertida para categorias usando a função <code>factor()</code>.</p>
+<pre class="r"><code>g.base + geom_point(aes(color = factor(npragas))) + 
+  labs(subtitle = &quot;scale_color_brewer() - npragas&quot;) + 
+  
+  scale_color_brewer(palette = &quot;OrRd&quot;)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-25-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#Perceba que o nome da legenda é, por padrão, a variável mapeada. Dificilmente uma variável estará escrita corretamente no banco de dados (e.g. &quot;projeto&quot; com p minúsculo, &quot;npragas&quot;, &quot;classe&quot; com c minúsculo, etc.). O nome da escala é alterado com o argumento &quot;name&quot;.
+
+#____________________________________________________
+g.base + geom_point(aes(color = factor(npragas))) + 
+  labs(subtitle = &quot;Alterando o nome da escala&quot;) + 
+  
+  scale_color_brewer(palette = &quot;OrRd&quot;, name = &quot;Ataque de Pragas (N)&quot;)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-25-2.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="scale_color_gradient" class="section level3">
+<h3>scale_color_gradient()</h3>
+<pre class="r"><code>g.base1 &lt;- g.base + geom_point(aes(color = vha))
+  
+ g1 &lt;-  g.base1 + labs(subtitle = &quot;g1&quot;) +
+   scale_color_gradient(low = &quot;yellow&quot;, high = &quot;blue&quot;, name = &quot;Volume (m³/ha)&quot;) 
+ 
+ g2 &lt;- g.base1 + labs(subtitle = &quot;g2&quot;) +
+   scale_color_gradient2(low = &quot;blue&quot;,mid = &quot;orange&quot;, high = &quot;red&quot;,midpoint = 200) 
+  
+ g3 &lt;- g.base1 + labs(subtitle = &quot;g3&quot;) +
+   scale_color_gradientn(colours = c(&quot;blue&quot;,&quot;green&quot;,&quot;yellow&quot;,&quot;orange&quot;,&quot;red&quot;), name = &quot;Volume (m³/ha)&quot;)
+ 
+#install.packages(&quot;gridExtra&quot;)
+#library(gridExtra)
+
+ grid.arrange(g1,g2,g3, ncol = 2)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-26-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#_gradient() cria uma escala gradiente com base na cor inferior e superior informada
+
+#_gradient2() cria uma escala gradiente divergente, especificando uma cor inferior, uma cor no meio da amplitude, e uma cor superior. É também preciso especificar o ponto médio da escala, caso contrário, é definido zero como padrão.
+
+#_gradientn() cria uma escala gradiente com base nas n cores informadas.</code></pre>
+</div>
+<div id="scale_color_manual" class="section level3">
+<h3>scale_color_manual()</h3>
+<p>Em últimos casos, é possível informar manualmente as cores desejadas, com o uso das funções _manual()</p>
+<pre class="r"><code>g.base + geom_point(aes(color = classe)) + 
+  labs(subtitle = &quot;Escala de cores manual&quot;) + 
+  
+  scale_color_manual(name = &quot;Classe de Sítio&quot;, 
+                     values = c(&quot;#b22222&quot;,&quot;steelblue&quot;,&quot;darkgreen&quot;),
+                     labels = c(&quot;ClAsSe 1&quot;, &quot;ClAsSe 2&quot;, &quot;ClAsSe 3&quot;))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-27-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># O argumento values define as cores utilizadas, note que é possível também informar o valor hexadecimal das cores, caso desejado. O argumento labels define os rótulos que serão apresentados na escala. Perceba também que o número de cores e rótulos informados deve ser o mesmo número de categorias da variável utilizada. Nesse caso, existem três classes de sítio.
+
+#Além disso, É preciso ficar atento à ordem em que a escala é disposta, que segue a ordem dos níveis da variável categórica. Por exemplo: caso a ordem de apresentação das classes fosse Classe II, Classe I, Classe III; o argumento labels deve ser informado com essa sequência em mente, caso contrário, se estará atribuindo o rótulo &quot;ClAsSe 1&quot; para a categoria &quot;Classe II&quot;, por exemplo. Fica a recomendação de, sempre que uma situação similar surgir, plotar o gráfico primeiramente sem alterar os rótulos da escala, e verificar a ordem em que as categorias são dispostas.</code></pre>
+</div>
+<div id="tudo-manual" class="section level3">
+<h3>Tudo manual</h3>
+<p>Mas, e se não existir uma variável para informar a estética dentro de aes(), como criar a legenda?</p>
+<p>Isso é comum quando se está trabalhando com diferentes bancos de dados, por exemplo, um data frame para cada projeto.</p>
+<pre class="r"><code>unique(dados$projeto)</code></pre>
+<pre><code>## [1] &quot;Campo Alto&quot; &quot;Campina&quot;    &quot;Lageadinho&quot; &quot;Perdidinha&quot;</code></pre>
+<pre class="r"><code>df.p1 &lt;- subset(dados, projeto == &quot;Campina&quot;)
+df.p2 &lt;- subset(dados, projeto == &quot;Campo Alto&quot;)
+df.p3 &lt;- subset(dados, projeto == &quot;Lageadinho&quot;)
+df.p4 &lt;- subset(dados, projeto == &quot;Perdidinha&quot;)
+#________________________________________________________
+ggplot() + #Os ponto vem de data frames diferentes, então não há porque inserir aqui
+  
+  geom_point(data = df.p1, aes(d,v), color = &quot;red&quot;) + 
+  geom_point(data = df.p2, aes(d,v), color = &quot;blue&quot;) + 
+  geom_point(data = df.p3, aes(d,v), color = &quot;green&quot;) +
+  geom_point(data = df.p4, aes(d,v), color = &quot;orange&quot;)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-28-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Como não foi utilizada nenhuma variável para mapear as cores, o ggplot não cria uma escala. É preciso jogar o argumento color para dentro de aes(), para poder ser mapeado, e como variável é possível escrever algum nome, qualquer coisa, geralmente algo que remeta aos dados representados, para facilitar. Esses falsos nomes “mapeados” serão depois conectados com a função <code>scale_color_manual().</code></p>
+<pre class="r"><code>ggplot() + 
+  geom_point(data=df.p1, aes(d,v, color = &quot;p1&quot;)) +
+  geom_point(data=df.p2, aes(d,v, color = &quot;p2&quot;)) + 
+  geom_point(data=df.p3, aes(d,v, color = &quot;p3&quot;)) + 
+  geom_point(data=df.p4, aes(d,v, color = &quot;p4&quot;)) + 
+  
+  scale_color_manual(name = &quot;Projeto&quot;, 
+                     values = c(&quot;p1&quot; = &quot;red&quot;, 
+                                &quot;p2&quot; = &quot;blue&quot;,
+                                &quot;p3&quot; = &quot;green&quot;,
+                                &quot;p4&quot; = &quot;orange&quot;),
+                     
+                     labels = c(&quot;p3&quot; = &quot;Lageadinho&quot;,
+                                &quot;p1&quot; = &quot;Campina&quot;,
+                                &quot;p4&quot; = &quot;Perdidinha&quot;,
+                                &quot;p2&quot; = &quot;Campo Alto&quot;))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-29-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Perceba que em geom_point() foi utilizado um nome qualquer apenas para mapear a cor, e consequentemente gerar uma escala para isso. Já em scale_color_manual(), cada nome vinculado com uma cor específica no argumento values, bem como cada nome foi vinculado com um rótulo específico no argumento labels. Note também que, uma vez que cada nome é vinculado a um rótulo específico, não há necessidade de informar os campos em alguma ordem específica.
+
+#Caso o nome do projeto fosse escrito diretamente nos geom_point, o argumento labels poderia ser omitido.</code></pre>
+</div>
+<div id="quando-há-várias-geometrias" class="section level3">
+<h3>Quando há várias geometrias</h3>
+<pre class="r"><code>ggplot(dados, aes(d,v)) + 
+  labs(x = &quot;DAP (cm)&quot;, y = &quot;Volume (m³)&quot;, subtitle = &quot;Legenda ruim&quot;) +
+  
+  geom_point(aes(color = &quot;Observados&quot;)) +
+  
+  stat_smooth(aes(color = &quot;Ajuste&quot;), se = FALSE) +
+  
+  scale_color_manual(name = NULL, values = c(&quot;Observados&quot; = &quot;steelblue&quot;,
+                                             &quot;Ajuste&quot; = &quot;darkblue&quot;))</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-30-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Percebe-se que o ponto e a linha são repetidos na legenda. Isso ocorre porque o argumento <code>color</code> foi utilizado em duas geometrias diferentes (<code>geom_point</code> e <code>stat_smooth</code>), e nesse caso o ggplot irá criar a escala de cores evidenciando que há duas geometrias na sua escala. Para contornar isso, é preciso sobrepor a estética de cor, e informar manualmente como serão montados os ícones da legenha. Isso é feito com o comando <code>guides()</code></p>
+<pre class="r"><code>ggplot(dados, aes(d,v)) + 
+  labs(x = &quot;DAP (cm)&quot;, y = &quot;Volume (m³)&quot;, subtitle = &quot;Legenda boa&quot;) + 
+  
+  geom_point(aes(color = &quot;Observados&quot;)) +
+  
+  stat_smooth(aes(color = &quot;Ajuste&quot;), se = FALSE) +
+  
+  scale_color_manual(name = NULL, values = c(&quot;Observados&quot; = &quot;steelblue&quot;,
+                                             &quot;Ajuste&quot; = &quot;darkblue&quot;)) +
+
+ guides(color = guide_legend(override.aes = list(shape = c(NA,16),
+                                                  linetype = c(1,NA))))</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-31-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#&quot;color = &quot; indica que a mudança será na escala de cores;
+#&quot;override.aes&quot; burla o formato padrão da estética do gráfico e permite alterar o que quisermos, as mudanças são informadas por uma lista.
+#&quot;shape = c(NA,16)&quot; indica as formas dos pontos que irão compor os ícones. Como nesse caso são dois ícones, então dois valores serão informados em sequência. NA informa que não será inserido nenhum ponto na primeira posição. 16 significa que será colocado um ponto com o formato número 16 (é o padrão do geom_point) na segunda posição.
+#&quot;linetype = c(1,NA)&quot; indica que tipo de linha será inserido em cada ícone. Nesse caso, será inserida uma linha contínua (tipo 1) na primeira posição, e nenhuma linha (NA) no segundo ícone. 
+
+#Boom.</code></pre>
+</div>
+</div>
+<div id="fill-shape-size-linetype" class="section level2">
+<h2>Fill, Shape, Size, Linetype…</h2>
+<p>Para nossa alegria, quase todas as demais escalas (<code>scale_fill_</code>, <code>scale_size_</code>, <code>scale_shape_</code>, <code>scale_linetype_</code>…) funcionam de maneira igual ou semelhante à apresentada na escala de cores</p>
+</div>
+<div id="x-e-y" class="section level2">
+<h2>X e Y</h2>
+<p>Como mencionado anteriormente, as variáveis mapeadas em X e Y também recebem uma escala, e são apresentadas como os eixos X e Y, porém elas também podem ser manipuladas, de maneira similar às demais. As funções são escritas com <code>scale_x_</code> e <code>scale_y_</code>.</p>
+<p>Dentre as opções de escala, estão <code>_continuous()</code>, <code>_discrete()</code>, <code>_log10()</code>, <code>_reverse()</code>, <code>_date()</code>, <code>_sqrt()</code> e <code>_time()</code>.</p>
+<p>Como se pode perceber, é possível organizar os eixos de acordo com o tipo de variável inserida, como datas ou tempo, e ainda fazer transformações dos dados, como raiz quadrada ou logaritmo. Também é possível inverter a escala com <code>_reverse()</code>.</p>
+<p>Uma das principais razões em alterar a escala dos eixos é para modificar a numeração de cada eixo, adicionando mais ou menos marcas, com números mais ou menos espaçados. Além disso, é possível adicionar pequenos símbolos junto aos números em escalas contínuas, como porcentagem ou expoentes.</p>
+<p>Por praticidade, as operações serão todas feitas no eixo X, mas alterações no eixo Y são da mesma forma.</p>
+<pre class="r"><code>g.base &lt;- ggplot(dados, aes(d,v)) + 
+  labs(x = &quot;DAP(cm)&quot;, y = &quot;Volume (m³)&quot;) +
+  geom_point()
+
+g.base</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-32-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="exemplos" class="section level3">
+<h3>Exemplos</h3>
+<pre class="r"><code>#Define que as quebras serão uma sequência de 0 a 30, de 2 e 2
+g.base + scale_x_continuous(breaks = seq(0,30,2)) </code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-33-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#As quebras são definidas no argumento breaks.
+
+#Define que as quebras irão de 0 a 10, de 1 em 1
+g.base + scale_x_continuous(breaks = seq(0,10,1))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-33-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#Observe que informar uma amplitude de valores menor que a real amplitude dos dados não delimita o início e fim do eixo.
+
+#Adiciona um símbolo nos números
+g.base + scale_x_continuous(labels = function(numero) paste0(numero,&quot;%&quot;))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-33-3.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#Os rótulos dos eixos são definidos pelo argumento labels. Note que o argumento recebe uma função que, para cada número do eixo, pegue esse numero e cole-o junto com o símbolo &quot;%&quot;.
+
+#Juntando breaks e labels
+g.base + scale_x_continuous(breaks = seq(0,30,2), labels = function(x) paste0(x,&quot;%&quot;))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-33-4.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#Invertendo o eixo
+g.base + scale_x_reverse()</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-33-5.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#Os outros comandos permanecem disponíveis
+g.base + scale_x_reverse(breaks = seq(0,30,2), labels = function(x) paste0(x,&quot;%&quot;))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-33-6.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+<div id="tema" class="section level1">
+<h1>TEMA</h1>
+<p>O tema é onde são feitos os acabamentos do gráfico. No tema se pode tornar negrito os títulos dos eixos, mudar o local de inserção da legenda, aumentar o espaço entre o título e o gráfico, mudar a cor do fundo, etc…</p>
+<p>As mudanças de tema são passadas dentro da função <code>theme()</code>, que normalmente é a última ou uma das últimas camadas inseridas no gráfico. Dentro de <code>theme()</code> há uma infinidade de argumentos passíveis de alteração. Digite <code>theme()</code> no console e pressione a tecla Tab entre os parênteses para conferir.</p>
+<div id="a-família-element_" class="section level2">
+<h2>A família element_</h2>
+<p>Para fazer alguma mudança nos títulos dos eixos, por exemplo, o argumento é <code>theme(axis.title = )</code>. Assim, será realizada uma mudança dentro dos títulos dos eixos. Note que essas opções também podem ser feitas para algum eixo específico (via <code>axis.title.x</code> e <code>axis.title.y</code>).</p>
+<p>Já para alterar as linhas de grade do fundo do gráfico, o argumento é <code>panel.grid</code>,com suas variações para eixo e para maiores ou menores.</p>
+<p>Como terceiro exemplo, é possível alterar a cor do fundo do gráfico, pelo argumento <code>panel.background</code>. Vamos ver esses três exemplos no gráfico abaixo.</p>
+<pre class="r"><code>ggplot(dados, aes(d,v)) + 
+  geom_point() + 
+  labs(x = &quot;DAP (cm)&quot;, y = &quot;Volume(m³)&quot;) + 
+  
+  theme(axis.title = element_text(face = &quot;bold&quot;),
+        panel.grid = element_line(color = &quot;blue&quot;),
+        panel.background = element_rect(fill = &quot;orange&quot;))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-34-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Note que para cada alteração há uma função <code>element_</code> diferente. A decisão de qual usar depende do tipo de alteração.</p>
+<ul>
+<li><p><code>element_rect()</code>: usada para alterar elementos que envolvem uma área, que possam ser preenchidos (<code>fill</code>);</p></li>
+<li><p><code>element_line()</code>: usada para alterar linhas em geral;</p></li>
+<li><p><code>element_text()</code>: usada para alterar caracteres de texto;</p></li>
+<li><p><code>element_blank()</code>: usada para remover o elemento do gráfico.</p></li>
+</ul>
+<p>Perceba que no exemplo acima, a mudança dos títulos dos eixos recebe <code>element_text</code>; as linhas de grade são alteradas com <code>element_line</code>; e o fundo do gráfico recebe <code>element_rect</code>. Cada função da família element_ possui dentro de si argumentos referentes à seu tipo de alteração, ou seja, não há a opção ‘fill’ dentro de element_line, por exemplo, pois linhas não possuem preenchimento.</p>
+<pre class="r"><code>g.base &lt;- ggplot(dados, aes(d,v)) + geom_point() + 
+  labs(x = &quot;DAP (cm)&quot;, y = &quot;Volume (m³)&quot;)</code></pre>
+<div id="exemplos-1" class="section level3">
+<h3>Exemplos</h3>
+<pre class="r"><code># Removendo linhas de grade - element_blank()
+g.base + theme(panel.grid = element_blank())</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-36-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Mudando o tamanho dos eixos
+g.base + theme(axis.text = element_text(size = 12))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-36-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># alterando a caixa do gráfico
+g.base + theme(panel.border = element_blank(),
+               axis.line = element_line(size = 1))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-36-3.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Outros exemplos
+g.base + theme(panel.border = element_blank(),
+               axis.line = element_line(size = 1),
+               panel.grid = element_blank(),
+               axis.text = element_text(color = &quot;black&quot;),
+               axis.title = element_text(face = &quot;bold&quot;))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-36-4.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>g.base + labs(title = &quot;Relação H-d&quot;)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-36-5.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>g.base + labs(title = &quot;Relação H-d&quot;) + 
+  theme(plot.title = element_text(hjust = 0.5))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-36-6.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>g.base + labs(title = &quot;Relação H-d&quot;) + 
+  theme(axis.title.x = element_text(hjust = 0.1),
+        axis.title.y = element_text(hjust = 0.9, face = &quot;italic&quot;))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-36-7.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#Note que hjust realiza um deslocamento horizontal relativo ao próprio eixo.</code></pre>
+</div>
+</div>
+<div id="temas-prontos" class="section level2">
+<h2>Temas prontos</h2>
+<p>Há também uma porção de temas prontos. Para utilizá-los, basta adicionar alguma função <code>theme_</code> e selecionar a função desejada. Alguns exemplos são <code>theme_classic()</code>, <code>theme_bw()</code>, <code>theme_minimal()</code>, <code>theme_grey()</code>, <code>theme_dark()</code>.</p>
+<p>Mais temas podem ser obtidos no pacote <code>ggthemes</code></p>
+<p><strong>IMPORTANTE</strong>: Caso queira utilizar um tema pronto, e ainda assim realizar alguns ajustes nele, apenas tenha o cuidado de adicionar o tema pronto (theme_) antes da função de modificação de temas (theme()). Caso contrário, o tema pronto irá sobrepor as modificações.</p>
+<pre class="r"><code>g.base + theme_get()</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-37-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>g.base + theme_gray()</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-37-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>g.base + theme_dark()</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-37-3.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>g.base + theme_minimal()</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-37-4.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>g.base + theme_light()</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-37-5.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>g.base + theme_linedraw()</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-37-6.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>g.base + theme_classic()</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-37-7.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>g.base + theme_bw() #é o utilizado ao longo desse script</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-37-8.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="mudando-a-legenda" class="section level2">
+<h2>Mudando a legenda</h2>
+<p>No tema, é possível fazer algumas alterações na legenda. As principais são definir a posição da legenda ou ocultá-la.</p>
+<pre class="r"><code>g.base &lt;- g.base + geom_point(aes(color = classe))
+
+#____________________________________________________________
+# Inserindo a legenda na base do gráfico
+g.base + theme(legend.position = &quot;bottom&quot;)</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-38-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#o padrão é right, mas é possível informar &quot;bottom&quot;, &quot;left&quot;, e &quot;top&quot;
+
+# Inserindo dentro do gráfico
+g.base + theme(legend.position = c(0.05,0.98),
+               legend.justification = c(0,1),
+               legend.background = element_rect(fill = &quot;grey&quot;))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-38-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>#Para inserir dentro do gráfico, em vez de um dos comandos do exemplo acima, são informados um par de coordenadas (x,y) em legend.position, que varia de 0% até 100% (0 a 1) do respectivo eixo. O comando legend.justification representa o ponto de ancoragem da legenda; no exemplo, a ancoragem está no canto esquerdo superior (c(1,1) é superior direito, c(0,0), é inferior esquerto, e c(1,0) é inferior direito). Isso significa que o ponto de ancoragem será colocado exatamente na coordenada informada. O comando legend.background foi adicionado para realçar os pontos de ancoragem.
+
+# Alterando título da legenda
+g.base + theme(legend.title = element_text(face = &quot;bold.italic&quot;, size = 15, color = &quot;red&quot;))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-38-3.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Espaçamento dos símbolos
+g.base + theme(legend.key.height = unit(0,&quot;mm&quot;))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-38-4.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>g.base + theme(legend.key.height = unit(0,&quot;mm&quot;),
+               legend.key.width = unit(2,&quot;cm&quot;))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-38-5.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="exemplos-diversos" class="section level1">
+<h1>EXEMPLOS DIVERSOS</h1>
+<div id="análise-discriminante" class="section level2">
+<h2>Análise discriminante</h2>
+<pre class="r"><code># Plotando os dois primeiros autovetores
+#library(MASS)
+#library(ggalt)
+
+ad &lt;- lda(classe ~ d + hdom + gha + npragas + idade, data = dados)
+
+pred.ad &lt;- as.data.frame(predict(ad)[[&quot;x&quot;]])
+pred.ad$class &lt;- predict(ad)$class
+
+pred.ad.I &lt;- subset(pred.ad, class == &quot;Classe I&quot;)
+pred.ad.II &lt;- subset(pred.ad, class == &quot;Classe II&quot;)
+pred.ad.III &lt;- subset(pred.ad, class == &quot;Classe III&quot;)
+#geom_encircle() é aplicado sobre todo o banco de dados, por isso foi preciso separar cada grupo antes, caso contrário o contorno iria sobre todos os pontos.
+
+#__________________________________________________________
+ggplot(pred.ad) + 
+  geom_point(aes(x = LD1, y = LD2, shape = class, color = class)) +
+  geom_encircle(data = pred.ad.I, aes(LD1,LD2, fill = class), color = NA,alpha = 0.1, expand = 0.015) + 
+  geom_encircle(data = pred.ad.II, aes(LD1,LD2, fill = class), color = NA, alpha = 0.1, expand = 0.015) +
+  geom_encircle(data = pred.ad.III, aes(LD1,LD2, fill = class), color = NA, alpha = 0.1, expand = 0.015) + 
+  
+  labs(subtitle = &quot;Discriminação dos Grupos com base nos dois primeiros autovetores&quot;) +
+  
+  scale_color_brewer(palette = &quot;Dark2&quot;, name = &quot;Classe de Sítio&quot;) + 
+  scale_fill_brewer(palette = &quot;Dark2&quot;, guide = FALSE) +
+  scale_shape(guide = FALSE) + 
+  guides(color = guide_legend(override.aes = list(shape = c(16,17,15),
+                                                  linetype = c(NA,NA,NA)))) +
+  theme(panel.grid = element_blank())</code></pre>
+<pre><code>## Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+## use `guide = &quot;none&quot;` instead.
+
+## Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please
+## use `guide = &quot;none&quot;` instead.</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-39-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="regressão" class="section level2">
+<h2>Regressão</h2>
+<pre class="r"><code>#Ajuste não linear
+#___________________________________________________
+fit &lt;-nls(v ~ b0*d^b1, 
+          data = dados, 
+          start = list(b0 = 1, b1 = 3))
+
+coef(fit)</code></pre>
+<pre><code>##           b0           b1 
+## 0.0001662425 2.5072366651</code></pre>
+<pre class="r"><code>func.fit &lt;- function(x) {coef(fit)[1]*x^coef(fit)[2]}
+#___________________________________________________
+
+
+#Ajuste por regressão quantílica
+#__________________________________________________
+#install.packages(&quot;quantreg&quot;)
+library(quantreg)</code></pre>
+<pre><code>## Loading required package: SparseM</code></pre>
+<pre><code>## 
+## Attaching package: &#39;SparseM&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:base&#39;:
+## 
+##     backsolve</code></pre>
+<pre class="r"><code>q.fit &lt;- nlrq(v ~ b0*d^b1, 
+              data = dados, 
+              start = list(b0 = 1, b1 = 3 ),
+              tau = 0.95)
+
+coef(q.fit)</code></pre>
+<pre><code>##           b0           b1 
+## 0.0002967183 2.3500387643</code></pre>
+<pre class="r"><code>func.q.fit &lt;- function(x) {coef(q.fit)[1]*x^coef(q.fit)[2]} 
+#____________________________________________________
+
+
+#Gráfico
+#___________________________________________________
+
+ggplot(dados, aes(x = d, y = v)) + 
+  labs(x=&quot;DAP (cm)&quot;,
+       y=&quot;Volume (m³)&quot;,
+       subtitle=&quot;Regressão Quantílica&quot;) +
+  
+  geom_point(aes(color = &quot;Observados&quot;), 
+             alpha = 0.7,
+             size = 2) +
+  
+  stat_function(fun = func.fit,
+                aes(color = &quot;Média&quot;),
+                size = 1) + 
+  
+  stat_function(fun = func.q.fit,
+                aes(color = &quot;95%&quot;),
+                size = 1) + 
+  
+  scale_color_manual(name = NULL,
+                     values = c(&quot;Observados&quot; = &quot;black&quot;,
+                                &quot;Média&quot; = &quot;#1b9e77&quot;,
+                                &quot;95%&quot; = &quot;#d95f02&quot;)) +
+  
+  guides(color = guide_legend(override.aes = list(shape = c(NA,NA,16),
+                                                  linetype = c(1,1,NA)))) + 
+  
+  theme_classic() + 
+  
+  theme(legend.justification = c(1,0),
+        legend.position = c(0.98,0.02),
+        plot.subtitle = element_text(face = &quot;bold&quot;,
+                                     hjust = 0.5))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-40-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="resíduos" class="section level2">
+<h2>Resíduos</h2>
+<pre class="r"><code>#Obtendo resíduos ordinários
+res &lt;- residuals(fit)
+
+#Obtendo volumes estimados
+v.est &lt;- fitted(fit)
+
+#Criando Gráfico
+#________________________________________
+ggplot() + theme_classic() +
+      geom_point(aes(x = v.est, y = res), alpha = 0.7) + 
+      labs(x = &quot;Volume Estimado (m³)&quot;, y = &quot;Resíduos (m³)&quot;) + 
+      geom_hline(yintercept = 0, color = &quot;red&quot;, size = 1) + 
+      coord_cartesian(ylim = c(-0.045, 0.045))</code></pre>
+<p><img src="ggplot_files/figure-html/unnamed-chunk-41-1.png" width="480" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
