@@ -9,9 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Gabriel Orso" />
 
 
-<title>MQO</title>
+<title>Mínimos Quadrados Ordinários</title>
 
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -29,6 +30,9 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
@@ -228,6 +232,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -235,6 +302,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -286,7 +363,8 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">MQO</h1>
+<h1 class="title toc-ignore">Mínimos Quadrados Ordinários</h1>
+<h4 class="author">Gabriel Orso</h4>
 
 </div>
 
@@ -297,10 +375,10 @@ library(magrittr)
 library(dplyr)
 library(kableExtra)</code></pre>
 <p>Utilizaremos o banco de dados <strong>trees</strong>. Esse banco de dados contém informações sobre o diâmetro em polegadas, altura em pés e volume em pés³ de 31 árvores <em>black cherry</em>.</p>
-<p>Além disso, os gráficos serão gerados utilizando o pacote <code>ggplot2</code>, com comentários pertinentes sobre as funções utilizadas. Os comandos do pacote <code>ggplot2</code> são inseridos em camadas, normalmente iniciando por uma função que indica o banco de dados utilizado, e posteriormente as demais funções. As variáveis que serão utilizadas para criar os gráficos devem sempre estar “mapeadas” para serem encontradas, e a maneira de fazer isso é inserindo-as dentro do argumento <code>aes()</code>. No exemplo abaixo, o primeiro nível de comando especifica o banco de dados utilizado. O segundo indica o tipo de gráfico a ser criado e mapeia as variáveis de interesse. O terceiro comando introduz os títulos dos eixos, do gráfico, etc. E o quarto comando aplica um tema pronto ao gráfico.</p>
+<p>Além disso, os gráficos serão gerados utilizando o pacote <code>ggplot2</code>, com comentários pertinentes sobre as funções utilizadas. Os comandos do pacote <code>ggplot2</code> são inseridos em camadas, normalmente iniciando por uma função que indica o banco de dados utilizado, e posteriormente as demais funções. As variáveis que serão utilizadas para criar os gráficos devem sempre estar “mapeadas” para serem encontradas, e a maneira de fazer isso é inserindo-as dentro do argumento <code>aes()</code>. No exemplo abaixo, o primeiro nível de comando especifica o banco de dados utilizado. O segundo indica o tipo de gráfico a ser criado e mapeia as variáveis de interesse. O terceiro comando introduz os títulos dos eixos, do gráfico, etc. E o quarto comando aplica um tema pronto ao gráfico. Para mais informações sobre pacote <code>ggplot</code>, acesse esse <a href="ggplot.html">breve tutorial</a>.</p>
 <pre class="r"><code>data(&quot;trees&quot;)
 
-# Transformar as variáveis para unidades comumente utilizadas
+# Transforma as variáveis para unidades comumente utilizadas
 d &lt;- trees$Girth/2.54     # polegadas para centímetros
 ht &lt;- trees$Height/3.281  # pés para metros
 v &lt;- trees$Volume/34.286  # pés cúbicos para metros cúbicos
@@ -316,13 +394,13 @@ d</code></pre>
 <pre><code>## [1] 31</code></pre>
 <pre class="r"><code># O mesmo ocorre com ht, v e d2h.
 
-# Agrupar tudo em um único data frame
+# Agrupa tudo em um único data frame
 dados &lt;- data.frame(d,ht,v,d2h)
 
 g.base &lt;- ggplot(data = dados, 
                  aes(x = d2h, y = v)) +     #Introduz o dataframe utilizado
   
-  geom_point() + #geom_point cria gráfico de pontos)
+  geom_point() + #geom_point() cria gráfico de pontos
   
   labs(x = &quot;d2h&quot;,          #Adiciona Títulos dos eixos e do gráfico
        y = &quot;Volume (m³)&quot;,
@@ -383,12 +461,12 @@ y = \beta_0 + \beta_1x + \epsilon
 <p><span class="math display">\[
 \hat{y} = \hat{\beta_0} + \hat{\beta_1}x 
 \]</span></p>
-<p>Os parâmetros <em>verdadeiros</em> <span class="math inline">\(\beta_i\)</span> do modelo são desconhecidos, e em vez disso se utiliza a denotação <span class="math inline">\(\hat{\beta_0}\)</span> e <span class="math inline">\(\hat{\beta_1}\)</span> para definir os parâmetros <em>estimados</em> pela regressão.</p>
+<p>Os parâmetros <em>verdadeiros</em> <span class="math inline">\(\beta_i\)</span> do modelo são desconhecidos, e em vez disso se utiliza <span class="math inline">\(\hat{\beta_0}\)</span> e <span class="math inline">\(\hat{\beta_1}\)</span> para definir os parâmetros <em>estimados</em> pela regressão.</p>
 <p>O erro <span class="math inline">\(\epsilon\)</span> nada mais é que a diferença entre o valor real observado <span class="math inline">\(y\)</span>, e o valor estimado ou predito <span class="math inline">\(\hat{y}\)</span>.</p>
 <p><span class="math display">\[
 \epsilon_i = y_i - \hat{y_i}
 \]</span></p>
-<p>Como citado anteriormente, o objetivo do método é encontrar os parâmetros que resultem na menor soma de quadrados de resíduos. Como os resíduos devem possuir média zero e distribuição normal, alguns resíduos são positivos e outros negativos, e seu somatório resultaria no valor zero. Daí a necessidade de elevar cada erro <span class="math inline">\(\epsilon\)</span> ao quadrado.</p>
+<p>Como citado anteriormente, o objetivo do método é encontrar os parâmetros que resultem na menor soma de quadrados de resíduos. Como os resíduos devem possuir média zero e distribuição normal, alguns resíduos são positivos e outros negativos. Nessa situação, a simples soma teria efeito de ‘compensação’ entre valores positivos e negativos, e o resultado final não representaria de forma apropriada o erro do modelo (o somatório seria próximo de zero). Daí a necessidade de elevar cada erro <span class="math inline">\(\epsilon\)</span> ao quadrado.</p>
 <p><span class="math display">\[
 S = \sum_{i=1}^{n} \epsilon_i^2 = min
 \]</span></p>
@@ -402,24 +480,24 @@ S = \sum_{i=1}^{n} (y_i - [\hat{\beta_0} + \hat{\beta_1}x_i])^2
 <p><span class="math display">\[
 S = \sum_{i=1}^{n} (y_i - \hat{\beta_0} - \hat{\beta_1}x_i)^2 = min
 \]</span></p>
-<p>Agora, se atribuíssemos algum valor para os parâmetros no modelo acima e calculássemos o somatório, isso resultaria em um valor S de Soma de Quadrados de Resíduos. Conforme os valores dos parâmetros mudam, então também a Soma de Quadrados de Resíduos (S) irá mudar.</p>
-<pre class="r"><code>#Criar uma função S que recebe os parâmetros x,y,a,b
+<p>Agora, se atribuíssemos algum valor qualquer para os parâmetros no modelo acima e calculássemos o somatório, isso resultaria em um valor S de Soma de Quadrados de Resíduos. Conforme os valores dos parâmetros mudam, então também a Soma de Quadrados de Resíduos (S) irá mudar.</p>
+<pre class="r"><code>#Cria uma função S que recebe os parâmetros x,y,a,b
 S &lt;- function(x,y,b0,b1) {sum((y-b0-b1*x)^2)}
 
-#Essa função criada receberá 4 argumentos: um vetor x, um vetor y, um valor de b0 e um valor de b1. Como x e y são dois vetores e b0 e b1 são dois valores, o que a função fará é realizar a operação y - b0 - b1*x para os primeiros valores de x e y e elevar o resultado ao quadrado. A seguir, realiza a mesma operação para os segundos valores e eleva o resultado ao quadrado. Por fim, é requisitado por meio da função sum() que faça o somatório de todos esses resultados. Por fim, isso resultará em um único valor que é a soma do quadrado dos resíduos para aquele par de coeficientes b0 e b1 informados.
+#Essa função criada recebe 4 argumentos: um vetor x, um vetor y, um valor de b0 e um valor de b1. Como x e y são dois vetores e b0 e b1 são dois valores, o que a função fará é realizar a operação y - b0 - b1*x para os primeiros valores de x e y e elevar o resultado ao quadrado. A seguir, realiza a mesma operação para os segundos valores e eleva o resultado ao quadrado. Por fim, é requisitado por meio da função sum() que faça o somatório de todos esses resultados. Por fim, isso resultará em um único valor que é a soma do quadrado dos resíduos para aquele par de coeficientes b0 e b1 informados.
 
-#Criar um vetor de possíveis valores de b0 e b1
+#Cria um vetor de possíveis valores de b0 e b1
 b_0 &lt;- seq(from = -0.5, to = 0.5, by = 0.01)  #De -0.5 até 0.5, ao passo de 0.01
 b_1 &lt;- seq(from = -0.5, to = 0.5, by = 0.01)
 
-#Isso resulta em 101 possíveis valores de b0 e b1.
+#Isso resulta em 101 valores diferentes de b0 e b1.
 length(b_0) ; length(b_1)</code></pre>
 <pre><code>## [1] 101</code></pre>
 <pre><code>## [1] 101</code></pre>
-<pre class="r"><code>#Criar vetor que receberá o resultado de S para cada possível valor de b0 e b1. Naturalmente, deve ter o mesmo comprimento do número de possíveis valores dos coeficientes.
+<pre class="r"><code>#Cria vetor que receberá o resultado de S para cada possível valor de b0 e b1. Naturalmente, deve ter o mesmo comprimento do número de possíveis valores dos coeficientes.
 S.est &lt;- vector(length = length(b_0))  #Vetor de comprimento igual ao vetor b0
 
-#Criar um loop para estimar cada valor de S baseado em cada valor de b0 e b1
+#Cria um loop para estimar cada valor de S baseado em cada valor de b0 e b1
 for (i in 1:length(S.est)) {
   
   S.est[i] &lt;- S(x = dados$d2h,  
@@ -428,7 +506,7 @@ for (i in 1:length(S.est)) {
                 b1 = b_1[i])
 }
 
-#O comando acima pega a função S() criada no início desse bloco de código, joga os primeiros valores de b0 e b1 dos vetores, calcula o valor de S e o guarda na primeira posição do vetor S.est. A seguir, pega todos valores das segundas posições dos vetores, joga na função S() criada e resgata o valor resultante, salvando na segunda posição do vetor S.est. Esse processo é repetido de 1:length(S.est), ou seja, do primeiro até o último valor dos vetores.
+#O comando acima pega a função S() criada acima, joga os primeiros valores de b0 e b1 dos vetores, calcula o valor de S e o guarda na primeira posição do vetor S.est. A seguir, pega todos valores das segundas posições dos vetores, joga na função S() criada e resgata o valor resultante, salvando na segunda posição do vetor S.est. Esse processo é repetido de 1:length(S.est), ou seja, do primeiro até o último valor dos vetores.
 
 
 #Criando um data frame com as variáveis
@@ -437,7 +515,7 @@ df &lt;- data.frame(&quot;b0&quot; = b_0,
                  &quot;S&quot; = S.est)
 
 g.S &lt;- ggplot(data = df, aes(x = b0, y = S)) + 
-  geom_line(aes(color = S.est), size = 1) +  # Cria uma reta conectando cada observação. Como são 101 pontos, o resultado terá uma aparência  de curva parabólica.
+  geom_line(aes(color = S.est), size = 1) +  # Cria uma reta conectando cada observação. Como são 101 pontos, o resultado terá a forma de uma parábola.
   labs(x = &quot;Parâmetro b0&quot;, y = &quot;S (m³)²&quot;, subtitle = &quot;Efeito de b0 na Soma de Quadrado dos Resíduos&quot;) + 
   scale_color_gradient(low = &quot;blue&quot;, high = &quot;red&quot;, name = &quot;S (m³)²&quot;) + 
   geom_segment(aes(x=-0.2,xend=0.2, y = min(S), yend = min(S)), color = &quot;black&quot;) +
@@ -715,6 +793,8 @@ B1
 </center>
 
 
+</div>
+</div>
 
 </div>
 
@@ -748,10 +828,39 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeCodeFolding("hide" === "show");
+  window.initializeCodeFolding("show" === "show");
 });
 </script>
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
