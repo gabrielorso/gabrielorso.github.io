@@ -1,9 +1,9 @@
 par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
-3;1;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;82;17;6;2;1;dossel;
-3;2;Meliaceae;Guarea macrophylla;Vahl;Café-bravo;18;5,5;3;1;1;sub;
-3;3;Lauraceae;Ocotea dispersa;(Nees & Mart.) Mez;Canela-sabão;20;6;4;2;1;sub;
+3;1;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;82;17;6;2;1;dossel;
+3;2;Meliaceae;Guarea macrophylla;Vahl;Cafï¿½-bravo;18;5,5;3;1;1;sub;
+3;3;Lauraceae;Ocotea dispersa;(Nees & Mart.) Mez;Canela-sabï¿½o;20;6;4;2;1;sub;
 3;4;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;57;10;7;3;2;inter;
-3;5;Aquifoliaceae;Ilex dumosa;Reissek;Caúna;70;12;7;3;2;dossel;
+3;5;Aquifoliaceae;Ilex dumosa;Reissek;Caï¿½na;70;12;7;3;2;dossel;
 3;6;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;17;8;3;3;3;sub;
 3;7;Calophyllaceae;Calophyllum brasiliense;Cambess.;Guanandi;44;12;7;3;2;inter;
 3;8;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;33;10;6;2;1;inter;bif
@@ -15,14 +15,13 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 3;12;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;17;5;15;2;3;sub;
 3;13;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;17;7;3;3;2;sub;
 3;14;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;20;7;3;3;2;sub;
-3;15;Aquifoliaceae;Ilex theezans;Mart. ex Reissek;Juçara;37;8;5;1;3;inter;
-3;16;;Morta;;;48;;;;;;Morta
+3;15;Aquifoliaceae;Ilex theezans;Mart. ex Reissek;Juï¿½ara;37;8;5;1;3;inter;
 3;17;Nyctaginaceae;Guapira hirsuta;(Choisy) Lundell;Caixeta;21;5;3;3;2;sub;bif
 3;17;Nyctaginaceae;Guapira hirsuta;(Choisy) Lundell;Caixeta;16,5;5;3;3;2;sub;bif
 3;18;Myrtaceae;Myrcia brasiliensis;Kiaersk.;Cambuim;56;13;7;3;2;dossel;
 3;19;;Morta;;;39;;;;;;Morta
-3;20;Sapindaceae;Matayba intermedia;Radlk.;Mataíba;19;8;4;3;3;sub;bif
-3;20;Sapindaceae;Matayba intermedia;Radlk.;Mataíba;33;8;4;3;3;sub;bif
+3;20;Sapindaceae;Matayba intermedia;Radlk.;Mataï¿½ba;19;8;4;3;3;sub;bif
+3;20;Sapindaceae;Matayba intermedia;Radlk.;Mataï¿½ba;33;8;4;3;3;sub;bif
 3;21;Calophyllaceae;Calophyllum brasiliense;Cambess.;Guanandi;199;25;10;1;1;emerg;
 3;22;Lauraceae;Ocotea indecora;(Schott) Mez;Canela;34;14;8;1;1;inter;
 3;23;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;22;7;4;3;3;sub;
@@ -34,7 +33,7 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 3;29;Calophyllaceae;Calophyllum brasiliense;Cambess.;Guanandi;200;24;8;1;1;emerg;
 3;30;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;34;13;7;2;2;inter;
 3;31;Calophyllaceae;Calophyllum brasiliense;Cambess.;Guanandi;32;17;8;2;3;inter;
-3;32;Sapindaceae;Matayba intermedia;Radlk.;Mataíba;40;12;7;2;3;inter;
+3;32;Sapindaceae;Matayba intermedia;Radlk.;Mataï¿½ba;40;12;7;2;3;inter;
 3;33;Myrtaceae;Marlierea obscura;O.Berg;Guamirim-da-folha-larga;37;12;8;3;3;inter;
 3;34;Lauraceae;Nectandra oppositifolia;Nees;Canela-ferrugem;19;11;7;3;3;sub;
 3;35;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;18;8;3;3;3;sub;
@@ -42,43 +41,43 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 3;35;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;16;8;3;3;3;sub;
 3;36;Myrtaceae;Eugenia stigmatosa;DC.;Guamirim;21;7;5;2;1;inter;
 3;37;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;65;16;9;1;1;dossel;
-3;38;Arecaceae;Euterpe edulis;Mart.;Juçara;42;4;3;1;2;sub;
+3;38;Arecaceae;Euterpe edulis;Mart.;Juï¿½ara;42;4;3;1;2;sub;
 3;39;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;113;20;10;2;1;dossel;
 3;40;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;28;7;3;3;3;sub;
 3;41;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;27;7,5;4;1;3;sub;
 3;42;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;17;7;5;1;1;sub;
-6;1;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;63;11;6;1;2;dossel;
+6;1;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;63;11;6;1;2;dossel;
 6;2;Bignoniaceae;Jacaranda puberula;Cham.;Caroba;28;5;3;2;1;sub;
 6;3;Primulaceae;Myrsine coriacea;(Sw.) R.Br. ex Roem. & Schult.;Capororoquinha;27;9;5;1;1;dossel;
-6;4;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;21;7;5;1;2;inter;
-6;5;Melastomataceae;Pleroma trichopodum;DC.;Jacatirão;21;7;4,5;1;1;inter;
+6;4;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;21;7;5;1;2;inter;
+6;5;Melastomataceae;Pleroma trichopodum;DC.;Jacatirï¿½o;21;7;4,5;1;1;inter;
 6;6;Lauraceae;Ocotea mosenii;Mez;Canela-preta;70;12;1;3;1;dossel;bif
 6;6;Lauraceae;Ocotea mosenii;Mez;Canela-preta;67;12;1;3;1;dossel;bif
-6;7;Meliaceae;Guarea macrophylla;Vahl;Café-bravo;18;6;2;3;1;sub;
+6;7;Meliaceae;Guarea macrophylla;Vahl;Cafï¿½-bravo;18;6;2;3;1;sub;
 6;8;Calophyllaceae;Calophyllum brasiliense;Cambess.;Guanandi;212;17;8;1;1;dossel;
 6;9;Myrtaceae;Myrcia brasiliensis;Kiaersk.;Cambuim;25;6;2;2;2;dub;
-6;10;Arecaceae;Syagrus romanzoffiana;(Cham.) Glassman;Jerivá;66;16;11;3;2;dossel;
+6;10;Arecaceae;Syagrus romanzoffiana;(Cham.) Glassman;Jerivï¿½;66;16;11;3;2;dossel;
 6;11;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;16;6;3;3;3;sub;bif
 6;11;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;16;6;3;3;3;sub;bif
-6;12;Meliaceae;Guarea macrophylla;Vahl;Café-bravo;23;7;3,5;3;2;sub;
+6;12;Meliaceae;Guarea macrophylla;Vahl;Cafï¿½-bravo;23;7;3,5;3;2;sub;
 6;13;Calophyllaceae;Calophyllum brasiliense;Cambess.;Guanandi;141;17;12;1;1;dossel;
 6;14;Calophyllaceae;Calophyllum brasiliense;Cambess.;Guanandi;139;18;8;1;1;dossel;
 6;15;Elaeocarpaceae;Sloanea hatschbachii;D. Sampaio & V.C. Souza;Urucurana;45;10;7;2;2;sub;bif
 6;15;Elaeocarpaceae;Sloanea hatschbachii;D. Sampaio & V.C. Souza;Urucurana;24;5;2;2;3;sub;bif
 6;16;Lauraceae;Ocotea indecora;(Schott) Mez;Canela;40;9;4;3;3;inter;bif
 6;16;Lauraceae;Ocotea indecora;(Schott) Mez;Canela;39;9;4;3;3;inter;bif
-6;17;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maçaranduba;30;13,5;2;3;3;sub;
+6;17;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maï¿½aranduba;30;13,5;2;3;3;sub;
 6;18;Moraceae;Ficus adhatodifolia;Schott in Spreng.;Figueira;90;12;7;2;2;dossel;
 6;19;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;36;6;3;3;3;sub;
-6;20;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;61;8;4;3;2;sub;
+6;20;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;61;8;4;3;2;sub;
 6;21;Lauraceae;Ocotea indecora;(Schott) Mez;Canela;46;9;5;3;2;sub;
 6;22;Calophyllaceae;Calophyllum brasiliense;Cambess.;Guanandi;122;13;9;1;1;dossel;
-6;23;Meliaceae;Guarea macrophylla;Vahl;Café-bravo;22;4,5;4;1;1;sub;
+6;23;Meliaceae;Guarea macrophylla;Vahl;Cafï¿½-bravo;22;4,5;4;1;1;sub;
 6;24;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;20;6;1,5;3;1;sub;
 6;25;Peraceae;Pera glabrata;(Schott) Baill.;Sapateiro;33;14;6;2;1;dossel;tri
 6;25;Peraceae;Pera glabrata;(Schott) Baill.;Sapateiro;58;14;6;2;1;dossel;tri
 6;25;Peraceae;Pera glabrata;(Schott) Baill.;Sapateiro;50;14;6;2;1;dossel;tri
-6;26;Myrtaceae;Myrcia multiflora;(Lam.) DC.;Pedra-de-caá;20;7;4;3;3;sub;
+6;26;Myrtaceae;Myrcia multiflora;(Lam.) DC.;Pedra-de-caï¿½;20;7;4;3;3;sub;
 6;27;Peraceae;Pera glabrata;(Schott) Baill.;Sapateiro;48;10;5;3;2;dossel;
 6;28;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;29;7;4;2;2;dossel;
 6;29;Fabaceae;Andira fraxinifolia;Benth.;Pau-angelim;46;5;4;2;2;inter;
@@ -94,11 +93,11 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 7;8;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;22;6;2;3;3;sub;bif
 7;9;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;26;7;1,5;3;3;sub;
 7;10;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;25;7;1,5;3;3;sub;
-7;11;Sapindaceae;Matayba intermedia;Radlk.;Mataíba;22;7;3,5;1;2;inter;
+7;11;Sapindaceae;Matayba intermedia;Radlk.;Mataï¿½ba;22;7;3,5;1;2;inter;
 7;12;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;30;7,5;4;2;1;inter;
 7;13;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;21;8;3;1;1;inter;
 7;14;Aquifoliaceae;Ilex theezans;Mart. ex Reissek;Congonha;72;13;6;1;1;dossel;
-7;15;Chloranthaceae;Hedyosmum brasiliense;Mart. ex Miq.;Chá-de-bugre;24;5;1;3;2;sub;
+7;15;Chloranthaceae;Hedyosmum brasiliense;Mart. ex Miq.;Chï¿½-de-bugre;24;5;1;3;2;sub;
 7;16;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;19;7;3;3;2;inter;bif
 7;16;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;20;7;3;3;2;inter;bif
 7;17;;Morta;;;52;;;;;;Morta
@@ -108,22 +107,21 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 7;21;Calophyllaceae;Calophyllum brasiliense;Cambess.;Guanandi;34;12;7;1;1;inter;
 7;22;Lauraceae;Ocotea pulchella;(Nees & Mart.) Mez;Canela-preta;16,5;8;5;2;1;inter;
 7;23;Boraginaceae;Cordia sellowiana;Cham.;Louro-mole;19;7;4;2;1;sub;
-7;24;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maçaranduba;21;9;8;2;2;inter;coletada
-7;25;Myrtaceae;Myrcia pubipetala;Miq.;Goiabão;36;8;4;3;3;inter;
+7;24;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maï¿½aranduba;21;9;8;2;2;inter;coletada
+7;25;Myrtaceae;Myrcia pubipetala;Miq.;Goiabï¿½o;36;8;4;3;3;inter;
 7;26;Myrtaceae;Myrcia brasiliensis;Kiaersk.;Cambuim;48;7;4;3;2;sub;
 7;27;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;68;12;6;1;2;dossel;
-7;28;Fabaceae;Platymiscium floribundum;Vogel;Jacarandá-do-litoral;17;5;3;3;3;sub;
-7;29;;Morta;;;;;;;;;Morta
+7;28;Fabaceae;Platymiscium floribundum;Vogel;Jacarandï¿½-do-litoral;17;5;3;3;3;sub;
 7;30;Clusiaceae;Clusia criuva;Cambess.;Mangue-do-mato;33;13;4;2;2;inter;
-7;31;Myrtaceae;Psidium cattleyanum;Sabine;Araçá;33;9;3;1;1;inter;
+7;31;Myrtaceae;Psidium cattleyanum;Sabine;Araï¿½ï¿½;33;9;3;1;1;inter;
 7;32;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;17;8;4;1;2;sub;
 7;33;Fabaceae;Andira fraxinifolia;Benth.;Pau-angelim;72;7;3,5;1;2;inter;
 7;34;Malpighiaceae;Byrsonima ligustrifolia;A.Juss.;Murici-vermelho;57;13;7;1;2;dossel;
 7;35;Peraceae;Pera glabrata;(Schott) Baill.;Sapateiro;91;12;3;3;2;inter;
-7;36;Arecaceae;Syagrus romanzoffiana;(Cham.) Glassman;Jerivá;66;15;12;1;1;dossel;
+7;36;Arecaceae;Syagrus romanzoffiana;(Cham.) Glassman;Jerivï¿½;66;15;12;1;1;dossel;
 7;37;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;19;7;3;3;3;sub;
 7;38;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;22;6;3;3;3;sub;
-7;39;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;72;16;8;2;1;dossel;
+7;39;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;72;16;8;2;1;dossel;
 7;40;Humiriaceae;Humiriastrum dentatum;(Casar.) Cuatrec.;Umiri;44;9;3,5;3;2;inter;
 7;41;Primulaceae;Myrsine venosa;A.DC.;Capororoca;33;5;2;3;3;sub;
 7;42;Aquifoliaceae;Ilex theezans;Mart. ex Reissek;Congonha;27;8;4;2;3;inter;
@@ -134,7 +132,7 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 7;47;Peraceae;Pera glabrata;(Schott) Baill.;Sapateiro;59;13;7;2;2;dossel;
 7;48;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;29;9;3;3;2;inter;
 8;1;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;27;8;4;2;1;inter;
-8;2;Aquifoliaceae;Ilex pseudobuxus;Reissek;Caúna;36;12;7;2;3;dossel;
+8;2;Aquifoliaceae;Ilex pseudobuxus;Reissek;Caï¿½na;36;12;7;2;3;dossel;
 8;3;Malpighiaceae;Byrsonima ligustrifolia;A.Juss.;Murici-vermelho;23;6,5;2,5;2;1;inter;
 8;4;Arecaceae;Geonoma schottiana;Mart.;Guaricana;20;3,5;2;1;1;sub;
 8;5;Clethraceae;Clethra scabra;Pers.;Carne-de-vaca;77;13;8;2;1;dossel;
@@ -146,14 +144,14 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 8;9;;;;;49;9;3;3;1;inter;bif
 8;10;Lauraceae;Nectandra oppositifolia;Nees;Canela-ferrugem;86;17;8;2;1;dossel;
 8;11;Celastraceae;Monteverdia gonoclada;(Mart.) Biral;Espinheira-santa;26;8;4;2;2;inter;
-8;12;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;23;11;5;2;1;inter;
-8;13;Phyllanthaceae;Hyeronima alchorneoides;Allemão;Cajueiro-bravo;27;10;5;2;1;inter;
+8;12;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;23;11;5;2;1;inter;
+8;13;Phyllanthaceae;Hyeronima alchorneoides;Allemï¿½o;Cajueiro-bravo;27;10;5;2;1;inter;
 8;14;Myrtaceae;Myrcia brasiliensis;Kiaersk.;Cambuim;18;5;2;3;3;sub;
 8;15;Peraceae;Pera glabrata;(Schott) Baill.;Sapateiro;18;7;4;2;2;sub;
 8;16;Clethraceae;Clethra scabra;Pers.;Carne-de-vaca;24;9;4;2;1;inter;
 8;17;Lauraceae;Nectandra oppositifolia;Nees;Canela-ferrugem;73;16;7;2;1;dossel;
 8;18;Clethraceae;Clethra scabra;Pers.;Carne-de-vaca;44;12;4;3;2;inter;
-8;19;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatá;25;5;2;3;3;sub;
+8;19;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatï¿½;25;5;2;3;3;sub;
 8;20;Fabaceae;Andira fraxinifolia;Benth.;Pau-angelim;28;7;3;2;2;sub;
 8;21;Celastraceae;Monteverdia gonoclada;(Mart.) Biral;Espinheira-santa;26;9;3;2;1;inter;
 8;22;;Morta;;;26;;;;;;Morta
@@ -174,10 +172,10 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 8;32;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;22;8;5;3;2;sub;bif
 8;33;Clethraceae;Clethra scabra;Pers.;Carne-de-vaca;28;9;5;2;2;dossel;
 8;34;Aquifoliaceae;Ilex theezans;Mart. ex Reissek;Congonha;23;8;6;2;2;inter;
-8;35;Phyllanthaceae;Hyeronima alchorneoides;Allemão;Cajueiro-bravo;21;8;6;2;2;inter;
+8;35;Phyllanthaceae;Hyeronima alchorneoides;Allemï¿½o;Cajueiro-bravo;21;8;6;2;2;inter;
 8;36;Aquifoliaceae;Ilex theezans;Mart. ex Reissek;Congonha;20;8;4;2;2;inter;
 8;37;Lauraceae;Ocotea pulchella;(Nees & Mart.) Mez;Canela-preta;40;13;4,5;2;1;dossel;
-8;38;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;43;12;6;2;1;dossel;
+8;38;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;43;12;6;2;1;dossel;
 8;39;Arecaceae;Geonoma schottiana;Mart.;Guaricana;17;1,6;1;2;2;sub;
 8;40;Lauraceae;Aniba firmula;(Nees & Mart.) Mez;Canela;66;15;7;3;3;dossel;
 8;41;;Morta;;;26;;;;;dossel;Morta
@@ -186,7 +184,7 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 8;44;Clethraceae;Clethra scabra;Pers.;Carne-de-vaca;53;13;7;2;2;dossel;
 8;45;Clethraceae;Clethra scabra;Pers.;Carne-de-vaca;20;7;2;3;3;sub;
 8;46;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;23;8;4;2;2;inter;
-9;1;Annonaceae;Guatteria australis;A.St.-Hil.;Pindaúva-preta;17;7;3;3;3;sub;
+9;1;Annonaceae;Guatteria australis;A.St.-Hil.;Pindaï¿½va-preta;17;7;3;3;3;sub;
 9;2;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;104;15;2;3;2;dossel;bif
 9;2;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;41;15;2;3;2;dossel;bif
 9;3;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;38;12;5;2;2;inter;
@@ -196,12 +194,12 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 9;7;Melastomataceae;Miconia cinerascens;Miq.;Pixirica;20;7;2;3;3;sub;
 9;8;Peraceae;Pera glabrata;(Schott) Baill.;Sapateiro;65;15;7;2;1;dossel;
 9;9;;Morta;;;49;;;;;;Morta
-9;10;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;64;13;7;2;1;dossel;
+9;10;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;64;13;7;2;1;dossel;
 9;11;Peraceae;Pera glabrata;(Schott) Baill.;Sapateiro;42;9;4;3;2;inter;
 9;12;Fabaceae;Andira fraxinifolia;Benth.;Pau-angelim;41;9;5;1;1;inter;
 9;13;Clethraceae;Clethra scabra;Pers.;Carne-de-vaca;37;10;4;2;2;dossel;
 9;14;Peraceae;Pera glabrata;(Schott) Baill.;Sapateiro;50;10;7;2;1;inter;
-9;15;Fabaceae;Dalbergia brasiliensis;Vogel;Jacarandá;43;12;7;2;1;dossel;
+9;15;Fabaceae;Dalbergia brasiliensis;Vogel;Jacarandï¿½;43;12;7;2;1;dossel;
 9;16;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;23;8;2;2;2;sub;
 9;17;Peraceae;Pera glabrata;(Schott) Baill.;Sapateiro;61;14;4;1;1;dossel;tri
 9;17;Peraceae;Pera glabrata;(Schott) Baill.;Sapateiro;76;14;4;1;1;dossel;tri
@@ -210,11 +208,11 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 9;19;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;21;7;2,5;1;1;inter;
 9;20;Indet.;Indet.;;;71;12;7;2;1;dossel;
 9;21;Lauraceae;Aniba firmula;(Nees & Mart.) Mez;Canela;52;13;5;2;1;dossel;
-9;22;Phyllanthaceae;Hyeronima alchorneoides;Allemão;Cajueiro-bravo;40;10;5;2;1;inter;
+9;22;Phyllanthaceae;Hyeronima alchorneoides;Allemï¿½o;Cajueiro-bravo;40;10;5;2;1;inter;
 9;23;Peraceae;Pera glabrata;(Schott) Baill.;Sapateiro;29;7;2;3;2;inter;
 9;24;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;21;7;3;3;3;inter;
-9;25;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;64;13;4;2;1;dossel;
-9;26;Myrtaceae;Myrcia glabra;(O.Berg) D.Legrand;Uvá;28;7;3;2;1;sub;
+9;25;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;64;13;4;2;1;dossel;
+9;26;Myrtaceae;Myrcia glabra;(O.Berg) D.Legrand;Uvï¿½;28;7;3;2;1;sub;
 9;27;Peraceae;Pera glabrata;(Schott) Baill.;Sapateiro;47;13;7;2;1;dossel;
 9;28;Arecaceae;Geonoma schottiana;Mart.;Guaricana;20;2;1,5;2;2;sub;
 9;29;Clusiaceae;Clusia criuva;Cambess.;Mangue-do-mato;52;10;4;2;1;inter;
@@ -234,16 +232,16 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 9;41;Clusiaceae;Clusia criuva;Cambess.;Mangue-do-mato;28;11;5;3;2;inter;bif
 9;42;Celastraceae;Monteverdia gonoclada;(Mart.) Biral;Espinheira-santa;36;7;2;2;2;sub;
 9;43;Clusiaceae;Clusia criuva;Cambess.;Mangue-do-mato;35;8;3;2;2;inter;
-9;44;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maçaranduba;21;7;2;2;2;sub;
+9;44;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maï¿½aranduba;21;7;2;2;2;sub;
 10;1;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;16,5;5;2;2;3;sub;
 10;2;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;22;6;2;2;3;sub;bif
 10;2;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;23;6;2;2;3;sub;bif
 10;3;Lauraceae;Ocotea aciphylla;(Nees & Mart.) Mez;Canela-amarela;61;14;8;1;1;dossel;
-10;4;Sapindaceae;Matayba intermedia;Radlk.;Mataíba;42;14;6;2;1;dossel;
+10;4;Sapindaceae;Matayba intermedia;Radlk.;Mataï¿½ba;42;14;6;2;1;dossel;
 10;5;Fabaceae;Andira fraxinifolia;Benth.;Pau-angelim;45;13;7;1;2;dossel;
 10;6;Lauraceae;Nectandra oppositifolia;Nees;Canela-ferrugem;121;16;8;2;1;dossel;
-10;7;Sapindaceae;Matayba intermedia;Radlk.;Mataíba;42;12;6;2;1;dossel;
-10;8;Sapindaceae;Matayba intermedia;Radlk.;Mataíba;29;10;4;2;2;inter;
+10;7;Sapindaceae;Matayba intermedia;Radlk.;Mataï¿½ba;42;12;6;2;1;dossel;
+10;8;Sapindaceae;Matayba intermedia;Radlk.;Mataï¿½ba;29;10;4;2;2;inter;
 10;9;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;32;9;4;2;2;inter;
 10;10;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;24;7;4;2;2;sub;bif
 10;10;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;23;7;4;2;2;sub;bif
@@ -251,38 +249,38 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 10;12;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;32;9;5;2;1;inter;
 10;13;Fabaceae;Andira fraxinifolia;Benth.;Pau-angelim;20;6;2;2;2;sub;
 10;14;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;28;8;4;2;2;inter;
-10;15;Rubiaceae;Posoqueria latifolia;(Rudge) Schult.;Araçá-da-praia;39;9;4;3;2;inter;
+10;15;Rubiaceae;Posoqueria latifolia;(Rudge) Schult.;Araï¿½ï¿½-da-praia;39;9;4;3;2;inter;
 10;16;Peraceae;Pera glabrata;(Schott) Baill.;Sapateiro;63;13;4;2;1;dossel;
-10;17;Lauraceae;Ocotea dispersa;(Nees & Mart.) Mez;Canela-sabão;31;9;4;2;2;inter;
+10;17;Lauraceae;Ocotea dispersa;(Nees & Mart.) Mez;Canela-sabï¿½o;31;9;4;2;2;inter;
 10;18;Lauraceae;Ocotea aciphylla;(Nees & Mart.) Mez;Canela-amarela;39;9;5;2;1;inter;tri
 10;18;Lauraceae;Ocotea aciphylla;(Nees & Mart.) Mez;Canela-amarela;39;9;5;2;1;inter;tri
 10;18;Lauraceae;Ocotea aciphylla;(Nees & Mart.) Mez;Canela-amarela;83;14;7;2;1;dossel;tri
 10;19;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;46;10;5;2;1;dossel;
 10;20;Calophyllaceae;Calophyllum brasiliense;Cambess.;Guanandi;29;8;3;2;1;inter;
-10;21;Sapindaceae;Matayba intermedia;Radlk.;Mataíba;26;6;4;2;2;inter;
+10;21;Sapindaceae;Matayba intermedia;Radlk.;Mataï¿½ba;26;6;4;2;2;inter;
 10;22;Lauraceae;Nectandra oppositifolia;Nees;Canela-ferrugem;148;17;10;2;3;dossel;
-10;23;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatá;22;7;4;2;1;inter;
+10;23;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatï¿½;22;7;4;2;1;inter;
 10;24;Fabaceae;Andira fraxinifolia;Benth.;Pau-angelim;17;4;2;2;2;sub;
 10;25;;Morta;;;142;;;;;;Morta
-10;26;Phyllanthaceae;Hyeronima alchorneoides;Allemão;Cajueiro-bravo;42;9;6;2;2;inter;
-10;27;Myrtaceae;Myrcia pubipetala;Miq.;Goiabão;32;9;6;2;2;inter;
+10;26;Phyllanthaceae;Hyeronima alchorneoides;Allemï¿½o;Cajueiro-bravo;42;9;6;2;2;inter;
+10;27;Myrtaceae;Myrcia pubipetala;Miq.;Goiabï¿½o;32;9;6;2;2;inter;
 10;28;;Morta;;;47;;;;;;Morta
 10;29;Euphorbiaceae;Aparisthmium cordatum;(A.Juss.) Baill.;Iricurana;27;7;1;3;3;sub;
 10;30;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;22;4;1,5;2;3;sub;
 10;31;Lauraceae;Ocotea aciphylla;(Nees & Mart.) Mez;Canela-amarela;50;13;7;2;1;inter;bif
 10;32;Lauraceae;Ocotea aciphylla;(Nees & Mart.) Mez;Canela-amarela;53;14;6;2;2;dossel;bif
 10;33;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;113;18;8;1;1;dossel;
-10;34;Myrtaceae;Myrcia hebepetala;DC.;Aperta-guéla;19;7;2;2;2;inter;
+10;34;Myrtaceae;Myrcia hebepetala;DC.;Aperta-guï¿½la;19;7;2;2;2;inter;
 10;35;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;22;8;3;2;2;inter;
-11;1;Myrtaceae;Psidium cattleyanum;Sabine;Araçá;44;13;5;2;1;dossel;bif
-11;1;Myrtaceae;Psidium cattleyanum;Sabine;Araçá;39,5;13;5;2;1;dossel;bif
-11;2;Annonaceae;Guatteria australis;A.St.-Hil.;Pindaúva-preta;17;7;2;1;1;inter;
+11;1;Myrtaceae;Psidium cattleyanum;Sabine;Araï¿½ï¿½;44;13;5;2;1;dossel;bif
+11;1;Myrtaceae;Psidium cattleyanum;Sabine;Araï¿½ï¿½;39,5;13;5;2;1;dossel;bif
+11;2;Annonaceae;Guatteria australis;A.St.-Hil.;Pindaï¿½va-preta;17;7;2;1;1;inter;
 11;3;;Morta;;;25;7;2;3;3;sub;Morta bif
 11;3;Lauraceae;Ocotea pulchella;(Nees & Mart.) Mez;Canela-preta;31;7;2;3;3;sub;bif
 11;4;Lauraceae;Ocotea pulchella;(Nees & Mart.) Mez;Canela-preta;52;10;2;2;2;dossel;
 11;5;Fabaceae;Andira fraxinifolia;Benth.;Pau-angelim;33;7;2;3;2;sub;
 11;6;Lauraceae;Ocotea pulchella;(Nees & Mart.) Mez;Canela-preta;44;12;5;2;1;dossel;
-11;7;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;53;9;4;2;2;inter;
+11;7;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;53;9;4;2;2;inter;
 11;8;Arecaceae;Geonoma schottiana;Mart.;Guaricana;19;2;1,5;2;2;sub;
 11;9;Lauraceae;Ocotea pulchella;(Nees & Mart.) Mez;Canela-preta;41;12;2;2;2;dossel;
 11;10;Fabaceae;Andira fraxinifolia;Benth.;Pau-angelim;26;7;2;3;1;inter;1
@@ -311,22 +309,22 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 11;19;Primulaceae;Myrsine venosa;A.DC.;Capororoca;48;14;10;2;1;dossel;
 11;20;Lauraceae;Ocotea pulchella;(Nees & Mart.) Mez;Canela-preta;37;14;5;2;1;inter;
 11;20;Lauraceae;Ocotea pulchella;(Nees & Mart.) Mez;Canela-preta;42;14;5;2;1;inter;
-11;21;Myrtaceae;Psidium cattleyanum;Sabine;Araçá;29;7;2;1;1;inter;
+11;21;Myrtaceae;Psidium cattleyanum;Sabine;Araï¿½ï¿½;29;7;2;1;1;inter;
 11;22;Fabaceae;Andira fraxinifolia;Benth.;Pau-angelim;32;8;2;2;1;inter;
 11;23;Fabaceae;Andira fraxinifolia;Benth.;Pau-angelim;41;7;0;3;2;sub;bif
 11;23;Fabaceae;Andira fraxinifolia;Benth.;Pau-angelim;32;7;0;3;2;sub;bif
-11;24;Aquifoliaceae;Ilex dumosa;Reissek;Caúna;87;13;3;2;1;dossel;
+11;24;Aquifoliaceae;Ilex dumosa;Reissek;Caï¿½na;87;13;3;2;1;dossel;
 11;25;;Morta;;;68;;;;;;Morta
 11;26;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;68;15;5;3;1;dossel;tri
 11;26;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;62;15;5;3;1;dossel;tri
 11;26;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;99;15;5;3;1;dossel;tri
 11;27;Clusiaceae;Clusia criuva;Cambess.;Mangue-do-mato;39;9;4;2;1;inter;
-11;28;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatá;29;8;4;3;3;sub;1
-11;28;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatá;22;8;4;3;3;sub;2
-11;28;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatá;21;8;4;3;3;sub;3
-11;28;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatá;33;8;4;3;3;sub;4
-11;28;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatá;23;8;4;3;3;sub;5
-11;28;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatá;32;8;4;3;3;sub;6
+11;28;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatï¿½;29;8;4;3;3;sub;1
+11;28;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatï¿½;22;8;4;3;3;sub;2
+11;28;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatï¿½;21;8;4;3;3;sub;3
+11;28;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatï¿½;33;8;4;3;3;sub;4
+11;28;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatï¿½;23;8;4;3;3;sub;5
+11;28;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatï¿½;32;8;4;3;3;sub;6
 11;29;Lauraceae;Ocotea pulchella;(Nees & Mart.) Mez;Canela-preta;53;13;4;2;1;dossel;
 11;30;Aquifoliaceae;Ilex theezans;Mart. ex Reissek;Congonha;80;14;3;2;1;dossel;
 11;30;Aquifoliaceae;Ilex theezans;Mart. ex Reissek;Congonha;54;14;3;2;1;dossel;
@@ -335,48 +333,48 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 11;31;Lauraceae;Ocotea pulchella;(Nees & Mart.) Mez;Canela-preta;47;9;2;2;2;inter;tri
 11;31;Lauraceae;Ocotea pulchella;(Nees & Mart.) Mez;Canela-preta;36;9;2;2;2;inter;tri
 11;32;Fabaceae;Andira fraxinifolia;Benth.;Pau-angelim;43;7;2;2;2;inter;
-11;33;Araliaceae;Didymopanax morototoni;(Aubl.) Decne. & Planch.;Morototó;22;9;7;1;1;inter;
+11;33;Araliaceae;Didymopanax morototoni;(Aubl.) Decne. & Planch.;Morototï¿½;22;9;7;1;1;inter;
 12;1;Lauraceae;Ocotea pulchella;(Nees & Mart.) Mez;Canela-preta;37;9;6;2;2;inter;
 12;2;Clethraceae;Clethra scabra;Pers.;Carne-de-vaca;18;9;6;2;1;inter;1
 12;2;Clethraceae;Clethra scabra;Pers.;Carne-de-vaca;40;9;6;2;1;inter;2
 12;2;Clethraceae;Clethra scabra;Pers.;Carne-de-vaca;30;9;6;2;1;inter;3
 12;2;Clethraceae;Clethra scabra;Pers.;Carne-de-vaca;19;9;6;2;1;inter;4
-12;3;Myrtaceae;Myrcia glabra;(O.Berg) D.Legrand;Uvá;28;9;5;2;2;inter;
+12;3;Myrtaceae;Myrcia glabra;(O.Berg) D.Legrand;Uvï¿½;28;9;5;2;2;inter;
 12;4;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;22;6;3;1;1;inter;
 12;5;Lauraceae;Nectandra oppositifolia;Nees;Canela-ferrugem;96;14;5;2;1;dossel;
 12;6;Theaceae;Laplacea fruticosa;(Schrad.) Kobuski;Pau-de-santa-rita;45;10;6;2;1;dossel;
-12;7;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;25;6;2;2;2;sub;
-12;8;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;19,5;9;5;2;1;inter;
+12;7;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;25;6;2;2;2;sub;
+12;8;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;19,5;9;5;2;1;inter;
 12;9;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;26;8;5;2;2;sub;
 12;10;Lauraceae;Ocotea aciphylla;(Nees & Mart.) Mez;Canela-amarela;39;11;5;2;2;inter;
-12;11;Sapindaceae;Matayba intermedia;Radlk.;Mataíba;163;16;2;2;1;dossel;
-12;12;Fabaceae;Ormosia arborea;(Vell.) Harms;Olho-de-cabra;22;8;3;2;1;inter;arbórea
+12;11;Sapindaceae;Matayba intermedia;Radlk.;Mataï¿½ba;163;16;2;2;1;dossel;
+12;12;Fabaceae;Ormosia arborea;(Vell.) Harms;Olho-de-cabra;22;8;3;2;1;inter;arbï¿½rea
 12;13;Primulaceae;Cybianthus brasiliensis;(Mez) G.Agostini;Capororoca;27;7;3;2;2;sub;
 12;14;Euphorbiaceae;Aparisthmium cordatum;(A.Juss.) Baill.;Iricurana;22;6;1;3;3;sub;
-12;15;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;26;8;2;2;1;inter;
+12;15;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;26;8;2;2;1;inter;
 12;16;Annonaceae;Xylopia brasiliensis;Spreng.;Pimenta-do-mato;51;12;7;2;1;dossel;
 12;17;Fabaceae;Andira fraxinifolia;Benth.;Pau-angelim;72;12;4;2;1;dossel;
-12;18;Phyllanthaceae;Hyeronima alchorneoides;Allemão;Cajueiro-bravo;25;8;2;2;1;inter;
+12;18;Phyllanthaceae;Hyeronima alchorneoides;Allemï¿½o;Cajueiro-bravo;25;8;2;2;1;inter;
 12;19;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;34;13;6;2;1;dossel;
 12;20;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;32;14;3;2;1;dossel;
 12;21;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;54;13;4;2;1;dossel;
 12;22;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;32;9;3;3;2;inter;
 12;23;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;31;7;2;2;3;sub;
-12;24;Sapindaceae;Matayba intermedia;Radlk.;Mataíba;99;15;2;2;1;dossel;
+12;24;Sapindaceae;Matayba intermedia;Radlk.;Mataï¿½ba;99;15;2;2;1;dossel;
 12;25;Indet.;Indet.;;;85;16;7;2;1;dossel;
 12;26;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;32;9;6;2;2;inter;
 12;27;Primulaceae;Myrsine venosa;A.DC.;Capororoca;48;11;5;2;2;inter;
-12;28;Annonaceae;Guatteria australis;A.St.-Hil.;Pindaúva-preta;22;8;4;2;2;sub;
+12;28;Annonaceae;Guatteria australis;A.St.-Hil.;Pindaï¿½va-preta;22;8;4;2;2;sub;
 12;29;Clethraceae;Clethra scabra;Pers.;Carne-de-vaca;50;14;5;2;1;dossel;
-12;30;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;20;8;2;2;1;sub;
+12;30;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;20;8;2;2;1;sub;
 12;31;;Morta;;;85;;;;;;Morta
-12;32;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;32;9;4;2;2;inter;
+12;32;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;32;9;4;2;2;inter;
 12;33;Arecaceae;Geonoma schottiana;Mart.;Guaricana;18;2;1;1;1;sub;
 12;34;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;30;9;4;2;2;inter;
-13;1;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;54;15;6;2;2;dossel;
+13;1;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;54;15;6;2;2;dossel;
 13;2;Lauraceae;Ocotea aciphylla;(Nees & Mart.) Mez;Canela-amarela;86;16;7;1;1;dossel;
 13;3;Fabaceae;Ormosia arborea;(Vell.) Harms;Olho-de-cabra;88;15;6;2;1;dossel;
-13;4;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;99;13;7;2;1;dossel;
+13;4;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;99;13;7;2;1;dossel;
 13;5;Fabaceae;Ormosia arborea;(Vell.) Harms;Olho-de-cabra;72;13;6;2;1;dossel;
 13;6;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;25;8;3;2;2;sub;
 13;7;Myrtaceae;Eugenia astringens;Cambess.;Jabuticaba-da-praia;45;13;4;2;1;dossel;
@@ -384,57 +382,57 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 13;9;Lauraceae;Ocotea aciphylla;(Nees & Mart.) Mez;Canela-amarela;52;14;3;2;2;dossel;
 13;10;;Morta;;;33;;;;;;Morta
 13;11;Celastraceae;Monteverdia gonoclada;(Mart.) Biral;Espinheira-santa;47;12;6,5;1;1;inter;
-13;12;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;76;13;6;2;1;dossel;
+13;12;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;76;13;6;2;1;dossel;
 13;13;Annonaceae;Xylopia brasiliensis;Spreng.;Pimenta-do-mato;62;14;5;2;1;dossel;
 13;14;Lauraceae;Ocotea aciphylla;(Nees & Mart.) Mez;Canela-amarela;71;15;5;2;1;dossel;
-13;15;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;40;10;4;2;2;inter;
-13;16;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;89;15;5;2;1;dossel;
+13;15;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;40;10;4;2;2;inter;
+13;16;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;89;15;5;2;1;dossel;
 13;17;Clusiaceae;Garcinia gardneriana;(Planch. & Triana) Zappi;Bacupari;37;7;2;2;1;sub;
 13;18;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;42;13;2;3;1;inter;
 13;19;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;44;9;3;2;2;inter;
 13;20;Lauraceae;Ocotea aciphylla;(Nees & Mart.) Mez;Canela-amarela;85;14;6;2;1;dossel;
-13;21;Fabaceae;Inga edwallii;(Harms) T.D.Penn.;Ingá-liso;60;13;3;2;2;dossel;
+13;21;Fabaceae;Inga edwallii;(Harms) T.D.Penn.;Ingï¿½-liso;60;13;3;2;2;dossel;
 13;22;Calophyllaceae;Calophyllum brasiliense;Cambess.;Guanandi;229;17;10;1;1;emerg;
 14;1;Clusiaceae;Garcinia gardneriana;(Planch. & Triana) Zappi;Bacupari;25;9;2;2;1;sub;
 14;2;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;25;8;3;2;1;sub;
 14;3;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;56;14;5;2;1;dossel;
-14;4;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;165;19;7;2;1;emerg;
+14;4;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;165;19;7;2;1;emerg;
 14;5;Indet.;Indet.;;;76;17;4;2;1;dossel;
 14;6;Euphorbiaceae;Aparisthmium cordatum;(A.Juss.) Baill.;Iricurana;30;9;3;2;2;sub;
-14;7;Phyllanthaceae;Hyeronima alchorneoides;Allemão;Cajueiro-bravo;53;8;3;2;2;inter;
+14;7;Phyllanthaceae;Hyeronima alchorneoides;Allemï¿½o;Cajueiro-bravo;53;8;3;2;2;inter;
 14;8;Myrtaceae;Eugenia excelsa;O.Berg;Eugenia;86;17;8;2;2;dossel;
 14;9;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;23;7;3;2;2;sub;
 14;10;Lauraceae;Ocotea aciphylla;(Nees & Mart.) Mez;Canela-amarela;126;19;10;1;1;emerg;
-14;11;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Café-do-mato;40;9;3;3;2;sub;
+14;11;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Cafï¿½-do-mato;40;9;3;3;2;sub;
 14;12;Monimiaceae;Mollinedia schottiana;(Spreng.) Perkins;Espinheira-santa;41;8;2;2;2;sub;
 14;13;Fabaceae;Pterocarpus rohrii;Vahl;Pau-sangue;74;17;6;2;2;dossel;
 14;14;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;31;7;2;3;2;inter;
 14;15;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;22;7;2;3;2;sub;
 14;16;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;51;9;5;2;2;inter;
-14;17;Phyllanthaceae;Hyeronima alchorneoides;Allemão;Cajueiro-bravo;33;8;2;3;2;inter;
-14;18;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Café-do-mato;23;7;3;2;2;sub;
-14;19;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;141;20;7;2;1;emerg;
-14;20;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Café-do-mato;25;12;10;3;3;inter;
+14;17;Phyllanthaceae;Hyeronima alchorneoides;Allemï¿½o;Cajueiro-bravo;33;8;2;3;2;inter;
+14;18;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Cafï¿½-do-mato;23;7;3;2;2;sub;
+14;19;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;141;20;7;2;1;emerg;
+14;20;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Cafï¿½-do-mato;25;12;10;3;3;inter;
 14;21;Chrysobalanaceae;Hirtella hebeclada;Moric. ex DC.;Pau-cinza;36;7;3;2;2;sub;
 14;22;Lauraceae;Nectandra oppositifolia;Nees;Canela-ferrugem;138;22;12;2;2;emerg;
-14;23;Burseraceae;Protium kleinii;Cuatrec.;Almécega;81;17;6;2;1;dossel;
+14;23;Burseraceae;Protium kleinii;Cuatrec.;Almï¿½cega;81;17;6;2;1;dossel;
 14;24;;Morta;;;28;;;;;;Morta
 14;25;Primulaceae;Cybianthus brasiliensis;(Mez) G.Agostini;Capororoca;22;14;3;3;1;inter;
 14;25;Primulaceae;Cybianthus brasiliensis;(Mez) G.Agostini;Capororoca;26;14;3;3;1;inter;
 14;25;Primulaceae;Cybianthus brasiliensis;(Mez) G.Agostini;Capororoca;70;14;3;3;1;inter;
-14;26;Melastomataceae;Mouriri chamissoana;Cogn.;Mandapuçá;27;9;2;2;1;inter;
-14;27;Phyllanthaceae;Hyeronima alchorneoides;Allemão;Cajueiro-bravo;26;10;5;3;2;inter;
+14;26;Melastomataceae;Mouriri chamissoana;Cogn.;Mandapuï¿½ï¿½;27;9;2;2;1;inter;
+14;27;Phyllanthaceae;Hyeronima alchorneoides;Allemï¿½o;Cajueiro-bravo;26;10;5;3;2;inter;
 14;28;Myrtaceae;Myrcia strigipes;Mart.;Guamirim;23;9;2;2;2;sub;
 14;29;Fabaceae;Pterocarpus rohrii;Vahl;Pau-sangue;68;16;8;2;1;dossel;
 14;30;Boraginaceae;Cordia sellowiana;Cham.;Louro-mole;23;8;2;2;2;sub;
-14;31;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;126;17;10;2;1;dossel;
+14;31;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;126;17;10;2;1;dossel;
 14;32;Rubiaceae;Psychotria sp.1;;;24;7;3;3;2;inter;
 14;33;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;68;15;9;1;1;dossel;
 14;34;;Morta;;;49;;;;;;Morta
-14;35;Sapindaceae;Cupania oblongifolia;Mart.;Camboatá;79;16;8;2;1;dossel;
-14;36;Annonaceae;Guatteria australis;A.St.-Hil.;Pindaúva-preta;36;12;5;3;2;inter;
+14;35;Sapindaceae;Cupania oblongifolia;Mart.;Camboatï¿½;79;16;8;2;1;dossel;
+14;36;Annonaceae;Guatteria australis;A.St.-Hil.;Pindaï¿½va-preta;36;12;5;3;2;inter;
 15;1;Myrtaceae;Eugenia malacantha;D.Legrand;Eugenia;59;15;8;2;1;dossel;
-15;2;Lauraceae;Ocotea dispersa;(Nees & Mart.) Mez;Canela-sabão;26;10;6;2;1;inter;
+15;2;Lauraceae;Ocotea dispersa;(Nees & Mart.) Mez;Canela-sabï¿½o;26;10;6;2;1;inter;
 15;3;Fabaceae;Zollernia ilicifolia;(Brongn.) Vogel;Laranjeira-do-mato;34;10;4;2;2;inter;
 15;4;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;19;8,5;4;2;2;inter;
 15;5;Clusiaceae;Garcinia gardneriana;(Planch. & Triana) Zappi;Bacupari;20;8;3;2;2;inter;
@@ -445,16 +443,16 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 15;6;Myrtaceae;Myrcia strigipes;Mart.;Guamirim;22;9;4;2;1;inter;
 15;7;;Morta;;;32;6;2;3;2;sub;Morta
 15;8;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;142;16;6;3;1;emerg;
-15;9;Araliaceae;Didymopanax morototoni;(Aubl.) Decne. & Planch.;Morototó;74;14;6;2;1;dossel;
+15;9;Araliaceae;Didymopanax morototoni;(Aubl.) Decne. & Planch.;Morototï¿½;74;14;6;2;1;dossel;
 15;10;Myrtaceae;Myrcia strigipes;Mart.;Guamirim;31;8;1,5;3;2;sub;
 15;11;Clusiaceae;Garcinia gardneriana;(Planch. & Triana) Zappi;Bacupari;23;7;4;2;1;sub;
-15;12;Fabaceae;Inga sellowiana;Benth.;Ingá-mirim;63;14;2;1;1;dossel;
+15;12;Fabaceae;Inga sellowiana;Benth.;Ingï¿½-mirim;63;14;2;1;1;dossel;
 15;13;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;43;8;1;3;2;inter;
 15;14;;Morta;;;46;;;;;;Morta
 15;15;Boraginaceae;Cordia sellowiana;Cham.;Louro-mole;37;8;3;2;2;sub;
 15;16;Myrtaceae;Eugenia stigmatosa;DC.;Guamirim;41;8;2;2;1;inter;
 15;18;Myrtaceae;Myrtaceae sp. 1;;;33;8;3;3;2;sub;
-15;17;Myristicaceae;Virola bicuhyba;(Schott ex Spreng.) Warb.;Bicuíba;41;10;6;2;1;dossel;
+15;17;Myristicaceae;Virola bicuhyba;(Schott ex Spreng.) Warb.;Bicuï¿½ba;41;10;6;2;1;dossel;
 15;19;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;32;11;5;2;2;dossel;
 15;20;Aquifoliaceae;Ilex theezans;Mart. ex Reissek;Congonha;20;5;2;3;3;sub;
 15;21;Fabaceae;Pterocarpus rohrii;Vahl;Pau-sangue;82;9;4;3;2;inter;
@@ -471,7 +469,7 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 15;31;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;49;12;6;2;1;dossel;
 15;32;Olacaceae;Tetrastylidium grandifolium;(Baill.) Sleumer;Tatu;31;10;6;1;2;dossel;
 15;33;Clusiaceae;Garcinia gardneriana;(Planch. & Triana) Zappi;Bacupari;50;15;6;3;2;inter;
-15;34;Sapindaceae;Cupania oblongifolia;Mart.;Camboatá;80;13;6;2;2;dossel;
+15;34;Sapindaceae;Cupania oblongifolia;Mart.;Camboatï¿½;80;13;6;2;2;dossel;
 15;35;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;23;8;5;1;2;inter;
 15;36;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;32;8;3;3;2;inter;
 15;37;Myrtaceae;Eugenia malacantha;D.Legrand;Eugenia;30;8;5;2;1;inter;
@@ -479,29 +477,29 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 16;1;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;22;11;5;1;1;dossel;
 16;2;Euphorbiaceae;Aparisthmium cordatum;(A.Juss.) Baill.;Iricurana;19;7;3;2;2;sub;
 16;3;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;22;7;3;2;1;sub;
-16;4;Annonaceae;Xylopia langsdorffiana;A.St.-Hil. & Tul.;Pindaúva;43;9;5;3;2;inter;
-16;5;Sapindaceae;Matayba intermedia;Radlk.;Mataíba;150;15;8;2;1;emerg;
+16;4;Annonaceae;Xylopia langsdorffiana;A.St.-Hil. & Tul.;Pindaï¿½va;43;9;5;3;2;inter;
+16;5;Sapindaceae;Matayba intermedia;Radlk.;Mataï¿½ba;150;15;8;2;1;emerg;
 16;6;Fabaceae;Ormosia arborea;(Vell.) Harms;Olho-de-cabra;30;4;2;3;2;sub;
 16;7;Fabaceae;Ormosia arborea;(Vell.) Harms;Olho-de-cabra;21;5;2;2;1;sub;
-16;8;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatá;81;16;9;2;1;emerg;
-16;9;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;101;16;10;1;1;emerg;
+16;8;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatï¿½;81;16;9;2;1;emerg;
+16;9;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;101;16;10;1;1;emerg;
 16;10;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;31;9;4;3;2;inter;
 16;11;Euphorbiaceae;Aparisthmium cordatum;(A.Juss.) Baill.;Iricurana;19;8;4;2;2;sub;
 16;12;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;34;10;6;3;2;sub;
 16;13;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;61;12;7;2;1;dossel;
-16;14;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;88;15;8;2;1;dossel;
+16;14;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;88;15;8;2;1;dossel;
 16;15;Lauraceae;Ocotea aciphylla;(Nees & Mart.) Mez;Canela-amarela;125;17;10;2;1;emerg;
-16;16;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maçaranduba;27;10;4;2;2;inter;
+16;16;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maï¿½aranduba;27;10;4;2;2;inter;
 16;17;Euphorbiaceae;Aparisthmium cordatum;(A.Juss.) Baill.;Iricurana;29;8;5;2;2;sub;
 16;18;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;49;12;8;2;1;dossel;
-16;19;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;59;15;8;2;1;dossel;
+16;19;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;59;15;8;2;1;dossel;
 16;20;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;55;12;6;2;1;dossel;
 16;21;Euphorbiaceae;Aparisthmium cordatum;(A.Juss.) Baill.;Iricurana;34;9;4;2;1;sub;
 16;22;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;35,5;11;6;1;1;inter;
 16;23;Lauraceae;Aniba firmula;(Nees & Mart.) Mez;Canela;106;13;6;2;1;dossel;
 16;24;Lauraceae;Ocotea aciphylla;(Nees & Mart.) Mez;Canela-amarela;67;17;8;2;1;emerg;
 16;25;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;60;12;5;2;1;dossel;
-16;26;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;28;7;3;2;1;sub;
+16;26;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;28;7;3;2;1;sub;
 16;27;Euphorbiaceae;Aparisthmium cordatum;(A.Juss.) Baill.;Iricurana;21;7;3;2;1;sub;
 16;28;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;54;9;15;3;2;inter;bif
 16;28;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;35;9;15;3;2;inter;bif
@@ -514,48 +512,48 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 17;7;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;68;13;4;2;1;dossel;
 17;8;Myrtaceae;Myrtaceae sp. 2;;;21;8;2;2;2;inter;Col
 17;9;Olacaceae;Tetrastylidium grandifolium;(Baill.) Sleumer;Tatu;28;8;3;2;1;inter;Col
-17;10;Myrtaceae;Myrcia glabra;(O.Berg) D.Legrand;Uvá;20;9;5;2;1;sub;
+17;10;Myrtaceae;Myrcia glabra;(O.Berg) D.Legrand;Uvï¿½;20;9;5;2;1;sub;
 17;11;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;70;15;8;2;2;dossel;
 17;12;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;18;8;4;2;2;sub;
-17;13;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Café-do-mato;34;8;3;2;1;sub;
+17;13;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Cafï¿½-do-mato;34;8;3;2;1;sub;
 17;14;Euphorbiaceae;Aparisthmium cordatum;(A.Juss.) Baill.;Iricurana;26;8;4;2;1;sub;
-17;15;Annonaceae;Xylopia langsdorffiana;A.St.-Hil. & Tul.;Pindaúva;30;12;5;2;1;dossel;
+17;15;Annonaceae;Xylopia langsdorffiana;A.St.-Hil. & Tul.;Pindaï¿½va;30;12;5;2;1;dossel;
 17;16;Humiriaceae;Vantanea compacta;(Schnizl.) Cuatrec.;Guaraparim;118;15;7;2;1;dossel;
-17;17;Melastomataceae;Mouriri chamissoana;Cogn.;Mandapuçá;62;12;7;2;1;inter;
+17;17;Melastomataceae;Mouriri chamissoana;Cogn.;Mandapuï¿½ï¿½;62;12;7;2;1;inter;
 17;18;Indet.;Indet.;;;120;17;8;2;1;emerg;
-17;19;Annonaceae;Xylopia langsdorffiana;A.St.-Hil. & Tul.;Pindaúva;39;11;5;2;1;inter;
+17;19;Annonaceae;Xylopia langsdorffiana;A.St.-Hil. & Tul.;Pindaï¿½va;39;11;5;2;1;inter;
 17;20;Lauraceae;Ocotea mosenii;Mez;Canela-preta;54;16;8;2;1;emerg;
 17;21;Myrtaceae;Eugenia subavenia;O.Berg;Eugenia;25;9;1,5;2;1;sub;bif
 17;21;Myrtaceae;Eugenia subavenia;O.Berg;Eugenia;46;9;1,5;2;1;sub;bif
 17;22;Urticaceae;Pourouma guianensis;Aubl.;Embaubarana;24;9;5;2;1;sub;
 17;23;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;51;12;7;2;1;dossel;
 17;24;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;51;9;4;2;2;inter;
-17;25;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maçaranduba;160;17;5;2;1;emerg;
-17;26;Sapindaceae;Cupania oblongifolia;Mart.;Camboatá;36;9;4;2;1;inter;
+17;25;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maï¿½aranduba;160;17;5;2;1;emerg;
+17;26;Sapindaceae;Cupania oblongifolia;Mart.;Camboatï¿½;36;9;4;2;1;inter;
 17;27;Clusiaceae;Garcinia gardneriana;(Planch. & Triana) Zappi;Bacupari;22;8;4;2;1;sub;
 17;28;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;30;10;6;2;2;inter;
 17;29;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;49;12;7;2;1;dossel;
 17;30;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;48;13;6;2;1;inter;
-17;31;Sapindaceae;Matayba juglandifolia;(Cambess.) Radlk.;Camboatá-amarelo;19;9;4;3;2;inter;
-17;32;Lauraceae;Ocotea dispersa;(Nees & Mart.) Mez;Canela-sabão;18;10;6;1;2;inter;bif
-17;32;Lauraceae;Ocotea dispersa;(Nees & Mart.) Mez;Canela-sabão;32;10;6;1;2;inter;bif
+17;31;Sapindaceae;Matayba juglandifolia;(Cambess.) Radlk.;Camboatï¿½-amarelo;19;9;4;3;2;inter;
+17;32;Lauraceae;Ocotea dispersa;(Nees & Mart.) Mez;Canela-sabï¿½o;18;10;6;1;2;inter;bif
+17;32;Lauraceae;Ocotea dispersa;(Nees & Mart.) Mez;Canela-sabï¿½o;32;10;6;1;2;inter;bif
 17;33;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;112;17;8;2;1;emerg;bif
 17;33;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;116;17;8;2;1;emerg;bif
 17;34;Sapotaceae;Ecclinusa ramiflora;Mart.;Abiorana;28;11;7;2;1;inter;
 17;35;Monimiaceae;Mollinedia schottiana;(Spreng.) Perkins;Espinheira-santa;36;11;4;2;2;inter;
 17;36;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;24;7;3;2;2;sub;
-17;37;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Café-do-mato;22;6;1;3;2;sub;
-17;38;Melastomataceae;Mouriri chamissoana;Cogn.;Mandapuçá;47;13;8;3;2;inter;
+17;37;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Cafï¿½-do-mato;22;6;1;3;2;sub;
+17;38;Melastomataceae;Mouriri chamissoana;Cogn.;Mandapuï¿½ï¿½;47;13;8;3;2;inter;
 17;39;Myrtaceae;Myrcia strigipes;Mart.;Guamirim;45;12;4;3;1;inter;
 18;1;Fabaceae;Ormosia arborea;(Vell.) Harms;Olho-de-cabra;64;9;4;1;2;dossel;
-18;2;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Café-do-mato;40;6;3;2;2;sub;
-18;3;Sapindaceae;Cupania oblongifolia;Mart.;Camboatá;44;13;4;1;1;dossel;
+18;2;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Cafï¿½-do-mato;40;6;3;2;2;sub;
+18;3;Sapindaceae;Cupania oblongifolia;Mart.;Camboatï¿½;44;13;4;1;1;dossel;
 18;4;Lauraceae;Endlicheria paniculata;(Spreng.) J.F.Macbr.;Canela-garuva;90;13;7;1;1;dossel;
 18;5;Indet.;Indet.;;;111;13;8;1;1;dossel;
 18;6;;Morta;;;30;9;8;3;3;inter;Morta
-18;7;Burseraceae;Protium kleinii;Cuatrec.;Almécega;88;10;5;3;2;inter;Tombada
-18;8;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maçaranduba;141;14;8;2;1;dossel;bif
-18;8;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maçaranduba;88;14;8;2;1;dossel;bif
+18;7;Burseraceae;Protium kleinii;Cuatrec.;Almï¿½cega;88;10;5;3;2;inter;Tombada
+18;8;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maï¿½aranduba;141;14;8;2;1;dossel;bif
+18;8;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maï¿½aranduba;88;14;8;2;1;dossel;bif
 18;9;Clusiaceae;Garcinia gardneriana;(Planch. & Triana) Zappi;Bacupari;38;9;4;2;1;inter;
 18;10;Lauraceae;Nectandra oppositifolia;Nees;Canela-ferrugem;64;10;5;3;1;inter;
 18;11;Olacaceae;Heisteria silvianii;Schwacke;Brinco-de-mulata;30;7;2;3;2;sub;col
@@ -564,20 +562,20 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 18;14;Myrtaceae;Myrcia spectabilis;DC.;Ameixa-do-mato;38;8;5;3;2;sub;
 18;15;Monimiaceae;Mollinedia schottiana;(Spreng.) Perkins;Espinheira-santa;24;7;2;2;2;sub;
 18;16;Melastomataceae;Miconia cubatanensis;Hoehne;Pixirica;24;8;3;2;1;sub;
-18;17;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Café-do-mato;48;13;4;2;2;inter;
+18;17;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Cafï¿½-do-mato;48;13;4;2;2;inter;
 18;18;Lauraceae;Endlicheria paniculata;(Spreng.) J.F.Macbr.;Canela-garuva;50;14;7;2;1;dossel;
-18;19;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Café-do-mato;25;8;3;2;2;inter;
+18;19;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Cafï¿½-do-mato;25;8;3;2;2;inter;
 18;20;Indet.;Indet.;;;37;10;5;2;2;inter;
 18;21;Myrtaceae;Myrcia strigipes;Mart.;Guamirim;25;7;2;3;2;inter;
-18;22;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maçaranduba;26;8;3;3;2;inter;
+18;22;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maï¿½aranduba;26;8;3;3;2;inter;
 18;23;Lauraceae;Aniba firmula;(Nees & Mart.) Mez;Canela;33;11;5;3;2;inter;
 18;24;Lauraceae;Endlicheria paniculata;(Spreng.) J.F.Macbr.;Canela-garuva;19;8;2;3;2;sub;
 18;25;Annonaceae;Annona dolabripetala;Raddi;Pinha do mato;30;9;2;2;1;inter;
 18;26;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;18;7;2;2;2;sub;
 18;27;Myrtaceae;Myrcia strigipes;Mart.;Guamirim;22;9;3;3;2;inter;
-18;28;Burseraceae;Protium kleinii;Cuatrec.;Almécega;103;14;6;1;1;dossel;
+18;28;Burseraceae;Protium kleinii;Cuatrec.;Almï¿½cega;103;14;6;1;1;dossel;
 18;29;Lauraceae;Ocotea aciphylla;(Nees & Mart.) Mez;Canela-amarela;59;12;3;3;2;dossel;
-18;30;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Café-do-mato;23;7;2;3;2;sub;
+18;30;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Cafï¿½-do-mato;23;7;2;3;2;sub;
 18;31;Peraceae;Pera glabrata;(Schott) Baill.;Sapateiro;63;13;5;2;1;dossel;
 18;32;Euphorbiaceae;Aparisthmium cordatum;(A.Juss.) Baill.;Iricurana;41;12;6;3;1;dossel;
 18;33;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;41;9;3;3;2;inter;
@@ -589,7 +587,7 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 19;3;Clusiaceae;Garcinia gardneriana;(Planch. & Triana) Zappi;Bacupari;27;8;2;2;3;sub;
 19;4;Lauraceae;Ocotea aciphylla;(Nees & Mart.) Mez;Canela-amarela;83;16;8;2;1;dossel;
 19;5;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;72;18;8;2;1;dossel;
-19;6;Myrtaceae;Neomitranthes glomerata;(D.Legrand) D.Legrand;Pitangão;56;14;7;2;1;inter;
+19;6;Myrtaceae;Neomitranthes glomerata;(D.Legrand) D.Legrand;Pitangï¿½o;56;14;7;2;1;inter;
 19;7;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;31;11;5;2;1;inter;
 19;8;Clusiaceae;Garcinia gardneriana;(Planch. & Triana) Zappi;Bacupari;42;14;5;2;1;inter;
 19;9;Lauraceae;Aniba firmula;(Nees & Mart.) Mez;Canela;97;16;8;2;1;inter;
@@ -617,27 +615,27 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 19;29;Monimiaceae;Mollinedia schottiana;(Spreng.) Perkins;Espinheira-santa;34;9;4;3;2;sub;bif
 19;29;Monimiaceae;Mollinedia schottiana;(Spreng.) Perkins;Espinheira-santa;45;9;4;3;2;sub;bif
 19;30;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;67;16;7;1;1;dossel;
-19;31;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maçaranduba;106;18;8;1;1;dossel;
+19;31;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maï¿½aranduba;106;18;8;1;1;dossel;
 19;32;Fabaceae;Andira fraxinifolia;Benth.;Pau-angelim;109;18;7;2;1;dossel;
-19;33;Sapindaceae;Matayba intermedia;Radlk.;Mataíba;134;25;10;2;1;dossel;
+19;33;Sapindaceae;Matayba intermedia;Radlk.;Mataï¿½ba;134;25;10;2;1;dossel;
 19;34;Chrysobalanaceae;Hirtella hebeclada;Moric. ex DC.;Pau-cinza;27;13;10;1;2;inter;
-19;35;Myrtaceae;Neomitranthes glomerata;(D.Legrand) D.Legrand;Pitangão;46;14;10;3;2;inter;
+19;35;Myrtaceae;Neomitranthes glomerata;(D.Legrand) D.Legrand;Pitangï¿½o;46;14;10;3;2;inter;
 19;36;Clusiaceae;Garcinia gardneriana;(Planch. & Triana) Zappi;Bacupari;22;7;2;3;1;sub;
-19;37;Lauraceae;Ocotea dispersa;(Nees & Mart.) Mez;Canela-sabão;16;7;4;2;1;sub;
-19;38;Sapindaceae;Matayba intermedia;Radlk.;Mataíba;113;14;8;2;1;dossel;
-19;39;Malpighiaceae;Bunchosia pallescens;Skottsb.;Café-do-mato;58;14;6;2;1;inter;
-19;40;Sapindaceae;Matayba intermedia;Radlk.;Mataíba;77;16;8;1;1;dossel;
-19;41;Burseraceae;Protium kleinii;Cuatrec.;Almécega;67;16;6;3;1;inter;
+19;37;Lauraceae;Ocotea dispersa;(Nees & Mart.) Mez;Canela-sabï¿½o;16;7;4;2;1;sub;
+19;38;Sapindaceae;Matayba intermedia;Radlk.;Mataï¿½ba;113;14;8;2;1;dossel;
+19;39;Malpighiaceae;Bunchosia pallescens;Skottsb.;Cafï¿½-do-mato;58;14;6;2;1;inter;
+19;40;Sapindaceae;Matayba intermedia;Radlk.;Mataï¿½ba;77;16;8;1;1;dossel;
+19;41;Burseraceae;Protium kleinii;Cuatrec.;Almï¿½cega;67;16;6;3;1;inter;
 19;42;Fabaceae;Fabaceae sp. 1;;;68;16;12;3;1;dossel;
 19;43;Rubiaceae;Psychotria nuda;(Cham. & Schltdl.) Wawra;Cravo-negro;16;3,5;2;1;1;sub;
-20;1;Myrtaceae;Neomitranthes glomerata;(D.Legrand) D.Legrand;Pitangão;42;12;10;1;2;inter;
-20;2;Myrtaceae;Myrcia pubipetala;Miq.;Goiabão;20;8;4;2;2;sub;
-20;3;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maçaranduba;86;18;9;1;2;dossel;
+20;1;Myrtaceae;Neomitranthes glomerata;(D.Legrand) D.Legrand;Pitangï¿½o;42;12;10;1;2;inter;
+20;2;Myrtaceae;Myrcia pubipetala;Miq.;Goiabï¿½o;20;8;4;2;2;sub;
+20;3;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maï¿½aranduba;86;18;9;1;2;dossel;
 20;4;Euphorbiaceae;Aparisthmium cordatum;(A.Juss.) Baill.;Iricurana;19;7;5;1;1;sub;
 20;5;Celastraceae;Monteverdia gonoclada;(Mart.) Biral;Espinheira-santa;78;17;7;2;1;dossel;
-20;6;Meliaceae;Guarea macrophylla;Vahl;Café-bravo;20;6;1,5;2;2;sub;
+20;6;Meliaceae;Guarea macrophylla;Vahl;Cafï¿½-bravo;20;6;1,5;2;2;sub;
 20;7;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;89;20;17;1;1;dossel;
-20;8;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maçaranduba;338;30;20;1;1;e;
+20;8;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maï¿½aranduba;338;30;20;1;1;e;
 20;9;Annonaceae;Xylopia brasiliensis;Spreng.;Pimenta-do-mato;37;9;5;1;2;inter;
 20;10;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;55;9;7;3;2;sub;
 20;11;Lauraceae;Endlicheria paniculata;(Spreng.) J.F.Macbr.;Canela-garuva;23;7;5;3;2;sub;
@@ -656,7 +654,7 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 20;24;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;25;7;4;2;1;sub;
 20;25;Fabaceae;Pterocarpus rohrii;Vahl;Pau-sangue;163;26;10;1;1;dossel;
 20;26;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;116;18;7;1;2;inter;
-20;27;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Café-do-mato;19;6;4;1;1;sub;
+20;27;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Cafï¿½-do-mato;19;6;4;1;1;sub;
 20;28;Boraginaceae;Cordia sellowiana;Cham.;Louro-mole;36;9;3;3;1;inter;
 20;29;Rubiaceae;Psychotria nuda;(Cham. & Schltdl.) Wawra;Cravo-negro;26;5;2;3;1;sub;
 21;1;Clusiaceae;Garcinia gardneriana;(Planch. & Triana) Zappi;Bacupari;23;8;3;2;1;sub;
@@ -664,7 +662,7 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 21;3;Clusiaceae;Garcinia gardneriana;(Planch. & Triana) Zappi;Bacupari;56;12;6;1;2;inter;
 21;4;Myrtaceae;Myrcia strigipes;Mart.;Guamirim;21;9;2;1;2;sub;
 21;5;Rubiaceae;Psychotria nuda;(Cham. & Schltdl.) Wawra;Cravo-negro;25;7;3;2;1;sub;
-21;6;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Café-do-mato;28;8;2;2;1;sub;
+21;6;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Cafï¿½-do-mato;28;8;2;2;1;sub;
 21;7;Fabaceae;Pterocarpus rohrii;Vahl;Pau-sangue;66;12;8;2;1;dossel;
 21;8;Olacaceae;Heisteria silvianii;Schwacke;Brinco-de-mulata;39;10;4;1;2;inter;
 21;9;Fabaceae;Pterocarpus rohrii;Vahl;Pau-sangue;230;25;6;2;1;dossel;
@@ -678,16 +676,16 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 21;17;Lauraceae;Ocotea aciphylla;(Nees & Mart.) Mez;Canela-amarela;85;15;3;2;1;inter;
 21;18;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;22;8;5;2;1;sub;
 21;19;Rubiaceae;Psychotria nuda;(Cham. & Schltdl.) Wawra;Cravo-negro;20;6;1;2;1;sub;
-21;20;Symplocaceae;Symplocos pustulosa;Aranha;Orelha-de-onça;34;9;2;2;1;inter;1
-21;20;Symplocaceae;Symplocos pustulosa;Aranha;Orelha-de-onça;31;9;2;2;1;inter;2
-21;20;Symplocaceae;Symplocos pustulosa;Aranha;Orelha-de-onça;31;9;2;2;1;inter;3
+21;20;Symplocaceae;Symplocos pustulosa;Aranha;Orelha-de-onï¿½a;34;9;2;2;1;inter;1
+21;20;Symplocaceae;Symplocos pustulosa;Aranha;Orelha-de-onï¿½a;31;9;2;2;1;inter;2
+21;20;Symplocaceae;Symplocos pustulosa;Aranha;Orelha-de-onï¿½a;31;9;2;2;1;inter;3
 21;21;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;32;9;4;2;1;inter;
-21;22;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;157;17;10;1;1;dossel;
-21;23;Myrtaceae;Neomitranthes glomerata;(D.Legrand) D.Legrand;Pitangão;35;8;3;2;1;inter;
+21;22;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;157;17;10;1;1;dossel;
+21;23;Myrtaceae;Neomitranthes glomerata;(D.Legrand) D.Legrand;Pitangï¿½o;35;8;3;2;1;inter;
 21;24;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;24;8;3;2;1;sub;
 21;25;;Morta;;;19;;;;;;Morta
 21;26;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;29;8;2;2;1;sub;
-21;27;Meliaceae;Guarea macrophylla;Vahl;Café-bravo;19;7;3;1;1;inter;
+21;27;Meliaceae;Guarea macrophylla;Vahl;Cafï¿½-bravo;19;7;3;1;1;inter;
 21;28;Boraginaceae;Cordia sellowiana;Cham.;Louro-mole;32;9;4;2;1;inter;
 21;29;Myrtaceae;Myrcia strigipes;Mart.;Guamirim;21;8;3;2;1;sub;
 21;30;;Morta;;;94;;;;;;Morta
@@ -696,8 +694,8 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 21;33;Primulaceae;Cybianthus brasiliensis;(Mez) G.Agostini;Capororoca;16;7;3;2;1;sub;
 21;34;;Morta;;;29;;;;;;Morta
 21;34;;Morta;;;25;;;;;;Morta
-21;35;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatá;17;4;3;2;1;sub;
-21;36;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatá;21;8;5;2;1;inter;1
+21;35;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatï¿½;17;4;3;2;1;sub;
+21;36;Sapotaceae;Pouteria beaurepairei;(Glaz. & Raunk.) Baehni;Batatï¿½;21;8;5;2;1;inter;1
 21;36;Clusiaceae;Garcinia gardneriana;(Planch. & Triana) Zappi;Bacupari;16;8;5;2;1;inter;2
 21;36;Primulaceae;Myrsine coriacea;(Sw.) R.Br. ex Roem. & Schult.;Capororoquinha;57;9;5;2;1;inter;3
 21;37;Myrtaceae;Myrcia strigipes;Mart.;Guamirim;21;8;4;2;1;sub;
@@ -715,41 +713,41 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 22;4;Rubiaceae;Amaioua guianensis;Aubl.;Canela-de-veado;20;8;6;1;2;sub;
 22;5;Euphorbiaceae;Aparisthmium cordatum;(A.Juss.) Baill.;Iricurana;30;8;4;1;1;inter;
 22;6;Clusiaceae;Garcinia gardneriana;(Planch. & Triana) Zappi;Bacupari;29;8;4;2;1;inter;
-22;7;Sapindaceae;Matayba intermedia;Radlk.;Mataíba;130;16;6;3;3;inter;Tombada
+22;7;Sapindaceae;Matayba intermedia;Radlk.;Mataï¿½ba;130;16;6;3;3;inter;Tombada
 22;8;Elaeocarpaceae;Sloanea hatschbachii;D. Sampaio & V.C. Souza;Urucurana;29;8;2;2;3;sub;bif
 22;8;Elaeocarpaceae;Sloanea hatschbachii;D. Sampaio & V.C. Souza;Urucurana;22;8;2;2;3;sub;bif
 22;9;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;43;8;2;2;3;sub;
 22;10;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;36;9;4;2;2;sub;
-22;11;Meliaceae;Guarea macrophylla;Vahl;Café-bravo;16;6;2;2;2;sub;
+22;11;Meliaceae;Guarea macrophylla;Vahl;Cafï¿½-bravo;16;6;2;2;2;sub;
 22;12;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;33;8;1;2;2;sub;
-22;13;Myrtaceae;Myrcia pubipetala;Miq.;Goiabão;75;19;10;1;1;dossel;
+22;13;Myrtaceae;Myrcia pubipetala;Miq.;Goiabï¿½o;75;19;10;1;1;dossel;
 22;14;Lauraceae;Ocotea aciphylla;(Nees & Mart.) Mez;Canela-amarela;26;8;3;2;1;inter;
-22;15;Lauraceae;Ocotea dispersa;(Nees & Mart.) Mez;Canela-sabão;29;7;2;1;2;sub;
+22;15;Lauraceae;Ocotea dispersa;(Nees & Mart.) Mez;Canela-sabï¿½o;29;7;2;1;2;sub;
 22;16;Urticaceae;Coussapoa microcarpa;(Schott) Rizzini;Mata-pau;53;12;6;2;1;inter;
 22;17;Indet.;Indet.;;;228;23;10;2;1;dossel;
 22;18;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;70;18;9;2;1;dossel;
-22;19;Meliaceae;Guarea macrophylla;Vahl;Café-bravo;18,5;5;2;1;1;sub;
-22;20;Annonaceae;Xylopia langsdorffiana;A.St.-Hil. & Tul.;Pindaúva;22;9;4;1;2;sub;
-22;21;Annonaceae;Xylopia langsdorffiana;A.St.-Hil. & Tul.;Pindaúva;24;9;4;1;2;sub;
+22;19;Meliaceae;Guarea macrophylla;Vahl;Cafï¿½-bravo;18,5;5;2;1;1;sub;
+22;20;Annonaceae;Xylopia langsdorffiana;A.St.-Hil. & Tul.;Pindaï¿½va;22;9;4;1;2;sub;
+22;21;Annonaceae;Xylopia langsdorffiana;A.St.-Hil. & Tul.;Pindaï¿½va;24;9;4;1;2;sub;
 22;22;Annonaceae;Xylopia brasiliensis;Spreng.;Pimenta-do-mato;59;12;5;3;2;inter;
 22;23;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;36,5;11;6;3;1;inter;
-22;24;Meliaceae;Guarea macrophylla;Vahl;Café-bravo;35;1,3;0;3;3;sub;
+22;24;Meliaceae;Guarea macrophylla;Vahl;Cafï¿½-bravo;35;1,3;0;3;3;sub;
 22;25;Celastraceae;Monteverdia gonoclada;(Mart.) Biral;Espinheira-santa;28;12;7;1;1;inter;
-22;26;Malpighiaceae;Bunchosia pallescens;Skottsb.;Café-do-mato;58;17;8;2;1;dossel;
+22;26;Malpighiaceae;Bunchosia pallescens;Skottsb.;Cafï¿½-do-mato;58;17;8;2;1;dossel;
 22;27;Celastraceae;Monteverdia gonoclada;(Mart.) Biral;Espinheira-santa;29;7;2;3;2;sub;
 22;28;Fabaceae;Andira fraxinifolia;Benth.;Pau-angelim;21;7;5;3;3;sub;
 22;29;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;124;19;10;2;1;dossel;
 22;30;Lauraceae;Aniba firmula;(Nees & Mart.) Mez;Canela;25;8;4;3;2;sub;
-22;31;Annonaceae;Xylopia langsdorffiana;A.St.-Hil. & Tul.;Pindaúva;18;7;2;3;2;sub;
+22;31;Annonaceae;Xylopia langsdorffiana;A.St.-Hil. & Tul.;Pindaï¿½va;18;7;2;3;2;sub;
 22;32;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;30;10;7;2;1;inter;
 22;33;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;17;6;4;1;2;sub;
 22;34;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;30;9;6;2;1;inter;bif
 22;34;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;18;9;6;2;1;inter;bif
 22;35;Fabaceae;Andira fraxinifolia;Benth.;Pau-angelim;77;14;7;2;1;dossel;
-22;36;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Café-do-mato;31;9;5;2;1;inter;
+22;36;Rubiaceae;Faramea montevidensis;(Cham. & Schltdl.) DC.;Cafï¿½-do-mato;31;9;5;2;1;inter;
 22;37;Myrtaceae;Myrcia racemosa;(O.Berg) Kiaersk.;Guamirim-branco;21;6;2;2;1;sub;
-22;38;Phyllanthaceae;Hyeronima alchorneoides;Allemão;Cajueiro-bravo;107;20;7;1;1;dossel;
-22;39;Arecaceae;Syagrus romanzoffiana;(Cham.) Glassman;Jerivá;19;7;2;1;1;sub;
+22;38;Phyllanthaceae;Hyeronima alchorneoides;Allemï¿½o;Cajueiro-bravo;107;20;7;1;1;dossel;
+22;39;Arecaceae;Syagrus romanzoffiana;(Cham.) Glassman;Jerivï¿½;19;7;2;1;1;sub;
 22;40;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;28;8;5;1;3;inter;
 22;41;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;28;9;6;2;3;inter;
 22;42;Myrtaceae;Myrcia reitzii;(D.Legrand) Mazine;Cambuimzinho;25;8;5;2;1;inter;
@@ -757,9 +755,9 @@ par;ind;fam;cient;autor;verna;cap;ht;hc;qf;qc;estrato;obs
 22;44;Lauraceae;Ocotea aciphylla;(Nees & Mart.) Mez;Canela-amarela;112;16;10;1;1;dossel;
 22;45;Elaeocarpaceae;Sloanea guianensis;(Aubl.) Benth.;Urucurana;52;12;8;1;2;inter;
 22;46;Anacardiaceae;Tapirira guianensis;Aubl.;Pau-pombo;114;18;10;2;1;dossel;
-22;47;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maçaranduba;24;8;5;2;1;sub;
+22;47;Sapotaceae;Manilkara subsericea;(Mart.) Dubard;Maï¿½aranduba;24;8;5;2;1;sub;
 22;48;Lauraceae;Aniba firmula;(Nees & Mart.) Mez;Canela;22;8;6;2;2;inter;
 22;49;Primulaceae;Cybianthus brasiliensis;(Mez) G.Agostini;Capororoca;22;7;2,5;3;3;sub;
-22;50;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Müll.Arg.;Tanheiro;109;16;4;2;1;dossel;
+22;50;Euphorbiaceae;Alchornea triplinervia;(Spreng.) Mï¿½ll.Arg.;Tanheiro;109;16;4;2;1;dossel;
 22;51;Clethraceae;Clethra scabra;Pers.;Carne-de-vaca;43;11;7;1;1;inter;
-22;52;Lauraceae;Ocotea dispersa;(Nees & Mart.) Mez;Canela-sabão;28;9;5;2;1;inter;
+22;52;Lauraceae;Ocotea dispersa;(Nees & Mart.) Mez;Canela-sabï¿½o;28;9;5;2;1;inter;
