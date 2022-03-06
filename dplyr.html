@@ -383,13 +383,13 @@ library(tidyverse)</code></pre>
 <pre class="r"><code>dados &lt;- read.csv2(&quot;data/dados_dplyr.csv&quot;, h = T)
 
 str(dados)</code></pre>
-<pre><code>## &#39;data.frame&#39;:    764 obs. of  13 variables:
+<pre><code>## &#39;data.frame&#39;:    762 obs. of  13 variables:
 ##  $ par    : int  3 3 3 3 3 3 3 3 3 3 ...
 ##  $ ind    : int  1 2 3 4 5 6 7 8 8 9 ...
 ##  $ fam    : chr  &quot;Euphorbiaceae&quot; &quot;Meliaceae&quot; &quot;Lauraceae&quot; &quot;Elaeocarpaceae&quot; ...
 ##  $ cient  : chr  &quot;Alchornea triplinervia&quot; &quot;Guarea macrophylla&quot; &quot;Ocotea dispersa&quot; &quot;Sloanea guianensis&quot; ...
-##  $ autor  : chr  &quot;(Spreng.) M\xfcll.Arg.&quot; &quot;Vahl&quot; &quot;(Nees &amp; Mart.) Mez&quot; &quot;(Aubl.) Benth.&quot; ...
-##  $ verna  : chr  &quot;Tanheiro&quot; &quot;Caf\xe9-bravo&quot; &quot;Canela-sab\xe3o&quot; &quot;Urucurana&quot; ...
+##  $ autor  : chr  &quot;(Spreng.) M�ll.Arg.&quot; &quot;Vahl&quot; &quot;(Nees &amp; Mart.) Mez&quot; &quot;(Aubl.) Benth.&quot; ...
+##  $ verna  : chr  &quot;Tanheiro&quot; &quot;Caf�-bravo&quot; &quot;Canela-sab�o&quot; &quot;Urucurana&quot; ...
 ##  $ cap    : num  82 18 20 57 70 17 44 33 31 17 ...
 ##  $ ht     : num  17 5.5 6 10 12 8 12 10 10 6 ...
 ##  $ hc     : num  6 3 4 7 7 3 7 6 6 3 ...
@@ -422,9 +422,9 @@ resumo.base &lt;- data.frame(n.ind, dap.m, G)
 
 resumo.base</code></pre>
 <pre><code>##    Var1 Freq    dap.m         G
-## 3     3   48 13.37565 1.2880211
+## 3     3   47 13.33515 1.2696864
 ## 6     6   36 16.49022 1.2675975
-## 7     7   50 11.68002 0.7185567
+## 7     7   49 11.68002 0.7185567
 ## 8     8   53 12.02371 0.7833129
 ## 9     9   49 13.69707 0.8875057
 ## 10   10   39 14.23008 0.9500854
@@ -450,9 +450,9 @@ resumo.base</code></pre>
 <pre><code>## # A tibble: 18 × 4
 ##      par n.ind dap.m     G
 ##    &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
-##  1     3    48  13.4 1.29 
+##  1     3    47  13.3 1.27 
 ##  2     6    36  16.5 1.27 
-##  3     7    50  11.7 0.719
+##  3     7    49  11.7 0.719
 ##  4     8    53  12.0 0.783
 ##  5     9    49  13.7 0.888
 ##  6    10    39  14.2 0.950
@@ -553,16 +553,16 @@ dados %&gt;% filter(par == 6)</code></pre>
 <pre><code>## # A tibble: 36 × 15
 ##      par   ind fam    cient   autor  verna   cap    ht    hc    qf    qc estrato
 ##    &lt;int&gt; &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  
-##  1     6     1 Eupho… Alchor… &quot;(Spr… &quot;Tan…    63    11   6       1     2 dossel 
-##  2     6     2 Bigno… Jacara… &quot;Cham… &quot;Car…    28     5   3       2     1 sub    
-##  3     6     3 Primu… Myrsin… &quot;(Sw.… &quot;Cap…    27     9   5       1     1 dossel 
-##  4     6     4 Eupho… Alchor… &quot;(Spr… &quot;Tan…    21     7   5       1     2 inter  
-##  5     6     5 Melas… Plerom… &quot;DC.&quot;  &quot;Jac…    21     7   4.5     1     1 inter  
-##  6     6     6 Laura… Ocotea… &quot;Mez&quot;  &quot;Can…    70    12   1       3     1 dossel 
-##  7     6     6 Laura… Ocotea… &quot;Mez&quot;  &quot;Can…    67    12   1       3     1 dossel 
-##  8     6     7 Melia… Guarea… &quot;Vahl&quot; &quot;Caf…    18     6   2       3     1 sub    
-##  9     6     8 Calop… Caloph… &quot;Camb… &quot;Gua…   212    17   8       1     1 dossel 
-## 10     6     9 Myrta… Myrcia… &quot;Kiae… &quot;Cam…    25     6   2       2     2 dub    
+##  1     6     1 Eupho… Alchor… (Spre… Tanh…    63    11   6       1     2 dossel 
+##  2     6     2 Bigno… Jacara… Cham.  Caro…    28     5   3       2     1 sub    
+##  3     6     3 Primu… Myrsin… (Sw.)… Capo…    27     9   5       1     1 dossel 
+##  4     6     4 Eupho… Alchor… (Spre… Tanh…    21     7   5       1     2 inter  
+##  5     6     5 Melas… Plerom… DC.    Jaca…    21     7   4.5     1     1 inter  
+##  6     6     6 Laura… Ocotea… Mez    Cane…    70    12   1       3     1 dossel 
+##  7     6     6 Laura… Ocotea… Mez    Cane…    67    12   1       3     1 dossel 
+##  8     6     7 Melia… Guarea… Vahl   Caf�…    18     6   2       3     1 sub    
+##  9     6     8 Calop… Caloph… Cambe… Guan…   212    17   8       1     1 dossel 
+## 10     6     9 Myrta… Myrcia… Kiaer… Camb…    25     6   2       2     2 dub    
 ## # … with 26 more rows, and 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
 <pre class="r"><code>dados %&gt;% filter(cap &gt;= 140)</code></pre>
 <pre><code>## # A tibble: 23 × 15
@@ -586,11 +586,17 @@ dados %&gt;% filter(par == 6)</code></pre>
 ## 1    10    22 &quot;Lauraceae&quot; Nect… &quot;Nee… &quot;Can…   148    17    10     2     3 &quot;dosse…
 ## 2    10    25 &quot;&quot;          Morta &quot;&quot;    &quot;&quot;      142    NA    NA    NA    NA &quot;&quot;     
 ## # … with 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
-<pre class="r"><code>df &lt;- dados %&gt;% filter(cap &gt;= 140)</code></pre>
+<pre class="r"><code># Separar as condições com vírgula é equivalente 
+
+
+df &lt;- dados %&gt;% filter(cap &gt;= 140)</code></pre>
 <div class="figure">
 <img src="img/Filter.gif" alt="" />
 <p class="caption">Filter</p>
 </div>
+<div id="filtro-ou---união-de-condições" class="section level3">
+<h3>Filtro OU ‘|’ - União de condições</h3>
+<p>O operador ‘|’ representa união entre condições, <strong>i.e.</strong>, mantém as linhas que satisfaçam PELO MENOS uma das condições.</p>
 <pre class="r"><code>print(df)</code></pre>
 <pre><code>## # A tibble: 23 × 15
 ##      par   ind fam    cient   autor  verna   cap    ht    hc    qf    qc estrato
@@ -608,42 +614,60 @@ dados %&gt;% filter(par == 6)</code></pre>
 ## # … with 13 more rows, and 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
 <pre class="r"><code>df %&gt;% filter(cap &gt;= 200 | cient == &#39;Matayba intermedia&#39;)</code></pre>
 <pre><code>## # A tibble: 8 × 15
-##     par   ind fam    cient   autor  verna    cap    ht    hc    qf    qc estrato
-##   &lt;int&gt; &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  
-## 1     3    29 Calop… Caloph… &quot;Camb… &quot;Guan…   200    24     8     1     1 emerg  
-## 2     6     8 Calop… Caloph… &quot;Camb… &quot;Guan…   212    17     8     1     1 dossel 
-## 3    12    11 Sapin… Matayb… &quot;Radl… &quot;Mata…   163    16     2     2     1 dossel 
-## 4    13    22 Calop… Caloph… &quot;Camb… &quot;Guan…   229    17    10     1     1 emerg  
-## 5    16     5 Sapin… Matayb… &quot;Radl… &quot;Mata…   150    15     8     2     1 emerg  
-## 6    20     8 Sapot… Manilk… &quot;(Mar… &quot;Ma\x…   338    30    20     1     1 e      
-## 7    21     9 Fabac… Pteroc… &quot;Vahl&quot; &quot;Pau-…   230    25     6     2     1 dossel 
-## 8    22    17 Indet. Indet.  &quot;&quot;     &quot;&quot;       228    23    10     2     1 dossel 
+##     par   ind fam    cient   autor   verna   cap    ht    hc    qf    qc estrato
+##   &lt;int&gt; &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  
+## 1     3    29 Calop… Caloph… &quot;Cambe… &quot;Gua…   200    24     8     1     1 emerg  
+## 2     6     8 Calop… Caloph… &quot;Cambe… &quot;Gua…   212    17     8     1     1 dossel 
+## 3    12    11 Sapin… Matayb… &quot;Radlk… &quot;Mat…   163    16     2     2     1 dossel 
+## 4    13    22 Calop… Caloph… &quot;Cambe… &quot;Gua…   229    17    10     1     1 emerg  
+## 5    16     5 Sapin… Matayb… &quot;Radlk… &quot;Mat…   150    15     8     2     1 emerg  
+## 6    20     8 Sapot… Manilk… &quot;(Mart… &quot;Ma�…   338    30    20     1     1 e      
+## 7    21     9 Fabac… Pteroc… &quot;Vahl&quot;  &quot;Pau…   230    25     6     2     1 dossel 
+## 8    22    17 Indet. Indet.  &quot;&quot;      &quot;&quot;      228    23    10     2     1 dossel 
 ## # … with 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
 <div class="figure">
 <img src="img/FilterOu.gif" alt="" />
 <p class="caption">Filter Ou</p>
 </div>
+</div>
+<div id="filtro-e---interseção-de-condições" class="section level3">
+<h3>Filtro E ‘&amp;’ - Interseção de condições</h3>
+<p>O operador ‘&amp;’ representa interseção de condições, <strong>i.e.</strong>, mantém as linhas que satisfaçam TODAS as condições.</p>
 <pre class="r"><code>df %&gt;% filter(dap &gt; 50 &amp; ht &gt;= 20)</code></pre>
 <pre><code>## # A tibble: 6 × 15
-##     par   ind fam    cient   autor  verna    cap    ht    hc    qf    qc estrato
-##   &lt;int&gt; &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  
-## 1     3    21 Calop… Caloph… &quot;Camb… &quot;Guan…   199    25    10     1     1 emerg  
-## 2     3    29 Calop… Caloph… &quot;Camb… &quot;Guan…   200    24     8     1     1 emerg  
-## 3    20     8 Sapot… Manilk… &quot;(Mar… &quot;Ma\x…   338    30    20     1     1 e      
-## 4    20    25 Fabac… Pteroc… &quot;Vahl&quot; &quot;Pau-…   163    26    10     1     1 dossel 
-## 5    21     9 Fabac… Pteroc… &quot;Vahl&quot; &quot;Pau-…   230    25     6     2     1 dossel 
-## 6    22    17 Indet. Indet.  &quot;&quot;     &quot;&quot;       228    23    10     2     1 dossel 
+##     par   ind fam    cient   autor   verna   cap    ht    hc    qf    qc estrato
+##   &lt;int&gt; &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  
+## 1     3    21 Calop… Caloph… &quot;Cambe… &quot;Gua…   199    25    10     1     1 emerg  
+## 2     3    29 Calop… Caloph… &quot;Cambe… &quot;Gua…   200    24     8     1     1 emerg  
+## 3    20     8 Sapot… Manilk… &quot;(Mart… &quot;Ma�…   338    30    20     1     1 e      
+## 4    20    25 Fabac… Pteroc… &quot;Vahl&quot;  &quot;Pau…   163    26    10     1     1 dossel 
+## 5    21     9 Fabac… Pteroc… &quot;Vahl&quot;  &quot;Pau…   230    25     6     2     1 dossel 
+## 6    22    17 Indet. Indet.  &quot;&quot;      &quot;&quot;      228    23    10     2     1 dossel 
+## # … with 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
+<pre class="r"><code># Separar as condições por vírgula é análogo à interseção de condições
+df %&gt;% filter(dap &gt; 50, ht &gt;= 20)</code></pre>
+<pre><code>## # A tibble: 6 × 15
+##     par   ind fam    cient   autor   verna   cap    ht    hc    qf    qc estrato
+##   &lt;int&gt; &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  
+## 1     3    21 Calop… Caloph… &quot;Cambe… &quot;Gua…   199    25    10     1     1 emerg  
+## 2     3    29 Calop… Caloph… &quot;Cambe… &quot;Gua…   200    24     8     1     1 emerg  
+## 3    20     8 Sapot… Manilk… &quot;(Mart… &quot;Ma�…   338    30    20     1     1 e      
+## 4    20    25 Fabac… Pteroc… &quot;Vahl&quot;  &quot;Pau…   163    26    10     1     1 dossel 
+## 5    21     9 Fabac… Pteroc… &quot;Vahl&quot;  &quot;Pau…   230    25     6     2     1 dossel 
+## 6    22    17 Indet. Indet.  &quot;&quot;      &quot;&quot;      228    23    10     2     1 dossel 
 ## # … with 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
 <div class="figure">
 <img src="img/FilterE.gif" alt="" />
 <p class="caption">Filter E</p>
 </div>
 </div>
+</div>
 <div id="select" class="section level2">
 <h2><code>select()</code></h2>
-<p>A função <code>select()</code> é utilizada para selecionar <strong>colunas</strong>.</p>
-<pre class="r"><code>dados %&gt;% select(cap, ht)</code></pre>
-<pre><code>## # A tibble: 764 × 2
+<p>A função <code>select()</code> é utilizada para selecionar ou remover <strong>colunas</strong>.</p>
+<pre class="r"><code># Seleciona apenas as colunas &#39;cap&#39; e &#39;ht&#39;. Note que não é preciso escrever os nomes das colunas entre aspas.
+dados %&gt;% select(cap, ht)</code></pre>
+<pre><code>## # A tibble: 762 × 2
 ##      cap    ht
 ##    &lt;dbl&gt; &lt;dbl&gt;
 ##  1    82  17  
@@ -656,28 +680,30 @@ dados %&gt;% filter(par == 6)</code></pre>
 ##  8    33  10  
 ##  9    31  10  
 ## 10    17   6  
-## # … with 754 more rows</code></pre>
+## # … with 752 more rows</code></pre>
 <div class="figure">
 <img src="img/Select.gif" alt="" />
 <p class="caption">Select</p>
 </div>
+<p>Para remover uma coluan do data frame, usa-se o sinal de menos ‘-’ para remover a coluna desejada.</p>
 <pre class="r"><code>dados %&gt;% select(-par)</code></pre>
-<pre><code>## # A tibble: 764 × 14
+<pre><code>## # A tibble: 762 × 14
 ##      ind fam    cient   autor  verna   cap    ht    hc    qf    qc estrato obs  
 ##    &lt;int&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;
-##  1     1 Eupho… Alchor… &quot;(Spr… &quot;Tan…    82  17       6     2     1 dossel  &quot;&quot;   
-##  2     2 Melia… Guarea… &quot;Vahl&quot; &quot;Caf…    18   5.5     3     1     1 sub     &quot;&quot;   
-##  3     3 Laura… Ocotea… &quot;(Nee… &quot;Can…    20   6       4     2     1 sub     &quot;&quot;   
-##  4     4 Elaeo… Sloane… &quot;(Aub… &quot;Uru…    57  10       7     3     2 inter   &quot;&quot;   
-##  5     5 Aquif… Ilex d… &quot;Reis… &quot;Ca\…    70  12       7     3     2 dossel  &quot;&quot;   
-##  6     6 Myrta… Myrcia… &quot;(D.L… &quot;Cam…    17   8       3     3     3 sub     &quot;&quot;   
-##  7     7 Calop… Caloph… &quot;Camb… &quot;Gua…    44  12       7     3     2 inter   &quot;&quot;   
-##  8     8 Elaeo… Sloane… &quot;(Aub… &quot;Uru…    33  10       6     2     1 inter   &quot;bif&quot;
-##  9     8 Elaeo… Sloane… &quot;(Aub… &quot;Uru…    31  10       6     2     1 inter   &quot;bif&quot;
-## 10     9 Myrta… Myrcia… &quot;(O.B… &quot;Gua…    17   6       3     3     3 sub     &quot;bif&quot;
-## # … with 754 more rows, and 2 more variables: dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
-<pre class="r"><code>dados %&gt;% select(-c(par, fam, cient, autor, verna))</code></pre>
-<pre><code>## # A tibble: 764 × 10
+##  1     1 Eupho… Alchor… (Spre… Tanh…    82  17       6     2     1 dossel  &quot;&quot;   
+##  2     2 Melia… Guarea… Vahl   Caf�…    18   5.5     3     1     1 sub     &quot;&quot;   
+##  3     3 Laura… Ocotea… (Nees… Cane…    20   6       4     2     1 sub     &quot;&quot;   
+##  4     4 Elaeo… Sloane… (Aubl… Uruc…    57  10       7     3     2 inter   &quot;&quot;   
+##  5     5 Aquif… Ilex d… Reiss… Ca�na    70  12       7     3     2 dossel  &quot;&quot;   
+##  6     6 Myrta… Myrcia… (D.Le… Camb…    17   8       3     3     3 sub     &quot;&quot;   
+##  7     7 Calop… Caloph… Cambe… Guan…    44  12       7     3     2 inter   &quot;&quot;   
+##  8     8 Elaeo… Sloane… (Aubl… Uruc…    33  10       6     2     1 inter   &quot;bif&quot;
+##  9     8 Elaeo… Sloane… (Aubl… Uruc…    31  10       6     2     1 inter   &quot;bif&quot;
+## 10     9 Myrta… Myrcia… (O.Be… Guam…    17   6       3     3     3 sub     &quot;bif&quot;
+## # … with 752 more rows, and 2 more variables: dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
+<pre class="r"><code># Para remover mais de uma variável (coluna), basta concatenar as variáveis desejadas em um vetor.
+dados %&gt;% select(-c(par, fam, cient, autor, verna))</code></pre>
+<pre><code>## # A tibble: 762 × 10
 ##      ind   cap    ht    hc    qf    qc estrato obs     dap       g
 ##    &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;   &lt;dbl&gt;
 ##  1     1    82  17       6     2     1 dossel  &quot;&quot;    26.1  0.0535 
@@ -690,7 +716,7 @@ dados %&gt;% filter(par == 6)</code></pre>
 ##  8     8    33  10       6     2     1 inter   &quot;bif&quot; 10.5  0.00867
 ##  9     8    31  10       6     2     1 inter   &quot;bif&quot;  9.87 0.00765
 ## 10     9    17   6       3     3     3 sub     &quot;bif&quot;  5.41 0.00230
-## # … with 754 more rows</code></pre>
+## # … with 752 more rows</code></pre>
 <div class="figure">
 <img src="img/SelectInverso.gif" alt="" />
 <p class="caption">Select Inverso</p>
@@ -698,7 +724,7 @@ dados %&gt;% filter(par == 6)</code></pre>
 </div>
 <div id="mutate" class="section level2">
 <h2><code>mutate()</code></h2>
-<p>A função <code>mutate()</code> permite criar e adicionar novas variáveis no dataframe, utilizando tanto variáveis externas quanto do próprio dataframe.</p>
+<p>A função <code>mutate()</code> permite criar e adicionar novas variáveis (colunas) no dataframe, utilizando tanto variáveis externas quanto do próprio dataframe.</p>
 <pre class="r"><code># Carregando novamente os dados para criar variáveis
 dados &lt;- read_csv2(&#39;data/dados_dplyr.csv&#39;)</code></pre>
 <pre><code>## ℹ Using &quot;&#39;,&#39;&quot; as decimal and &quot;&#39;.&#39;&quot; as grouping mark. Use `read_delim()` for more control.</code></pre>
@@ -733,7 +759,7 @@ head(dados %&gt;% select(dap, g))</code></pre>
 ## 4 18.1  0.0259 
 ## 5 22.3  0.0390 
 ## 6  5.41 0.00230</code></pre>
-<p>Note que, para esse caso, a variável <code>g</code> fez uso da variável <code>dap</code> recém criada. Esse recurso “<em>on the fly</em>” é oportuno para criar de forma encadeada diversas variáveis de maneira simples e rápida. Além disso, também fica claro que há uma ordem de criação das variáveis.</p>
+<p>Note que, para esse caso, a variável <code>g</code> fez uso da variável <code>dap</code> recém criada. Esse recurso chamado “<em>on the fly</em>” é oportuno para criar de forma encadeada diversas variáveis de maneira simples e direta Além disso, também fica implícito que há uma ordem de criação das variáveis dentro da função <code>mutate()</code>.</p>
 <div class="figure">
 <img src="img/Mutate.gif" alt="" />
 <p class="caption">Mutate</p>
@@ -741,31 +767,31 @@ head(dados %&gt;% select(dap, g))</code></pre>
 </div>
 <div id="group_by" class="section level2">
 <h2><code>group_by()</code></h2>
-<p>A função <code>group_by()</code> agrupa o data frame com base em uma variável especificada. A função não faz alterações no dataframe, apenas marca internamente os grupos para que alguma outra função seja realizada em cima desses grupos marcados.</p>
+<p>A função <code>group_by()</code> agrupa o data frame com base em uma variável especificada. A função não faz alterações explícitas no dataframe, apenas marca internamente os grupos para que alguma outra função seja realizada sobre esses grupos marcados.</p>
 <pre class="r"><code># Data frame antes da operação group_by()
 head(tibble(dados))</code></pre>
 <pre><code>## # A tibble: 6 × 15
-##     par   ind fam    cient   autor  verna    cap    ht    hc    qf    qc estrato
-##   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  
-## 1     3     1 Eupho… Alchor… &quot;(Spr… &quot;Tanh…    82  17       6     2     1 dossel 
-## 2     3     2 Melia… Guarea… &quot;Vahl&quot; &quot;Caf\…    18   5.5     3     1     1 sub    
-## 3     3     3 Laura… Ocotea… &quot;(Nee… &quot;Cane…    20   6       4     2     1 sub    
-## 4     3     4 Elaeo… Sloane… &quot;(Aub… &quot;Uruc…    57  10       7     3     2 inter  
-## 5     3     5 Aquif… Ilex d… &quot;Reis… &quot;Ca\x…    70  12       7     3     2 dossel 
-## 6     3     6 Myrta… Myrcia… &quot;(D.L… &quot;Camb…    17   8       3     3     3 sub    
+##     par   ind fam    cient   autor   verna   cap    ht    hc    qf    qc estrato
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  
+## 1     3     1 Eupho… Alchor… (Spren… Tanh…    82  17       6     2     1 dossel 
+## 2     3     2 Melia… Guarea… Vahl    Caf�…    18   5.5     3     1     1 sub    
+## 3     3     3 Laura… Ocotea… (Nees … Cane…    20   6       4     2     1 sub    
+## 4     3     4 Elaeo… Sloane… (Aubl.… Uruc…    57  10       7     3     2 inter  
+## 5     3     5 Aquif… Ilex d… Reissek Ca�na    70  12       7     3     2 dossel 
+## 6     3     6 Myrta… Myrcia… (D.Leg… Camb…    17   8       3     3     3 sub    
 ## # … with 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
 <pre class="r"><code># Data frame após a operação group_by()
 head(dados %&gt;% group_by(par))</code></pre>
 <pre><code>## # A tibble: 6 × 15
 ## # Groups:   par [1]
-##     par   ind fam    cient   autor  verna    cap    ht    hc    qf    qc estrato
-##   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  
-## 1     3     1 Eupho… Alchor… &quot;(Spr… &quot;Tanh…    82  17       6     2     1 dossel 
-## 2     3     2 Melia… Guarea… &quot;Vahl&quot; &quot;Caf\…    18   5.5     3     1     1 sub    
-## 3     3     3 Laura… Ocotea… &quot;(Nee… &quot;Cane…    20   6       4     2     1 sub    
-## 4     3     4 Elaeo… Sloane… &quot;(Aub… &quot;Uruc…    57  10       7     3     2 inter  
-## 5     3     5 Aquif… Ilex d… &quot;Reis… &quot;Ca\x…    70  12       7     3     2 dossel 
-## 6     3     6 Myrta… Myrcia… &quot;(D.L… &quot;Camb…    17   8       3     3     3 sub    
+##     par   ind fam    cient   autor   verna   cap    ht    hc    qf    qc estrato
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  
+## 1     3     1 Eupho… Alchor… (Spren… Tanh…    82  17       6     2     1 dossel 
+## 2     3     2 Melia… Guarea… Vahl    Caf�…    18   5.5     3     1     1 sub    
+## 3     3     3 Laura… Ocotea… (Nees … Cane…    20   6       4     2     1 sub    
+## 4     3     4 Elaeo… Sloane… (Aubl.… Uruc…    57  10       7     3     2 inter  
+## 5     3     5 Aquif… Ilex d… Reissek Ca�na    70  12       7     3     2 dossel 
+## 6     3     6 Myrta… Myrcia… (D.Leg… Camb…    17   8       3     3     3 sub    
 ## # … with 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
 <pre class="r"><code># A função não modifica nenhuma observação ou variável do data frame</code></pre>
 <div class="figure">
@@ -775,7 +801,29 @@ head(dados %&gt;% group_by(par))</code></pre>
 </div>
 <div id="summarise" class="section level2">
 <h2><code>summarise()</code></h2>
-<p><code>summarise()</code> resume…</p>
+<p><code>summarise()</code> resume cada grupo em uma menor quantidade de linhas por meio de uma função desejada, por exemplo a função média ou soma. A função aplicada deve ser capaz de receber um vetor e retornar o resultado de alguma operação aplicada sobre esse vetor. Caso o data frame não tenha grupos (sem utilização da função <code>group_by()</code>), o resultado será uma única linha resumindo a informação de todas as observações. <code>summarize()</code> e <code>summarise()</code> são sinônimos.</p>
+<pre class="r"><code># Sem a criação de grupos, a função mean() retornará a média de todas as observações
+dados %&gt;% summarise(media_dap = mean(dap))</code></pre>
+<pre><code>## # A tibble: 1 × 1
+##   media_dap
+##       &lt;dbl&gt;
+## 1      14.5</code></pre>
+<pre class="r"><code># Com a definição de grupo por família botânica, a função retornará a operação por grupo. Neste caso por família botânica.
+dados %&gt;% group_by(fam) %&gt;% summarise(media_ht = mean(ht))</code></pre>
+<pre><code>## # A tibble: 41 × 2
+##    fam            media_ht
+##    &lt;chr&gt;             &lt;dbl&gt;
+##  1 Anacardiaceae     13.4 
+##  2 Annonaceae         9.8 
+##  3 Aquifoliaceae     10.2 
+##  4 Araliaceae        11.5 
+##  5 Arecaceae          5.51
+##  6 Bignoniaceae       5   
+##  7 Boraginaceae       8.2 
+##  8 Burseraceae       14.2 
+##  9 Calophyllaceae    16.1 
+## 10 Celastraceae       9.75
+## # … with 31 more rows</code></pre>
 <div class="figure">
 <img src="img/Summarise.gif" alt="" />
 <p class="caption">Summarise</p>

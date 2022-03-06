@@ -783,7 +783,7 @@ g.base + geom_point(aes(color = factor(npragas))) +
   
   scale_color_manual(name = &quot;Classe de Sítio&quot;, 
                      values = c(&quot;#b22222&quot;,&quot;steelblue&quot;,&quot;darkgreen&quot;),
-                     labels = c(&quot;ClAsSe 1&quot;, &quot;ClAsSe 2&quot;, &quot;ClAsSe 3&quot;))</code></pre>
+                     labels = c(&quot;Classe 1&quot;, &quot;ClAsse 2&quot;, &quot;ClAsse 3&quot;))</code></pre>
 <p><img src="ggplot_files/figure-html/unnamed-chunk-27-1.png" width="672" style="display: block; margin: auto;" /></p>
 <pre class="r"><code># O argumento values define as cores utilizadas, note que é possível também informar o valor hexadecimal das cores, caso desejado. O argumento labels define os rótulos que serão apresentados na escala. Perceba também que o número de cores e rótulos informados deve ser o mesmo número de categorias da variável utilizada. Nesse caso, existem três classes de sítio.
 
@@ -853,8 +853,8 @@ ggplot() + #Os ponto vem de data frames diferentes, então não há porque inser
   scale_color_manual(name = NULL, values = c(&quot;Observados&quot; = &quot;steelblue&quot;,
                                              &quot;Ajuste&quot; = &quot;darkblue&quot;)) +
 
- guides(color = guide_legend(override.aes = list(shape = c(NA,16),
-                                                  linetype = c(1,NA))))</code></pre>
+ guides(color = guide_legend(override.aes = list(shape = c(16,NA),
+                                                  linetype = c(NA,1))))</code></pre>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
 <p><img src="ggplot_files/figure-html/unnamed-chunk-31-1.png" width="672" style="display: block; margin: auto;" /></p>
 <pre class="r"><code>#&quot;color = &quot; indica que a mudança será na escala de cores;
@@ -1122,8 +1122,8 @@ ggplot(dados, aes(x = d, y = v)) +
                                 &quot;Média&quot; = &quot;#1b9e77&quot;,
                                 &quot;95%&quot; = &quot;#d95f02&quot;)) +
   
-  guides(color = guide_legend(override.aes = list(shape = c(NA,NA,16),
-                                                  linetype = c(1,1,NA)))) + 
+  guides(color = guide_legend(override.aes = list(shape = c(16, NA,NA),
+                                                  linetype = c(NA, 1,1)))) + 
   
   theme_classic() + 
   
