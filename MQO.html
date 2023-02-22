@@ -14,8 +14,8 @@
 
 <title>Mínimos Quadrados Ordinários</title>
 
-<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -67,6 +67,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
 
@@ -91,6 +92,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -148,11 +152,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -181,8 +189,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -190,16 +198,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -319,7 +320,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -340,6 +341,9 @@ div.tocify {
 <li>
   <a href="dplyr.html">dplyr</a>
 </li>
+<li>
+  <a href="Simulacao.html">Simulação</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -357,7 +361,7 @@ div.tocify {
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -377,8 +381,23 @@ library(gganimate)
 library(magrittr)
 library(dplyr)
 library(kableExtra)</code></pre>
-<p>Utilizaremos o banco de dados <strong>trees</strong>. Esse banco de dados contém informações sobre o diâmetro em polegadas, altura em pés e volume em pés³ de 31 árvores <em>black cherry</em>.</p>
-<p>Além disso, os gráficos serão gerados utilizando o pacote <code>ggplot2</code>, com comentários pertinentes sobre as funções utilizadas. Os comandos do pacote <code>ggplot2</code> são inseridos em camadas, normalmente iniciando por uma função que indica o banco de dados utilizado, e posteriormente as demais funções. As variáveis que serão utilizadas para criar os gráficos devem sempre estar “mapeadas” para serem encontradas, e a maneira de fazer isso é inserindo-as dentro do argumento <code>aes()</code>. No exemplo abaixo, o primeiro nível de comando especifica o banco de dados utilizado. O segundo indica o tipo de gráfico a ser criado e mapeia as variáveis de interesse. O terceiro comando introduz os títulos dos eixos, do gráfico, etc. E o quarto comando aplica um tema pronto ao gráfico. Para mais informações sobre pacote <code>ggplot</code>, acesse esse <a href="ggplot.html">breve tutorial</a>.</p>
+<p>Utilizaremos o banco de dados <strong>trees</strong>. Esse banco de
+dados contém informações sobre o diâmetro em polegadas, altura em pés e
+volume em pés³ de 31 árvores <em>black cherry</em>.</p>
+<p>Além disso, os gráficos serão gerados utilizando o pacote
+<code>ggplot2</code>, com comentários pertinentes sobre as funções
+utilizadas. Os comandos do pacote <code>ggplot2</code> são inseridos em
+camadas, normalmente iniciando por uma função que indica o banco de
+dados utilizado, e posteriormente as demais funções. As variáveis que
+serão utilizadas para criar os gráficos devem sempre estar “mapeadas”
+para serem encontradas, e a maneira de fazer isso é inserindo-as dentro
+do argumento <code>aes()</code>. No exemplo abaixo, o primeiro nível de
+comando especifica o banco de dados utilizado. O segundo indica o tipo
+de gráfico a ser criado e mapeia as variáveis de interesse. O terceiro
+comando introduz os títulos dos eixos, do gráfico, etc. E o quarto
+comando aplica um tema pronto ao gráfico. Para mais informações sobre
+pacote <code>ggplot</code>, acesse esse <a href="ggplot.html">breve
+tutorial</a>.</p>
 <pre class="r"><code>data(&quot;trees&quot;)
 
 # Transforma as variáveis para unidades comumente utilizadas
@@ -414,8 +433,13 @@ g.base &lt;- ggplot(data = dados,
 
 plot(g.base)</code></pre>
 <p><img src="MQO_files/figure-html/Banco%20de%20dados-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>A figura acima demonstra a relação entre volume e <span class="math inline">\(d^2h\)</span>. Essa relação é conhecida no meio florestal através do modelo de Spurr: <span class="math inline">\(v = \beta_0 + \beta_1.d^2h\)</span>, e evidencia a relação linear entre as duas variáveis.</p>
-<p>Para encontrar os parâmetros do modelo, basta utilizar a função <code>lm()</code>.</p>
+<p>A figura acima demonstra a relação entre volume e <span
+class="math inline">\(d^2h\)</span>. Essa relação é conhecida no meio
+florestal através do modelo de Spurr: <span class="math inline">\(v =
+\beta_0 + \beta_1.d^2h\)</span>, e evidencia a relação linear entre as
+duas variáveis.</p>
+<p>Para encontrar os parâmetros do modelo, basta utilizar a função
+<code>lm()</code>.</p>
 <pre class="r"><code>spurr &lt;- lm(v ~ d2h, data = dados)
 
 summary(spurr)</code></pre>
@@ -445,35 +469,68 @@ summary(spurr)</code></pre>
               slope = coef(spurr)[2],      #Coeficiente angular (b1)
               color = &quot;steelblue&quot;) </code></pre>
 <p><img src="MQO_files/figure-html/linear%20simples-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>Os valores de <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span> encontrados foram de -0.0087 e 0.0013, respectivamente.</p>
-<p>Agora vamos tentar chegar nos mesmos parâmetros realizando o método dos mínimos quadrados ordinários passo a passo.</p>
+<p>Os valores de <span class="math inline">\(\beta_0\)</span> e <span
+class="math inline">\(\beta_1\)</span> encontrados foram de -0.0087 e
+0.0013, respectivamente.</p>
+<p>Agora vamos tentar chegar nos mesmos parâmetros realizando o método
+dos mínimos quadrados ordinários passo a passo.</p>
 <div id="mínimos-quadrados-ordinários" class="section level2">
 <h2>Mínimos Quadrados Ordinários</h2>
-<p>O método dos mínimos quadrados ordinários é o principal método de estimativa dos parâmetros para regressões lineares, e tem como objetivo encontrar os parâmetros do modelo que resultem na menor soma de quadrados dos resíduos. Sua utilização depende de pressuposições que devem ser satisfeitas. São elas:</p>
+<p>O método dos mínimos quadrados ordinários é o principal método de
+estimativa dos parâmetros para regressões lineares, e tem como objetivo
+encontrar os parâmetros do modelo que resultem na menor soma de
+quadrados dos resíduos. Sua utilização depende de pressuposições que
+devem ser satisfeitas. São elas:</p>
 <ul>
 <li><strong>1.</strong> Erro com média 0 e distribuição normal;</li>
 <li><strong>2.</strong> Variância do erro constante;</li>
 <li><strong>3.</strong> Independência dos resíduos.</li>
 </ul>
-<p>A formulação tradicional do modelo linear simples é exemplificada abaixo,</p>
+<p>A formulação tradicional do modelo linear simples é exemplificada
+abaixo,</p>
 <p><span class="math display">\[
 y = \beta_0 + \beta_1x + \epsilon
 \]</span></p>
-<p>Onde <span class="math inline">\(\beta_0\)</span> é o parâmetro linear, também chamado de intercepto ou constante, pois não depende de <span class="math inline">\(x\)</span>; <span class="math inline">\(\beta_1\)</span> é o parâmetro angular ou coeficiente da variável <span class="math inline">\(x\)</span>; <span class="math inline">\(\epsilon\)</span> é o erro, e representa a variação de <span class="math inline">\(y\)</span> que não é explicada pelo modelo. Outra formulação encontrada na literatura é <span class="math inline">\(y = \alpha + \beta x + \epsilon\)</span>.</p>
-<p>Os valores estimados ou preditos da variável <span class="math inline">\(y\)</span> são denotados por <span class="math inline">\(\hat{y}\)</span>,</p>
+<p>Onde <span class="math inline">\(\beta_0\)</span> é o parâmetro
+linear, também chamado de intercepto ou constante, pois não depende de
+<span class="math inline">\(x\)</span>; <span
+class="math inline">\(\beta_1\)</span> é o parâmetro angular ou
+coeficiente da variável <span class="math inline">\(x\)</span>; <span
+class="math inline">\(\epsilon\)</span> é o erro, e representa a
+variação de <span class="math inline">\(y\)</span> que não é explicada
+pelo modelo. Outra formulação encontrada na literatura é <span
+class="math inline">\(y = \alpha + \beta x + \epsilon\)</span>.</p>
+<p>Os valores estimados ou preditos da variável <span
+class="math inline">\(y\)</span> são denotados por <span
+class="math inline">\(\hat{y}\)</span>,</p>
 <p><span class="math display">\[
-\hat{y} = \hat{\beta_0} + \hat{\beta_1}x 
+\hat{y} = \hat{\beta_0} + \hat{\beta_1}x
 \]</span></p>
-<p>Os parâmetros <em>verdadeiros</em> <span class="math inline">\(\beta_i\)</span> do modelo são desconhecidos, e em vez disso se utiliza <span class="math inline">\(\hat{\beta_0}\)</span> e <span class="math inline">\(\hat{\beta_1}\)</span> para definir os parâmetros <em>estimados</em> pela regressão.</p>
-<p>O erro <span class="math inline">\(\epsilon\)</span> nada mais é que a diferença entre o valor real observado <span class="math inline">\(y\)</span>, e o valor estimado ou predito <span class="math inline">\(\hat{y}\)</span>.</p>
+<p>Os parâmetros <em>verdadeiros</em> <span
+class="math inline">\(\beta_i\)</span> do modelo são desconhecidos, e em
+vez disso se utiliza <span class="math inline">\(\hat{\beta_0}\)</span>
+e <span class="math inline">\(\hat{\beta_1}\)</span> para definir os
+parâmetros <em>estimados</em> pela regressão.</p>
+<p>O erro <span class="math inline">\(\epsilon\)</span> nada mais é que
+a diferença entre o valor real observado <span
+class="math inline">\(y\)</span>, e o valor estimado ou predito <span
+class="math inline">\(\hat{y}\)</span>.</p>
 <p><span class="math display">\[
 \epsilon_i = y_i - \hat{y_i}
 \]</span></p>
-<p>Como citado anteriormente, o objetivo do método é encontrar os parâmetros que resultem na menor soma de quadrados de resíduos. Como os resíduos devem possuir média zero e distribuição normal, alguns resíduos são positivos e outros negativos. Nessa situação, a simples soma teria efeito de ‘compensação’ entre valores positivos e negativos, e o resultado final não representaria de forma apropriada o erro do modelo (o somatório seria próximo de zero). Daí a necessidade de elevar cada erro <span class="math inline">\(\epsilon\)</span> ao quadrado.</p>
+<p>Como citado anteriormente, o objetivo do método é encontrar os
+parâmetros que resultem na menor soma de quadrados de resíduos. Como os
+resíduos devem possuir média zero e distribuição normal, alguns resíduos
+são positivos e outros negativos. Nessa situação, a simples soma teria
+efeito de ‘compensação’ entre valores positivos e negativos, e o
+resultado final não representaria de forma apropriada o erro do modelo
+(o somatório seria próximo de zero). Daí a necessidade de elevar cada
+erro <span class="math inline">\(\epsilon\)</span> ao quadrado.</p>
 <p><span class="math display">\[
 S = \sum_{i=1}^{n} \epsilon_i^2 = min
 \]</span></p>
-<p>Com a substituição de alguns termos com as equações apresentadas acima, temos que</p>
+<p>Com a substituição de alguns termos com as equações apresentadas
+acima, temos que</p>
 <p><span class="math display">\[
 S = \sum_{i=1}^{n} (y_i - \hat{y_i})^2
 \]</span></p>
@@ -483,7 +540,10 @@ S = \sum_{i=1}^{n} (y_i - [\hat{\beta_0} + \hat{\beta_1}x_i])^2
 <p><span class="math display">\[
 S = \sum_{i=1}^{n} (y_i - \hat{\beta_0} - \hat{\beta_1}x_i)^2 = min
 \]</span></p>
-<p>Agora, se atribuíssemos algum valor qualquer para os parâmetros no modelo acima e calculássemos o somatório, isso resultaria em um valor S de Soma de Quadrados de Resíduos. Conforme os valores dos parâmetros mudam, então também a Soma de Quadrados de Resíduos (S) irá mudar.</p>
+<p>Agora, se atribuíssemos algum valor qualquer para os parâmetros no
+modelo acima e calculássemos o somatório, isso resultaria em um valor S
+de Soma de Quadrados de Resíduos. Conforme os valores dos parâmetros
+mudam, então também a Soma de Quadrados de Resíduos (S) irá mudar.</p>
 <pre class="r"><code>#Cria uma função S que recebe os parâmetros x,y,a,b
 S &lt;- function(x,y,b0,b1) {sum((y-b0-b1*x)^2)}
 
@@ -528,88 +588,143 @@ g.S &lt;- ggplot(data = df, aes(x = b0, y = S)) +
 
 plot(g.S)</code></pre>
 <p><img src="MQO_files/figure-html/Varia%C3%A7%C3%A3o%20de%20S-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>Na figura acima, percebe-se que quando <span class="math inline">\(\hat{\beta_0}\)</span> é próximo de -0.5, a soma de quadrado dos resíduos é alta, assim como perto de 0.5. Entretanto, quando <span class="math inline">\(\hat{\beta_0}\)</span> é próximo de 0, S atinge os menores valores. Se fizéssemos esse procedimento com <span class="math inline">\(\hat{\beta_1}\)</span>, esse mesmo comportamento seria observado. Em outras palavras, existe um determinado valor de <span class="math inline">\(\hat{\beta_0}\)</span> e <span class="math inline">\(\hat{\beta_1}\)</span> que resultam no valor mínimo de S. Para encontrar os valores exatos, podemos fazer uso do cálculo diferencial.</p>
-<p>Analisando a figura, percebemos que o ponto que resulta no menor valor de S é um ponto de mínima, e se trassarmos uma reta tangente à curva nesse ponto, essa reta será perfeitamente horizontal.</p>
-<p>Uma maneira adequada para encontrar pontos críticos em uma função é utilizando cálculo diferencial, sabendo que nos pontos onde a primeira derivada for igual a zero, então a tangente da função será perfeitamente horizontal, marcando assim um ponto de máxima ou mínima.</p>
-<p>Para encontrarmos os valores de <span class="math inline">\(\hat{\beta_0}\)</span> e <span class="math inline">\(\hat{\beta_1}\)</span> que minimizam S, precisamos derivar a função S em relação a esses parâmetros. Esse procedimento é chamado de derivada parcial (denotado por <span class="math inline">\(\partial\)</span>), e em linhas gerais tudo que não possuir relação com o parâmetro alvo é considerado como constante.</p>
-<p>Primeiramente podemos abrir o polinômio da função <span class="math inline">\(S\)</span>.</p>
+<p>Na figura acima, percebe-se que quando <span
+class="math inline">\(\hat{\beta_0}\)</span> é próximo de -0.5, a soma
+de quadrado dos resíduos é alta, assim como perto de 0.5. Entretanto,
+quando <span class="math inline">\(\hat{\beta_0}\)</span> é próximo de
+0, S atinge os menores valores. Se fizéssemos esse procedimento com
+<span class="math inline">\(\hat{\beta_1}\)</span>, esse mesmo
+comportamento seria observado. Em outras palavras, existe um determinado
+valor de <span class="math inline">\(\hat{\beta_0}\)</span> e <span
+class="math inline">\(\hat{\beta_1}\)</span> que resultam no valor
+mínimo de S. Para encontrar os valores exatos, podemos fazer uso do
+cálculo diferencial.</p>
+<p>Analisando a figura, percebemos que o ponto que resulta no menor
+valor de S é um ponto de mínima, e se trassarmos uma reta tangente à
+curva nesse ponto, essa reta será perfeitamente horizontal.</p>
+<p>Uma maneira adequada para encontrar pontos críticos em uma função é
+utilizando cálculo diferencial, sabendo que nos pontos onde a primeira
+derivada for igual a zero, então a tangente da função será perfeitamente
+horizontal, marcando assim um ponto de máxima ou mínima.</p>
+<p>Para encontrarmos os valores de <span
+class="math inline">\(\hat{\beta_0}\)</span> e <span
+class="math inline">\(\hat{\beta_1}\)</span> que minimizam S, precisamos
+derivar a função S em relação a esses parâmetros. Esse procedimento é
+chamado de derivada parcial (denotado por <span
+class="math inline">\(\partial\)</span>), e em linhas gerais tudo que
+não possuir relação com o parâmetro alvo é considerado como
+constante.</p>
+<p>Primeiramente podemos abrir o polinômio da função <span
+class="math inline">\(S\)</span>.</p>
 <p><span class="math display">\[
 S = \sum_{i=1}^{n} (y_i - \hat{\beta_0} - \hat{\beta_1}x_i)^2
 \]</span></p>
 <p><span class="math display">\[
-S = \sum_{i=1}^{n} (y_i^2 - y_i\hat{\beta_0} - y_i\hat{\beta_i}x_i-y_i\hat{\beta_0} + \hat{\beta_0}^2 + \hat{\beta_0}\hat{\beta_1}x_i - y_i\hat{\beta_1}x_i + \hat{\beta_0}\hat{\beta_1}x_i + \hat{\beta_1}^2x_i^2)
+S = \sum_{i=1}^{n} (y_i^2 - y_i\hat{\beta_0} -
+y_i\hat{\beta_i}x_i-y_i\hat{\beta_0} + \hat{\beta_0}^2 +
+\hat{\beta_0}\hat{\beta_1}x_i - y_i\hat{\beta_1}x_i +
+\hat{\beta_0}\hat{\beta_1}x_i + \hat{\beta_1}^2x_i^2)
 \]</span></p>
 <p><span class="math display">\[
-S = \sum_{i=1}^{n} (y_i^2 + \hat{\beta_0}^2 + \hat{\beta_1}^2x_i^2 -2y_i\hat{\beta_0} - 2y_i\hat{\beta_1}x_i + 2\hat{\beta_0}\hat{\beta_1}x_i)
+S = \sum_{i=1}^{n} (y_i^2 + \hat{\beta_0}^2 + \hat{\beta_1}^2x_i^2
+-2y_i\hat{\beta_0} - 2y_i\hat{\beta_1}x_i +
+2\hat{\beta_0}\hat{\beta_1}x_i)
 \]</span></p>
 <hr />
 <hr />
-<div id="derivada-parcial-em-relação-à-hatbeta_0" class="section level3">
-<h3>Derivada parcial em relação à <span class="math inline">\(\hat{\beta_0}\)</span></h3>
-<p>As regras de derivação são as mesmas de qualquer outra diferenciação. A única diferença é que, agora, a variável de interesse é <span class="math inline">\(\hat{\beta_0}\)</span>, e tudo o mais é considerado constante.</p>
+<div id="derivada-parcial-em-relação-à-hatbeta_0"
+class="section level3">
+<h3>Derivada parcial em relação à <span
+class="math inline">\(\hat{\beta_0}\)</span></h3>
+<p>As regras de derivação são as mesmas de qualquer outra diferenciação.
+A única diferença é que, agora, a variável de interesse é <span
+class="math inline">\(\hat{\beta_0}\)</span>, e tudo o mais é
+considerado constante.</p>
 <p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_0}} = \sum_{i=1}^{n} (0 + \hat{\beta_0}^2 + 0 - 2y_i\hat{\beta_0} - 0 + 2\hat{\beta_0}\hat{\beta_1}x_i)
+\frac{\partial S}{\partial \hat{\beta_0}} = \sum_{i=1}^{n} (0 +
+\hat{\beta_0}^2 + 0 - 2y_i\hat{\beta_0} - 0 +
+2\hat{\beta_0}\hat{\beta_1}x_i)
 \]</span></p>
 <p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_0}} = \sum_{i=1}^{n} (0 + 2\hat{\beta_0} + 0 - 2y_i - 0 + 2\hat{\beta_1}x_i)
+\frac{\partial S}{\partial \hat{\beta_0}} = \sum_{i=1}^{n} (0 +
+2\hat{\beta_0} + 0 - 2y_i - 0 + 2\hat{\beta_1}x_i)
 \]</span></p>
 <p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_0}} = \sum_{i=1}^{n} (2\hat{\beta_0} - 2y_i + 2\hat{\beta_1}x_i) 
+\frac{\partial S}{\partial \hat{\beta_0}} = \sum_{i=1}^{n}
+(2\hat{\beta_0} - 2y_i + 2\hat{\beta_1}x_i)
 \]</span></p>
 <p>Igualando a 0</p>
 <p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_0}} = \sum_{i=1}^{n} (2\hat{\beta_0} - 2y_i + 2\hat{\beta_1}x_i) = 0
+\frac{\partial S}{\partial \hat{\beta_0}} = \sum_{i=1}^{n}
+(2\hat{\beta_0} - 2y_i + 2\hat{\beta_1}x_i) = 0
 \]</span></p>
 <p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_0}} = 2\sum_{i=1}^{n} (\hat{\beta_0} - y_i + \hat{\beta_1}x_i) = 0
+\frac{\partial S}{\partial \hat{\beta_0}} = 2\sum_{i=1}^{n}
+(\hat{\beta_0} - y_i + \hat{\beta_1}x_i) = 0
 \]</span></p>
 <p>Podemos ainda realizar algumas simplificações.</p>
 <p>Dividindo por 2 e multiplicando por -1</p>
 <p><span class="math display">\[
-\frac{\displaystyle  2\sum_{i=1}^{n} (\hat{\beta_0} - y_i + \hat{\beta_1}x_i)}{2} (-1) = \frac{0}{2}(-1)
+\frac{\displaystyle  2\sum_{i=1}^{n} (\hat{\beta_0} - y_i +
+\hat{\beta_1}x_i)}{2} (-1) = \frac{0}{2}(-1)
 \]</span></p>
 <p><span class="math display">\[
-\sum_{i=1}^{n} (y_i - \hat{\beta_0} - \hat{\beta_1}x_i) = 0 
+\sum_{i=1}^{n} (y_i - \hat{\beta_0} - \hat{\beta_1}x_i) = 0
 \]</span></p>
 <p><span class="math display">\[
-\sum_{i=1}^{n}y_i - N\hat{\beta_0} - N\hat{\beta_1}\sum_{i=1}^{n}x_i = 0 
+\sum_{i=1}^{n}y_i - n\hat{\beta_0} - n\hat{\beta_1}\sum_{i=1}^{n}x_i = 0
 \]</span></p>
-<p>Dividindo tudo por <span class="math inline">\(N\)</span></p>
+<p>Dividindo tudo por <span class="math inline">\(n\)</span></p>
 <p><span class="math display">\[
-\frac{\displaystyle  \sum_{i=1}^{n}y_i}{N} - \frac{\displaystyle  N\hat{\beta_0}}{N}-\frac{\displaystyle  N\hat{\beta_1}\sum_{i=1}^{n}x_i}{N} = \frac{0}{N} 
+\frac{\displaystyle  \sum_{i=1}^{n}y_i}{n} -
+\frac{\displaystyle  n\hat{\beta_0}}{n}-\frac{\displaystyle  n\hat{\beta_1}\sum_{i=1}^{n}x_i}{n}
+= \frac{0}{n}
 \]</span></p>
 <p><span class="math display">\[
-\bar{y} - \hat{\beta_0} - \hat{\beta_1}\bar{x} = 0 
+\bar{y} - \hat{\beta_0} - \hat{\beta_1}\bar{x} = 0
 \]</span></p>
-<p>Com isso descobrimos que <span class="math inline">\(\displaystyle \frac{\partial S}{\partial \hat{\beta_0}}\)</span> vale 0 quando</p>
+<p>Com isso descobrimos que <span class="math inline">\(\displaystyle
+\frac{\partial S}{\partial \hat{\beta_0}}\)</span> vale 0 quando</p>
 <p><span class="math display">\[
 \hat{\beta_0} = \bar{y} - \hat{\beta_1}\bar{x}
 \]</span></p>
 <hr />
 <hr />
 </div>
-<div id="derivada-paricla-em-relação-à-hatbeta_1" class="section level3">
-<h3>Derivada paricla em relação à <span class="math inline">\(\hat{\beta_1}\)</span></h3>
-<p>A derivada de <span class="math inline">\(S\)</span> em relação a <span class="math inline">\(\hat{\beta_1}\)</span> é</p>
+<div id="derivada-paricla-em-relação-à-hatbeta_1"
+class="section level3">
+<h3>Derivada paricla em relação à <span
+class="math inline">\(\hat{\beta_1}\)</span></h3>
+<p>A derivada de <span class="math inline">\(S\)</span> em relação a
+<span class="math inline">\(\hat{\beta_1}\)</span> é</p>
 <p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_1}} = \sum_{i=1}^{n} (0 + 0 + \hat{\beta_1}^2 x_i^2 - 0 - 2y_i\hat{\beta_1}x_i + 2\hat{\beta_0}\hat{\beta_1}x_i)
+\frac{\partial S}{\partial \hat{\beta_1}} = \sum_{i=1}^{n} (0 + 0 +
+\hat{\beta_1}^2 x_i^2 - 0 - 2y_i\hat{\beta_1}x_i +
+2\hat{\beta_0}\hat{\beta_1}x_i)
 \]</span></p>
 <p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_1}} = \sum_{i=1}^{n} (0 + 0 + 2\hat{\beta_1}x_i^2 - 0 - 2y_ix_i + 2\hat{\beta_0}x_i)
+\frac{\partial S}{\partial \hat{\beta_1}} = \sum_{i=1}^{n} (0 + 0 +
+2\hat{\beta_1}x_i^2 - 0 - 2y_ix_i + 2\hat{\beta_0}x_i)
 \]</span></p>
 <p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_1}} = \sum_{i=1}^{n} (2\hat{\beta_1}x_i^2 - 2y_ix_i + 2\hat{\beta_0}x_i)
+\frac{\partial S}{\partial \hat{\beta_1}} = \sum_{i=1}^{n}
+(2\hat{\beta_1}x_i^2 - 2y_ix_i + 2\hat{\beta_0}x_i)
 \]</span></p>
 <p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_1}} = 2\sum_{i=1}^{n} x_i(\hat{\beta_1}x_i - y_i + \hat{\beta_0})
+\frac{\partial S}{\partial \hat{\beta_1}} = 2\sum_{i=1}^{n}
+x_i(\hat{\beta_1}x_i - y_i + \hat{\beta_0})
 \]</span></p>
-<p>Essa é a derivada de S em relação a <span class="math inline">\(\hat{\beta_1}\)</span>. Agora igualamos a zero para encontrar o ponto de mínima.</p>
+<p>Essa é a derivada de S em relação a <span
+class="math inline">\(\hat{\beta_1}\)</span>. Agora igualamos a zero
+para encontrar o ponto de mínima.</p>
 <p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_1}} = 2\sum_{i=1}^{n} x_i(\hat{\beta_1}x_i - y_i + \hat{\beta_0}) = 0
+\frac{\partial S}{\partial \hat{\beta_1}} = 2\sum_{i=1}^{n}
+x_i(\hat{\beta_1}x_i - y_i + \hat{\beta_0}) = 0
 \]</span></p>
 <p>Dividindo por 2 para simplificação</p>
 <p><span class="math display">\[
-\frac{\displaystyle  2\sum_{i=1}^{n} x_i(\hat{\beta_1}x_i - y_i + \hat{\beta_0})}{2} = \frac{0}{2}
+\frac{\displaystyle  2\sum_{i=1}^{n} x_i(\hat{\beta_1}x_i - y_i +
+\hat{\beta_0})}{2} = \frac{0}{2}
 \]</span></p>
 <p><span class="math display">\[
 \sum_{i=1}^{n} x_i(\hat{\beta_1}x_i - y_i + \hat{\beta_0}) = 0
@@ -618,44 +733,76 @@ S = \sum_{i=1}^{n} (y_i^2 + \hat{\beta_0}^2 + \hat{\beta_1}^2x_i^2 -2y_i\hat{\be
 \sum_{i=1}^{n} x_i(-y_i + \hat{\beta_0} + \hat{\beta_1}x_i) = 0
 \]</span></p>
 <p><span class="math display">\[
--\sum_{i=1}^{n}x_iy_i + \hat{\beta_0} \sum_{i=1}^{n}x_i + \hat{\beta_1}\sum_{i=1}^{n}x_i^2 = 0
+-\sum_{i=1}^{n}x_iy_i + \hat{\beta_0} \sum_{i=1}^{n}x_i +
+\hat{\beta_1}\sum_{i=1}^{n}x_i^2 = 0
 \]</span></p>
-<p>Com isso descobrimos que <span class="math inline">\(\frac{\partial S}{\partial \hat{\beta_1}}\)</span> vale 0 quando</p>
+<p>Com isso descobrimos que <span class="math inline">\(\frac{\partial
+S}{\partial \hat{\beta_1}}\)</span> vale 0 quando</p>
 <p><span class="math display">\[
-\hat{\beta_0} \sum_{i=1}^{n}x_i + \hat{\beta_1}\sum_{i=1}^{n}x_i^2 = \sum_{i=1}^{n}x_iy_i
+\hat{\beta_0} \sum_{i=1}^{n}x_i + \hat{\beta_1}\sum_{i=1}^{n}x_i^2 =
+\sum_{i=1}^{n}x_iy_i
 \]</span></p>
 <hr />
 <hr />
-<p>Encontradas as derivadas, ainda falta resolvermos essas equações. A derivada de <span class="math inline">\(S\)</span> em relação à <span class="math inline">\(\hat{\beta_0}\)</span> ainda precisa de <span class="math inline">\(\hat{\beta_1}\)</span> para ser resolvida, e o mesmo ocorre para <span class="math inline">\(\hat{\beta_1}\)</span>.</p>
-<p>Uma solução para isso é substituir o valor de <span class="math inline">\(\hat{\beta_0}\)</span> por <span class="math inline">\(\displaystyle \bar{y} - \hat{\beta_1}\bar{x}\)</span> na última equação apresentada acima. Essa substituição é valida pois estamos substituindo <span class="math inline">\(\hat{\beta_0}\)</span> pelo seu valor que garante um resultado 0 para sua derivada.</p>
-<p>Substituindo o valor de <span class="math inline">\(\hat{\beta_0}\)</span> por <span class="math inline">\(\displaystyle \bar{y} - \hat{\beta_1}\bar{x}\)</span></p>
+<p>Encontradas as derivadas, ainda falta resolvermos essas equações. A
+derivada de <span class="math inline">\(S\)</span> em relação à <span
+class="math inline">\(\hat{\beta_0}\)</span> ainda precisa de <span
+class="math inline">\(\hat{\beta_1}\)</span> para ser resolvida, e o
+mesmo ocorre para <span
+class="math inline">\(\hat{\beta_1}\)</span>.</p>
+<p>Uma solução para isso é substituir o valor de <span
+class="math inline">\(\hat{\beta_0}\)</span> por <span
+class="math inline">\(\displaystyle \bar{y} -
+\hat{\beta_1}\bar{x}\)</span> na última equação apresentada acima. Essa
+substituição é valida pois estamos substituindo <span
+class="math inline">\(\hat{\beta_0}\)</span> pelo seu valor que garante
+um resultado 0 para sua derivada.</p>
+<p>Substituindo o valor de <span
+class="math inline">\(\hat{\beta_0}\)</span> por <span
+class="math inline">\(\displaystyle \bar{y} -
+\hat{\beta_1}\bar{x}\)</span></p>
 <p><span class="math display">\[
-(\bar{y}-\hat{\beta_1}\bar{x})\sum_{i=1}^{n}x_i + \hat{\beta_1}\sum_{i=1}^{n}x_i^2 = \sum_{i=1}^{n}x_iy_i
+(\bar{y}-\hat{\beta_1}\bar{x})\sum_{i=1}^{n}x_i +
+\hat{\beta_1}\sum_{i=1}^{n}x_i^2 = \sum_{i=1}^{n}x_iy_i
 \]</span></p>
-<p>Como <span class="math inline">\(\bar{x} =\displaystyle \frac{\displaystyle \sum_{i=1}^{n}x_i}{N}\)</span>, então <span class="math inline">\(\displaystyle \sum_{i=1}^{n}x_i = N\bar{x}\)</span>.</p>
+<p>Como <span class="math inline">\(\bar{x} =\displaystyle
+\frac{\displaystyle \sum_{i=1}^{n}x_i}{n}\)</span>, então <span
+class="math inline">\(\displaystyle \sum_{i=1}^{n}x_i =
+n\bar{x}\)</span>.</p>
 <p><span class="math display">\[
-(\bar{y} - \hat{\beta_1}\bar{x}) N\bar{x} + \hat{\beta_1}\sum_{i=1}^{n}x_i^2 = \sum_{i=1}^{n}x_iy_i
-\]</span></p>
-<p><span class="math display">\[
-N\bar{x}\bar{y} - \hat{\beta_1}N\bar{x}^2 + \hat{\beta_1}\sum_{i=1}^{n}x_i^2 = \sum_{i=1}^{n}x_iy_i
-\]</span></p>
-<p><span class="math display">\[
--\hat{\beta_1}N\bar{x}^2 + \hat{\beta_1}\sum_{i=1}^{n}x_i^2 = \sum_{i=1}^{n}x_iy_i - N\bar{x}\bar{y}
-\]</span></p>
-<p><span class="math display">\[
-\hat{\beta_1}(\sum_{i=1}^{n}x_i^2 - N\bar{x}^2) = \sum_{i=1}^{n}x_iy_i - N\bar{x}\bar{y}
+(\bar{y} - \hat{\beta_1}\bar{x}) n\bar{x} +
+\hat{\beta_1}\sum_{i=1}^{n}x_i^2 = \sum_{i=1}^{n}x_iy_i
 \]</span></p>
 <p><span class="math display">\[
-\hat{\beta_1} = \frac{\displaystyle \sum_{i=1}^{n}x_iy_i - N\bar{x}\bar{y}}{\displaystyle \sum_{i=1}^{n}x_i^2 - N\bar{x}^2} \qquad ou \qquad \hat{\beta_1} = \frac{\displaystyle \sum_{i=1}^{n}x_iy_i - \frac{\displaystyle \sum_{i=1}^{n}x_i\sum_{i=1}^{n}y_i}{N}}{\displaystyle \sum_{i=1}^{n}x_i^2 - \frac{\displaystyle (\sum_{i=1}^{n}x_i)^2}{N}}
+n\bar{x}\bar{y} - \hat{\beta_1}n\bar{x}^2 +
+\hat{\beta_1}\sum_{i=1}^{n}x_i^2 = \sum_{i=1}^{n}x_iy_i
 \]</span></p>
-<p>Agora, podemos encontrar o valor de <span class="math inline">\(\hat{\beta_1}\)</span> que garante o menor valor de <span class="math inline">\(S\)</span>.</p>
+<p><span class="math display">\[
+-\hat{\beta_1}n\bar{x}^2 + \hat{\beta_1}\sum_{i=1}^{n}x_i^2 =
+\sum_{i=1}^{n}x_iy_i - n\bar{x}\bar{y}
+\]</span></p>
+<p><span class="math display">\[
+\hat{\beta_1}(\sum_{i=1}^{n}x_i^2 - n\bar{x}^2) = \sum_{i=1}^{n}x_iy_i -
+n\bar{x}\bar{y}
+\]</span></p>
+<p><span class="math display">\[
+\hat{\beta_1} = \frac{\displaystyle \sum_{i=1}^{n}x_iy_i -
+n\bar{x}\bar{y}}{\displaystyle \sum_{i=1}^{n}x_i^2 - n\bar{x}^2} \qquad
+ou \qquad \hat{\beta_1} = \frac{\displaystyle \sum_{i=1}^{n}x_iy_i -
+\frac{\displaystyle
+\sum_{i=1}^{n}x_i\sum_{i=1}^{n}y_i}{n}}{\displaystyle
+\sum_{i=1}^{n}x_i^2 - \frac{\displaystyle (\sum_{i=1}^{n}x_i)^2}{n}}
+\]</span></p>
+<p>Agora, podemos encontrar o valor de <span
+class="math inline">\(\hat{\beta_1}\)</span> que garante o menor valor
+de <span class="math inline">\(S\)</span>.</p>
 <pre class="r"><code>x &lt;- d2h
 y &lt;- v
 
-N &lt;- length(x)
+n &lt;- length(x)
 
 #Serão chamados de b0.mqo e b1.mqo, para lembrarmos que são os valores obtido por meio das operações realizadas acima
-b1.mqo &lt;- (sum(x*y)-(sum(x)*sum(y))/N)/(sum(x^2)-(sum(x)^2)/N)
+b1.mqo &lt;- (sum(x*y)-(sum(x)*sum(y))/n)/(sum(x^2)-(sum(x)^2)/n)
 
 b0.mqo &lt;- mean(y) - b1.mqo*mean(x)
 
@@ -663,32 +810,57 @@ b0.mqo</code></pre>
 <pre><code>## [1] -0.008682245</code></pre>
 <pre class="r"><code>b1.mqo</code></pre>
 <pre><code>## [1] 0.001311559</code></pre>
-<p>O caso mostrado acima foi montado com base na regressão linear simples, com somente os parâmetros <span class="math inline">\(\hat{\beta_0}\)</span> e <span class="math inline">\(\hat{\beta_1}\)</span>. O sistema de equações normais nesse caso é disposto da seguinte forma</p>
+<p>O caso mostrado acima foi montado com base na regressão linear
+simples, com somente os parâmetros <span
+class="math inline">\(\hat{\beta_0}\)</span> e <span
+class="math inline">\(\hat{\beta_1}\)</span>. O sistema de equações
+normais nesse caso é disposto da seguinte forma</p>
 <p><span class="math display">\[
-\begin{cases} \displaystyle  N\hat{\beta_0} \enspace \enspace \quad + \quad \hat{\beta_1}\sum_{i=1}^{n}x_i \quad = \quad \sum_{i=1}^{n}y_i \\ 
-\displaystyle \hat{\beta_0}\sum_{i=1}^{n}x_i \quad + \quad \hat{\beta_1}\sum_{i=1}^{n}x_i^2 \quad = \quad \sum_{i=1}^{n}y_ix_i \end{cases}
+\begin{cases} \displaystyle  n\hat{\beta_0} \enspace \enspace \quad +
+\quad \hat{\beta_1}\sum_{i=1}^{n}x_i \quad = \quad \sum_{i=1}^{n}y_i \\
+\displaystyle \hat{\beta_0}\sum_{i=1}^{n}x_i \quad + \quad
+\hat{\beta_1}\sum_{i=1}^{n}x_i^2 \quad = \quad \sum_{i=1}^{n}y_ix_i
+\end{cases}
 \]</span></p>
-<p>Para uma regressão linear múltipla, com mais de uma variável explicativa, o processo é similar, porém adicionando-se mais uma equações ao sistema.</p>
-<p>Entretanto, quando muitas variáveis são adicionadas, convém dispor por meio de cálculo matricial. Essa disposição também é muito encontrada na literatura, e é comumente chamada de método análitico de resolução da regressão linear. As variáveis X, Y e os coeficientes assumem matrizes e vetores, como a seguir.</p>
-<p><span class="math inline">\(\hat{\beta}\)</span> é o vetor de parâmetros do modelo, de dimensão <span class="math inline">\(p\times 1\)</span>. <span class="math inline">\(Y\)</span> é o vetor da variável observada. Tem dimensão <span class="math inline">\(n \times 1\)</span>. <span class="math inline">\(\epsilon\)</span> é o vetor de resíduos, de dimensão <span class="math inline">\(n \times 1\)</span>. <span class="math display">\[
+<p>Para uma regressão linear múltipla, com mais de uma variável
+explicativa, o processo é similar, porém adicionando-se mais uma
+equações ao sistema.</p>
+<p>Entretanto, quando muitas variáveis são adicionadas, convém dispor
+por meio de cálculo matricial. Essa disposição também é muito encontrada
+na literatura, e é comumente chamada de método análitico de resolução da
+regressão linear. As variáveis X, Y e os coeficientes assumem matrizes e
+vetores, como a seguir.</p>
+<p><span class="math inline">\(\hat{\beta}\)</span> é o vetor de
+parâmetros do modelo, de dimensão <span class="math inline">\(p\times
+1\)</span>. <span class="math inline">\(Y\)</span> é o vetor da variável
+observada. Tem dimensão <span class="math inline">\(n \times 1\)</span>.
+<span class="math inline">\(\epsilon\)</span> é o vetor de resíduos, de
+dimensão <span class="math inline">\(n \times 1\)</span>. <span
+class="math display">\[
 \mathbf{\hat{\beta}} = \left[\begin{array}{c}
 \hat{\beta_0} \\ \hat{\beta_1} \\ \vdots \\ \hat{\beta_p}
-\end{array}\right]_{p\times 1} \qquad \mathbf{Y} = \left[\begin{array}{c}
+\end{array}\right]_{p\times 1} \qquad \mathbf{Y} =
+\left[\begin{array}{c}
 y_1 \\ y_2 \\ \vdots \\ y_n
-\end{array}\right]_{n \times 1} \qquad \mathbf{\epsilon} = \left[\begin{array}{c}
+\end{array}\right]_{n \times 1} \qquad \mathbf{\epsilon} =
+\left[\begin{array}{c}
 e_1 \\ e_2 \\ \vdots \\ e_n
 \end{array}\right]_{n \times 1}
 \]</span></p>
-<p><span class="math inline">\(X\)</span> é a matriz das variáveis explicativas do modelo, onde <span class="math inline">\(n\)</span> é o número de observações, e <span class="math inline">\(p\)</span> é o número de parâmetros do modelo. <span class="math display">\[
+<p><span class="math inline">\(X\)</span> é a matriz das variáveis
+explicativas do modelo, onde <span class="math inline">\(n\)</span> é o
+número de observações, e <span class="math inline">\(p\)</span> é o
+número de parâmetros do modelo. <span class="math display">\[
 \mathbf{X} = \left[\begin{array}
 {cccc}   
-1 &amp; X_{11} &amp; X_{12} &amp; \dots &amp; X_{1p} \\ 
+1 &amp; X_{11} &amp; X_{12} &amp; \dots &amp; X_{1p} \\
 1 &amp; X_{21} &amp; X_{22} &amp; \dots &amp; X_{2p} \\
 \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
 1 &amp; X_{n1} &amp; X_{n2} &amp; \dots &amp; X{np} \\
 \end{array}\right]_{n \times p}
 \]</span></p>
-<p>Assim como no processo anterior, é desejado determinar o menor valor da soma de quadrado dos resíduos.</p>
+<p>Assim como no processo anterior, é desejado determinar o menor valor
+da soma de quadrado dos resíduos.</p>
 <p><span class="math display">\[
 S = \sum_{i=1}^{n} e_i^2 = \epsilon^\top \epsilon
 \]</span></p>
@@ -696,31 +868,38 @@ S = \sum_{i=1}^{n} e_i^2 = \epsilon^\top \epsilon
 \epsilon^\top \epsilon = (Y - \hat{\beta}X)^\top (Y - X\hat{\beta})
 \]</span></p>
 <p><span class="math display">\[
-= Y^\top Y - Y^\top (X\hat{\beta}) - (X\hat{\beta})^\top Y + (X\hat{\beta})^\top (X\hat{\beta})
+= Y^\top Y - Y^\top (X\hat{\beta}) - (X\hat{\beta})^\top Y +
+(X\hat{\beta})^\top (X\hat{\beta})
 \]</span> <span class="math display">\[
-= Y^\top Y - (X\hat{\beta})^\top Y - (X\hat{\beta})^\top Y + (X\hat{\beta})^\top (X\hat{\beta})
+= Y^\top Y - (X\hat{\beta})^\top Y - (X\hat{\beta})^\top Y +
+(X\hat{\beta})^\top (X\hat{\beta})
 \]</span> <span class="math display">\[
 = Y^\top Y - 2(X\hat{\beta})^\top Y + (X\hat{\beta})^\top (X\hat{\beta})
 \]</span> <span class="math display">\[
- \mathbf{S} = Y^\top Y - 2\hat{\beta}^\top X^\top Y + \hat{\beta}^\top X^\top X \hat{\beta}
+\mathbf{S} = Y^\top Y - 2\hat{\beta}^\top X^\top Y + \hat{\beta}^\top
+X^\top X \hat{\beta}
 \]</span></p>
 <p>A derivada parcial é dada por</p>
 <p><span class="math display">\[
-\frac{\partial}{\partial \hat{\beta}}[\epsilon^\top \epsilon] = 0 \enspace - \enspace 2\hat{\beta}^\top X^\top Y \enspace + \enspace \hat{\beta}^\top X^\top X\hat{\beta} \enspace = \enspace 0
+\frac{\partial}{\partial \hat{\beta}}[\epsilon^\top \epsilon] = 0
+\enspace - \enspace 2\hat{\beta}^\top X^\top Y \enspace + \enspace
+\hat{\beta}^\top X^\top X\hat{\beta} \enspace = \enspace 0
 \]</span></p>
 <p><span class="math display">\[
 0 - 2X^\top Y + 2X^\top X\hat{\beta} = 0
 \]</span></p>
 <p><span class="math display">\[
-2X^\top X\hat{\beta} = 2X^\top Y 
+2X^\top X\hat{\beta} = 2X^\top Y
 \]</span></p>
 <p><span class="math display">\[
-X^\top X\hat{\beta} = X^\top Y 
+X^\top X\hat{\beta} = X^\top Y
 \]</span></p>
 <p><span class="math display">\[
-\mathbf{\hat{\beta}} = (X^\top X)^{-1} X^\top Y 
+\mathbf{\hat{\beta}} = (X^\top X)^{-1} X^\top Y
 \]</span></p>
-<p>Essa é a equação que garante o menor valor de <span class="math inline">\(S\)</span>. Também podemos utilizá-la para encontrar os parâmetros.</p>
+<p>Essa é a equação que garante o menor valor de <span
+class="math inline">\(S\)</span>. Também podemos utilizá-la para
+encontrar os parâmetros.</p>
 <pre class="r"><code>X &lt;- model.matrix(y ~ x)
 
 betas &lt;- solve(t(X) %*% X) %*% t(X) %*% y
