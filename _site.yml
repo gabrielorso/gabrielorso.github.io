@@ -20,6 +20,8 @@ navbar:
       href: MQO.html
     - text: 'dplyr'
       href: dplyr.html
+    - text: 'Simulação'
+      href: Simulacao.html
   right:
     - text: GitHub
       icon: fa-github fa-lg
