@@ -14,7 +14,7 @@
 
 <title>dplyr</title>
 
-<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -573,9 +573,9 @@ selecionada, e como consequência não há como calcular a nova variável
 contendo apenas as variáveis “cient” e “ht”, e insere esse data frame no
 início do comando <code>mutate()</code>. O erro surge por não existir a
 variável “dap” no data frame fornecido.</p>
-<div class="figure">
-<img src="img/Pipes.gif" alt="" />
-<p class="caption">Pipes</p>
+<div class="float">
+<img src="img/Pipes.gif" alt="Pipes" />
+<div class="figcaption">Pipes</div>
 </div>
 </div>
 </div>
@@ -628,9 +628,9 @@ dados %&gt;% filter(par == 6)</code></pre>
 
 
 df &lt;- dados %&gt;% filter(cap &gt;= 140)</code></pre>
-<div class="figure">
-<img src="img/Filter.gif" alt="" />
-<p class="caption">Filter</p>
+<div class="float">
+<img src="img/Filter.gif" alt="Filter" />
+<div class="figcaption">Filter</div>
 </div>
 <div id="filtro-ou---união-de-condições" class="section level3">
 <h3>Filtro OU ‘|’ - União de condições</h3>
@@ -665,9 +665,9 @@ das condições.</p>
 ## 7    21     9 Fabaceae   Pter… &quot;Vah… &quot;Pau…   230    25     6     2     1 dossel 
 ## 8    22    17 Indet.     Inde… &quot;&quot;    &quot;&quot;      228    23    10     2     1 dossel 
 ## # … with 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
-<div class="figure">
-<img src="img/FilterOu.gif" alt="" />
-<p class="caption">Filter Ou</p>
+<div class="float">
+<img src="img/FilterOu.gif" alt="Filter Ou" />
+<div class="figcaption">Filter Ou</div>
 </div>
 </div>
 <div id="filtro-e---interseção-de-condições" class="section level3">
@@ -698,9 +698,9 @@ df %&gt;% filter(dap &gt; 50, ht &gt;= 20)</code></pre>
 ## 5    21     9 Fabaceae   Pter… &quot;Vah… &quot;Pau…   230    25     6     2     1 dossel 
 ## 6    22    17 Indet.     Inde… &quot;&quot;    &quot;&quot;      228    23    10     2     1 dossel 
 ## # … with 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
-<div class="figure">
-<img src="img/FilterE.gif" alt="" />
-<p class="caption">Filter E</p>
+<div class="float">
+<img src="img/FilterE.gif" alt="Filter E" />
+<div class="figcaption">Filter E</div>
 </div>
 </div>
 </div>
@@ -724,9 +724,9 @@ dados %&gt;% select(cap, ht)</code></pre>
 ##  9    31  10  
 ## 10    17   6  
 ## # … with 752 more rows</code></pre>
-<div class="figure">
-<img src="img/Select.gif" alt="" />
-<p class="caption">Select</p>
+<div class="float">
+<img src="img/Select.gif" alt="Select" />
+<div class="figcaption">Select</div>
 </div>
 <p>Para remover uma coluan do data frame, usa-se o sinal de menos ‘-’
 para remover a coluna desejada.</p>
@@ -761,9 +761,9 @@ dados %&gt;% select(-c(par, fam, cient, autor, verna))</code></pre>
 ##  9     8    31  10       6     2     1 inter   &quot;bif&quot;  9.87 0.00765
 ## 10     9    17   6       3     3     3 sub     &quot;bif&quot;  5.41 0.00230
 ## # … with 752 more rows</code></pre>
-<div class="figure">
-<img src="img/SelectInverso.gif" alt="" />
-<p class="caption">Select Inverso</p>
+<div class="float">
+<img src="img/SelectInverso.gif" alt="Select Inverso" />
+<div class="figcaption">Select Inverso</div>
 </div>
 </div>
 <div id="mutate" class="section level2">
@@ -775,7 +775,7 @@ quanto do próprio dataframe.</p>
 dados &lt;- read_csv2(&#39;data/dados_dplyr.csv&#39;)</code></pre>
 <pre><code>## ℹ Using &quot;&#39;,&#39;&quot; as decimal and &quot;&#39;.&#39;&quot; as grouping mark. Use `read_delim()` for more control.</code></pre>
 <pre><code>## Rows: 762 Columns: 13
-## ── Column specification ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+## ── Column specification ───────────────────────────────────────────────────────────────────────
 ## Delimiter: &quot;;&quot;
 ## chr (6): fam, cient, autor, verna, estrato, obs
 ## dbl (7): par, ind, cap, ht, hc, qf, qc
@@ -802,9 +802,9 @@ fly</em>” é oportuno para criar de forma encadeada diversas variáveis de
 maneira simples e direta Além disso, também fica implícito que há uma
 ordem de criação das variáveis dentro da função
 <code>mutate()</code>.</p>
-<div class="figure">
-<img src="img/Mutate.gif" alt="" />
-<p class="caption">Mutate</p>
+<div class="float">
+<img src="img/Mutate.gif" alt="Mutate" />
+<div class="figcaption">Mutate</div>
 </div>
 </div>
 <div id="group_by" class="section level2">
@@ -839,9 +839,9 @@ head(dados %&gt;% group_by(par))</code></pre>
 ## 6     3     6 Myrtaceae  Myrc… (D.L… Camb…    17   8       3     3     3 sub    
 ## # … with 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
 <pre class="r"><code># A função não modifica nenhuma observação ou variável do data frame</code></pre>
-<div class="figure">
-<img src="img/GroupBy.gif" alt="" />
-<p class="caption">Mutate</p>
+<div class="float">
+<img src="img/GroupBy.gif" alt="Mutate" />
+<div class="figcaption">Mutate</div>
 </div>
 </div>
 <div id="summarise" class="section level2">
@@ -876,24 +876,24 @@ dados %&gt;% group_by(fam) %&gt;% summarise(media_ht = mean(ht))</code></pre>
 ##  9 Calophyllaceae    16.1 
 ## 10 Celastraceae       9.75
 ## # … with 31 more rows</code></pre>
-<div class="figure">
-<img src="img/Summarise.gif" alt="" />
-<p class="caption">Summarise</p>
+<div class="float">
+<img src="img/Summarise.gif" alt="Summarise" />
+<div class="figcaption">Summarise</div>
 </div>
 </div>
 <div id="pivot_longer" class="section level2">
 <h2><code>pivot_longer()</code></h2>
 <p><code>pivot_longer()</code></p>
-<div class="figure">
-<img src="img/PivotLonger_ManimCE_v0.14.0.gif" alt="" />
-<p class="caption">pivot_longer</p>
+<div class="float">
+<img src="img/PivotLonger_ManimCE_v0.14.0.gif" alt="pivot_longer" />
+<div class="figcaption">pivot_longer</div>
 </div>
 </div>
 <div id="tidy-select" class="section level2">
 <h2><code>&lt;tidy-select&gt;</code></h2>
-<div class="figure">
-<img src="img/TidySelect_ManimCE_v0.14.0.gif" alt="" />
-<p class="caption">tidy-select</p>
+<div class="float">
+<img src="img/TidySelect_ManimCE_v0.14.0.gif" alt="tidy-select" />
+<div class="figcaption">tidy-select</div>
 </div>
 </div>
 </div>

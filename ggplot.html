@@ -14,7 +14,7 @@
 
 <title>Visualização de Dados Florestais no R</title>
 
-<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -376,8 +376,9 @@ div.tocify {
 
 <pre class="r"><code>library(ggplot2)
 library(ggcorrplot)
-library(ggthemes)
-library(gridExtra)</code></pre>
+library(ggthemes)</code></pre>
+<pre><code>## Warning: package &#39;ggthemes&#39; was built under R version 4.2.3</code></pre>
+<pre class="r"><code>library(gridExtra)</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;gridExtra&#39;</code></pre>
 <pre><code>## The following object is masked from &#39;package:dplyr&#39;:
@@ -390,6 +391,7 @@ library(gridExtra)</code></pre>
 ## 
 ##     select</code></pre>
 <pre class="r"><code>library(ggalt)</code></pre>
+<pre><code>## Warning: package &#39;ggalt&#39; was built under R version 4.2.3</code></pre>
 <pre><code>## Registered S3 methods overwritten by &#39;ggalt&#39;:
 ##   method                  from   
 ##   grid.draw.absoluteGrob  ggplot2
@@ -635,7 +637,8 @@ ggplot(dados) +
   labs(x = &quot;Projeto&quot;, y = &quot;Volume(m³)&quot;)</code></pre>
 <pre><code>## Warning: The following aesthetics were dropped during statistical transformation: y
 ## ℹ This can happen when ggplot fails to infer the correct grouping structure in the data.
-## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical variable into a factor?</code></pre>
+## ℹ Did you forget to specify a `group` aesthetic or to convert a numerical variable into a
+##   factor?</code></pre>
 <pre><code>## Warning: Using the `size` aesthetic in this geom was deprecated in ggplot2 3.4.0.
 ## ℹ Please use `linewidth` in the `default_aes` field and elsewhere instead.</code></pre>
 <pre><code>## Warning: Using the `size` aesthietic with geom_segment was deprecated in ggplot2 3.4.0.
@@ -1196,7 +1199,7 @@ fit &lt;-nls(v ~ b0*d^b1,
 
 coef(fit)</code></pre>
 <pre><code>##           b0           b1 
-## 0.0001662425 2.5072366651</code></pre>
+## 0.0001662426 2.5072366641</code></pre>
 <pre class="r"><code>func.fit &lt;- function(x) {coef(fit)[1]*x^coef(fit)[2]}
 #___________________________________________________
 
