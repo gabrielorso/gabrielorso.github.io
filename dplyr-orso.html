@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Gabriel Orso" />
+
+
+<title>dplyr</title>
+
+<script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link rel="icon" type="image/ico" href="favicon/tree.ico"/>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="ggplot.html">ggplot</a>
+</li>
+<li>
+  <a href="MQO.html">MQO</a>
+</li>
+<li>
+  <a href="dplyr.html">dplyr</a>
+</li>
+<li>
+  <a href="Simulacao.html">Simulação</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/gabrielorso/gabrielorso.github.io">
+    <span class="fa fa-github fa-lg"></span>
+     
+    GitHub
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">dplyr</h1>
+<h4 class="author">Gabriel Orso</h4>
+
+</div>
+
+
+<div id="pacotes" class="section level1">
+<h1>Pacotes</h1>
+<p>Esse material foca principalmente no uso do pacote
+<code>dplyr</code>, porém será carregado o pacote
+<code>tidyverse</code>, que contém diversos outros pacotes inclusos,
+entre eles o <code>dplyr</code>e o <code>ggplot2</code>.</p>
+<pre class="r"><code>#install.packages(&quot;tidyverse&quot;)
+
+library(tidyverse)</code></pre>
+</div>
+<div id="carregando-dados" class="section level1">
+<h1>Carregando Dados</h1>
+<p>O banco de dados utilizado é um exemplo de parcelas de inventário
+florestal, onde foram obtidas, entre outras variáveis, o nome científico
+da espécie, o CAP, altura comercial e altura total.</p>
+<pre class="r"><code>dados &lt;- read.csv2(&quot;data/dados_dplyr.csv&quot;, h = T)
+
+str(dados)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    762 obs. of  13 variables:
+##  $ par    : int  3 3 3 3 3 3 3 3 3 3 ...
+##  $ ind    : int  1 2 3 4 5 6 7 8 8 9 ...
+##  $ fam    : chr  &quot;Euphorbiaceae&quot; &quot;Meliaceae&quot; &quot;Lauraceae&quot; &quot;Elaeocarpaceae&quot; ...
+##  $ cient  : chr  &quot;Alchornea triplinervia&quot; &quot;Guarea macrophylla&quot; &quot;Ocotea dispersa&quot; &quot;Sloanea guianensis&quot; ...
+##  $ autor  : chr  &quot;(Spreng.) M�ll.Arg.&quot; &quot;Vahl&quot; &quot;(Nees &amp; Mart.) Mez&quot; &quot;(Aubl.) Benth.&quot; ...
+##  $ verna  : chr  &quot;Tanheiro&quot; &quot;Caf�-bravo&quot; &quot;Canela-sab�o&quot; &quot;Urucurana&quot; ...
+##  $ cap    : num  82 18 20 57 70 17 44 33 31 17 ...
+##  $ ht     : num  17 5.5 6 10 12 8 12 10 10 6 ...
+##  $ hc     : num  6 3 4 7 7 3 7 6 6 3 ...
+##  $ qf     : int  2 1 2 3 3 3 3 2 2 3 ...
+##  $ qc     : int  1 1 1 2 2 3 2 1 1 3 ...
+##  $ estrato: chr  &quot;dossel&quot; &quot;sub&quot; &quot;sub&quot; &quot;inter&quot; ...
+##  $ obs    : chr  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...</code></pre>
+</div>
+<div id="introdução" class="section level1">
+<h1>Introdução</h1>
+<p>O pacote <code>dplyr</code> é um conjunto de ferramentas para
+manipulação de bancos de dados, e fornece alternativas rápidas e
+intuitivas para resolver as principais demandas de análise, manipulação
+e resumo dos dados.</p>
+<div id="motivação" class="section level2">
+<h2>Motivação</h2>
+<p>Tomando-se como exemplo um inventário florestal, deseja-se obter a
+partir dos dados brutos, um resumo do número de indivíduos, diâmetro
+médio e área basal por parcela.</p>
+<div id="usando-o-pacote-base" class="section level3">
+<h3>Usando o pacote base</h3>
+<pre class="r"><code># Calcular DAP e área transversal
+dados$dap &lt;- dados$cap/pi
+dados$g &lt;- (dados$dap**2*pi)/40000
+
+# Calcular número de indivíduos
+n.ind &lt;- table(dados$par)
+
+# Calcular o DAP médio e a área basal da parcela
+dap.m &lt;- tapply(X = dados$dap, INDEX = dados$par, FUN = mean, na.rm=T)
+G &lt;- tapply(X = dados$g, INDEX = dados$par, FUN = sum, na.rm=T)
+
+resumo.base &lt;- data.frame(n.ind, dap.m, G)
+
+
+resumo.base</code></pre>
+<pre><code>##    Var1 Freq    dap.m         G
+## 3     3   47 13.33515 1.2696864
+## 6     6   36 16.49022 1.2675975
+## 7     7   49 11.68002 0.7185567
+## 8     8   53 12.02371 0.7833129
+## 9     9   49 13.69707 0.8875057
+## 10   10   39 14.23008 0.9500854
+## 11   11   62 12.64512 0.9436257
+## 12   12   37 13.39052 0.7791371
+## 13   13   22 21.13867 1.0729828
+## 14   14   38 17.55730 1.3661065
+## 15   15   42 14.77867 1.1987550
+## 16   16   30 16.43010 0.8968162
+## 17   17   42 15.10456 1.1259496
+## 18   18   37 14.69387 0.8780618
+## 19   19   46 16.23034 1.4723444
+## 20   20   29 19.07664 1.7538238
+## 21   21   50 12.45228 1.1429553
+## 22   22   54 14.33279 1.5268907</code></pre>
+</div>
+<div id="usando-o-pacote-dplyr" class="section level3">
+<h3>Usando o pacote <code>dplyr</code></h3>
+<pre class="r"><code>dados %&gt;% 
+  mutate(dap = cap/pi, g = (dap^2*pi)/40000) %&gt;% 
+  group_by(par) %&gt;% 
+  summarise(n.ind = n(), dap.m = mean(dap, na.rm=T), G = sum(g, na.rm=T))</code></pre>
+<pre><code>## # A tibble: 18 × 4
+##      par n.ind dap.m     G
+##    &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;
+##  1     3    47  13.3 1.27 
+##  2     6    36  16.5 1.27 
+##  3     7    49  11.7 0.719
+##  4     8    53  12.0 0.783
+##  5     9    49  13.7 0.888
+##  6    10    39  14.2 0.950
+##  7    11    62  12.6 0.944
+##  8    12    37  13.4 0.779
+##  9    13    22  21.1 1.07 
+## 10    14    38  17.6 1.37 
+## 11    15    42  14.8 1.20 
+## 12    16    30  16.4 0.897
+## 13    17    42  15.1 1.13 
+## 14    18    37  14.7 0.878
+## 15    19    46  16.2 1.47 
+## 16    20    29  19.1 1.75 
+## 17    21    50  12.5 1.14 
+## 18    22    54  14.3 1.53</code></pre>
+<p>Colocando mais uma vez o código utilizado, agora mais desmembrado e
+explicado, é possível perceber que todos os comandos estão
+<strong>conectados</strong> por um operador <strong>%&gt;%</strong>,
+chamado <em>pipe</em>. Esse operador é similar ao operador
+“<strong>+</strong>” utilizado para conectar os comandos do
+<code>ggplot2</code>, e sua principal vantagem é que diversas operações
+podem ser realizadas sem a necessidade de criar e armazenar novos
+objetos, tornando o script mais rápido e fluido.</p>
+<pre class="r"><code>resumo.dplyr &lt;- dados %&gt;% 
+  
+  mutate(dap = cap/pi,              # mutate cria novas colunas no data frame
+         g = (dap^2*pi)/40000) %&gt;%
+  
+  group_by(par) %&gt;%    # group_by agrupa os dados com base na variável informada
+  
+  summarise(n.ind = n(),                 # summarise resume as informações
+            dap.m = mean(dap, na.rm=T),
+            G = sum(g, na.rm=T))
+
+
+resumo.dplyr</code></pre>
+<p>No exemplo acima, <code>mutate()</code> cria novas colunas no data
+frame; <code>group_by()</code> agrupa os dados com base na coluna
+desejada, e <code>summarise()</code> resume os grupos com base na função
+informada (<code>n()</code>, <code>mean()</code> e
+<code>sum()</code>).</p>
+</div>
+</div>
+<div id="pipes" class="section level2">
+<h2>Pipes <code>%&gt;%</code></h2>
+<p>Os pipes <code>%&gt;%</code> são operadores muito utilizados no
+pacote <code>dplyr</code>. Eles permitem <strong>encadear sequências de
+comandos</strong>, de forma similar ao operador “<code>+</code>” no
+pacote <code>ggplot2</code>.</p>
+<p>De forma resumida, o operador pega tudo que está à esquerda, e joga
+como primeiro argumento na função que está à sua direita.</p>
+<pre class="r"><code>#Selecionar as primeiras 10 linhas do data frame
+df &lt;- dados[1:10, ]
+
+#Selecionar apenas as colunas &quot;cient&quot;, &quot;cap&quot; e &quot;ht&quot;
+select(df, cient, cap, ht)</code></pre>
+<pre><code>##                      cient cap   ht
+## 1   Alchornea triplinervia  82 17.0
+## 2       Guarea macrophylla  18  5.5
+## 3          Ocotea dispersa  20  6.0
+## 4       Sloanea guianensis  57 10.0
+## 5              Ilex dumosa  70 12.0
+## 6           Myrcia reitzii  17  8.0
+## 7  Calophyllum brasiliense  44 12.0
+## 8       Sloanea guianensis  33 10.0
+## 9       Sloanea guianensis  31 10.0
+## 10         Myrcia racemosa  17  6.0</code></pre>
+<pre class="r"><code>#Selecionar apenas as colunas &quot;cient&quot;, &quot;cap&quot; e &quot;ht&quot;
+df %&gt;% select(cient, cap, ht)</code></pre>
+<pre><code>##                      cient cap   ht
+## 1   Alchornea triplinervia  82 17.0
+## 2       Guarea macrophylla  18  5.5
+## 3          Ocotea dispersa  20  6.0
+## 4       Sloanea guianensis  57 10.0
+## 5              Ilex dumosa  70 12.0
+## 6           Myrcia reitzii  17  8.0
+## 7  Calophyllum brasiliense  44 12.0
+## 8       Sloanea guianensis  33 10.0
+## 9       Sloanea guianensis  31 10.0
+## 10         Myrcia racemosa  17  6.0</code></pre>
+<p>Essa lógica se mantém para o uso de mais comandos em sequência,
+lembrando que o operador pega <strong>tudo</strong> que está à esquerda
+e insere como primeiro argumento no comando à direita.</p>
+<pre class="r"><code>df %&gt;% select(cient, cap, ht) %&gt;% mutate(dap = cap/pi)</code></pre>
+<pre><code>##                      cient cap   ht       dap
+## 1   Alchornea triplinervia  82 17.0 26.101411
+## 2       Guarea macrophylla  18  5.5  5.729578
+## 3          Ocotea dispersa  20  6.0  6.366198
+## 4       Sloanea guianensis  57 10.0 18.143664
+## 5              Ilex dumosa  70 12.0 22.281692
+## 6           Myrcia reitzii  17  8.0  5.411268
+## 7  Calophyllum brasiliense  44 12.0 14.005635
+## 8       Sloanea guianensis  33 10.0 10.504226
+## 9       Sloanea guianensis  31 10.0  9.867606
+## 10         Myrcia racemosa  17  6.0  5.411268</code></pre>
+<pre class="r"><code>df %&gt;% select(cient, ht) %&gt;% mutate(dap = cap/pi)</code></pre>
+<pre><code>## Error in `mutate()`:
+## ! Problem while computing `dap = cap/pi`.
+## Caused by error in `mask$eval_all_mutate()`:
+## ! objeto &#39;cap&#39; não encontrado</code></pre>
+<p>Esse último exemplo resultou em um erro pois a variável “cap” não foi
+selecionada, e como consequência não há como calcular a nova variável
+“dap”. O segundo operador <code>%&gt;%</code> recebe um data frame
+contendo apenas as variáveis “cient” e “ht”, e insere esse data frame no
+início do comando <code>mutate()</code>. O erro surge por não existir a
+variável “dap” no data frame fornecido.</p>
+<div class="float">
+<img src="img/Pipes.gif" alt="Pipes" />
+<div class="figcaption">Pipes</div>
+</div>
+</div>
+</div>
+<div id="funções" class="section level1">
+<h1>Funções</h1>
+<div id="filter" class="section level2">
+<h2><code>filter()</code></h2>
+<p>A função <code>filter()</code> é utilizada para filtrar
+<strong>linhas</strong> que satisfaçam uma determinada condição.</p>
+<pre class="r"><code>dados &lt;- as_tibble(dados)
+
+dados %&gt;% filter(par == 6)</code></pre>
+<pre><code>## # A tibble: 36 × 15
+##      par   ind fam       cient autor verna   cap    ht    hc    qf    qc estrato
+##    &lt;int&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  
+##  1     6     1 Euphorbi… Alch… (Spr… Tanh…    63    11   6       1     2 dossel 
+##  2     6     2 Bignonia… Jaca… Cham. Caro…    28     5   3       2     1 sub    
+##  3     6     3 Primulac… Myrs… (Sw.… Capo…    27     9   5       1     1 dossel 
+##  4     6     4 Euphorbi… Alch… (Spr… Tanh…    21     7   5       1     2 inter  
+##  5     6     5 Melastom… Pler… DC.   Jaca…    21     7   4.5     1     1 inter  
+##  6     6     6 Lauraceae Ocot… Mez   Cane…    70    12   1       3     1 dossel 
+##  7     6     6 Lauraceae Ocot… Mez   Cane…    67    12   1       3     1 dossel 
+##  8     6     7 Meliaceae Guar… Vahl  Caf�…    18     6   2       3     1 sub    
+##  9     6     8 Calophyl… Calo… Camb… Guan…   212    17   8       1     1 dossel 
+## 10     6     9 Myrtaceae Myrc… Kiae… Camb…    25     6   2       2     2 dub    
+## # … with 26 more rows, and 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
+<pre class="r"><code>dados %&gt;% filter(cap &gt;= 140)</code></pre>
+<pre><code>## # A tibble: 23 × 15
+##      par   ind fam       cient autor verna   cap    ht    hc    qf    qc estrato
+##    &lt;int&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  
+##  1     3    21 &quot;Calophy… Calo… &quot;Cam… &quot;Gua…   199    25    10     1     1 &quot;emerg&quot;
+##  2     3    29 &quot;Calophy… Calo… &quot;Cam… &quot;Gua…   200    24     8     1     1 &quot;emerg&quot;
+##  3     6     8 &quot;Calophy… Calo… &quot;Cam… &quot;Gua…   212    17     8     1     1 &quot;dosse…
+##  4     6    13 &quot;Calophy… Calo… &quot;Cam… &quot;Gua…   141    17    12     1     1 &quot;dosse…
+##  5    10    22 &quot;Laurace… Nect… &quot;Nee… &quot;Can…   148    17    10     2     3 &quot;dosse…
+##  6    10    25 &quot;&quot;        Morta &quot;&quot;    &quot;&quot;      142    NA    NA    NA    NA &quot;&quot;     
+##  7    12    11 &quot;Sapinda… Mata… &quot;Rad… &quot;Mat…   163    16     2     2     1 &quot;dosse…
+##  8    13    22 &quot;Calophy… Calo… &quot;Cam… &quot;Gua…   229    17    10     1     1 &quot;emerg&quot;
+##  9    14     4 &quot;Euphorb… Alch… &quot;(Sp… &quot;Tan…   165    19     7     2     1 &quot;emerg&quot;
+## 10    14    19 &quot;Euphorb… Alch… &quot;(Sp… &quot;Tan…   141    20     7     2     1 &quot;emerg&quot;
+## # … with 13 more rows, and 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
+<pre class="r"><code>dados %&gt;% filter(cap &gt;= 140 &amp; par == 10)</code></pre>
+<pre><code>## # A tibble: 2 × 15
+##     par   ind fam        cient autor verna   cap    ht    hc    qf    qc estrato
+##   &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  
+## 1    10    22 &quot;Lauracea… Nect… &quot;Nee… &quot;Can…   148    17    10     2     3 &quot;dosse…
+## 2    10    25 &quot;&quot;         Morta &quot;&quot;    &quot;&quot;      142    NA    NA    NA    NA &quot;&quot;     
+## # … with 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
+<pre class="r"><code># Separar as condições com vírgula é equivalente 
+
+
+df &lt;- dados %&gt;% filter(cap &gt;= 140)</code></pre>
+<div class="float">
+<img src="img/Filter.gif" alt="Filter" />
+<div class="figcaption">Filter</div>
+</div>
+<div id="filtro-ou---união-de-condições" class="section level3">
+<h3>Filtro OU ‘|’ - União de condições</h3>
+<p>O operador ‘|’ representa união entre condições,
+<strong>i.e.</strong>, mantém as linhas que satisfaçam PELO MENOS uma
+das condições.</p>
+<pre class="r"><code>print(df)</code></pre>
+<pre><code>## # A tibble: 23 × 15
+##      par   ind fam       cient autor verna   cap    ht    hc    qf    qc estrato
+##    &lt;int&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  
+##  1     3    21 &quot;Calophy… Calo… &quot;Cam… &quot;Gua…   199    25    10     1     1 &quot;emerg&quot;
+##  2     3    29 &quot;Calophy… Calo… &quot;Cam… &quot;Gua…   200    24     8     1     1 &quot;emerg&quot;
+##  3     6     8 &quot;Calophy… Calo… &quot;Cam… &quot;Gua…   212    17     8     1     1 &quot;dosse…
+##  4     6    13 &quot;Calophy… Calo… &quot;Cam… &quot;Gua…   141    17    12     1     1 &quot;dosse…
+##  5    10    22 &quot;Laurace… Nect… &quot;Nee… &quot;Can…   148    17    10     2     3 &quot;dosse…
+##  6    10    25 &quot;&quot;        Morta &quot;&quot;    &quot;&quot;      142    NA    NA    NA    NA &quot;&quot;     
+##  7    12    11 &quot;Sapinda… Mata… &quot;Rad… &quot;Mat…   163    16     2     2     1 &quot;dosse…
+##  8    13    22 &quot;Calophy… Calo… &quot;Cam… &quot;Gua…   229    17    10     1     1 &quot;emerg&quot;
+##  9    14     4 &quot;Euphorb… Alch… &quot;(Sp… &quot;Tan…   165    19     7     2     1 &quot;emerg&quot;
+## 10    14    19 &quot;Euphorb… Alch… &quot;(Sp… &quot;Tan…   141    20     7     2     1 &quot;emerg&quot;
+## # … with 13 more rows, and 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
+<pre class="r"><code>df %&gt;% filter(cap &gt;= 200 | cient == &#39;Matayba intermedia&#39;)</code></pre>
+<pre><code>## # A tibble: 8 × 15
+##     par   ind fam        cient autor verna   cap    ht    hc    qf    qc estrato
+##   &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  
+## 1     3    29 Calophyll… Calo… &quot;Cam… &quot;Gua…   200    24     8     1     1 emerg  
+## 2     6     8 Calophyll… Calo… &quot;Cam… &quot;Gua…   212    17     8     1     1 dossel 
+## 3    12    11 Sapindace… Mata… &quot;Rad… &quot;Mat…   163    16     2     2     1 dossel 
+## 4    13    22 Calophyll… Calo… &quot;Cam… &quot;Gua…   229    17    10     1     1 emerg  
+## 5    16     5 Sapindace… Mata… &quot;Rad… &quot;Mat…   150    15     8     2     1 emerg  
+## 6    20     8 Sapotaceae Mani… &quot;(Ma… &quot;Ma�…   338    30    20     1     1 e      
+## 7    21     9 Fabaceae   Pter… &quot;Vah… &quot;Pau…   230    25     6     2     1 dossel 
+## 8    22    17 Indet.     Inde… &quot;&quot;    &quot;&quot;      228    23    10     2     1 dossel 
+## # … with 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
+<div class="float">
+<img src="img/FilterOu.gif" alt="Filter Ou" />
+<div class="figcaption">Filter Ou</div>
+</div>
+</div>
+<div id="filtro-e---interseção-de-condições" class="section level3">
+<h3>Filtro E ‘&amp;’ - Interseção de condições</h3>
+<p>O operador ‘&amp;’ representa interseção de condições,
+<strong>i.e.</strong>, mantém as linhas que satisfaçam TODAS as
+condições.</p>
+<pre class="r"><code>df %&gt;% filter(dap &gt; 50 &amp; ht &gt;= 20)</code></pre>
+<pre><code>## # A tibble: 6 × 15
+##     par   ind fam        cient autor verna   cap    ht    hc    qf    qc estrato
+##   &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  
+## 1     3    21 Calophyll… Calo… &quot;Cam… &quot;Gua…   199    25    10     1     1 emerg  
+## 2     3    29 Calophyll… Calo… &quot;Cam… &quot;Gua…   200    24     8     1     1 emerg  
+## 3    20     8 Sapotaceae Mani… &quot;(Ma… &quot;Ma�…   338    30    20     1     1 e      
+## 4    20    25 Fabaceae   Pter… &quot;Vah… &quot;Pau…   163    26    10     1     1 dossel 
+## 5    21     9 Fabaceae   Pter… &quot;Vah… &quot;Pau…   230    25     6     2     1 dossel 
+## 6    22    17 Indet.     Inde… &quot;&quot;    &quot;&quot;      228    23    10     2     1 dossel 
+## # … with 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
+<pre class="r"><code># Separar as condições por vírgula é análogo à interseção de condições
+df %&gt;% filter(dap &gt; 50, ht &gt;= 20)</code></pre>
+<pre><code>## # A tibble: 6 × 15
+##     par   ind fam        cient autor verna   cap    ht    hc    qf    qc estrato
+##   &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  
+## 1     3    21 Calophyll… Calo… &quot;Cam… &quot;Gua…   199    25    10     1     1 emerg  
+## 2     3    29 Calophyll… Calo… &quot;Cam… &quot;Gua…   200    24     8     1     1 emerg  
+## 3    20     8 Sapotaceae Mani… &quot;(Ma… &quot;Ma�…   338    30    20     1     1 e      
+## 4    20    25 Fabaceae   Pter… &quot;Vah… &quot;Pau…   163    26    10     1     1 dossel 
+## 5    21     9 Fabaceae   Pter… &quot;Vah… &quot;Pau…   230    25     6     2     1 dossel 
+## 6    22    17 Indet.     Inde… &quot;&quot;    &quot;&quot;      228    23    10     2     1 dossel 
+## # … with 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
+<div class="float">
+<img src="img/FilterE.gif" alt="Filter E" />
+<div class="figcaption">Filter E</div>
+</div>
+</div>
+</div>
+<div id="select" class="section level2">
+<h2><code>select()</code></h2>
+<p>A função <code>select()</code> é utilizada para selecionar ou remover
+<strong>colunas</strong>.</p>
+<pre class="r"><code># Seleciona apenas as colunas &#39;cap&#39; e &#39;ht&#39;. Note que não é preciso escrever os nomes das colunas entre aspas.
+dados %&gt;% select(cap, ht)</code></pre>
+<pre><code>## # A tibble: 762 × 2
+##      cap    ht
+##    &lt;dbl&gt; &lt;dbl&gt;
+##  1    82  17  
+##  2    18   5.5
+##  3    20   6  
+##  4    57  10  
+##  5    70  12  
+##  6    17   8  
+##  7    44  12  
+##  8    33  10  
+##  9    31  10  
+## 10    17   6  
+## # … with 752 more rows</code></pre>
+<div class="float">
+<img src="img/Select.gif" alt="Select" />
+<div class="figcaption">Select</div>
+</div>
+<p>Para remover uma coluan do data frame, usa-se o sinal de menos ‘-’
+para remover a coluna desejada.</p>
+<pre class="r"><code>dados %&gt;% select(-par)</code></pre>
+<pre><code>## # A tibble: 762 × 14
+##      ind fam       cient autor verna   cap    ht    hc    qf    qc estrato obs  
+##    &lt;int&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;
+##  1     1 Euphorbi… Alch… (Spr… Tanh…    82  17       6     2     1 dossel  &quot;&quot;   
+##  2     2 Meliaceae Guar… Vahl  Caf�…    18   5.5     3     1     1 sub     &quot;&quot;   
+##  3     3 Lauraceae Ocot… (Nee… Cane…    20   6       4     2     1 sub     &quot;&quot;   
+##  4     4 Elaeocar… Sloa… (Aub… Uruc…    57  10       7     3     2 inter   &quot;&quot;   
+##  5     5 Aquifoli… Ilex… Reis… Ca�na    70  12       7     3     2 dossel  &quot;&quot;   
+##  6     6 Myrtaceae Myrc… (D.L… Camb…    17   8       3     3     3 sub     &quot;&quot;   
+##  7     7 Calophyl… Calo… Camb… Guan…    44  12       7     3     2 inter   &quot;&quot;   
+##  8     8 Elaeocar… Sloa… (Aub… Uruc…    33  10       6     2     1 inter   &quot;bif&quot;
+##  9     8 Elaeocar… Sloa… (Aub… Uruc…    31  10       6     2     1 inter   &quot;bif&quot;
+## 10     9 Myrtaceae Myrc… (O.B… Guam…    17   6       3     3     3 sub     &quot;bif&quot;
+## # … with 752 more rows, and 2 more variables: dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
+<pre class="r"><code># Para remover mais de uma variável (coluna), basta concatenar as variáveis desejadas em um vetor.
+dados %&gt;% select(-c(par, fam, cient, autor, verna))</code></pre>
+<pre><code>## # A tibble: 762 × 10
+##      ind   cap    ht    hc    qf    qc estrato obs     dap       g
+##    &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;   &lt;dbl&gt;
+##  1     1    82  17       6     2     1 dossel  &quot;&quot;    26.1  0.0535 
+##  2     2    18   5.5     3     1     1 sub     &quot;&quot;     5.73 0.00258
+##  3     3    20   6       4     2     1 sub     &quot;&quot;     6.37 0.00318
+##  4     4    57  10       7     3     2 inter   &quot;&quot;    18.1  0.0259 
+##  5     5    70  12       7     3     2 dossel  &quot;&quot;    22.3  0.0390 
+##  6     6    17   8       3     3     3 sub     &quot;&quot;     5.41 0.00230
+##  7     7    44  12       7     3     2 inter   &quot;&quot;    14.0  0.0154 
+##  8     8    33  10       6     2     1 inter   &quot;bif&quot; 10.5  0.00867
+##  9     8    31  10       6     2     1 inter   &quot;bif&quot;  9.87 0.00765
+## 10     9    17   6       3     3     3 sub     &quot;bif&quot;  5.41 0.00230
+## # … with 752 more rows</code></pre>
+<div class="float">
+<img src="img/SelectInverso.gif" alt="Select Inverso" />
+<div class="figcaption">Select Inverso</div>
+</div>
+</div>
+<div id="mutate" class="section level2">
+<h2><code>mutate()</code></h2>
+<p>A função <code>mutate()</code> permite criar e adicionar novas
+variáveis (colunas) no dataframe, utilizando tanto variáveis externas
+quanto do próprio dataframe.</p>
+<pre class="r"><code># Carregando novamente os dados para criar variáveis
+dados &lt;- read_csv2(&#39;data/dados_dplyr.csv&#39;)</code></pre>
+<pre><code>## ℹ Using &quot;&#39;,&#39;&quot; as decimal and &quot;&#39;.&#39;&quot; as grouping mark. Use `read_delim()` for more control.</code></pre>
+<pre><code>## Rows: 762 Columns: 13
+## ── Column specification ───────────────────────────────────────────────────────────────────────
+## Delimiter: &quot;;&quot;
+## chr (6): fam, cient, autor, verna, estrato, obs
+## dbl (7): par, ind, cap, ht, hc, qf, qc
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code># Criando as variáveis dap e g
+dados &lt;- dados %&gt;% mutate(dap = cap/pi,
+                          g = dap^2*pi/40000)
+
+head(dados %&gt;% select(dap, g))</code></pre>
+<pre><code>## # A tibble: 6 × 2
+##     dap       g
+##   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 26.1  0.0535 
+## 2  5.73 0.00258
+## 3  6.37 0.00318
+## 4 18.1  0.0259 
+## 5 22.3  0.0390 
+## 6  5.41 0.00230</code></pre>
+<p>Note que, para esse caso, a variável <code>g</code> fez uso da
+variável <code>dap</code> recém criada. Esse recurso chamado “<em>on the
+fly</em>” é oportuno para criar de forma encadeada diversas variáveis de
+maneira simples e direta Além disso, também fica implícito que há uma
+ordem de criação das variáveis dentro da função
+<code>mutate()</code>.</p>
+<div class="float">
+<img src="img/Mutate.gif" alt="Mutate" />
+<div class="figcaption">Mutate</div>
+</div>
+</div>
+<div id="group_by" class="section level2">
+<h2><code>group_by()</code></h2>
+<p>A função <code>group_by()</code> agrupa o data frame com base em uma
+variável especificada. A função não faz alterações explícitas no
+dataframe, apenas marca internamente os grupos para que alguma outra
+função seja realizada sobre esses grupos marcados.</p>
+<pre class="r"><code># Data frame antes da operação group_by()
+head(tibble(dados))</code></pre>
+<pre><code>## # A tibble: 6 × 15
+##     par   ind fam        cient autor verna   cap    ht    hc    qf    qc estrato
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  
+## 1     3     1 Euphorbia… Alch… (Spr… Tanh…    82  17       6     2     1 dossel 
+## 2     3     2 Meliaceae  Guar… Vahl  Caf�…    18   5.5     3     1     1 sub    
+## 3     3     3 Lauraceae  Ocot… (Nee… Cane…    20   6       4     2     1 sub    
+## 4     3     4 Elaeocarp… Sloa… (Aub… Uruc…    57  10       7     3     2 inter  
+## 5     3     5 Aquifolia… Ilex… Reis… Ca�na    70  12       7     3     2 dossel 
+## 6     3     6 Myrtaceae  Myrc… (D.L… Camb…    17   8       3     3     3 sub    
+## # … with 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
+<pre class="r"><code># Data frame após a operação group_by()
+head(dados %&gt;% group_by(par))</code></pre>
+<pre><code>## # A tibble: 6 × 15
+## # Groups:   par [1]
+##     par   ind fam        cient autor verna   cap    ht    hc    qf    qc estrato
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  
+## 1     3     1 Euphorbia… Alch… (Spr… Tanh…    82  17       6     2     1 dossel 
+## 2     3     2 Meliaceae  Guar… Vahl  Caf�…    18   5.5     3     1     1 sub    
+## 3     3     3 Lauraceae  Ocot… (Nee… Cane…    20   6       4     2     1 sub    
+## 4     3     4 Elaeocarp… Sloa… (Aub… Uruc…    57  10       7     3     2 inter  
+## 5     3     5 Aquifolia… Ilex… Reis… Ca�na    70  12       7     3     2 dossel 
+## 6     3     6 Myrtaceae  Myrc… (D.L… Camb…    17   8       3     3     3 sub    
+## # … with 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;</code></pre>
+<pre class="r"><code># A função não modifica nenhuma observação ou variável do data frame</code></pre>
+<div class="float">
+<img src="img/GroupBy.gif" alt="Mutate" />
+<div class="figcaption">Mutate</div>
+</div>
+</div>
+<div id="summarise" class="section level2">
+<h2><code>summarise()</code></h2>
+<p><code>summarise()</code> resume cada grupo em uma menor quantidade de
+linhas por meio de uma função desejada, por exemplo a função média ou
+soma. A função aplicada deve ser capaz de receber um vetor e retornar o
+resultado de alguma operação aplicada sobre esse vetor. Caso o data
+frame não tenha grupos (sem utilização da função
+<code>group_by()</code>), o resultado será uma única linha resumindo a
+informação de todas as observações. <code>summarize()</code> e
+<code>summarise()</code> são sinônimos.</p>
+<pre class="r"><code># Sem a criação de grupos, a função mean() retornará a média de todas as observações
+dados %&gt;% summarise(media_dap = mean(dap))</code></pre>
+<pre><code>## # A tibble: 1 × 1
+##   media_dap
+##       &lt;dbl&gt;
+## 1      14.5</code></pre>
+<pre class="r"><code># Com a definição de grupo por família botânica, a função retornará a operação por grupo. Neste caso por família botânica.
+dados %&gt;% group_by(fam) %&gt;% summarise(media_ht = mean(ht))</code></pre>
+<pre><code>## # A tibble: 41 × 2
+##    fam            media_ht
+##    &lt;chr&gt;             &lt;dbl&gt;
+##  1 Anacardiaceae     13.4 
+##  2 Annonaceae         9.8 
+##  3 Aquifoliaceae     10.2 
+##  4 Araliaceae        11.5 
+##  5 Arecaceae          5.51
+##  6 Bignoniaceae       5   
+##  7 Boraginaceae       8.2 
+##  8 Burseraceae       14.2 
+##  9 Calophyllaceae    16.1 
+## 10 Celastraceae       9.75
+## # … with 31 more rows</code></pre>
+<div class="float">
+<img src="img/Summarise.gif" alt="Summarise" />
+<div class="figcaption">Summarise</div>
+</div>
+</div>
+<div id="pivot_longer" class="section level2">
+<h2><code>pivot_longer()</code></h2>
+<p><code>pivot_longer()</code></p>
+<div class="float">
+<img src="img/PivotLonger_ManimCE_v0.14.0.gif" alt="pivot_longer" />
+<div class="figcaption">pivot_longer</div>
+</div>
+</div>
+<div id="tidy-select" class="section level2">
+<h2><code>&lt;tidy-select&gt;</code></h2>
+<div class="float">
+<img src="img/TidySelect_ManimCE_v0.14.0.gif" alt="tidy-select" />
+<div class="figcaption">tidy-select</div>
+</div>
+</div>
+</div>
+
+<center>
+  <hr width="100%" size="3px">
+  <p> <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.pt_BR">
+      <img src="img/CC-by-nc-sa80x15.png" alt="Licença Creative Commons 3.0"> </a>
+  </p>
+  <p> <font size="2"> Este conteúdo
+      está disponível por meio da Licença Creative Commons 3.0 </font>
+  </p>
+</center>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

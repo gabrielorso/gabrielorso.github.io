@@ -1,2134 +1,367 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+
+<html>
+
 <head>
-    
-        <title>Apres30</title>
-    
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/jpg" href="img/favicon.png"/>
-    <link rel="stylesheet" href="webpack/base.css">
-    
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Início</title>
+
+<script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link rel="icon" type="image/ico" href="favicon/tree.ico"/>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+
 </head>
 
-<body class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-        <div class="container-fluid">
-            
-                <a class="navbar-brand" target="_blank" href="https://github.com/ManimEditorProject/manim_editor"></a>
-            
-        </div>
-    </nav>
-    <div class="container">
-        <div id="flashes">
-            
-        </div>
-        
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
     </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="ggplot.html">ggplot</a>
+</li>
+<li>
+  <a href="MQO.html">MQO</a>
+</li>
+<li>
+  <a href="dplyr.html">dplyr</a>
+</li>
+<li>
+  <a href="Simulacao.html">Simulação</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/gabrielorso/gabrielorso.github.io">
+    <span class="fa fa-github fa-lg"></span>
+     
+    GitHub
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
 
-    <div class="container-fluid">
-        
+<div id="header">
 
-<!-- settings modal -->
-<div class="modal fade" id="settings-modal" tabindex="-1">
-<div class="modal-dialog modal-dialog-centered">
-<div class="modal-content">
-    <div class="modal-header">
-        <h5 class="modal-title">Player Settings</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-    </div>
-    <div class="modal-body">
-
-        <!-- go back time -->
-        <div class="row g-3 align-items-start">
-            <div class="col">
-                <label for="go-back-time" class="col-form-label">Go Back Time</label>
-                <div class="form-text">Seconds after which LeftArrow doesn't go back but restarts current section (-1 always goes back)</div>
-            </div>
-            <div class="col">
-                <input type="number" id="go-back-time" class="form-control">
-            </div>
-        </div>
-        <!-- cache batch size -->
-        <div class="row g-3 align-items-start mt-2">
-            <div class="col">
-                <label for="cache-batch-size" class="col-form-label">Cache Batch Size</label>
-            </div>
-            <div class="col">
-                <input type="number" id="cache-batch-size" class="form-control">
-            </div>
-        </div>
-        <!-- past sections to buffer -->
-        <div class="row g-3 align-items-start mt-2">
-            <div class="col">
-                <label for="past-sections-to-buffer" class="col-form-label">Past Sections to Buffer</label>
-            </div>
-            <div class="col">
-                <input type="number" id="past-sections-to-buffer" class="form-control">
-            </div>
-        </div>
-        <!-- future sections to buffer -->
-        <div class="row g-3 align-items-start mt-1">
-            <div class="col">
-                <label for="future-sections-to-buffer" class="col-form-label">Future Sections to Buffer</label>
-            </div>
-            <div class="col">
-                <input type="number" id="future-sections-to-buffer" class="form-control">
-            </div>
-        </div>
-
-        <!-- loader -->
-        <div class="row g-3 align-items-center mt-2">
-            <div class="col">
-                Loader
-            </div>
-            <div class="col">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="loader-selection" id="buffer-loader-selected" checked>
-                    <label class="form-check-label" for="buffer-loader-selected">
-                    Buffer Loader
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="loader-selection" id="fallback-loader-selected">
-                    <label class="form-check-label" for="fallback-loader-selected">
-                        Fallback Loader
-                    </label>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button id="reset-settings" type="button" class="btn btn-danger">Reset and Reload</button>
-        <button id="update-settings" type="button" class="btn btn-primary">Apply and Reload</button>
-    </div>
-</div>
-</div>
-</div>
-
-<div class="row g-0">
-    <div class="col-1">
-        <!-- timeline -->
-        <div class="timeline row g-2">
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0000.mp4"></div>
-            
-            <div id="timeline-element-0" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            autocreated
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-0">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-0">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0000.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0001.mp4"></div>
-            
-            <div id="timeline-element-1" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            A
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-1">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-1">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0001.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0002.mp4"></div>
-            
-            <div id="timeline-element-2" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            B
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-2">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-2">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0002.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0003.mp4"></div>
-            
-            <div id="timeline-element-3" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            C
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-3">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-3">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0003.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0004.mp4"></div>
-            
-            <div id="timeline-element-4" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            D
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-4">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-4">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0004.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0005.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0006.mp4"></div>
-            
-            <div id="timeline-element-5" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                +1
-                            
-
-                            E
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-5">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-5">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0006.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0007.mp4"></div>
-            
-            <div id="timeline-element-7" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            F
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-7">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-7">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0007.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0008.mp4"></div>
-            
-            <div id="timeline-element-8" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            G
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-8">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-8">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0008.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0009.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0010.mp4"></div>
-            
-            <div id="timeline-element-9" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                +1
-                            
-
-                            H
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-9">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-9">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0010.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0011.mp4"></div>
-            
-            <div id="timeline-element-11" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            I
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-11">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-11">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0011.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0012.mp4"></div>
-            
-            <div id="timeline-element-12" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            J
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-12">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-12">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0012.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0013.mp4"></div>
-            
-            <div id="timeline-element-13" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            K
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-13">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-13">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0013.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0014.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0015.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0016.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0017.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0018.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0019.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0020.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0021.mp4"></div>
-            
-            <div id="timeline-element-14" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                +7
-                            
-
-                            L
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-14">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-14">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0021.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0022.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0023.mp4"></div>
-            
-            <div id="timeline-element-22" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                +1
-                            
-
-                            M
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-22">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-22">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0023.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0024.mp4"></div>
-            
-            <div id="timeline-element-24" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            N
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-24">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-24">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0024.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0025.mp4"></div>
-            
-            <div id="timeline-element-25" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            O
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-25">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-25">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0025.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0026.mp4"></div>
-            
-            <div id="timeline-element-26" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            P
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-26">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-26">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0026.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0027.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0028.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0029.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0030.mp4"></div>
-            
-            <div id="timeline-element-27" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                +3
-                            
-
-                            Q
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-27">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-27">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0030.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0031.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0032.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0033.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0034.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0035.mp4"></div>
-            
-            <div id="timeline-element-31" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                +4
-                            
-
-                            R
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-31">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-31">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0035.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0036.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0037.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0038.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0039.mp4"></div>
-            
-            <div id="timeline-element-36" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                +3
-                            
-
-                            S
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-36">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-36">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0039.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0040.mp4"></div>
-            
-            <div id="timeline-element-40" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            T
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-40">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-40">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0040.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0041.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0042.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0043.mp4"></div>
-            
-            <div id="timeline-element-41" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                +2
-                            
-
-                            U
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-41">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-41">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0043.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0044.mp4"></div>
-            
-            <div id="timeline-element-44" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            V
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-44">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-44">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0044.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0045.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0046.mp4"></div>
-            
-            <div id="timeline-element-45" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                +1
-                            
-
-                            W
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-45">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-45">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0046.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0047.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0048.mp4"></div>
-            
-            <div id="timeline-element-47" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                +1
-                            
-
-                            X
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-47">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-47">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0048.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0049.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0050.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0051.mp4"></div>
-            
-            <div id="timeline-element-49" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                +2
-                            
-
-                            A
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-49">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-49">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0051.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0052.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0053.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0054.mp4"></div>
-            
-            <div id="timeline-element-52" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                +2
-                            
-
-                            B
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-52">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-52">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0054.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0055.mp4"></div>
-            
-            <div id="timeline-element-55" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            C
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-55">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-55">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0055.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0056.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0057.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0058.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0059.mp4"></div>
-            
-            <div id="timeline-element-56" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                +3
-                            
-
-                            D
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-56">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-56">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0059.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0060.mp4"></div>
-            
-            <div id="timeline-element-60" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            E
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-60">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-60">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0060.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0061.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0062.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0063.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0064.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0065.mp4"></div>
-            
-            <div id="timeline-element-61" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                +4
-                            
-
-                            F
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-61">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-61">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0065.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0066.mp4"></div>
-            
-            <div id="timeline-element-66" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            G
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-66">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-66">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0066.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0067.mp4"></div>
-            
-            <div id="timeline-element-67" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            H
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-67">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-67">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0067.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0068.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0069.mp4"></div>
-            
-            <div id="timeline-element-68" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                +1
-                            
-
-                            I
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-68">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-68">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0069.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0070.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0071.mp4"></div>
-            
-            <div id="timeline-element-70" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                +1
-                            
-
-                            I
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-70">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-70">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0071.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0072.mp4"></div>
-            
-            <div id="timeline-element-72" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            J
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-72">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-72">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0072.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0073.mp4"></div>
-            
-            <div id="timeline-element-73" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            K
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-73">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-73">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0073.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0074.mp4"></div>
-            
-            <div id="timeline-element-74" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            I
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-74">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-74">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0074.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0075.mp4"></div>
-            
-            <div id="timeline-element-75" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            J
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-75">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-75">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0075.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0076.mp4"></div>
-            
-            <div id="timeline-element-76" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            K
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-76">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-76">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0076.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0077.mp4"></div>
-            
-            <div id="timeline-element-77" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            L
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-77">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-77">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0077.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0078.mp4"></div>
-            
-            <div id="timeline-element-78" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            M
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-78">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-78">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0078.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0079.mp4"></div>
-            
-            <div id="timeline-element-79" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            N
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-79">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-79">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0079.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0080.mp4"></div>
-            
-            <div id="timeline-element-80" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            O
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-80">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-80">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0080.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0081.mp4"></div>
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0082.mp4"></div>
-            
-            <div id="timeline-element-81" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                +1
-                            
-
-                            P
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-81">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-81">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0082.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0083.mp4"></div>
-            
-            <div id="timeline-element-83" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            A
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-83">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-83">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0083.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0084.mp4"></div>
-            
-            <div id="timeline-element-84" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            B
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-84">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-84">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0084.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0085.mp4"></div>
-            
-            <div id="timeline-element-85" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            C
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-85">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-85">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0085.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-            
-            <!-- used to parse video url to TypeScript -->
-            <div class="section-urls" data-video="video_0086.mp4"></div>
-            
-            <div id="timeline-element-86" class="card timeline-element">
-                <div class="card-text">
-                    <div class="row card-text">
-                        <!-- type -->
-                        <div class="col">
-                            
-                                
-                                <i class="bi-play-btn" role="img"></i>
-                                
-                            
-
-                            D
-                        </div>
-                        <!-- timestamp -->
-                        <div class="col-auto">
-                            <div id="timeline-time-stamp-86">0 s</div>
-                        </div>
-                        <!-- indicator -->
-                        <div class="col-auto">
-                            <div id="timeline-indicator-86">
-                                <!-- one of -->
-                                <!-- <i class="bi-circle" role="img"></i> -->
-                                <!-- <i class="bi-circle-fill" role="img"></i> -->
-                                <!-- <i class="bi-check-circle" role="img"></i> -->
-                                <i class=" bi-circle" role="img"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- thumbnail (use last in slide) -->
-                <img src="thumb_0086.jpg" class="card-img-top" alt="couldn't load thumbnail">
-            </div>
-            
-        </div>
-    </div>
-    <div class="col ms-3">
-        <div class="row g-0">
-            <div class="col">
-                <!-- heading -->
-                <h1>Apres30</h1>
-
-                <!-- video player -->
-                <div id="videos-div" data-project_file="project.json">
-                    <video id="video0" class="main-video" muted>
-                        your browser doesn't support html5 videos.
-                    </video>
-                    <video id="video1" class="main-video" muted>
-                        your browser doesn't support html5 videos.
-                    </video>
-                </div>
-            </div>
-
-            <div class="col ms-3">
-                <div class="container">
-                    <!-- buttons -->
-                    <div class="btn-toolbar mt-4" role="toolbar">
-                        <div class="btn-group me-2 btn-group mt-3" role="group">
-                            <button id="previous-section" type="button" class="btn btn-secondary"><i class="bi-caret-left"></i></button>
-                            <button id="restart-section" type="button" class="btn btn-secondary"><i class="bi-arrow-counterclockwise"></i></button>
-                            <button id="pause" type="button" class="btn btn-secondary"><i class="bi-pause"></i></button>
-                            <button id="next-section" type="button" class="btn btn-secondary"><i class="bi-caret-right"></i></button>
-                        </div>
-                        <div class="btn-group btn-group me-3 mt-3" role="group">
-                            <button id="fullscreen" type="button" class="btn btn-secondary"><i class="bi-arrows-fullscreen"></i></button>
-                        </div>
-                        <div class="btn-group btn-group me-2 mt-3" role="group">
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#settings-modal"><i class="bi-gear me-1"></i>player settings</button>
-                        </div>
-                        <div class="btn-group btn-group me-3 mt-3" role="group">
-                            <button id="cache" type="button" class="btn btn-secondary"><i class="bi-download me-1"></i>cache videos</button>
-                        </div>
-                        
-                    </div>
-
-                    <!-- type legend -->
-                    <table class="table table-sm mt-3">
-                        <thead>
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr id="normal-legend">
-                                <td scope="col"><i class="bi-play-btn" role="img"></i></td>
-                                <td scope="col">normal</td>
-                            </tr>
-                            <tr id="skip-legend">
-                                <td scope="col"><i class="bi-wind" role="img"></i></td>
-                                <td scope="col">skip</td>
-                            </tr>
-                            <tr id="loop-legend">
-                                <td scope="col"><i class="bi-arrow-clockwise" role="img"></i></td>
-                                <td scope="col">loop</td>
-                            </tr>
-                            <tr id="complete-loop-legend">
-                                <td scope="col"><i class="bi-hourglass-split" role="img"></i></td>
-                                <td scope="col">complete loop</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <!-- keymap legend -->
-                    <table class="table table-sm mt-3">
-                        <thead>
-                            <tr>
-                                <th scope="col">key</th>
-                                <th scope="col">function</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr id="normal-legend">
-                                <td scope="col">arrowleft</td>
-                                <td scope="col">last section / repeat (according to go back time in player settings)</td>
-                            </tr>
-                            <tr id="normal-legend">
-                                <td scope="col">arrowright</td>
-                                <td scope="col">next section (respect complete loop sections)</td>
-                            </tr>
-                            <tr id="normal-legend">
-                                <td scope="col">ctrl/cmd+arrowleft</td>
-                                <td scope="col">force last section</td>
-                            </tr>
-                            <tr id="normal-legend">
-                                <td scope="col">ctrl/cmd+arrowright</td>
-                                <td scope="col">force next section</td>
-                            </tr>
-                            <tr id="normal-legend">
-                                <td scope="col">space</td>
-                                <td scope="col">pause / unpause</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
 </div>
 
 
-    </div>
 
-    <footer class="page-footer font-small mt-auto">
-        <div class="footer-copyright text-center pb-3 fs-6 text-muted">
-            
-                Created with the
-                <a href="https://github.com/ManimEditorProject/manim_editor">
-                    Manim Editor v0.3.8
-                </a>
-            
-        </div>
-    </footer>
+<h1 class="title toc-ignore">Início</h1>
 
-    <script src="webpack/base.js"></script>
-    
-<script src="webpack/edit_project.js"></script>
+</div>
+
+
+<p>Olá. Esse é um trabalho em construção, fruto do que tenho aprendido
+sobre R e estatística ao longo do tempo. Sinta-se livre para usar e
+adaptar qualquer coisa que achar interessante, só peço que cite o site
+caso o faça.</p>
+<p>Se encontrar um erro ou ter alguma dúvida não hesite em entrar em
+contato através da minha <a href="https://github.com/gabrielorso">página
+no github</a>.</p>
+
+<center>
+  <hr width="100%" size="3px">
+  <p> <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/deed.pt_BR">
+      <img src="img/CC-by-nc-sa80x15.png" alt="Licença Creative Commons 3.0"> </a>
+  </p>
+  <p> <font size="2"> Este conteúdo
+      está disponível por meio da Licença Creative Commons 3.0 </font>
+  </p>
+</center>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 </body>
 </html>
