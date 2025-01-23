@@ -133,6 +133,13 @@
     "text": "Resíduos\n\n#Obtendo resíduos ordinários\nres &lt;- residuals(fit)\n\n#Obtendo volumes estimados\nv.est &lt;- fitted(fit)\n\n#Criando Gráfico\n#________________________________________\nggplot() + theme_classic() +\n      geom_point(aes(x = v.est, y = res), alpha = 0.7) + \n      labs(x = \"Volume Estimado (m³)\", y = \"Resíduos (m³)\") + \n      geom_hline(yintercept = 0, color = \"red\", linewidth = 1) + \n      coord_cartesian(ylim = c(-0.045, 0.045))"
   },
   {
+    "objectID": "cursos/colheita/colheita.html",
+    "href": "cursos/colheita/colheita.html",
+    "title": "github.io.v2",
+    "section": "",
+    "text": "Site da disciplina de Colheita, Transporte e Logística Florestal.\nPlano de Ensino\nGuia de Estudo\nAulas"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -140,11 +147,11 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "colheita.html",
-    "href": "colheita.html",
+    "objectID": "cursos/colheita/colheita_aulas.html",
+    "href": "cursos/colheita/colheita_aulas.html",
     "title": "github.io.v2",
     "section": "",
-    "text": "Site da disciplina de “Colheita, Transporte e Logística Florestal.\nO plano de ensino pode ser acessado aqui"
+    "text": "Aulas da disciplina de Colheita, Transporte e Logística Florestal."
   },
   {
     "objectID": "index.html",
