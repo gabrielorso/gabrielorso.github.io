@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Dendrometria – github.io.v2</title>
+<title>d2h – github.io.v2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,143 +76,112 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-THCB1Q3SM7', { 'anonymize_ip': true});
 </script>
-<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
+<style>
+  html, body { height: 100%; margin: 0; }
+  /* tira gutters/margens do container para o iframe ocupar a largura toda */
+  main.content, .page-columns, .content {
+    padding: 0 !important; margin: 0 !important; max-width: none !important;
+  }
+  /* evita scroll da página; o scroll fica dentro do app */
+  body { overflow: hidden; }
+
+  /* o iframe ocupa tudo que sobra abaixo da navbar */
+  #embedded-app {
+    position: fixed;
+    left: 0; right: 0;
+    top: var(--nav-h, 56px);                           /* fallback 56px */
+    width: 100vw;
+    height: calc(100dvh - var(--nav-h, 56px));
+    border: 0;
+    display: block;
+  }
+</style>
 
 
 </head>
 
-<body class="quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">github.io.v2</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cursos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Cursos</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-cursos">    
+        <li>
+    <a class="dropdown-item" href="./colheita.html">
+ <span class="dropdown-text">Colheita, Transporte e Logística Florestal</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./dendrometria.html">
+ <span class="dropdown-text">Dendrometria</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./motores.html">
+ <span class="dropdown-text">Motores, Máquinas e Implementos Florestais</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./silvtropical.html">
+ <span class="dropdown-text">Silvicultura Tropical</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./ggplot.html"> 
+<span class="menu-text">ggplot2</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./MQO.html"> 
+<span class="menu-text">MQO</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Simulacao.html"> 
+<span class="menu-text">Simulação</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./d2h.html" aria-current="page"> 
+<span class="menu-text">d2h</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Dendrometria</h1>
-</div>
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<hr>
-<p><strong>Contato: gabriel.orso@ufmt.br</strong></p>
-<p><strong>Sala 21</strong></p>
-<hr>
-<p><a href="cursos/dendrometria/5_documentos/PlanoDeEnsino_Dendrometria_2024_2.pdf" target="_blank" title="Plano de Ensino">Plano de Ensino</a></p>
-<table class="table-striped table-hover caption-top table">
-<caption>Conteúdo Programático</caption>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Data</th>
-<th style="text-align: left;">Conteúdo</th>
-<th style="text-align: left;">Materiais</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">04/02/2025</td>
-<td style="text-align: left;">Médias dendrométricas.</td>
-<td style="text-align: left;"><a href="cursos/dendrometria/1_aulas/Aula3/Aula3.pdf" title="Médias Dendrométricas">Aula 3</a> | <a href="cursos/dendrometria/1_aulas/Aula3/Distribuicao_Diametrica.xlsx" title="Distribuição Diamétrica">Exemplo</a> | <a href="cursos/dendrometria/1_aulas/Aula3/Lista de exercícios.pdf" target="_blank" title="Exercícios - Médias Dendrométricas">Lista de Exercícios</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">11/02/2025</td>
-<td style="text-align: left;"><ul>
-<li><p>Medição de diâmetros e altura das árvores (Prática no campus).</p></li>
-<li><p>Relação Hipsométrica</p></li>
-</ul></td>
-<td style="text-align: left;"><ul>
-<li><p>Aula 4 - Aula prática</p></li>
-<li><p><a href="cursos/dendrometria/1_aulas/Aula5/Aula5.pdf" target="_blank" title="Relação Hipsométrica">Aula 5</a> | <a href="cursos/dendrometria/1_aulas/Aula5/Exercicio_RelacaoHipsometrica.pdf" target="_blank" title="Exercício Relação Hipsométrica">Exercício Relação Hipsométrica</a></p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">18/02/2025</td>
-<td style="text-align: left;">Retirada de dúvidas</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>25/02/2025</strong></td>
-<td style="text-align: left;"><strong>Verificação de Aprendizagem I</strong></td>
-<td style="text-align: left;"><a href="cursos/dendrometria/2_provas/Prova1/Notas_P1.pdf" target="_blank" title="Notas">Notas P1</a> | <a href="cursos/dendrometria/2_provas/Prova1/Exemplo_Prova.pdf" target="_blank" title="Prova">Prova</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">04/03/2025</td>
-<td style="text-align: left;">Carnaval - Sem Aula.</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">11/03/2025</td>
-<td style="text-align: left;">Volume das árvores (sólidos de revolução e cubagem rigorosa).</td>
-<td style="text-align: left;"><a href="cursos/dendrometria/1_aulas/Aula6/Aula6.pdf" target="_blank" title="Volumetria">Aula 6</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">18/03/2025</td>
-<td style="text-align: left;">Volume das árvores (sólidos de revolução e cubagem rigorosa). Volume comercial.</td>
-<td style="text-align: left;"><a href="cursos/dendrometria/1_aulas/Aula7/Aula7.pdf" target="_blank" title="Volume Comercial">Aula 7</a> | <a href="cursos/dendrometria/1_aulas/Aula7/Exercicio_Volumetria.pdf" target="_blank" title="Exercícios Volumetria">Exercícios</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">25/03/2025</td>
-<td style="text-align: left;">Volume das árvores (estimativas por regressão).</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>01/04/2025</strong></td>
-<td style="text-align: left;"><strong>Verificação de Aprendizagem II</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">08/04/2025</td>
-<td style="text-align: left;">Aniversário de Cuiabá - Sem aula</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">15/04/2025</td>
-<td style="text-align: left;">Quantificação e estimativa da biomassa florestal.</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">22/04/2025</td>
-<td style="text-align: left;">Viagem de campo - Sem aula</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">29/04/2025</td>
-<td style="text-align: left;">Crescimento das ávores (Noções de crescimento e produção).</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">06/05/2025</td>
-<td style="text-align: left;">Relascopia (Prática no campus).</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>13/05/2025</strong></td>
-<td style="text-align: left;"><strong>Verificação de Aprendizagem III</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
+<iframe id="embedded-app" src="https://dendrometria.shinyapps.io/d2h-app/" title="d2h — Inventário Florestal">
+</iframe>
 
 
 
@@ -617,6 +586,18 @@ gtag('config', 'G-THCB1Q3SM7', { 'anonymize_ip': true});
   });
   </script>
 </div> <!-- /content -->
+<script>
+  (function() {
+    function setNavHeight() {
+      // pega a navbar do Quarto/Bootstrap (qualquer um destes seletores funciona)
+      var nb = document.querySelector('header.navbar, nav.navbar, .navbar');
+      var h = nb ? nb.getBoundingClientRect().height : 56;
+      document.documentElement.style.setProperty('--nav-h', h + 'px');
+    }
+    window.addEventListener('load', setNavHeight);
+    window.addEventListener('resize', setNavHeight);
+  })();
+</script>
 
 
 
