@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Gabriel Agostini Orso">
 
-<title>Geração de Números Aleatórios – github.io.v2</title>
+<title>Geração de Números Aleatórios – d2h</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,14 +68,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-941d7e14017e1a43777b60853515243b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f7ac19f99b1bffdb182407b6a99bda4a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -127,7 +128,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -152,8 +153,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">github.io.v2</span>
+    <span class="navbar-title">d2h</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -172,20 +175,8 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-cursos">    
         <li>
-    <a class="dropdown-item" href="./colheita.html">
- <span class="dropdown-text">Colheita, Transporte e Logística Florestal</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="./dendrometria.html">
  <span class="dropdown-text">Dendrometria</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./motores.html">
- <span class="dropdown-text">Motores, Máquinas e Implementos Florestais</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./silvtropical.html">
- <span class="dropdown-text">Silvicultura Tropical</span></a>
   </li>  
     </ul>
   </li>
@@ -310,7 +301,7 @@ f(x) = {dF(x) \over dx} = {d \over dx} \Big[1-e^{-x^2 \over 2\theta^2} \Big] =  
 <p>Como é uma cadeia de Markov que precisa entrar em estacionariedade, é comum no método “jogar fora” as amostras iniciais (burnin), de forma a só amostrar da distribuição quando o processo entrar em estacionariedade. Além disso, por ser um processo markoviano, cada amostra gerada não é independente da anterior, por isso também é comum aproveitar somente 1 a cada x amostras geradas (thinning) para amenizar essa dependência entre as observações.</p>
 <p>Abaixo está minha implementação do algoritmo de Metropolis-Hastings para o problema.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Proposal</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Proposal</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="cf">function</span>(x, df, ...) {</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dchisq</span>(x, df, ...)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span>
@@ -358,7 +349,7 @@ f(x) = {dF(x) \over dx} = {d \over dx} \Big[1-e^{-x^2 \over 2\theta^2} \Big] =  
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">mcmc =</span> xn, <span class="at">k =</span> k<span class="sc">/</span>(n <span class="sc">*</span> thinning <span class="sc">+</span> burnin)))</span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Na Figura @ref(fig:gna) há um exemplo comparando a distribuição teórica de parâmetro <span class="math inline">\(\theta = 40\)</span> com a distribuição empírica construída a partir de 10000 amostras geradas pelo algoritmo de Metropolis-Hastings. As curvas estão bem parecidas, então aparentemente o algoritmo funciona bem. O painel inferior direito da figura mostra a função de autocorrelação, e aparentemente um valor de raleio de 50 elimina a dependência entre observações.</p>
 <p>Foi utilizado um burnin de 1000 amostras, e um thinning de 50. Isso quer dizer que as primeiras 1000 amostras geradas pelo algoritmo foram descartadas, e após isso, apenas uma amostra a cada 50 foi de fato utilizada. Em outras palavras, para ter uma amostra de tamanho 10000, precisamos gerar <span class="math inline">\(10000*50 + 1000 = 501000\)</span> valores da distribuição desejada.</p>
@@ -402,7 +393,7 @@ U(\theta) = {d \over d\theta} [lL(\theta | x)] = {\displaystyle\sum_{i=1}^n x^2_
 \end{equation}\]</span>
 <p>Ou seja, dado meu conjunto de dados <span class="math inline">\(x\)</span>, @ref(eq:esttheta) é o estimador de máxima verossimilhança de <span class="math inline">\(\theta\)</span>. Abaixo está sua implementação em R. Usarei essa função para estimar <span class="math inline">\(\hat{\theta}\)</span> ao longo do trabalho.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>esttheta <span class="ot">&lt;-</span> <span class="cf">function</span>(amostra, ...) (<span class="fu">sum</span>(amostra<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="dv">2</span> <span class="sc">*</span> <span class="fu">length</span>(amostra)))<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>esttheta <span class="ot">&lt;-</span> <span class="cf">function</span>(amostra, ...) (<span class="fu">sum</span>(amostra<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>(<span class="dv">2</span> <span class="sc">*</span> <span class="fu">length</span>(amostra)))<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="variância-do-estimador-de-máxima-verossimilhança" class="level2">
@@ -416,9 +407,9 @@ V(\theta) = -I(\theta)^{-1} =  -\Bigg( {-3\displaystyle\sum_{i=1}^n x^2_i + 2n\t
 (\#eq:var)
 \end{equation}\]</span>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>vartheta <span class="ot">&lt;-</span> <span class="cf">function</span>(amostra, that, ...) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>vartheta <span class="ot">&lt;-</span> <span class="cf">function</span>(amostra, that, ...) {</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    that<span class="sc">^</span><span class="dv">4</span><span class="sc">/</span>(<span class="dv">3</span> <span class="sc">*</span> <span class="fu">sum</span>(amostra<span class="sc">^</span><span class="dv">2</span>) <span class="sc">-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">length</span>(amostra) <span class="sc">*</span> that<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Aqui utilizei a informação observada, e não esperada, de Fisher. De qualquer forma, a variância do estimador não foi utilizada, pois o intervalo de confiança foi construído a partir da Deviance, apresentada abaixo.</p>
 </section>
@@ -440,12 +431,12 @@ D(\theta) = \displaystyle\sum_{i=1}^n x^2_i \Bigg( {1 \over \theta^2} - {1 \over
 \end{equation}\]</span>
 <p>Portanto os valores de <span class="math inline">\(\theta\)</span> que resultem em um valor extremo de <span class="math inline">\(D(\theta)\)</span> (sabendo que <span class="math inline">\(D(\theta) \sim \chi^2_1\)</span>), serão valores não contidos pelo intervalo de confiança (Figura @ref(fig:deviance)).</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>devtheta <span class="ot">&lt;-</span> <span class="cf">function</span>(t, that, amostra, ...) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>devtheta <span class="ot">&lt;-</span> <span class="cf">function</span>(t, that, amostra, ...) {</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(amostra<span class="sc">^</span><span class="dv">2</span>) <span class="sc">*</span> (<span class="dv">1</span><span class="sc">/</span>t<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">1</span><span class="sc">/</span>that<span class="sc">^</span><span class="dv">2</span>) <span class="sc">-</span> <span class="dv">4</span> <span class="sc">*</span> <span class="fu">length</span>(amostra) <span class="sc">*</span> <span class="fu">log</span>(that<span class="sc">/</span>t)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">50</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">50</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>))</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">devtheta</span>(x, <span class="at">that =</span> <span class="dv">40</span>, <span class="fu">rfun</span>(<span class="dv">30</span>, <span class="dv">40</span>, g)<span class="sc">$</span>mcmc), <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">50</span>), <span class="at">xlab =</span> <span class="fu">expression</span>(theta),</span>
@@ -454,7 +445,7 @@ D(\theta) = \displaystyle\sum_{i=1}^n x^2_i \Bigg( {1 \over \theta^2} - {1 \over
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">devtheta</span>(x, <span class="at">that =</span> <span class="dv">1</span>, <span class="fu">rfun</span>(<span class="dv">30</span>, <span class="dv">1</span>, g)<span class="sc">$</span>mcmc), <span class="at">xlim =</span> <span class="fu">c</span>(<span class="fl">0.7</span>, <span class="fl">1.5</span>), <span class="at">xlab =</span> <span class="fu">expression</span>(theta),</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylab =</span> <span class="st">"Deviance"</span>, <span class="at">main =</span> <span class="fu">expression</span>(theta <span class="sc">*</span> <span class="st">" = 1"</span>))</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">qchisq</span>(<span class="fl">0.95</span>, <span class="dv">1</span>), <span class="at">col =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">qchisq</span>(<span class="fl">0.95</span>, <span class="dv">1</span>), <span class="at">col =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -463,7 +454,7 @@ D(\theta) = \displaystyle\sum_{i=1}^n x^2_i \Bigg( {1 \over \theta^2} - {1 \over
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr>
 </section>
@@ -478,7 +469,7 @@ D(\theta) = \displaystyle\sum_{i=1}^n x^2_i \Bigg( {1 \over \theta^2} - {1 \over
 <p>No entanto, em cada cenário foram geradas amostras aleatórias da distribuição escolhida de tamanhos 2 a 30, e depois de 50 a 1000 ao passo de 20, o que totaliza 77 tamanhos de amostra diferentes. De cada uma dessas amostras foram feitas a estimativa pontual do parâmetro (Equação @ref(eq:esttheta)) e delimitação do intervalo de confiança utilizando máxima verossimilhança, jackknife e bootstrap. Além disso, cada uma dessas etapas foi repetida 100 vezes, a fim de avaliar a taxa real de cobertura dos intervalos de confiança por cada método para cada cenário.</p>
 <p>A Figura @ref(fig:densidades) apresenta a curva da densidade de probabilidade da função para os dois parâmetros escolhidos. Veja que quando <span class="math inline">\(\theta = 1\)</span>, a curva é muito mais assimétrica e com menor dispersão.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dfun</span>(x, <span class="at">theta =</span> <span class="dv">1</span>), <span class="at">col =</span> <span class="dv">4</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">40</span>), <span class="at">xlab =</span> <span class="cn">NA</span>, <span class="at">ylab =</span> <span class="st">"Densidade"</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dfun</span>(x, <span class="at">theta =</span> <span class="dv">40</span>), <span class="at">col =</span> <span class="dv">2</span>, <span class="at">add =</span> T)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="fu">expression</span>(theta <span class="sc">*</span> <span class="st">" = 1"</span>), <span class="fu">expression</span>(theta <span class="sc">*</span> <span class="st">" = 40"</span>)),</span>
@@ -487,7 +478,7 @@ D(\theta) = \displaystyle\sum_{i=1}^n x^2_i \Bigg( {1 \over \theta^2} - {1 \over
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dfun</span>(x, <span class="at">theta =</span> <span class="dv">40</span>), <span class="at">col =</span> <span class="dv">2</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">120</span>), <span class="at">xlab =</span> <span class="cn">NA</span>, <span class="at">ylab =</span> <span class="st">"Densidade"</span>)</span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dfun</span>(x, <span class="at">theta =</span> <span class="dv">1</span>), <span class="at">col =</span> <span class="dv">4</span>, <span class="at">add =</span> T)</span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="fu">expression</span>(theta <span class="sc">*</span> <span class="st">" = 1"</span>), <span class="fu">expression</span>(theta <span class="sc">*</span> <span class="st">" = 40"</span>)),</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">text.col =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">2</span>), <span class="at">bg =</span> <span class="st">"transparent"</span>, <span class="at">bty =</span> <span class="st">"n"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">text.col =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">2</span>), <span class="at">bg =</span> <span class="st">"transparent"</span>, <span class="at">bty =</span> <span class="st">"n"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -496,10 +487,10 @@ D(\theta) = \displaystyle\sum_{i=1}^n x^2_i \Bigg( {1 \over \theta^2} - {1 \over
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>C1 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="cf">function</span>(y) <span class="fu">lapply</span>(n, <span class="cf">function</span>(x) <span class="fu">rfun</span>(<span class="at">n =</span> x, <span class="at">theta =</span> par_C1, <span class="at">dprop =</span> g,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">thinning =</span> <span class="dv">50</span>)<span class="sc">$</span>mcmc))</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>C2 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="cf">function</span>(y) <span class="fu">lapply</span>(n, <span class="cf">function</span>(x) <span class="fu">rfun</span>(<span class="at">n =</span> x, <span class="at">theta =</span> par_C2, <span class="at">dprop =</span> g,</span>
@@ -511,12 +502,12 @@ D(\theta) = \displaystyle\sum_{i=1}^n x^2_i \Bigg( {1 \over \theta^2} - {1 \over
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># médias de theta estimado para cada tamanho de amostra</span></span>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>media_C1 <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(n), <span class="cf">function</span>(x) <span class="fu">mean</span>(<span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="cf">function</span>(y) that_C1[[y]][[x]])))</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>media_C2 <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(n), <span class="cf">function</span>(x) <span class="fu">mean</span>(<span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="cf">function</span>(y) that_C2[[y]][[x]])))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>media_C2 <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(n), <span class="cf">function</span>(x) <span class="fu">mean</span>(<span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="cf">function</span>(y) that_C2[[y]][[x]])))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Na Figura @ref(fig:simulacoes) estão os valores estimados de <span class="math inline">\(\hat{\theta}\)</span> para cada tamanho de amostra e cada uma das 100 realizações de monte carlo. Os paineis à esquerda são um recorte dos da direita, limitando a um tamanho de amostra entre 2 e 30. Veja que conforme aumenta o tamanho de amostra, há uma redução da variabilidade de <span class="math inline">\(\hat{\theta}\)</span>. Ou seja, passamos a ser mais <em>confiantes</em> da nossa estimativa conforme aumenta o tamanho da amostra.</p>
 <p>Veja que também que a dispersão das linhas para <span class="math inline">\(\theta = 40\)</span> é maior que quando <span class="math inline">\(\theta = 1\)</span>. Veja também que de acordo com a equação @ref(eq:var), a variância do estimador depende de seu valor. Portanto maiores valores de <span class="math inline">\(\theta\)</span> incorrem em uma maior variabilidade em torno de si.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(n[<span class="dv">1</span><span class="sc">:</span><span class="dv">29</span>], media_C1[<span class="dv">1</span><span class="sc">:</span><span class="dv">29</span>], <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="dv">2</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">80</span>), <span class="at">main =</span> <span class="st">"theta = 40</span><span class="sc">\n</span><span class="st">n = 2:30"</span>,</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="cn">NA</span>, <span class="at">ylab =</span> <span class="fu">expression</span>(<span class="fu">widehat</span>(theta)))</span>
@@ -543,7 +534,7 @@ D(\theta) = \displaystyle\sum_{i=1}^n x^2_i \Bigg( {1 \over \theta^2} - {1 \over
 <span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="cn">NA</span>, <span class="at">ylab =</span> <span class="cn">NA</span>)</span>
 <span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>foo <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="cf">function</span>(x) <span class="fu">lines</span>(n, that_C2[[x]], <span class="at">col =</span> <span class="st">"lightgrey"</span>))</span>
 <span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> par_C2, <span class="at">col =</span> <span class="st">"blue"</span>)</span>
-<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(n, media_C2, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(n, media_C2, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -552,13 +543,13 @@ D(\theta) = \displaystyle\sum_{i=1}^n x^2_i \Bigg( {1 \over \theta^2} - {1 \over
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="via-máxima-verossimilhança" class="level2">
 <h2 class="anchored" data-anchor-id="via-máxima-verossimilhança">Via Máxima Verossimilhança</h2>
 <p>A partir da função Deviance (Equação @ref(eq:deviance)), podemos calcular o intervalo de confiança da nossa estimativa <span class="math inline">\(\hat{\theta}\)</span> para cada uma das 100 realizações de Monte Carlo. A Figura @ref(fig:ICLL) mostra esses intervalos para a primeira realização de Monte Carlo. As barras vermelhas representam intervalos que não contiveram o valor verdadeiro (40 e 1, linha azul).</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilizando máxima verossimilhança -----------</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilizando máxima verossimilhança -----------</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Variância de theta</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>var_LL_C1 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="cf">function</span>(y) <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(n), <span class="cf">function</span>(x) <span class="fu">vartheta</span>(<span class="at">amostra =</span> C1[[y]][[x]],</span>
@@ -599,10 +590,10 @@ D(\theta) = \displaystyle\sum_{i=1}^n x^2_i \Bigg( {1 \over \theta^2} - {1 \over
 <span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>        }, <span class="at">interval =</span> <span class="fu">c</span>(<span class="fl">0.0001</span>, <span class="dv">5</span>))</span>
 <span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>contem_C1 <span class="ot">&lt;-</span> <span class="fu">sapply</span>(IC_LL_C1[[<span class="dv">1</span>]], <span class="cf">function</span>(x) x[<span class="dv">1</span>] <span class="sc">&lt;</span> par_C1 <span class="sc">&amp;</span> x[<span class="dv">2</span>] <span class="sc">&gt;</span> par_C1)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>contem_C1 <span class="ot">&lt;-</span> <span class="fu">sapply</span>(IC_LL_C1[[<span class="dv">1</span>]], <span class="cf">function</span>(x) x[<span class="dv">1</span>] <span class="sc">&lt;</span> par_C1 <span class="sc">&amp;</span> x[<span class="dv">2</span>] <span class="sc">&gt;</span> par_C1)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>contem_C2 <span class="ot">&lt;-</span> <span class="fu">sapply</span>(IC_LL_C2[[<span class="dv">1</span>]], <span class="cf">function</span>(x) x[<span class="dv">1</span>] <span class="sc">&lt;</span> par_C2 <span class="sc">&amp;</span> x[<span class="dv">2</span>] <span class="sc">&gt;</span> par_C2)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -634,7 +625,7 @@ D(\theta) = \displaystyle\sum_{i=1}^n x^2_i \Bigg( {1 \over \theta^2} - {1 \over
 <span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="cn">NA</span>, <span class="at">ylab =</span> <span class="cn">NA</span>)</span>
 <span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="at">x0 =</span> n, <span class="at">x1 =</span> n, <span class="at">y0 =</span> <span class="fu">sapply</span>(IC_LL_C2[[<span class="dv">1</span>]], <span class="cf">function</span>(x) x[<span class="dv">1</span>]), <span class="at">y1 =</span> <span class="fu">sapply</span>(IC_LL_C2[[<span class="dv">1</span>]],</span>
 <span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">function</span>(x) x[<span class="dv">2</span>]), <span class="at">col =</span> <span class="fu">ifelse</span>(contem_C2, <span class="st">"green"</span>, <span class="st">"red"</span>))</span>
-<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> par_C2, <span class="at">col =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> par_C2, <span class="at">col =</span> <span class="st">"blue"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -643,7 +634,7 @@ D(\theta) = \displaystyle\sum_{i=1}^n x^2_i \Bigg( {1 \over \theta^2} - {1 \over
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Para cada intervalo de confiança dessas figuras, existem outros 99 intervalos construídos via simulação. Como os intervalos são de 95% de confiança, espera-se que 95% dessas 100 realizações contenham o valor verdadeiro. Isso se chama taxa de cobertura do intervalo de confiança (quanto ele realmente é confiável).</p>
 <p>A Figura @ref(fig:coberturaLL) apresenta a taxa de cobertura dos intervalos de confiança para os diferentes tamanhos de amostra. Aparentemente os intervalos possuem uma cobertura similar para todo os tamanhos de amostra, mas esse resultado não está muito de acordo com o que se vê na literatura, portanto deve ser verificado com mais calma.</p>
@@ -653,7 +644,7 @@ D(\theta) = \displaystyle\sum_{i=1}^n x^2_i \Bigg( {1 \over \theta^2} - {1 \over
 </p>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>cobertura_LL_C1 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="at">length =</span> <span class="fu">length</span>(n))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>cobertura_LL_C1 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="at">length =</span> <span class="fu">length</span>(n))</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>cobertura_LL_C2 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">length</span>(<span class="fu">length</span>(n)))</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(n)) {</span>
@@ -675,7 +666,7 @@ D(\theta) = \displaystyle\sum_{i=1}^n x^2_i \Bigg( {1 \over \theta^2} - {1 \over
 <span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(n, cobertura_LL_C2, <span class="at">main =</span> <span class="fu">c</span>(<span class="st">"Taxa de cobertura para</span><span class="sc">\n</span><span class="st">theta = 1"</span>), <span class="at">xlab =</span> <span class="st">"Tamanho de amostra"</span>,</span>
 <span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylab =</span> <span class="st">"Taxa de Cobertura"</span>)</span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">0.95</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">0.95</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -684,11 +675,11 @@ D(\theta) = \displaystyle\sum_{i=1}^n x^2_i \Bigg( {1 \over \theta^2} - {1 \over
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Já ná Figura @ref(fig:ViesLL) está o viés de estimativa dos parâmetros para os diferentes tamanhos de amostra. Aparentemente não foi identificado nenhum viés no estimador (lembrando que o estimador de máxima verossimilhança é assintoticamente não viesado).</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>vies_LL_C1 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(that_C1, <span class="cf">function</span>(x) <span class="fu">sapply</span>(x, <span class="cf">function</span>(y) y <span class="sc">-</span> par_C1))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>vies_LL_C1 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(that_C1, <span class="cf">function</span>(x) <span class="fu">sapply</span>(x, <span class="cf">function</span>(y) y <span class="sc">-</span> par_C1))</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>vies_medio_LL_C1 <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(n), <span class="cf">function</span>(x) <span class="fu">mean</span>(<span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="cf">function</span>(y) vies_LL_C1[[y]][[x]])))</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -723,7 +714,7 @@ D(\theta) = \displaystyle\sum_{i=1}^n x^2_i \Bigg( {1 \over \theta^2} - {1 \over
 <span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="cn">NA</span>, <span class="at">ylab =</span> <span class="cn">NA</span>)</span>
 <span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>foo <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="cf">function</span>(x) <span class="fu">lines</span>(n, vies_LL_C2[[x]], <span class="at">col =</span> <span class="st">"lightgrey"</span>))</span>
 <span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"blue"</span>)</span>
-<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(n, vies_medio_LL_C2, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(n, vies_medio_LL_C2, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -732,7 +723,7 @@ D(\theta) = \displaystyle\sum_{i=1}^n x^2_i \Bigg( {1 \over \theta^2} - {1 \over
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="via-jackknife" class="level2">
@@ -758,7 +749,7 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 \]</span></p>
 <p>e seu intervalo de confinça pode ser aproximado por uma distribuição t de student se considerarmos que os pseudo valores são independentes. Mais informações sobre jackknife podem ser encontradas <a href="http://cursos.leg.ufpr.br/ce089/11_jackknife.html">aqui</a>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>esttheta_jack <span class="ot">&lt;-</span> <span class="cf">function</span>(amostra, f, <span class="at">pseudo =</span> F, ...) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>esttheta_jack <span class="ot">&lt;-</span> <span class="cf">function</span>(amostra, f, <span class="at">pseudo =</span> F, ...) {</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># amostra: vetor numérico com o conjunto de observações;</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># f: função da estatística desejada para cálculo;</span></span>
@@ -792,10 +783,10 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 <span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">est =</span> est, <span class="at">var =</span> var))</span>
 <span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilizando Jackknife --------------</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilizando Jackknife --------------</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># estimativa pontual</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>est_jack_C1 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(C1, <span class="cf">function</span>(x) <span class="fu">sapply</span>(x, <span class="cf">function</span>(y) <span class="fu">esttheta_jack</span>(y, <span class="at">f =</span> esttheta)<span class="sc">$</span>est))</span>
@@ -814,11 +805,11 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 <span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>IC_jack_C2 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="cf">function</span>(x) {</span>
 <span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mapply</span>(<span class="cf">function</span>(est, am, var) est <span class="sc">+</span> <span class="fu">c</span>(<span class="at">LI =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">LS =</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, <span class="fu">length</span>(am) <span class="sc">-</span></span>
 <span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>        <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">sqrt</span>(var), <span class="at">est =</span> est_jack_C2[[x]], <span class="at">am =</span> C2[[x]], <span class="at">var =</span> var_jack_C2[[x]])</span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>A @ref(fig:estjack) apresenta os intervalos de confiança para uma das 100 realizações de Monte Carlo. A taxa de cobertura (Figura @ref(fig:coberturajack)) mostra um padrão também não muito condizente com o que se vê na literatura.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>contem_C1_jack <span class="ot">&lt;-</span> <span class="fu">apply</span>(IC_jack_C1[[<span class="dv">1</span>]], <span class="dv">2</span>, <span class="cf">function</span>(x) x[<span class="dv">1</span>] <span class="sc">&lt;</span> par_C1 <span class="sc">&amp;</span> x[<span class="dv">2</span>] <span class="sc">&gt;</span> par_C1)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>contem_C1_jack <span class="ot">&lt;-</span> <span class="fu">apply</span>(IC_jack_C1[[<span class="dv">1</span>]], <span class="dv">2</span>, <span class="cf">function</span>(x) x[<span class="dv">1</span>] <span class="sc">&lt;</span> par_C1 <span class="sc">&amp;</span> x[<span class="dv">2</span>] <span class="sc">&gt;</span> par_C1)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>contem_C2_jack <span class="ot">&lt;-</span> <span class="fu">apply</span>(IC_jack_C2[[<span class="dv">1</span>]], <span class="dv">2</span>, <span class="cf">function</span>(x) x[<span class="dv">1</span>] <span class="sc">&lt;</span> par_C2 <span class="sc">&amp;</span> x[<span class="dv">2</span>] <span class="sc">&gt;</span> par_C2)</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -849,7 +840,7 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 <span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="cn">NA</span>, <span class="at">ylab =</span> <span class="cn">NA</span>)</span>
 <span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="at">x0 =</span> n, <span class="at">x1 =</span> n, <span class="at">y0 =</span> IC_jack_C2[[<span class="dv">1</span>]][<span class="dv">1</span>, ], <span class="at">y1 =</span> IC_jack_C2[[<span class="dv">1</span>]][<span class="dv">2</span>, ], <span class="at">col =</span> <span class="fu">ifelse</span>(contem_C2_jack,</span>
 <span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">"green"</span>, <span class="st">"red"</span>))</span>
-<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> par_C2, <span class="at">col =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> par_C2, <span class="at">col =</span> <span class="st">"blue"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -858,7 +849,7 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="alert alert-danger" role="alert">
 <p>
@@ -866,7 +857,7 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 </p>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>cobertura_jack_C1 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="at">length =</span> <span class="fu">length</span>(n))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>cobertura_jack_C1 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="at">length =</span> <span class="fu">length</span>(n))</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>cobertura_jack_C2 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">length</span>(<span class="fu">length</span>(n)))</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(n)) {</span>
@@ -889,7 +880,7 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 <span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(n, cobertura_jack_C2, <span class="at">main =</span> <span class="st">"Taxa de cobertura para</span><span class="sc">\n</span><span class="st">theta = 1"</span>, <span class="at">xlab =</span> <span class="st">"Tamanho de amostra"</span>,</span>
 <span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylab =</span> <span class="st">"Taxa de Cobertura"</span>)</span>
-<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">0.95</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">0.95</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -898,10 +889,10 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>vies_jack_C1 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(est_jack_C1, <span class="cf">function</span>(x) <span class="fu">sapply</span>(x, <span class="cf">function</span>(y) y <span class="sc">-</span> par_C1))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>vies_jack_C1 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(est_jack_C1, <span class="cf">function</span>(x) <span class="fu">sapply</span>(x, <span class="cf">function</span>(y) y <span class="sc">-</span> par_C1))</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>vies_medio_jack_C1 <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(n), <span class="cf">function</span>(x) <span class="fu">mean</span>(<span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="cf">function</span>(y) vies_jack_C1[[y]][[x]])))</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -936,7 +927,7 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 <span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="cn">NA</span>, <span class="at">ylab =</span> <span class="cn">NA</span>)</span>
 <span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a>foo <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="cf">function</span>(x) <span class="fu">lines</span>(n, vies_jack_C2[[x]], <span class="at">col =</span> <span class="st">"lightgrey"</span>))</span>
 <span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"blue"</span>)</span>
-<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(n, vies_medio_jack_C2, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(n, vies_medio_jack_C2, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -945,14 +936,14 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="via-bootstrap" class="level2">
 <h2 class="anchored" data-anchor-id="via-bootstrap">Via Bootstrap</h2>
 <p>O método bootstrap consiste em, dada uma amostra <span class="math inline">\(x\)</span> de tamanho <span class="math inline">\(n\)</span> (<span class="math inline">\(x_1, x_2, ..., x_n\)</span>), faça uma amostragem com reposição de <span class="math inline">\(x\)</span> com um mesmo tamanho <span class="math inline">\(n\)</span> e calcule novamente a estatística desejada (nesse caso, <span class="math inline">\(\hat{\theta}^\)</span>). Repita isso 500, 1000, 2000 ou número grande de vezes. A média de cada uma dessas estimativas de <span class="math inline">\(\hat{\theta}\)</span> será o estimador pontual bootstrap denotado por <span class="math inline">\(\hat{\theta}^B\)</span>. Um dos intervalos de confiança mais usados é o intervalo básico de bootstrap, que será o utilizado nesse estudo, mesmo que outros dois métodos estejam implementados na função abaixo. Mais informações sobre Bootstrap podem ser encontradas <a href="http://cursos.leg.ufpr.br/ce089/10_bootstrap.html">aqui</a>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>boot <span class="ot">&lt;-</span> <span class="cf">function</span>(n, amostra, f, ...) {</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>boot <span class="ot">&lt;-</span> <span class="cf">function</span>(n, amostra, f, ...) {</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># amostra: vetor numérico com o conjunto de observações;</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># f: função da estatística desejada para cálculo;</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ...: outros argumentos passados para f;</span></span>
@@ -994,10 +985,10 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 <span id="cb27-40"><a href="#cb27-40" aria-hidden="true" tabindex="-1"></a>         <span class="st">'percentil'</span> <span class="ot">=</span> {<span class="fu">quantile</span>(thetas_boot, <span class="fu">c</span>(alpha<span class="sc">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>))},</span>
 <span id="cb27-41"><a href="#cb27-41" aria-hidden="true" tabindex="-1"></a>         <span class="st">'normal'</span> <span class="ot">=</span> {<span class="fu">f</span>(amostra) <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">qnorm</span>(<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">sd</span>(thetas_boot)})</span>
 <span id="cb27-42"><a href="#cb27-42" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb27-43"><a href="#cb27-43" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-43"><a href="#cb27-43" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilizando Bootstrap ---------------</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilizando Bootstrap ---------------</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>thetas_boot_C1 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(C1, <span class="cf">function</span>(x) <span class="fu">lapply</span>(x, <span class="cf">function</span>(y) <span class="fu">boot</span>(<span class="dv">3000</span>, y, <span class="at">f =</span> esttheta)))</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>thetas_boot_C2 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(C2, <span class="cf">function</span>(x) <span class="fu">lapply</span>(x, <span class="cf">function</span>(y) <span class="fu">boot</span>(<span class="dv">3000</span>, y, <span class="at">f =</span> esttheta)))</span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1029,10 +1020,10 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 <span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>        <span class="fu">boot_IC</span>(<span class="at">amostra =</span> am, <span class="at">thetas_boot =</span> boots, <span class="at">f =</span> esttheta, <span class="at">metodo =</span> <span class="st">"basico"</span>,</span>
 <span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a>            <span class="at">alpha =</span> <span class="fl">0.05</span>)</span>
 <span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>    }, <span class="at">am =</span> C2[[x]], <span class="at">boots =</span> thetas_boot_C2[[x]])</span>
-<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>contem_C1_boot <span class="ot">&lt;-</span> <span class="fu">apply</span>(IC_boot_C1[[<span class="dv">1</span>]], <span class="dv">2</span>, <span class="cf">function</span>(x) x[<span class="dv">1</span>] <span class="sc">&lt;</span> par_C1 <span class="sc">&amp;</span> x[<span class="dv">2</span>] <span class="sc">&gt;</span> par_C1)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>contem_C1_boot <span class="ot">&lt;-</span> <span class="fu">apply</span>(IC_boot_C1[[<span class="dv">1</span>]], <span class="dv">2</span>, <span class="cf">function</span>(x) x[<span class="dv">1</span>] <span class="sc">&lt;</span> par_C1 <span class="sc">&amp;</span> x[<span class="dv">2</span>] <span class="sc">&gt;</span> par_C1)</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>contem_C2_boot <span class="ot">&lt;-</span> <span class="fu">apply</span>(IC_boot_C2[[<span class="dv">1</span>]], <span class="dv">2</span>, <span class="cf">function</span>(x) x[<span class="dv">1</span>] <span class="sc">&lt;</span> par_C2 <span class="sc">&amp;</span> x[<span class="dv">2</span>] <span class="sc">&gt;</span> par_C2)</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
@@ -1061,7 +1052,7 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 <span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="cn">NA</span>, <span class="at">ylab =</span> <span class="cn">NA</span>)</span>
 <span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a><span class="fu">segments</span>(<span class="at">x0 =</span> n, <span class="at">x1 =</span> n, <span class="at">y0 =</span> IC_boot_C2[[<span class="dv">1</span>]][<span class="dv">1</span>, ], <span class="at">y1 =</span> IC_boot_C2[[<span class="dv">1</span>]][<span class="dv">2</span>, ], <span class="at">col =</span> <span class="fu">ifelse</span>(contem_C2_boot,</span>
 <span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">"green"</span>, <span class="st">"red"</span>))</span>
-<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> par_C2, <span class="at">col =</span> <span class="st">"blue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> par_C2, <span class="at">col =</span> <span class="st">"blue"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1070,11 +1061,11 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Veja que a taxa de cobertura do intervalo de confiança booststrap não é de 95% para pequenas amostras (Figura @ref(fig:coberturaboot)). Porém à medida que o tamanho de amostra aumenta, a taxa de cobertura passa a equivaler o nível de confiança determinado.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>cobertura_boot_C1 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="at">length =</span> <span class="fu">length</span>(n))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>cobertura_boot_C1 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="at">length =</span> <span class="fu">length</span>(n))</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>cobertura_boot_C2 <span class="ot">&lt;-</span> <span class="fu">numeric</span>(<span class="fu">length</span>(<span class="fu">length</span>(n)))</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(n)) {</span>
@@ -1099,7 +1090,7 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 <span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(n, cobertura_boot_C2, <span class="at">main =</span> <span class="st">"Taxa de cobertura para</span><span class="sc">\n</span><span class="st">theta = 1"</span>, <span class="at">xlab =</span> <span class="st">"Tamanho de amostra"</span>,</span>
 <span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylab =</span> <span class="st">"Taxa de Cobertura"</span>)</span>
-<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">0.95</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">0.95</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1108,11 +1099,11 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>As Figuras @ref(fig:viesboot) e @ref(fig:viesboot2) apresentam o viés da estimativa boostrap com e sem <a href="http://cursos.leg.ufpr.br/ce089/10_bootstrap.html">correção para o viés</a>. Na Figura @ref(fig:viesboot2) percebe-se que há um viés de subestimativa de <span class="math inline">\(\theta\)</span>, portanto a correção é necessária para uma estimativa não viesada de <span class="math inline">\(\theta\)</span>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>vies_boot_C1 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(est_boot_C1, <span class="cf">function</span>(x) <span class="fu">sapply</span>(x, <span class="cf">function</span>(y) y <span class="sc">-</span> par_C1))</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>vies_boot_C1 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(est_boot_C1, <span class="cf">function</span>(x) <span class="fu">sapply</span>(x, <span class="cf">function</span>(y) y <span class="sc">-</span> par_C1))</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>vies_medio_boot_C1 <span class="ot">&lt;-</span> <span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(n), <span class="cf">function</span>(x) <span class="fu">mean</span>(<span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="cf">function</span>(y) vies_boot_C1[[y]][[x]])))</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1147,7 +1138,7 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 <span id="cb33-33"><a href="#cb33-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="cn">NA</span>, <span class="at">ylab =</span> <span class="cn">NA</span>)</span>
 <span id="cb33-34"><a href="#cb33-34" aria-hidden="true" tabindex="-1"></a>foo <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="cf">function</span>(x) <span class="fu">lines</span>(n, vies_boot_C2[[x]], <span class="at">col =</span> <span class="st">"lightgrey"</span>))</span>
 <span id="cb33-35"><a href="#cb33-35" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"blue"</span>)</span>
-<span id="cb33-36"><a href="#cb33-36" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(n, vies_medio_boot_C2, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-36"><a href="#cb33-36" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(n, vies_medio_boot_C2, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1156,10 +1147,10 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimativa pontual NÃO corrigida</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimativa pontual NÃO corrigida</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>est_boot_C1 <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="cf">function</span>(x) {</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mapply</span>(<span class="cf">function</span>(amostra, thetas_boot) <span class="fu">esttheta_boot</span>(amostra, thetas_boot, <span class="at">f =</span> esttheta,</span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">corr =</span> <span class="cn">FALSE</span>), <span class="at">amostra =</span> C1[[x]], <span class="at">thetas_boot =</span> thetas_boot_C1[[x]])</span>
@@ -1205,7 +1196,7 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 <span id="cb35-44"><a href="#cb35-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="cn">NA</span>, <span class="at">ylab =</span> <span class="cn">NA</span>)</span>
 <span id="cb35-45"><a href="#cb35-45" aria-hidden="true" tabindex="-1"></a>foo <span class="ot">&lt;-</span> <span class="fu">lapply</span>(<span class="dv">1</span><span class="sc">:</span>N, <span class="cf">function</span>(x) <span class="fu">lines</span>(n, vies_boot_C2[[x]], <span class="at">col =</span> <span class="st">"lightgrey"</span>))</span>
 <span id="cb35-46"><a href="#cb35-46" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"blue"</span>)</span>
-<span id="cb35-47"><a href="#cb35-47" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(n, vies_medio_boot_C2, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-47"><a href="#cb35-47" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(n, vies_medio_boot_C2, <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">col =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1214,10 +1205,10 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r fold-hide code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># save.image('./imagem.RData')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># save.image('./imagem.RData')</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 
@@ -1276,13 +1267,14 @@ EP[\hat{\theta}^*] = \sqrt{Var[\hat{\theta}^*] \over n}
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
