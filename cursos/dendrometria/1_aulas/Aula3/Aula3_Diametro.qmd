@@ -11,6 +11,9 @@ author:
     email: gabrielorso16@gmail.com
     affiliations: Universidade Federal de Santa Maria
 date: last-modified
+
+execute: 
+  echo: false
 ---
 
 # AULA DE HOJE {.secao} 
@@ -166,7 +169,7 @@ Existe também a [fita diamétrica]{.alert}, que fornece diretamente o valor do 
 ## Instrumentos de Medição
 ### Cintas dendrométricas (acompanhamento contínuo)
 
-![Fitas Dendrométricas; [Fonte](https://www.ipef.br/publicacoes/ctecnica/nr212.pdf)](FitasDendrometricas.png)
+![Fitas Dendrométricas; [Fonte](https://www.ipef.br/publicacoes/ctecnica/nr212.pdf)](assets/FitasDendrometricas.png)
 
 ## Instrumentos de Medição
 ### Novas Tecnologias
@@ -222,7 +225,7 @@ Existe também a [fita diamétrica]{.alert}, que fornece diretamente o valor do 
 
 A área transversal é definida como [toda a área compreendida por um círculo de raio r]{.fg}.
 
-![Medidas de um círculo. [Fonte](https://escolaeducacao.com.br/wp-content/uploads/2020/02/area-perimetro-circulo.png)](PontosCirculo.png)
+![Medidas de um círculo. [Fonte](https://escolaeducacao.com.br/wp-content/uploads/2020/02/area-perimetro-circulo.png)](assets/PontosCirculo.png)
 
 ## Área Transversal
 
