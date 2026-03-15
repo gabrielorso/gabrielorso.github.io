@@ -193,7 +193,7 @@
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "",
-    "text": "C:/Users/gabri/OneDrive/sites/github.io.v2/cursos/dendrometria/1_aulas/Aula3  - aula3.qmd"
+    "text": "UNIDADE 2 - DIÂMETRO\n2.1 - Diâmetro das árvores e a área basal.\n2.2 - Medição do diâmetro."
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#aula-de-hoje-1",
@@ -389,14 +389,14 @@
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#volume-de-dados-1",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Volume de dados",
-    "text": "Volume de dados\nConsidere agora dados agrupados\n\n\n\n\n\n\n\n\nParcela\nDAP (cm)\nN\n\n\n\n\nT5P4\n30.80\n125\n\n\nT1P6\n30.25\n137\n\n\nT3P3\n30.41\n130\n\n\nT2P3\n31.37\n120\n\n\nT3P4\n29.72\n133\n\n\nT6P4\n29.99\n117\n\n\nT2P2\n31.55\n150\n\n\nT4P3\n31.33\n158\n\n\nT8P3\n34.44\n125\n\n\nT5P1\n27.90\n121\n\n\n\n\n\n\n\n\nCada parcela possui \\(N\\) indivíduos, todos representados pelo respectivo diâmetro apresentado."
+    "text": "Volume de dados\nConsidere agora dados agrupados\n\n\n\n\n\n\n\n\nParcela\nDAP (cm)\nN\n\n\n\n\nT1P4\n31.01\n154\n\n\nT3P1\n30.65\n124\n\n\nT4P6\n29.98\n134\n\n\nT8P4\n29.26\n128\n\n\nT8P2\n29.63\n124\n\n\nT4P1\n32.66\n163\n\n\nT5P2\n32.23\n118\n\n\nT6P5\n28.25\n126\n\n\nT1P2\n29.89\n151\n\n\nT7P3\n27.62\n98\n\n\n\n\n\n\n\n\nCada parcela possui \\(N\\) indivíduos, todos representados pelo respectivo diâmetro apresentado."
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#volume-de-dados-2",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#volume-de-dados-2",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Volume de dados",
-    "text": "Volume de dados\nConsidere agora dados agrupados"
+    "text": "Volume de dados\nConsidere agora dados agrupados\n\n\n\nAnexando pacote: 'plotly'\n\n\nO seguinte objeto é mascarado por 'package:ggplot2':\n\n    last_plot\n\n\nO seguinte objeto é mascarado por 'package:stats':\n\n    filter\n\n\nO seguinte objeto é mascarado por 'package:graphics':\n\n    layout"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#dados-agrupados",

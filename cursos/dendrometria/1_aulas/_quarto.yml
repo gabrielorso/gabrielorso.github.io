@@ -1,6 +1,0 @@
-project:
-  type: default
-
-date-format: "D [de] MMMM [de] YYYY"
-language:
-  title-block-published: "Atualizado em"
