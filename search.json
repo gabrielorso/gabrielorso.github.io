@@ -193,7 +193,7 @@
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "",
-    "text": "UNIDADE 2 - DIÂMETRO\n2.1 - Diâmetro das árvores e a área basal.\n2.2 - Medição do diâmetro."
+    "text": "C:/Users/gabri/OneDrive/sites/github.io.v2/cursos/dendrometria/1_aulas/Aula3  - aula3.qmd"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#aula-de-hoje-1",
@@ -389,7 +389,7 @@
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#volume-de-dados-1",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Volume de dados",
-    "text": "Volume de dados\nConsidere agora dados agrupados\n\n\n\n\n\n\n\n\nParcela\nDAP (cm)\nN\n\n\n\n\nT8P4\n29.26\n128\n\n\nT8P2\n29.63\n124\n\n\nT4P6\n29.98\n134\n\n\nT3P3\n30.41\n130\n\n\nT2P3\n31.37\n120\n\n\nT7P5\n29.90\n159\n\n\nT6P6\n26.18\n104\n\n\nT8P1\n29.72\n91\n\n\nT7P1\n26.29\n87\n\n\nT7P6\n32.20\n128\n\n\n\n\n\n\n\n\nCada parcela possui \\(N\\) indivíduos, todos representados pelo respectivo diâmetro apresentado."
+    "text": "Volume de dados\nConsidere agora dados agrupados\n\n\n\n\n\n\n\n\nParcela\nDAP (cm)\nN\n\n\n\n\nT5P4\n30.80\n125\n\n\nT1P6\n30.25\n137\n\n\nT3P3\n30.41\n130\n\n\nT2P3\n31.37\n120\n\n\nT3P4\n29.72\n133\n\n\nT6P4\n29.99\n117\n\n\nT2P2\n31.55\n150\n\n\nT4P3\n31.33\n158\n\n\nT8P3\n34.44\n125\n\n\nT5P1\n27.90\n121\n\n\n\n\n\n\n\n\nCada parcela possui \\(N\\) indivíduos, todos representados pelo respectivo diâmetro apresentado."
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#volume-de-dados-2",
