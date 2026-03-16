@@ -213,8 +213,8 @@
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#aula-de-hoje-1",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#aula-de-hoje-1",
     "title": "UNIDADE 2 - DIÂMETRO",
-    "section": "Aula de hoje",
-    "text": "Aula de hoje\n\nUNIDADE 2 - DIÂMETRO\n2.1 - Diâmetro das árvores e a área basal.\n2.2 - Medição do diâmetro."
+    "section": "",
+    "text": "UNIDADE 2 - DIÂMETRO\n2.1 - Diâmetro das árvores e a área basal.\n2.2 - Medição do diâmetro."
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#diâmetro-1",
@@ -228,7 +228,7 @@
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#diâmetro-2",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Diâmetro",
-    "text": "Diâmetro\nDiâmetro ou circunferência\n\n\n\n\n\n\nDiâmetro e Circunferência\n\n\n\n\n\n\n\nMedição"
+    "text": "Diâmetro\n\nDiâmetro ou circunferência\n\n\n\n\n\n\nDiâmetro e Circunferência\n\n\n\n\n\n\n\nMedição"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#diâmetro-3",
@@ -242,14 +242,14 @@
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#diâmetro-4",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Diâmetro",
-    "text": "Diâmetro\nDAP\n\n\n\n\n\n\nPor que “altura do peito”?\n\n\n\n\n\n\nPaís\nAltura de Medição\n\n\n\n\nPaíses que usam o SI\n1,30 m\n\n\nEUA e Canadá\n1,37 m\n\n\nInglaterra\n1,29 m\n\n\nJapão\n1,25 m"
+    "text": "Diâmetro\n\nDAP\n\n\n\n\n\n\nTipPor que “altura do peito”?\n\n\n\n\n\n\n\nPaís\nAltura de Medição\n\n\n\n\nPaíses que usam o SI\n1,30 m\n\n\nEUA e Canadá\n1,37 m\n\n\nInglaterra\n1,29 m\n\n\nJapão\n1,25 m"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#diâmetro-5",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#diâmetro-5",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Diâmetro",
-    "text": "Diâmetro\nSímbolos\n\n\n\n\n\n\n\n\nVariáveis e Símbolos\nVariáveis e Símbolos\n\n\n\n\n\\(c\\) = \\(CAP\\) circunferência à 1,3 altura (cm);\n\\(g\\) = área transversal do indivíduo à 1,3 altura (m²)\n\n\n\\(d\\)=\\(DAP\\) = diâmetro à 1,3 altura (cm)\n\\(G_{u.a}\\) = área basal Unid. Amostral (m²/u.a); G = área basal do povoamento (m²/ha);\n\n\n\\(d_g\\) = \\(d_q\\) = diâmetro médio ou diâmetro da árvore de área transversal média, diâmetro quadrático;\n\\(d_{0,6h}\\) = diâmetro tomado à 60% da altura total;\n\n\n\\(\\bar{d}\\) = \\(d_{médio}\\) = diâmetro médio aritmético\n\\(d_{0,1h}\\) = diâmetro tomado à 10% da altura total;\n\n\n\\(d_w\\) = diâmetro de Weisse;\n\\(d_{0,1}\\) = diâmetro tomado à 10cm da altura;\n\n\n\\(d_z\\) = diâmetro da árvore com área transversal mediana;\n\\(d_4\\) = diâmetro tomado à 4m de altura;\n\n\n\\(d^+\\) e \\(d^-\\) = diâmetro de Hohenadl;\n\\(d_s\\) = diâmetro sem casca"
+    "text": "Diâmetro\n\nSímbolos\n\n\n\n\n\n\n\n\nVariáveis e Símbolos\nVariáveis e Símbolos\n\n\n\n\n\\(c\\) = \\(CAP\\) circunferência à 1,3 altura (cm);\n\\(g\\) = área transversal do indivíduo à 1,3 altura (m²)\n\n\n\\(d\\)=\\(DAP\\) = diâmetro à 1,3 altura (cm)\n\\(G_{u.a}\\) = área basal Unid. Amostral (m²/u.a); G = área basal do povoamento (m²/ha);\n\n\n\\(d_g\\) = \\(d_q\\) = diâmetro médio ou diâmetro da árvore de área transversal média, diâmetro quadrático;\n\\(d_{0,6h}\\) = diâmetro tomado à 60% da altura total;\n\n\n\\(\\bar{d}\\) = \\(d_{médio}\\) = diâmetro médio aritmético\n\\(d_{0,1h}\\) = diâmetro tomado à 10% da altura total;\n\n\n\\(d_w\\) = diâmetro de Weisse;\n\\(d_{0,1}\\) = diâmetro tomado à 10cm da altura;\n\n\n\\(d_z\\) = diâmetro da árvore com área transversal mediana;\n\\(d_4\\) = diâmetro tomado à 4m de altura;\n\n\n\\(d^+\\) e \\(d^-\\) = diâmetro de Hohenadl;\n\\(d_s\\) = diâmetro sem casca"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#instrumentos-de-medição",
@@ -263,70 +263,70 @@
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#instrumentos-de-medição-1",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Instrumentos de Medição",
-    "text": "Instrumentos de Medição\nSuta\n\n\n\n\nA Suta consiste de uma régua graduada conectada a dois braços perpendiculares, sendo um fixo e o outro móvel.\nPara a correta medição do diâmetro das árvores, é importante que a Suta esteja em posição perpendicular ao eixo do fuste da árvore.\nIdealmente deve-se realizar uma medição cruzada da suta e tirar a média.\n\n\n\n\n\n\nSuta. Fonte"
+    "text": "Instrumentos de Medição\n\nSuta\n\n\n\n\nA Suta consiste de uma régua graduada conectada a dois braços perpendiculares, sendo um fixo e o outro móvel.\nPara a correta medição do diâmetro das árvores, é importante que a Suta esteja em posição perpendicular ao eixo do fuste da árvore.\nIdealmente deve-se realizar uma medição cruzada da suta e tirar a média.\n\n\n\n\n\n\nSuta. Fonte"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#instrumentos-de-medição-2",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#instrumentos-de-medição-2",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Instrumentos de Medição",
-    "text": "Instrumentos de Medição\nFita métrica\n\n\n\n\nA Fita Métrica é utilizada para a medição da circunferência da árvore.\n\n \n\nNeste caso, o diâmetro é obtido pelo desenvolvimento da relação matemática CAP dividido por \\(\\pi\\)\n\n\n\n\n\n\nFita métrica. Fonte"
+    "text": "Instrumentos de Medição\n\nFita métrica\n\n\n\n\nA Fita Métrica é utilizada para a medição da circunferência da árvore.\n\n \n\nNeste caso, o diâmetro é obtido pelo desenvolvimento da relação matemática CAP dividido por \\(\\pi\\)\n\n\n\n\n\n\nFita métrica. Fonte"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#instrumentos-de-medição-3",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#instrumentos-de-medição-3",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Instrumentos de Medição",
-    "text": "Instrumentos de Medição\nFita diamétrica\nExiste também a fita diamétrica, que fornece diretamente o valor do diâmetro.\n\nFita diamétrica. Fonte"
+    "text": "Instrumentos de Medição\n\nFita diamétrica\nExiste também a fita diamétrica, que fornece diretamente o valor do diâmetro.\n\n\n\nFita diamétrica. Fonte"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#instrumentos-de-medição-4",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#instrumentos-de-medição-4",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Instrumentos de Medição",
-    "text": "Instrumentos de Medição\nFita diamétrica\n\n\n\n\n\n\nFita métrica vs. fita diamétrica\n\n\n\nVeja que \\(d = {c \\over \\pi}\\).\nO erro de \\(1\\) cm em circunferência equivale a \\(d = {1 \\over \\pi} = 0.318\\) cm em diâmetro.\nO erro de \\(1\\) cm em diâmetro é \\(1\\) cm em diâmetro."
+    "text": "Instrumentos de Medição\n\nFita diamétrica\n\n\n\n\n\n\nCautionFita métrica vs. fita diamétrica\n\n\n\n\nVeja que \\(d = {c \\over \\pi}\\).\nO erro de \\(1\\) cm em circunferência equivale a \\(d = {1 \\over \\pi} = 0.318\\) cm em diâmetro.\nO erro de \\(1\\) cm em diâmetro é \\(1\\) cm em diâmetro."
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#instrumentos-de-medição-5",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#instrumentos-de-medição-5",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Instrumentos de Medição",
-    "text": "Instrumentos de Medição\nCintas dendrométricas (acompanhamento contínuo)\n\nFitas Dendrométricas; Fonte"
+    "text": "Instrumentos de Medição\n\nCintas dendrométricas (acompanhamento contínuo)\n\n\n\nFitas Dendrométricas; Fonte"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#instrumentos-de-medição-6",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#instrumentos-de-medição-6",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Instrumentos de Medição",
-    "text": "Instrumentos de Medição\nNovas Tecnologias\n\nTreevia"
+    "text": "Instrumentos de Medição\n\nNovas Tecnologias\n\n\n\nTreevia"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#instrumentos-de-medição-7",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#instrumentos-de-medição-7",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Instrumentos de Medição",
-    "text": "Instrumentos de Medição\nNovas Tecnologias\n\nKatam Technologies"
+    "text": "Instrumentos de Medição\n\nNovas Tecnologias\n\n\n\nKatam Technologies"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#ponto-de-medição-do-diâmetro---pmd",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#ponto-de-medição-do-diâmetro---pmd",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Ponto de Medição do Diâmetro - PMD",
-    "text": "Ponto de Medição do Diâmetro - PMD\nOnde medir\n\nSempre desejamos medir \\(d\\) à 1,3m acima do nível do solo, mas nem sempre isso é possível.\nO Ponto de Medição do Diâmetro (PMD) varia a depender das condições encontradas em campo."
+    "text": "Ponto de Medição do Diâmetro - PMD\n\nOnde medir\n\nSempre desejamos medir \\(d\\) à 1,3m acima do nível do solo, mas nem sempre isso é possível.\nO Ponto de Medição do Diâmetro (PMD) varia a depender das condições encontradas em campo."
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#ponto-de-medição-do-diâmetro---pmd-1",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#ponto-de-medição-do-diâmetro---pmd-1",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Ponto de Medição do Diâmetro - PMD",
-    "text": "Ponto de Medição do Diâmetro - PMD\n\nPontos de Medição do Diâmetro - PMD"
+    "text": "Ponto de Medição do Diâmetro - PMD\n\n\n\nPontos de Medição do Diâmetro - PMD"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#ponto-de-medição-do-diâmetro---pmd-2",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#ponto-de-medição-do-diâmetro---pmd-2",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Ponto de Medição do Diâmetro - PMD",
-    "text": "Ponto de Medição do Diâmetro - PMD\n\nÁrvore descaracterizada na região do DAP."
+    "text": "Ponto de Medição do Diâmetro - PMD\n\n\n\nÁrvore descaracterizada na região do DAP."
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#ponto-de-medição-do-diâmetro---pmd-3",
@@ -340,14 +340,14 @@
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#erros-de-medição",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Erros de Medição",
-    "text": "Erros de Medição\n\n\n\n\n\n\nErros de medição\n\n\nÉ preciso tomar cuidado com Erros de medição!. Podem ser causados por:\n\nSutas mal posicionadas\nFita muito solta (formando barriga)\nInstrumentos não aferidos ou com problemas"
+    "text": "Erros de Medição\n\n\n\n\n\n\nWarningErros de medição\n\n\n\nÉ preciso tomar cuidado com Erros de medição!. Podem ser causados por:\n\nSutas mal posicionadas\nFita muito solta (formando barriga)\nInstrumentos não aferidos ou com problemas"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#área-transversal-1",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#área-transversal-1",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Área Transversal",
-    "text": "Área Transversal\nA área transversal é definida como toda a área compreendida por um círculo de raio r.\n\nMedidas de um círculo. Fonte"
+    "text": "Área Transversal\nA área transversal é definida como toda a área compreendida por um círculo de raio r.\n\n\n\nMedidas de um círculo. Fonte"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#área-transversal-2",
@@ -361,7 +361,7 @@
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#área-transversal-3",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Área Transversal",
-    "text": "Área Transversal\n\n\n\n\n\n\nCuidado com as unidades!\n\n\n\nSe \\(d\\) é fornecido em centímetros (\\(cm\\)), então \\(g\\) será \\(cm^2\\).\nSe \\(d\\) é fornecido em metros (\\(m\\)), então \\(g\\) será \\(m^2\\).\n\nComo sempre utilizamos \\(g\\) em \\(m^2\\), é possível converter diretamente \\(cm \\rightarrow m^2\\) acrescentando o fator de conversão na fórmula\n\\[\ng = {d^2 \\pi \\over 40000}\n\\]\nPortanto se \\(DAP\\) estiver em \\(cm\\), utiliza-se \\(g = {d^2 \\pi \\over 40000}\\), caso contrário utiliza-se \\(g = {d^2 \\pi \\over 4}\\)."
+    "text": "Área Transversal\n\n\n\n\n\n\nWarningCuidado com as unidades!\n\n\n\n\nSe \\(d\\) é fornecido em centímetros (\\(cm\\)), então \\(g\\) será \\(cm^2\\).\nSe \\(d\\) é fornecido em metros (\\(m\\)), então \\(g\\) será \\(m^2\\).\n\nComo sempre utilizamos \\(g\\) em \\(m^2\\), é possível converter diretamente \\(cm \\rightarrow m^2\\) acrescentando o fator de conversão na fórmula\n\\[\ng = {d^2 \\pi \\over 40000}\n\\]\nPortanto se \\(DAP\\) estiver em \\(cm\\), utiliza-se \\(g = {d^2 \\pi \\over 40000}\\), caso contrário utiliza-se \\(g = {d^2 \\pi \\over 4}\\)."
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#diâmetro-e-área-transversal",
@@ -382,35 +382,35 @@
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#exercícios",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Exercícios",
-    "text": "Exercícios\n\n\n\n\n\n\nExercícios\n\n\nCalcule a área transversal de cada medida abaixo\n\n\\(DAP = 30 cm\\)\n\\(d = 0,07 m\\)\n\\(CAP = 78 cm\\)\n\\(c = 232 cm\\)\n\\(d = 42 cm\\)"
+    "text": "Exercícios\n\n\n\n\n\n\nCautionExercícios\n\n\n\nCalcule a área transversal de cada medida abaixo\n\n\\(DAP = 30 cm\\)\n\\(d = 0,07 m\\)\n\\(CAP = 78 cm\\)\n\\(c = 232 cm\\)\n\\(d = 42 cm\\)"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#exercícios-2",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#exercícios-2",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Exercícios",
-    "text": "Exercícios\n\n\n\n\n\n\nExercícios\n\n\nCalcule a área transversal de cada medida abaixo\n\n\\(DAP = 30 cm \\qquad \\quad R = 0,0706 m^2\\)\n\\(d = 0,07 m \\qquad \\quad \\enspace R = 0,0038 m^2\\)\n\\(CAP = 78 cm \\qquad \\quad  R = 0,0483 m^2\\)\n\\(c = 232 cm \\qquad \\quad R = 0,4283 m^2\\)\n\\(d = 42 cm\\qquad \\quad R = 0,1385 m^2\\)"
+    "text": "Exercícios\n\n\n\n\n\n\nCautionExercícios\n\n\n\nCalcule a área transversal de cada medida abaixo\n\n\\(DAP = 30 cm \\qquad \\quad R = 0,0706 m^2\\)\n\\(d = 0,07 m \\qquad \\quad \\enspace R = 0,0038 m^2\\)\n\\(CAP = 78 cm \\qquad \\quad  R = 0,0483 m^2\\)\n\\(c = 232 cm \\qquad \\quad R = 0,4283 m^2\\)\n\\(d = 42 cm\\qquad \\quad R = 0,1385 m^2\\)"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#volume-de-dados",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#volume-de-dados",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Volume de dados",
-    "text": "Volume de dados\nConsidere o seguinte cenário\n\n\n\n\n\n\n\n\n\n\nÁrvore\nDAP (cm)\n\n\n\n\n1\n24.70\n\n\n2\n29.89\n\n\n3\n28.32\n\n\n4\n31.01\n\n\n5\n31.04\n\n\n6\n30.25\n\n\n7\n29.17\n\n\n8\n31.55\n\n\n9\n31.37\n\n\n10\n30.42\n\n\n11\n30.18\n\n\n12\n33.16\n\n\n\n\n\n\n\n\nÁrvore\nDAP (cm)\n\n\n\n\n13\n30.65\n\n\n14\n29.10\n\n\n15\n30.41\n\n\n16\n29.72\n\n\n17\n30.45\n\n\n18\n30.61\n\n\n19\n32.66\n\n\n20\n30.48\n\n\n21\n31.33\n\n\n22\n34.72\n\n\n23\n29.64\n\n\n24\n29.98\n\n\n\n\n\n\n\n\nÁrvore\nDAP (cm)\n\n\n\n\n25\n27.90\n\n\n26\n32.23\n\n\n27\n34.81\n\n\n28\n30.80\n\n\n29\n34.22\n\n\n30\n25.83\n\n\n31\n27.72\n\n\n32\n26.21\n\n\n33\n31.32\n\n\n34\n29.99\n\n\n35\n28.25\n\n\n36\n26.18\n\n\n\n\n\n\n\n\nÁrvore\nDAP (cm)\n\n\n\n\n37\n26.29\n\n\n38\n24.35\n\n\n39\n27.62\n\n\n40\n29.13\n\n\n41\n29.90\n\n\n42\n32.20\n\n\n43\n29.72\n\n\n44\n29.63\n\n\n45\n34.44\n\n\n46\n29.26"
+    "text": "Volume de dados\n\nConsidere o seguinte cenário\n\n\n\n\n\n\n\n\n\n\nÁrvore\nDAP (cm)\n\n\n\n\n1\n24.70\n\n\n2\n29.89\n\n\n3\n28.32\n\n\n4\n31.01\n\n\n5\n31.04\n\n\n6\n30.25\n\n\n7\n29.17\n\n\n8\n31.55\n\n\n9\n31.37\n\n\n10\n30.42\n\n\n11\n30.18\n\n\n12\n33.16\n\n\n\n\n\n\n\n\nÁrvore\nDAP (cm)\n\n\n\n\n13\n30.65\n\n\n14\n29.10\n\n\n15\n30.41\n\n\n16\n29.72\n\n\n17\n30.45\n\n\n18\n30.61\n\n\n19\n32.66\n\n\n20\n30.48\n\n\n21\n31.33\n\n\n22\n34.72\n\n\n23\n29.64\n\n\n24\n29.98\n\n\n\n\n\n\n\n\nÁrvore\nDAP (cm)\n\n\n\n\n25\n27.90\n\n\n26\n32.23\n\n\n27\n34.81\n\n\n28\n30.80\n\n\n29\n34.22\n\n\n30\n25.83\n\n\n31\n27.72\n\n\n32\n26.21\n\n\n33\n31.32\n\n\n34\n29.99\n\n\n35\n28.25\n\n\n36\n26.18\n\n\n\n\n\n\n\n\nÁrvore\nDAP (cm)\n\n\n\n\n37\n26.29\n\n\n38\n24.35\n\n\n39\n27.62\n\n\n40\n29.13\n\n\n41\n29.90\n\n\n42\n32.20\n\n\n43\n29.72\n\n\n44\n29.63\n\n\n45\n34.44\n\n\n46\n29.26"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#volume-de-dados-1",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#volume-de-dados-1",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Volume de dados",
-    "text": "Volume de dados\nConsidere agora dados agrupados\n\n\n\n\n\n\n\n\nParcela\nDAP (cm)\nN\n\n\n\n\nT2P4\n30.42\n148\n\n\nT4P2\n30.48\n114\n\n\nT6P2\n26.21\n79\n\n\nT6P5\n28.25\n126\n\n\nT7P1\n26.29\n87\n\n\nT3P4\n29.72\n133\n\n\nT7P4\n29.13\n141\n\n\nT2P2\n31.55\n150\n\n\nT4P1\n32.66\n163\n\n\nT4P6\n29.98\n134\n\n\n\n\n\n\n\n\nCada parcela possui \\(N\\) indivíduos, todos representados pelo respectivo diâmetro apresentado."
+    "text": "Volume de dados\n\nConsidere agora dados agrupados\n\n\n\n\n\n\n\n\nParcela\nDAP (cm)\nN\n\n\n\n\nT2P1\n29.17\n126\n\n\nT5P5\n34.22\n180\n\n\nT6P6\n26.18\n104\n\n\nT6P3\n31.32\n158\n\n\nT6P2\n26.21\n79\n\n\nT4P6\n29.98\n134\n\n\nT7P3\n27.62\n98\n\n\nT1P4\n31.01\n154\n\n\nT7P4\n29.13\n141\n\n\nT8P3\n34.44\n125\n\n\n\n\n\n\n\n\nCada parcela possui \\(N\\) indivíduos, todos representados pelo respectivo diâmetro apresentado."
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#volume-de-dados-2",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#volume-de-dados-2",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Volume de dados",
-    "text": "Volume de dados\nConsidere agora dados agrupados"
+    "text": "Volume de dados\n\nConsidere agora dados agrupados\n\n\n\nAnexando pacote: 'plotly'\n\n\nO seguinte objeto é mascarado por 'package:ggplot2':\n\n    last_plot\n\n\nO seguinte objeto é mascarado por 'package:stats':\n\n    filter\n\n\nO seguinte objeto é mascarado por 'package:graphics':\n\n    layout"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#dados-agrupados",
@@ -431,7 +431,7 @@
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-2",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nMédia aritmética\n\\[\n\\bar{d} = {d_1 + d_2 + \\cdots + d_n \\over n} = {\\displaystyle\\sum_{i=1}^n d_i \\over n}\n\\] Para Dados Agrupados:\n\\[\n\\bar{d} = {d_1.n_1 + d_2.n_2 + \\cdots + n_k.d_k \\over n_1 + n_2 + \\cdots + n_k} = {\\displaystyle\\sum_{i=1}^k n_id_i \\over \\displaystyle\\sum_{i=1}^k n_i}\n\\]"
+    "text": "Médias dendrométricas\n\nMédia aritmética\n\\[\n\\bar{d} = {d_1 + d_2 + \\cdots + d_n \\over n} = {\\displaystyle\\sum_{i=1}^n d_i \\over n}\n\\] Para Dados Agrupados:\n\\[\n\\bar{d} = {d_1.n_1 + d_2.n_2 + \\cdots + n_k.d_k \\over n_1 + n_2 + \\cdots + n_k} = {\\displaystyle\\sum_{i=1}^k n_id_i \\over \\displaystyle\\sum_{i=1}^k n_i}\n\\]"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-3",
@@ -445,7 +445,7 @@
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-4",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nÁrea transversal média\nÉ a média das áreas transversais.\n\\[\n\\bar{g} = {g_1 + g_2 + \\cdots + g_n \\over n} = {\\displaystyle\\sum_{i=1}^n g_i \\over n}\n\\]"
+    "text": "Médias dendrométricas\n\nÁrea transversal média\nÉ a média das áreas transversais.\n\\[\n\\bar{g} = {g_1 + g_2 + \\cdots + g_n \\over n} = {\\displaystyle\\sum_{i=1}^n g_i \\over n}\n\\]"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-5",
@@ -473,181 +473,265 @@
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-8",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nÁrea transversal média\nVeja que a área transversal média \\(\\bar{g}\\) pode ser reescrita como\n\\[\n\\bar{g} = {1 \\over n}\\left(g_1 + g_2 + \\cdots + g_n\\right)\n\\]\n\\[\n\\bar{g} = {1 \\over n}\\left({d_1^2\\pi\\over 40000} + {d_2^2\\pi \\over 40000} + \\cdots + {d_n^2\\pi \\over 40000} \\right)\n\\]\n\n\\[\n\\bar{g} = {1 \\over n} {\\pi \\over 40000} \\left( d_1^2 + d_2^2 + \\cdots + d_n^2 \\right)\n\\]"
+    "text": "Médias dendrométricas\n\nÁrea transversal média\nVeja que a área transversal média \\(\\bar{g}\\) pode ser reescrita como\n\\[\n\\bar{g} = {1 \\over n}\\left(g_1 + g_2 + \\cdots + g_n\\right)\n\\]\n\\[\n\\bar{g} = {1 \\over n}\\left({d_1^2\\pi\\over 40000} + {d_2^2\\pi \\over 40000} + \\cdots + {d_n^2\\pi \\over 40000} \\right)\n\\]\n\n\\[\n\\bar{g} = {1 \\over n} {\\pi \\over 40000} \\left( d_1^2 + d_2^2 + \\cdots + d_n^2 \\right)\n\\]"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-9",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-9",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nDiâmetro de área transversal média\nO diâmetro de área transversal média (\\(d_g\\)) é definido como o diâmetro equivalente da área tranversal média.\n\\[\ng = {d^2\\pi \\over 40000}\n\\]\n\\[\n\\bar{g} = {d_g^2\\pi \\over 40000}\n\\]"
+    "text": "Médias dendrométricas\n\nDiâmetro de área transversal média\nO diâmetro de área transversal média (\\(d_g\\)) é definido como o diâmetro equivalente da área tranversal média.\n\\[\ng = {d^2\\pi \\over 40000}\n\\]\n\\[\n\\bar{g} = {d_g^2\\pi \\over 40000}\n\\]"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-10",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-10",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nDiâmetro de área transversal média\n\\[\n\\bar{g} = {d_g^2\\pi \\over 40000} \\quad \\rightarrow \\quad d_g^2 = {\\bar{g}.40000 \\over \\pi}\n\\]\nPortanto\n\\[\nd_g = \\sqrt{\\bar{g} . 40000 \\over \\pi}\n\\]"
+    "text": "Médias dendrométricas\n\nDiâmetro de área transversal média\n\\[\n\\bar{g} = {d_g^2\\pi \\over 40000} \\quad \\rightarrow \\quad d_g^2 = {\\bar{g}.40000 \\over \\pi}\n\\]\nPortanto\n\\[\nd_g = \\sqrt{\\bar{g} . 40000 \\over \\pi}\n\\]"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-11",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-11",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nDiâmetro de área transversal média\nNo nosso exemplo, \\(\\bar{g} = 0.0174\\) m², portanto\n\\(d_g = \\sqrt{0.0174 \\times 40000 \\over \\pi} = 14.9\\) cm"
+    "text": "Médias dendrométricas\n\nDiâmetro de área transversal média\nNo nosso exemplo, \\(\\bar{g} = 0.0174\\) m², portanto\n\\(d_g = \\sqrt{0.0174 \\times 40000 \\over \\pi} = 14.9\\) cm"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-12",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-12",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nDiâmetro de área transversal média\nSe \\(\\bar{g} = {1 \\over n} {\\pi \\over 40000} \\left( d_1^2 + d_2^2 + \\cdots + d_n^2 \\right)\\), então\n\\[\n\\bar{g} = {1 \\over n} {\\pi \\over 40000} \\left( d_1^2 + d_2^2 + \\cdots + d_n^2 \\right) = {d_g^2 \\pi \\over 40000}\n\\] Portanto\n\\[\nd_g^2 = {1 \\over n} {\\pi \\over 40000} \\left( d_1^2 + d_2^2 + \\cdots + d_n^2 \\right) {40000 \\over \\pi}\n\\] \\[\nd_g^2 = {1 \\over n} \\left(d_1^2 + d_2^2 + \\cdots + d_n^2 \\right) \\quad \\rightarrow \\quad d_g = \\sqrt{\\displaystyle\\sum_{i=1}^n d_i^2 \\over n}\n\\]"
+    "text": "Médias dendrométricas\n\nDiâmetro de área transversal média\nSe \\(\\bar{g} = {1 \\over n} {\\pi \\over 40000} \\left( d_1^2 + d_2^2 + \\cdots + d_n^2 \\right)\\), então\n\\[\n\\bar{g} = {1 \\over n} {\\pi \\over 40000} \\left( d_1^2 + d_2^2 + \\cdots + d_n^2 \\right) = {d_g^2 \\pi \\over 40000}\n\\] Portanto\n\\[\nd_g^2 = {1 \\over n} {\\pi \\over 40000} \\left( d_1^2 + d_2^2 + \\cdots + d_n^2 \\right) {40000 \\over \\pi}\n\\] \\[\nd_g^2 = {1 \\over n} \\left(d_1^2 + d_2^2 + \\cdots + d_n^2 \\right) \\quad \\rightarrow \\quad d_g = \\sqrt{\\displaystyle\\sum_{i=1}^n d_i^2 \\over n}\n\\]"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-13",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-13",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nDiâmetro de área transversal média\nO \\(d_g\\) sempre será maior que a média aritmética \\(d\\)"
+    "text": "Médias dendrométricas\n\nDiâmetro de área transversal média\nO \\(d_g\\) sempre será maior que a média aritmética \\(d\\)"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-14",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-14",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nDiâmetro da árvore média de Weise\n \n\nSitua-se a 60% da distribuição dos diâmetros\nRequer colocar os diâmetros em ordem crescente."
+    "text": "Médias dendrométricas\n\nDiâmetro da árvore média de Weise\n \n\nSitua-se a 60% da distribuição dos diâmetros\nRequer colocar os diâmetros em ordem crescente."
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-15",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-15",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nDiâmetro da árvore média de Weise\n\n\n\n\n\n\n\nNova Ordem\nDAP\n\n\n\n\n1\n5.4\n\n\n2\n7.5\n\n\n3\n8.4\n\n\n4\n9.2\n\n\n5\n9.4\n\n\n6\n10.2\n\n\n7\n13.8\n\n\n8\n16.1\n\n\n9\n17.0\n\n\n10\n18.9\n\n\n11\n19.6\n\n\n12\n20.4\n\n\n13\n23.6\n\n\n\n\n\n\n\n\n\nPrimeiro passo é identificar a posição (ordem) que representa 60% da distribuição\n\n\\[\nn \\times 0.6 = 13 \\times 0.6 = 7.8\n\\]\n\n\n\\[\n\\begin{array}{l}\n7 \\quad \\rightarrow \\quad 13.8 \\\\\n7.8 \\quad \\rightarrow \\quad d_w \\\\\n8 \\quad \\rightarrow \\quad 16.1\n\\end{array}\n\\]"
+    "text": "Médias dendrométricas\n\nDiâmetro da árvore média de Weise\n\n\n\n\n\n\n\nNova Ordem\nDAP\n\n\n\n\n1\n5.4\n\n\n2\n7.5\n\n\n3\n8.4\n\n\n4\n9.2\n\n\n5\n9.4\n\n\n6\n10.2\n\n\n7\n13.8\n\n\n8\n16.1\n\n\n9\n17.0\n\n\n10\n18.9\n\n\n11\n19.6\n\n\n12\n20.4\n\n\n13\n23.6\n\n\n\n\n\n\n\n\n\nPrimeiro passo é identificar a posição (ordem) que representa 60% da distribuição\n\n\\[\nn \\times 0.6 = 13 \\times 0.6 = 7.8\n\\]\n\n\n\\[\n\\begin{array}{l}\n7 \\quad \\rightarrow \\quad 13.8 \\\\\n7.8 \\quad \\rightarrow \\quad d_w \\\\\n8 \\quad \\rightarrow \\quad 16.1\n\\end{array}\n\\]"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-16",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-16",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nDiâmetro da árvore média de Weise\n\n\n\n\n\n\n\nNova Ordem\nDAP\n\n\n\n\n1\n5.4\n\n\n2\n7.5\n\n\n3\n8.4\n\n\n4\n9.2\n\n\n5\n9.4\n\n\n6\n10.2\n\n\n7\n13.8\n\n\n8\n16.1\n\n\n9\n17.0\n\n\n10\n18.9\n\n\n11\n19.6\n\n\n12\n20.4\n\n\n13\n23.6\n\n\n\n\n\n\n\n\\[\n\\begin{array}{l}\n7 \\quad \\rightarrow \\quad 13.8 \\\\\n7.8 \\quad \\rightarrow \\quad d_w \\\\\n8 \\quad \\rightarrow \\quad 16.1\n\\end{array}\n\\]\n\n\\[\n{8-7 \\over 7.8-7} = {16.1-13.8 \\over d_w-13.8}\n\\]\n\n\n\\[\n{1 \\over 0.8} = {2.3 \\over d_w-13.8}\n\\]\n\n\n\\[\nd_w-13.8 = {2.3 \\times 0.8 \\over 1}\n\\] \\[\nd_w =  1.84 + 13.8 = 15.64 \\enspace cm\n\\]"
+    "text": "Médias dendrométricas\n\nDiâmetro da árvore média de Weise\n\n\n\n\n\n\n\nNova Ordem\nDAP\n\n\n\n\n1\n5.4\n\n\n2\n7.5\n\n\n3\n8.4\n\n\n4\n9.2\n\n\n5\n9.4\n\n\n6\n10.2\n\n\n7\n13.8\n\n\n8\n16.1\n\n\n9\n17.0\n\n\n10\n18.9\n\n\n11\n19.6\n\n\n12\n20.4\n\n\n13\n23.6\n\n\n\n\n\n\n\n\\[\n\\begin{array}{l}\n7 \\quad \\rightarrow \\quad 13.8 \\\\\n7.8 \\quad \\rightarrow \\quad d_w \\\\\n8 \\quad \\rightarrow \\quad 16.1\n\\end{array}\n\\]\n\n\\[\n{8-7 \\over 7.8-7} = {16.1-13.8 \\over d_w-13.8}\n\\]\n\n\n\\[\n{1 \\over 0.8} = {2.3 \\over d_w-13.8}\n\\]\n\n\n\\[\nd_w-13.8 = {2.3 \\times 0.8 \\over 1}\n\\] \\[\nd_w =  1.84 + 13.8 = 15.64 \\enspace cm\n\\]"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-17",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-17",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nDiâmetro da área transversal central \\(d_z\\)\n \n\nMedida similar ao diâmetro quadrático médio (\\(d_g\\)), porém utilizando a área transversal que representa metade do acúmulo em área.\nEssa área transversal central é obtida pela metade do valor acumulado de área transversal."
+    "text": "Médias dendrométricas\n\nDiâmetro da área transversal central \\(d_z\\)\n \n\nMedida similar ao diâmetro quadrático médio (\\(d_g\\)), porém utilizando a área transversal que representa metade do acúmulo em área.\nEssa área transversal central é obtida pela metade do valor acumulado de área transversal."
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-18",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-18",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nDiâmetro da área transversal central \\(d_z\\)\n\n\n\n\n\n\n\n\nNova Ordem\nDAP (cm)\ng (m²)\ngacum (m²)\n\n\n\n\n1\n5.4\n0.0023\n0.0023\n\n\n2\n7.5\n0.0044\n0.0067\n\n\n3\n8.4\n0.0055\n0.0122\n\n\n4\n9.2\n0.0066\n0.0188\n\n\n5\n9.4\n0.0069\n0.0257\n\n\n6\n10.2\n0.0082\n0.0339\n\n\n7\n13.8\n0.0150\n0.0489\n\n\n8\n16.1\n0.0204\n0.0693\n\n\n9\n17.0\n0.0227\n0.0920\n\n\n10\n18.9\n0.0281\n0.1201\n\n\n11\n19.6\n0.0302\n0.1503\n\n\n12\n20.4\n0.0327\n0.1830\n\n\n13\n23.6\n0.0437\n0.2267\n\n\n\n\n\n\n\n\n\nPrimeiro passo é encontrar a área transversal central"
+    "text": "Médias dendrométricas\n\nDiâmetro da área transversal central \\(d_z\\)\n\n\n\n\n\n\n\n\nNova Ordem\nDAP (cm)\ng (m²)\ngacum (m²)\n\n\n\n\n1\n5.4\n0.0023\n0.0023\n\n\n2\n7.5\n0.0044\n0.0067\n\n\n3\n8.4\n0.0055\n0.0122\n\n\n4\n9.2\n0.0066\n0.0188\n\n\n5\n9.4\n0.0069\n0.0257\n\n\n6\n10.2\n0.0082\n0.0339\n\n\n7\n13.8\n0.0150\n0.0489\n\n\n8\n16.1\n0.0204\n0.0693\n\n\n9\n17.0\n0.0227\n0.0920\n\n\n10\n18.9\n0.0281\n0.1201\n\n\n11\n19.6\n0.0302\n0.1503\n\n\n12\n20.4\n0.0327\n0.1830\n\n\n13\n23.6\n0.0437\n0.2267\n\n\n\n\n\n\n\n\n\nPrimeiro passo é encontrar a área transversal central"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-19",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-19",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nDiâmetro da área transversal central \\(d_z\\)\n\n\n\n\n\n\n\n\nNova Ordem\nDAP (cm)\ng (m²)\ngacum (m²)\n\n\n\n\n1\n5.4\n0.0023\n0.0023\n\n\n2\n7.5\n0.0044\n0.0067\n\n\n3\n8.4\n0.0055\n0.0122\n\n\n4\n9.2\n0.0066\n0.0188\n\n\n5\n9.4\n0.0069\n0.0257\n\n\n6\n10.2\n0.0082\n0.0339\n\n\n7\n13.8\n0.0150\n0.0489\n\n\n8\n16.1\n0.0204\n0.0693\n\n\n9\n17.0\n0.0227\n0.092\n\n\n10\n18.9\n0.0281\n0.1201\n\n\n11\n19.6\n0.0302\n0.1503\n\n\n12\n20.4\n0.0327\n0.183\n\n\n13\n23.6\n0.0437\n0.2267\n\n\n\n\n\n\n\n\n\nPrimeiro passo é encontrar a área transversal central\n\n\\[\n0.2267 \\times 0.5 = 0.11335 m^2\n\\]\n\nIsso quer dizer que 0.11335 é o ponto que acumula 50% da área transversal."
+    "text": "Médias dendrométricas\n\nDiâmetro da área transversal central \\(d_z\\)\n\n\n\n\n\n\n\n\nNova Ordem\nDAP (cm)\ng (m²)\ngacum (m²)\n\n\n\n\n1\n5.4\n0.0023\n0.0023\n\n\n2\n7.5\n0.0044\n0.0067\n\n\n3\n8.4\n0.0055\n0.0122\n\n\n4\n9.2\n0.0066\n0.0188\n\n\n5\n9.4\n0.0069\n0.0257\n\n\n6\n10.2\n0.0082\n0.0339\n\n\n7\n13.8\n0.0150\n0.0489\n\n\n8\n16.1\n0.0204\n0.0693\n\n\n9\n17.0\n0.0227\n0.092\n\n\n10\n18.9\n0.0281\n0.1201\n\n\n11\n19.6\n0.0302\n0.1503\n\n\n12\n20.4\n0.0327\n0.183\n\n\n13\n23.6\n0.0437\n0.2267\n\n\n\n\n\n\n\n\n\nPrimeiro passo é encontrar a área transversal central\n\n\\[\n0.2267 \\times 0.5 = 0.11335 m^2\n\\]\n\nIsso quer dizer que 0.11335 é o ponto que acumula 50% da área transversal."
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-20",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-20",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nDiâmetro da área transversal central \\(d_z\\)\n\n\n\n\n\n\n\n\nNova Ordem\nDAP (cm)\ng (m²)\ngacum (m²)\n\n\n\n\n1\n5.4\n0.0023\n0.0023\n\n\n2\n7.5\n0.0044\n0.0067\n\n\n3\n8.4\n0.0055\n0.0122\n\n\n4\n9.2\n0.0066\n0.0188\n\n\n5\n9.4\n0.0069\n0.0257\n\n\n6\n10.2\n0.0082\n0.0339\n\n\n7\n13.8\n0.0150\n0.0489\n\n\n8\n16.1\n0.0204\n0.0693\n\n\n9\n17.0\n0.0227\n0.092\n\n\n10\n18.9\n0.0281\n0.1201\n\n\n11\n19.6\n0.0302\n0.1503\n\n\n12\n20.4\n0.0327\n0.183\n\n\n13\n23.6\n0.0437\n0.2267\n\n\n\n\n\n\n\n\n\n\n\n\n\nDAP (cm)\ngacum (m²)\n\n\n\n\n17.0\n0.09200\n\n\n\\(d_z\\)\n0.11335\n\n\n18.9\n0.12010\n\n\n\n\n\n\n\\[\n{18.9-17 \\over d_z - 17}  = {0.12010 - 0.09200 \\over  0.11335 - 0.0920}\n\\]\n\n\n\\[\n{1.9 \\over d_z-17} = {0.0281 \\over 0.02135}\n\\]\n\\[\nd_z-17 = {1.9 \\times 0.02135 \\over 0.0281} \\rightarrow d_z = 1.443594 + 17 = \\color{#027FA8}{18.4 cm}\n\\]"
+    "text": "Médias dendrométricas\n\nDiâmetro da área transversal central \\(d_z\\)\n\n\n\n\n\n\n\n\nNova Ordem\nDAP (cm)\ng (m²)\ngacum (m²)\n\n\n\n\n1\n5.4\n0.0023\n0.0023\n\n\n2\n7.5\n0.0044\n0.0067\n\n\n3\n8.4\n0.0055\n0.0122\n\n\n4\n9.2\n0.0066\n0.0188\n\n\n5\n9.4\n0.0069\n0.0257\n\n\n6\n10.2\n0.0082\n0.0339\n\n\n7\n13.8\n0.0150\n0.0489\n\n\n8\n16.1\n0.0204\n0.0693\n\n\n9\n17.0\n0.0227\n0.092\n\n\n10\n18.9\n0.0281\n0.1201\n\n\n11\n19.6\n0.0302\n0.1503\n\n\n12\n20.4\n0.0327\n0.183\n\n\n13\n23.6\n0.0437\n0.2267\n\n\n\n\n\n\n\n\n\n\n\n\n\nDAP (cm)\ngacum (m²)\n\n\n\n\n17.0\n0.09200\n\n\n\\(d_z\\)\n0.11335\n\n\n18.9\n0.12010\n\n\n\n\n\n\n\\[\n{18.9-17 \\over d_z - 17}  = {0.12010 - 0.09200 \\over  0.11335 - 0.0920}\n\\]\n\n\n\\[\n{1.9 \\over d_z-17} = {0.0281 \\over 0.02135}\n\\]\n\\[\nd_z-17 = {1.9 \\times 0.02135 \\over 0.0281} \\rightarrow d_z = 1.443594 + 17 = \\color{#027FA8}{18.4 cm}\n\\]"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-21",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-21",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nDiâmetros de Hohenadl \\(d^-\\) e \\(d^+\\)\n\nSão calculados como a média aritmética mais ou menos um desvio padrão\n\n\\[\nS^2 = {\\displaystyle\\sum_{i=1}^n x_i^2 - {\\left(\\sum_{i=1}^n x_i \\over n \\right)^2} \\over n-1}\n\\]\n\\[\nS = \\sqrt{S^2}\n\\]"
+    "text": "Médias dendrométricas\n\nDiâmetros de Hohenadl \\(d^-\\) e \\(d^+\\)\n\nSão calculados como a média aritmética mais ou menos um desvio padrão\n\n\\[\nS^2 = {\\displaystyle\\sum_{i=1}^n x_i^2 - {\\left(\\sum_{i=1}^n x_i \\over n \\right)^2} \\over n-1}\n\\]\n\\[\nS = \\sqrt{S^2}\n\\]"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-22",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-22",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nDiâmetros de Hohenadl \\(d^-\\) e \\(d^+\\)\n\n\n\n\n\n\n\nOrdem\nDAP\nDAP2\n\n\n\n\n1\n17.0\n289.00\n\n\n2\n19.6\n384.16\n\n\n3\n7.5\n56.25\n\n\n4\n16.1\n259.21\n\n\n5\n9.2\n84.64\n\n\n6\n9.4\n88.36\n\n\n7\n5.4\n29.16\n\n\n8\n8.4\n70.56\n\n\n9\n13.8\n190.44\n\n\n10\n10.2\n104.04\n\n\n11\n18.9\n357.21\n\n\n12\n23.6\n556.96\n\n\n13\n20.4\n416.16\n\n\nSoma\n179.5\n2886.15\n\n\n\n\n\n\n\n\\[\n\\bar{d} = {179.5 \\over 13} = 13.81\n\\] \\[\nS^2 = {2886.15 - \\left({179.5 \\over 13}\\right)^2 \\over 13-1} = 33.9724 cm^2\n\\]\n\\[\nS = \\sqrt{33.9724359} = 5.83 cm\n\\]\n\\[\n\\textcolor{#027FA8}{d^-} = \\bar{d} \\textcolor{#027FA8}{-} S \\quad \\text{e} \\quad \\textcolor{#FF0000}{d^+} = \\bar{d} \\textcolor{#FF0000}{+ }S\n\\]"
+    "text": "Médias dendrométricas\n\nDiâmetros de Hohenadl \\(d^-\\) e \\(d^+\\)\n\n\n\n\n\n\n\nOrdem\nDAP\nDAP2\n\n\n\n\n1\n17.0\n289.00\n\n\n2\n19.6\n384.16\n\n\n3\n7.5\n56.25\n\n\n4\n16.1\n259.21\n\n\n5\n9.2\n84.64\n\n\n6\n9.4\n88.36\n\n\n7\n5.4\n29.16\n\n\n8\n8.4\n70.56\n\n\n9\n13.8\n190.44\n\n\n10\n10.2\n104.04\n\n\n11\n18.9\n357.21\n\n\n12\n23.6\n556.96\n\n\n13\n20.4\n416.16\n\n\nSoma\n179.5\n2886.15\n\n\n\n\n\n\n\n\\[\n\\bar{d} = {179.5 \\over 13} = 13.81\n\\] \\[\nS^2 = {2886.15 - \\left({179.5 \\over 13}\\right)^2 \\over 13-1} = 33.9724 cm^2\n\\]\n\\[\nS = \\sqrt{33.9724359} = 5.83 cm\n\\]\n\\[\n\\textcolor{#027FA8}{d^-} = \\bar{d} \\textcolor{#027FA8}{-} S \\quad \\text{e} \\quad \\textcolor{#FF0000}{d^+} = \\bar{d} \\textcolor{#FF0000}{+ }S\n\\]"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-23",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-23",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nDiâmetros de Hohenadl \\(d^-\\) e \\(d^+\\)\n\n\n\n\n\n\n\nOrdem\nDAP\nDAP2\n\n\n\n\n1\n17.0\n289.00\n\n\n2\n19.6\n384.16\n\n\n3\n7.5\n56.25\n\n\n4\n16.1\n259.21\n\n\n5\n9.2\n84.64\n\n\n6\n9.4\n88.36\n\n\n7\n5.4\n29.16\n\n\n8\n8.4\n70.56\n\n\n9\n13.8\n190.44\n\n\n10\n10.2\n104.04\n\n\n11\n18.9\n357.21\n\n\n12\n23.6\n556.96\n\n\n13\n20.4\n416.16\n\n\nSoma\n179.5\n2886.15\n\n\n\n\n\n\n\n\\[\n\\textcolor{#027FA8}{d^-} = \\bar{d} \\textcolor{#027FA8}{-} S \\quad \\text{e} \\quad \\textcolor{#FF0000}{d^+} = \\bar{d} \\textcolor{#FF0000}{+} S\n\\]\n\\[\n\\textcolor{#027FA8}{d^-} = 13.8 \\textcolor{#027FA8}{-} 5.83 = \\textcolor{#027FA8}{8} cm\n\\]\n\\[\n\\textcolor{#FF0000}{d^+} = 13.8 \\textcolor{#FF0000}{+} 5.83 = \\textcolor{#FF0000}{19.6} cm\n\\]"
+    "text": "Médias dendrométricas\n\nDiâmetros de Hohenadl \\(d^-\\) e \\(d^+\\)\n\n\n\n\n\n\n\nOrdem\nDAP\nDAP2\n\n\n\n\n1\n17.0\n289.00\n\n\n2\n19.6\n384.16\n\n\n3\n7.5\n56.25\n\n\n4\n16.1\n259.21\n\n\n5\n9.2\n84.64\n\n\n6\n9.4\n88.36\n\n\n7\n5.4\n29.16\n\n\n8\n8.4\n70.56\n\n\n9\n13.8\n190.44\n\n\n10\n10.2\n104.04\n\n\n11\n18.9\n357.21\n\n\n12\n23.6\n556.96\n\n\n13\n20.4\n416.16\n\n\nSoma\n179.5\n2886.15\n\n\n\n\n\n\n\n\\[\n\\textcolor{#027FA8}{d^-} = \\bar{d} \\textcolor{#027FA8}{-} S \\quad \\text{e} \\quad \\textcolor{#FF0000}{d^+} = \\bar{d} \\textcolor{#FF0000}{+} S\n\\]\n\\[\n\\textcolor{#027FA8}{d^-} = 13.8 \\textcolor{#027FA8}{-} 5.83 = \\textcolor{#027FA8}{8} cm\n\\]\n\\[\n\\textcolor{#FF0000}{d^+} = 13.8 \\textcolor{#FF0000}{+} 5.83 = \\textcolor{#FF0000}{19.6} cm\n\\]"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-24",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-24",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nHistograma\n\nO resumo de dados em forma de histograma também é oportuno.\nPara criar um histograma, é preciso:\n\n\nDeterminar o número de classes (\\(k\\))\nCalcular a amplitude total (\\(A_t\\))\nDeterminar a amplitude de cada classe (\\(A_c\\))\nCalcular os limites inferior (\\(LI\\)) e superior (\\(LS\\)) de cada classe\n\n\nO número de classes de um histograma pode ser obtido a partir da fórmula de Sturges:\n\n\\[\nk = 1 + 3.3 \\log_{10}(n)\n\\]"
+    "text": "Médias dendrométricas\n\nHistograma\n\nO resumo de dados em forma de histograma também é oportuno.\nPara criar um histograma, é preciso:\n\n\nDeterminar o número de classes (\\(k\\))\nCalcular a amplitude total (\\(A_t\\))\nDeterminar a amplitude de cada classe (\\(A_c\\))\nCalcular os limites inferior (\\(LI\\)) e superior (\\(LS\\)) de cada classe\n\n\nO número de classes de um histograma pode ser obtido a partir da fórmula de Sturges:\n\n\\[\nk = 1 + 3.3 \\log_{10}(n)\n\\]"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-25",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-25",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nHistograma\n\n\n\n\n\n\n\nOrdem\nDAP\nOrdem\nDAP\n\n\n\n\n1\n17.0\n15\n13.7\n\n\n2\n19.6\n16\n17.5\n\n\n3\n7.5\n17\n15.9\n\n\n4\n16.1\n18\n13.8\n\n\n5\n9.2\n19\n17.5\n\n\n6\n9.4\n20\n14.5\n\n\n7\n5.4\n21\n8.1\n\n\n8\n8.4\n22\n10.3\n\n\n9\n13.8\n23\n17.2\n\n\n10\n10.2\n24\n11.5\n\n\n11\n18.9\n25\n17.5\n\n\n12\n23.6\n26\n16.1\n\n\n13\n20.4\n27\n12.6\n\n\n14\n13.2\n\n\n\n\n\n\n\n\n\n\\[\nk = 1 + 3.3 \\log_{10}(n)\n\\] \\[\nk = 1 + 3.3 \\log_{10}(27) = 5.7235\n\\]\n\\[\nk \\approx 5\n\\]\n\nA amplitude total \\(A_t\\) é calculada pela diferença entre maior e menor valor:\n\\[\nA_t = \\max(DAP) - \\min(DAP) = 23.6 - 5.4 = 18.2\n\\]"
+    "text": "Médias dendrométricas\n\nHistograma\n\n\n\n\n\n\n\nOrdem\nDAP\nOrdem\nDAP\n\n\n\n\n1\n17.0\n15\n13.7\n\n\n2\n19.6\n16\n17.5\n\n\n3\n7.5\n17\n15.9\n\n\n4\n16.1\n18\n13.8\n\n\n5\n9.2\n19\n17.5\n\n\n6\n9.4\n20\n14.5\n\n\n7\n5.4\n21\n8.1\n\n\n8\n8.4\n22\n10.3\n\n\n9\n13.8\n23\n17.2\n\n\n10\n10.2\n24\n11.5\n\n\n11\n18.9\n25\n17.5\n\n\n12\n23.6\n26\n16.1\n\n\n13\n20.4\n27\n12.6\n\n\n14\n13.2\n\n\n\n\n\n\n\n\n\n\\[\nk = 1 + 3.3 \\log_{10}(n)\n\\] \\[\nk = 1 + 3.3 \\log_{10}(27) = 5.7235\n\\]\n\\[\nk \\approx 5\n\\]\n\nA amplitude total \\(A_t\\) é calculada pela diferença entre maior e menor valor:\n\\[\nA_t = \\max(DAP) - \\min(DAP) = 23.6 - 5.4 = 18.2\n\\]"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-26",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-26",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nHistograma\n\n\n\n\n\n\n\nOrdem\nDAP\nOrdem\nDAP\n\n\n\n\n1\n17.0\n15\n13.7\n\n\n2\n19.6\n16\n17.5\n\n\n3\n7.5\n17\n15.9\n\n\n4\n16.1\n18\n13.8\n\n\n5\n9.2\n19\n17.5\n\n\n6\n9.4\n20\n14.5\n\n\n7\n5.4\n21\n8.1\n\n\n8\n8.4\n22\n10.3\n\n\n9\n13.8\n23\n17.2\n\n\n10\n10.2\n24\n11.5\n\n\n11\n18.9\n25\n17.5\n\n\n12\n23.6\n26\n16.1\n\n\n13\n20.4\n27\n12.6\n\n\n14\n13.2\n\n\n\n\n\n\n\n\n\nA Amplitude da classe (\\(A_c\\)) é calculada pela razão entre \\(A_t\\) e \\(k\\)\n\\[\nA_c = {A_t \\over k} = {18.2 \\over 5} = 3.64 cm\n\\]\n\nIsso significa que cada classe terá 3.64 cm de amplitude no diâmetro.\n\n\nAssim, os limites de classe começam no menor diâmetro (\\(5.4\\)), e aumentam até o maior diâmetro (\\(23.6\\)) ao passo de \\(3.64\\)."
+    "text": "Médias dendrométricas\n\nHistograma\n\n\n\n\n\n\n\nOrdem\nDAP\nOrdem\nDAP\n\n\n\n\n1\n17.0\n15\n13.7\n\n\n2\n19.6\n16\n17.5\n\n\n3\n7.5\n17\n15.9\n\n\n4\n16.1\n18\n13.8\n\n\n5\n9.2\n19\n17.5\n\n\n6\n9.4\n20\n14.5\n\n\n7\n5.4\n21\n8.1\n\n\n8\n8.4\n22\n10.3\n\n\n9\n13.8\n23\n17.2\n\n\n10\n10.2\n24\n11.5\n\n\n11\n18.9\n25\n17.5\n\n\n12\n23.6\n26\n16.1\n\n\n13\n20.4\n27\n12.6\n\n\n14\n13.2\n\n\n\n\n\n\n\n\n\nA Amplitude da classe (\\(A_c\\)) é calculada pela razão entre \\(A_t\\) e \\(k\\)\n\\[\nA_c = {A_t \\over k} = {18.2 \\over 5} = 3.64 cm\n\\]\n\nIsso significa que cada classe terá 3.64 cm de amplitude no diâmetro.\n\n\nAssim, os limites de classe começam no menor diâmetro (\\(5.4\\)), e aumentam até o maior diâmetro (\\(23.6\\)) ao passo de \\(3.64\\)."
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-27",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-27",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nHistograma"
+    "text": "Médias dendrométricas\n\nHistograma"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-28",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-28",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nHistograma\n\n\n\n\n\n\n\n\n\nNº Classe\nLimites de Classe\nCC\nn\n\n\n\n\n1\n5,4 |– 9,04\n7,22\n4\n\n\n2\n9,04 |– 12,68\n10,86\n6\n\n\n3\n12,68 |– 16,32\n14,5\n8\n\n\n4\n16,32 |– 19,96\n18,14\n7\n\n\n5\n19,96 |– 23,6\n21,78\n2\n\n\nTotal\n-\n-\n27"
+    "text": "Médias dendrométricas\n\nHistograma\n\n\n\n\n\n\n\n\n\nNº Classe\nLimites de Classe\nCC\nn\n\n\n\n\n1\n5,4 |– 9,04\n7,22\n4\n\n\n2\n9,04 |– 12,68\n10,86\n6\n\n\n3\n12,68 |– 16,32\n14,5\n8\n\n\n4\n16,32 |– 19,96\n18,14\n7\n\n\n5\n19,96 |– 23,6\n21,78\n2\n\n\nTotal\n-\n-\n27"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-29",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-29",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nÁrea Basal \\(G\\)\nA Área Basal - \\(G\\) é uma medida ocupação do espaço.\nPode ser calculada como a soma das áreas transversais da parcela:\n\\[\nG = \\displaystyle\\sum_{i=1}^n g_i\n\\]"
+    "text": "Médias dendrométricas\n\nÁrea Basal \\(G\\)\nA Área Basal - \\(G\\) é uma medida ocupação do espaço.\nPode ser calculada como a soma das áreas transversais da parcela:\n\\[\nG = \\displaystyle\\sum_{i=1}^n g_i\n\\]"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-30",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-30",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nÁrea Basal \\(G\\)\n\n\n\n\n\n\n\nOrdem\nDAP\ng\nOrdem\nDAP\ng\n\n\n\n\n1\n17.0\n0.0227\n15\n13.7\n0.0147\n\n\n2\n19.6\n0.0302\n16\n17.5\n0.0241\n\n\n3\n7.5\n0.0044\n17\n15.9\n0.0199\n\n\n4\n16.1\n0.0204\n18\n13.8\n0.015\n\n\n5\n9.2\n0.0066\n19\n17.5\n0.0241\n\n\n6\n9.4\n0.0069\n20\n14.5\n0.0165\n\n\n7\n5.4\n0.0023\n21\n8.1\n0.0052\n\n\n8\n8.4\n0.0055\n22\n10.3\n0.0083\n\n\n9\n13.8\n0.0150\n23\n17.2\n0.0232\n\n\n10\n10.2\n0.0082\n24\n11.5\n0.0104\n\n\n11\n18.9\n0.0281\n25\n17.5\n0.0241\n\n\n12\n23.6\n0.0437\n26\n16.1\n0.0204\n\n\n13\n20.4\n0.0327\n27\n12.6\n0.0125\n\n\n14\n13.2\n0.0137\n\n\n\n\n\n\n\n\n\n\nNesse caso, a área basal é dada pela soma de todas as áreas transversais\n\\[\nG = \\displaystyle\\sum_{i=1}^{27} g_i  = 0.46 \\enspace m^3/\\textcolor{#FF0000}{??}\n\\]"
+    "text": "Médias dendrométricas\n\nÁrea Basal \\(G\\)\n\n\n\n\n\n\n\nOrdem\nDAP\ng\nOrdem\nDAP\ng\n\n\n\n\n1\n17.0\n0.0227\n15\n13.7\n0.0147\n\n\n2\n19.6\n0.0302\n16\n17.5\n0.0241\n\n\n3\n7.5\n0.0044\n17\n15.9\n0.0199\n\n\n4\n16.1\n0.0204\n18\n13.8\n0.015\n\n\n5\n9.2\n0.0066\n19\n17.5\n0.0241\n\n\n6\n9.4\n0.0069\n20\n14.5\n0.0165\n\n\n7\n5.4\n0.0023\n21\n8.1\n0.0052\n\n\n8\n8.4\n0.0055\n22\n10.3\n0.0083\n\n\n9\n13.8\n0.0150\n23\n17.2\n0.0232\n\n\n10\n10.2\n0.0082\n24\n11.5\n0.0104\n\n\n11\n18.9\n0.0281\n25\n17.5\n0.0241\n\n\n12\n23.6\n0.0437\n26\n16.1\n0.0204\n\n\n13\n20.4\n0.0327\n27\n12.6\n0.0125\n\n\n14\n13.2\n0.0137\n\n\n\n\n\n\n\n\n\n\nNesse caso, a área basal é dada pela soma de todas as áreas transversais\n\\[\nG = \\displaystyle\\sum_{i=1}^{27} g_i  = 0.46 \\enspace m^3/\\textcolor{#FF0000}{??}\n\\]"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-31",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-31",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nÁrea Basal \\(G\\)\n\n\n\n\n\nParcela\n\n\n\n\n\nA Área Basal \\(G\\) é uma medida relacionada à uma área delimitada.\nNo nosso exemplo, a área delimitada, ou área da parcela \\(a\\), seria de:\n\n\\[a = 20 m \\times 30 m = 600 m^2 = 0.06ha\\]\nPortanto,\n\\[\nG = 0.46 \\enspace m^2/\\textcolor{#FF0000}{0.06ha}\n\\]"
+    "text": "Médias dendrométricas\n\nÁrea Basal \\(G\\)\n\n\n\n\n\nParcela\n\n\n\n\n\nA Área Basal \\(G\\) é uma medida relacionada à uma área delimitada.\nNo nosso exemplo, a área delimitada, ou área da parcela \\(a\\), seria de:\n\n\\[a = 20 m \\times 30 m = 600 m^2 = 0.06ha\\]\nPortanto,\n\\[\nG = 0.46 \\enspace m^2/\\textcolor{#FF0000}{0.06ha}\n\\]"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-32",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-32",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nÁrea Basal \\(G\\)\n\n\n\n\n\nParcela\n\n\n\n\n\n\n\n\n\n\nUnidades de área\n\n\n\nNa Engenharia Florestal, é mais comum apresentar resultados por hectare, como \\(m^2/ha\\), \\(m^3/ha\\) etc..\nIsso significa que os valores obtidos na escala da parcela são extrapolados para 1 hectare.\n\n\n\n\nPara extrapolar, basta calcular um fator de expansão \\(f_e = {1 \\over a}\\) (\\(a\\) deve estar em hectare!).\n\\[\n0.46 \\enspace m^2/0.06ha \\enspace . f_e \\quad \\rightarrow \\quad 7.6 \\enspace m^2/ha\n\\]"
+    "text": "Médias dendrométricas\n\nÁrea Basal \\(G\\)\n\n\n\n\n\nParcela\n\n\n\n\n\n\n\n\n\n\nWarningUnidades de área\n\n\n\n\nNa Engenharia Florestal, é mais comum apresentar resultados por hectare, como \\(m^2/ha\\), \\(m^3/ha\\) etc..\nIsso significa que os valores obtidos na escala da parcela são extrapolados para 1 hectare.\n\n\n\nPara extrapolar, basta calcular um fator de expansão \\(f_e = {1 \\over a}\\) (\\(a\\) deve estar em hectare!).\n\\[\n0.46 \\enspace m^2/0.06ha \\enspace . f_e \\quad \\rightarrow \\quad 7.6 \\enspace m^2/ha\n\\]"
   },
   {
     "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-33",
     "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html#médias-dendrométricas-33",
     "title": "UNIDADE 2 - DIÂMETRO",
     "section": "Médias dendrométricas",
-    "text": "Médias dendrométricas\nÁrea Basal \\(G\\)\n\n\n\n\n\nParcela\n\n\n\n\nIsso é o mesmo que usar regra de 3\n\\[\n\\begin{aligned}\n0.06 \\enspace ha & \\rightarrow 0.46 \\enspace m^2 \\\\\n1 \\enspace ha & \\rightarrow X \\enspace m^2\n\\end{aligned}\n\\]\n\\[\nX = {0.46 \\times 1  \\over 0.06 } = 7.6 \\enspace m^2/ha\n\\]"
+    "text": "Médias dendrométricas\n\nÁrea Basal \\(G\\)\n\n\n\n\n\nParcela\n\n\n\n\nIsso é o mesmo que usar regra de 3\n\\[\n\\begin{aligned}\n0.06 \\enspace ha & \\rightarrow 0.46 \\enspace m^2 \\\\\n1 \\enspace ha & \\rightarrow X \\enspace m^2\n\\end{aligned}\n\\]\n\\[\nX = {0.46 \\times 1  \\over 0.06 } = 7.6 \\enspace m^2/ha\n\\]"
+  },
+  {
+    "objectID": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html",
+    "href": "cursos/dendrometria/1_aulas/Aula3/Aula3_Diametro.html",
+    "title": "UNIDADE 2 - DIÂMETRO",
+    "section": "",
+    "text": "UNIDADE 2 - DIÂMETRO\n2.1 - Diâmetro das árvores e a área basal.\n2.2 - Medição do diâmetro."
+  },
+  {
+    "objectID": "manejoflorestal.html",
+    "href": "manejoflorestal.html",
+    "title": "Manejo Florestal",
+    "section": "",
+    "text": "Contato: gabrielorso16@gmail.com\nSala 6 - Prédio 44B\n\n\nPara salvar as aulas em pdf, abra a apresentação, pressione “e”, e depois Ctrl + P para impressão.\n\n\nConteúdo Programático\n\n\n10/03/2026\n\nApresentação da Disciplina\nUnidade 1 - Introdução\n\n\nAula 1\nAula 2\n\n\n\n11/03/2026\n\nUnidade 2 - Elementos Principais\n\n\nAula 3\n\n\n\n17/03/2026\n\nClassificação de Sítios\n\n\nAula 4"
+  },
+  {
+    "objectID": "dplyr.html",
+    "href": "dplyr.html",
+    "title": "dplyr",
+    "section": "",
+    "text": "Esse material foca principalmente no uso do pacote dplyr, porém será carregado o pacote tidyverse, que contém diversos outros pacotes inclusos, entre eles o dplyre o ggplot2.\n\n#install.packages(\"tidyverse\")\n\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "dplyr.html#motivação",
+    "href": "dplyr.html#motivação",
+    "title": "dplyr",
+    "section": "Motivação",
+    "text": "Motivação\nTomando-se como exemplo um inventário florestal, deseja-se obter a partir dos dados brutos, um resumo do número de indivíduos, diâmetro médio e área basal por parcela.\n\nUsando o pacote base\n\n# Calcular DAP e área transversal\ndados$dap &lt;- dados$cap/pi\ndados$g &lt;- (dados$dap**2*pi)/40000\n\n# Calcular número de indivíduos\nn.ind &lt;- table(dados$par)\n\n# Calcular o DAP médio e a área basal da parcela\ndap.m &lt;- tapply(X = dados$dap, INDEX = dados$par, FUN = mean, na.rm=T)\nG &lt;- tapply(X = dados$g, INDEX = dados$par, FUN = sum, na.rm=T)\n\nresumo.base &lt;- data.frame(n.ind, dap.m, G)\n\n\nresumo.base\n\n   Var1 Freq    dap.m         G\n3     3   47 13.33515 1.2696864\n6     6   36 16.49022 1.2675975\n7     7   49 11.68002 0.7185567\n8     8   53 12.02371 0.7833129\n9     9   49 13.69707 0.8875057\n10   10   39 14.23008 0.9500854\n11   11   62 12.64512 0.9436257\n12   12   37 13.39052 0.7791371\n13   13   22 21.13867 1.0729828\n14   14   38 17.55730 1.3661065\n15   15   42 14.77867 1.1987550\n16   16   30 16.43010 0.8968162\n17   17   42 15.10456 1.1259496\n18   18   37 14.69387 0.8780618\n19   19   46 16.23034 1.4723444\n20   20   29 19.07664 1.7538238\n21   21   50 12.45228 1.1429553\n22   22   54 14.33279 1.5268907\n\n\n\n\nUsando o pacote dplyr\n\ndados %&gt;% \n  mutate(dap = cap/pi, g = (dap^2*pi)/40000) %&gt;% \n  group_by(par) %&gt;% \n  summarise(n.ind = n(), dap.m = mean(dap, na.rm=T), G = sum(g, na.rm=T))\n\n# A tibble: 18 × 4\n     par n.ind dap.m     G\n   &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1     3    47  13.3 1.27 \n 2     6    36  16.5 1.27 \n 3     7    49  11.7 0.719\n 4     8    53  12.0 0.783\n 5     9    49  13.7 0.888\n 6    10    39  14.2 0.950\n 7    11    62  12.6 0.944\n 8    12    37  13.4 0.779\n 9    13    22  21.1 1.07 \n10    14    38  17.6 1.37 \n11    15    42  14.8 1.20 \n12    16    30  16.4 0.897\n13    17    42  15.1 1.13 \n14    18    37  14.7 0.878\n15    19    46  16.2 1.47 \n16    20    29  19.1 1.75 \n17    21    50  12.5 1.14 \n18    22    54  14.3 1.53 \n\n\nColocando mais uma vez o código utilizado, agora mais desmembrado e explicado, é possível perceber que todos os comandos estão conectados por um operador %&gt;%, chamado pipe. Esse operador é similar ao operador “+” utilizado para conectar os comandos do ggplot2, e sua principal vantagem é que diversas operações podem ser realizadas sem a necessidade de criar e armazenar novos objetos, tornando o script mais rápido e fluido.\n\nresumo.dplyr &lt;- dados %&gt;% \n  \n  mutate(dap = cap/pi,              # mutate cria novas colunas no data frame\n         g = (dap^2*pi)/40000) %&gt;%\n  \n  group_by(par) %&gt;%    # group_by agrupa os dados com base na variável informada\n  \n  summarise(n.ind = n(),                 # summarise resume as informações\n            dap.m = mean(dap, na.rm=T),\n            G = sum(g, na.rm=T))\n\n\nresumo.dplyr\n\nNo exemplo acima, mutate() cria novas colunas no data frame; group_by() agrupa os dados com base na coluna desejada, e summarise() resume os grupos com base na função informada (n(), mean() e sum())."
+  },
+  {
+    "objectID": "dplyr.html#pipes",
+    "href": "dplyr.html#pipes",
+    "title": "dplyr",
+    "section": "Pipes %>%",
+    "text": "Pipes %&gt;%\nOs pipes %&gt;% são operadores muito utilizados no pacote dplyr. Eles permitem encadear sequências de comandos, de forma similar ao operador “+” no pacote ggplot2.\nDe forma resumida, o operador pega tudo que está à esquerda, e joga como primeiro argumento na função que está à sua direita.\n\n#Selecionar as primeiras 10 linhas do data frame\ndf &lt;- dados[1:10, ]\n\n#Selecionar apenas as colunas \"cient\", \"cap\" e \"ht\"\nselect(df, cient, cap, ht)\n\n                     cient cap   ht\n1   Alchornea triplinervia  82 17.0\n2       Guarea macrophylla  18  5.5\n3          Ocotea dispersa  20  6.0\n4       Sloanea guianensis  57 10.0\n5              Ilex dumosa  70 12.0\n6           Myrcia reitzii  17  8.0\n7  Calophyllum brasiliense  44 12.0\n8       Sloanea guianensis  33 10.0\n9       Sloanea guianensis  31 10.0\n10         Myrcia racemosa  17  6.0\n\n#Selecionar apenas as colunas \"cient\", \"cap\" e \"ht\"\ndf %&gt;% select(cient, cap, ht)\n\n                     cient cap   ht\n1   Alchornea triplinervia  82 17.0\n2       Guarea macrophylla  18  5.5\n3          Ocotea dispersa  20  6.0\n4       Sloanea guianensis  57 10.0\n5              Ilex dumosa  70 12.0\n6           Myrcia reitzii  17  8.0\n7  Calophyllum brasiliense  44 12.0\n8       Sloanea guianensis  33 10.0\n9       Sloanea guianensis  31 10.0\n10         Myrcia racemosa  17  6.0\n\n\nEssa lógica se mantém para o uso de mais comandos em sequência, lembrando que o operador pega tudo que está à esquerda e insere como primeiro argumento no comando à direita.\n\ndf %&gt;% select(cient, cap, ht) %&gt;% mutate(dap = cap/pi)\n\n                     cient cap   ht       dap\n1   Alchornea triplinervia  82 17.0 26.101411\n2       Guarea macrophylla  18  5.5  5.729578\n3          Ocotea dispersa  20  6.0  6.366198\n4       Sloanea guianensis  57 10.0 18.143664\n5              Ilex dumosa  70 12.0 22.281692\n6           Myrcia reitzii  17  8.0  5.411268\n7  Calophyllum brasiliense  44 12.0 14.005635\n8       Sloanea guianensis  33 10.0 10.504226\n9       Sloanea guianensis  31 10.0  9.867606\n10         Myrcia racemosa  17  6.0  5.411268\n\ndf %&gt;% select(cient, ht) %&gt;% mutate(dap = cap/pi)\n\nError in `mutate()`:\nℹ In argument: `dap = cap/pi`.\nCaused by error:\n! objeto 'cap' não encontrado\n\n\nEsse último exemplo resultou em um erro pois a variável “cap” não foi selecionada, e como consequência não há como calcular a nova variável “dap”. O segundo operador %&gt;% recebe um data frame contendo apenas as variáveis “cient” e “ht”, e insere esse data frame no início do comando mutate(). O erro surge por não existir a variável “dap” no data frame fornecido.\n\n\n\nPipes"
+  },
+  {
+    "objectID": "dplyr.html#filter",
+    "href": "dplyr.html#filter",
+    "title": "dplyr",
+    "section": "filter()",
+    "text": "filter()\nA função filter() é utilizada para filtrar linhas que satisfaçam uma determinada condição.\n\ndados &lt;- as_tibble(dados)\n\ndados %&gt;% filter(par == 6)\n\n# A tibble: 36 × 15\n     par   ind fam       cient autor verna   cap    ht    hc    qf    qc estrato\n   &lt;int&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  \n 1     6     1 Euphorbi… Alch… (Spr… Tanh…    63    11   6       1     2 dossel \n 2     6     2 Bignonia… Jaca… Cham. Caro…    28     5   3       2     1 sub    \n 3     6     3 Primulac… Myrs… (Sw.… Capo…    27     9   5       1     1 dossel \n 4     6     4 Euphorbi… Alch… (Spr… Tanh…    21     7   5       1     2 inter  \n 5     6     5 Melastom… Pler… DC.   Jaca…    21     7   4.5     1     1 inter  \n 6     6     6 Lauraceae Ocot… Mez   Cane…    70    12   1       3     1 dossel \n 7     6     6 Lauraceae Ocot… Mez   Cane…    67    12   1       3     1 dossel \n 8     6     7 Meliaceae Guar… Vahl  Caf�…    18     6   2       3     1 sub    \n 9     6     8 Calophyl… Calo… Camb… Guan…   212    17   8       1     1 dossel \n10     6     9 Myrtaceae Myrc… Kiae… Camb…    25     6   2       2     2 dub    \n# ℹ 26 more rows\n# ℹ 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;\n\ndados %&gt;% filter(cap &gt;= 140)\n\n# A tibble: 23 × 15\n     par   ind fam       cient autor verna   cap    ht    hc    qf    qc estrato\n   &lt;int&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  \n 1     3    21 \"Calophy… Calo… \"Cam… \"Gua…   199    25    10     1     1 \"emerg\"\n 2     3    29 \"Calophy… Calo… \"Cam… \"Gua…   200    24     8     1     1 \"emerg\"\n 3     6     8 \"Calophy… Calo… \"Cam… \"Gua…   212    17     8     1     1 \"dosse…\n 4     6    13 \"Calophy… Calo… \"Cam… \"Gua…   141    17    12     1     1 \"dosse…\n 5    10    22 \"Laurace… Nect… \"Nee… \"Can…   148    17    10     2     3 \"dosse…\n 6    10    25 \"\"        Morta \"\"    \"\"      142    NA    NA    NA    NA \"\"     \n 7    12    11 \"Sapinda… Mata… \"Rad… \"Mat…   163    16     2     2     1 \"dosse…\n 8    13    22 \"Calophy… Calo… \"Cam… \"Gua…   229    17    10     1     1 \"emerg\"\n 9    14     4 \"Euphorb… Alch… \"(Sp… \"Tan…   165    19     7     2     1 \"emerg\"\n10    14    19 \"Euphorb… Alch… \"(Sp… \"Tan…   141    20     7     2     1 \"emerg\"\n# ℹ 13 more rows\n# ℹ 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;\n\ndados %&gt;% filter(cap &gt;= 140 & par == 10)\n\n# A tibble: 2 × 15\n    par   ind fam        cient autor verna   cap    ht    hc    qf    qc estrato\n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  \n1    10    22 \"Lauracea… Nect… \"Nee… \"Can…   148    17    10     2     3 \"dosse…\n2    10    25 \"\"         Morta \"\"    \"\"      142    NA    NA    NA    NA \"\"     \n# ℹ 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;\n\n# Separar as condições com vírgula é equivalente \n\n\ndf &lt;- dados %&gt;% filter(cap &gt;= 140)\n\n\n\n\nFilter\n\n\n\nFiltro OU ‘|’ - União de condições\nO operador ‘|’ representa união entre condições, i.e., mantém as linhas que satisfaçam PELO MENOS uma das condições.\n\nprint(df)\n\n# A tibble: 23 × 15\n     par   ind fam       cient autor verna   cap    ht    hc    qf    qc estrato\n   &lt;int&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  \n 1     3    21 \"Calophy… Calo… \"Cam… \"Gua…   199    25    10     1     1 \"emerg\"\n 2     3    29 \"Calophy… Calo… \"Cam… \"Gua…   200    24     8     1     1 \"emerg\"\n 3     6     8 \"Calophy… Calo… \"Cam… \"Gua…   212    17     8     1     1 \"dosse…\n 4     6    13 \"Calophy… Calo… \"Cam… \"Gua…   141    17    12     1     1 \"dosse…\n 5    10    22 \"Laurace… Nect… \"Nee… \"Can…   148    17    10     2     3 \"dosse…\n 6    10    25 \"\"        Morta \"\"    \"\"      142    NA    NA    NA    NA \"\"     \n 7    12    11 \"Sapinda… Mata… \"Rad… \"Mat…   163    16     2     2     1 \"dosse…\n 8    13    22 \"Calophy… Calo… \"Cam… \"Gua…   229    17    10     1     1 \"emerg\"\n 9    14     4 \"Euphorb… Alch… \"(Sp… \"Tan…   165    19     7     2     1 \"emerg\"\n10    14    19 \"Euphorb… Alch… \"(Sp… \"Tan…   141    20     7     2     1 \"emerg\"\n# ℹ 13 more rows\n# ℹ 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;\n\ndf %&gt;% filter(cap &gt;= 200 | cient == 'Matayba intermedia')\n\n# A tibble: 8 × 15\n    par   ind fam        cient autor verna   cap    ht    hc    qf    qc estrato\n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  \n1     3    29 Calophyll… Calo… \"Cam… \"Gua…   200    24     8     1     1 emerg  \n2     6     8 Calophyll… Calo… \"Cam… \"Gua…   212    17     8     1     1 dossel \n3    12    11 Sapindace… Mata… \"Rad… \"Mat…   163    16     2     2     1 dossel \n4    13    22 Calophyll… Calo… \"Cam… \"Gua…   229    17    10     1     1 emerg  \n5    16     5 Sapindace… Mata… \"Rad… \"Mat…   150    15     8     2     1 emerg  \n6    20     8 Sapotaceae Mani… \"(Ma… \"Ma�…   338    30    20     1     1 e      \n7    21     9 Fabaceae   Pter… \"Vah… \"Pau…   230    25     6     2     1 dossel \n8    22    17 Indet.     Inde… \"\"    \"\"      228    23    10     2     1 dossel \n# ℹ 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;\n\n\n\n\n\nFilter Ou\n\n\n\n\nFiltro E ‘&’ - Interseção de condições\nO operador ‘&’ representa interseção de condições, i.e., mantém as linhas que satisfaçam TODAS as condições.\n\ndf %&gt;% filter(dap &gt; 50 & ht &gt;= 20)\n\n# A tibble: 6 × 15\n    par   ind fam        cient autor verna   cap    ht    hc    qf    qc estrato\n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  \n1     3    21 Calophyll… Calo… \"Cam… \"Gua…   199    25    10     1     1 emerg  \n2     3    29 Calophyll… Calo… \"Cam… \"Gua…   200    24     8     1     1 emerg  \n3    20     8 Sapotaceae Mani… \"(Ma… \"Ma�…   338    30    20     1     1 e      \n4    20    25 Fabaceae   Pter… \"Vah… \"Pau…   163    26    10     1     1 dossel \n5    21     9 Fabaceae   Pter… \"Vah… \"Pau…   230    25     6     2     1 dossel \n6    22    17 Indet.     Inde… \"\"    \"\"      228    23    10     2     1 dossel \n# ℹ 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;\n\n# Separar as condições por vírgula é análogo à interseção de condições\ndf %&gt;% filter(dap &gt; 50, ht &gt;= 20)\n\n# A tibble: 6 × 15\n    par   ind fam        cient autor verna   cap    ht    hc    qf    qc estrato\n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  \n1     3    21 Calophyll… Calo… \"Cam… \"Gua…   199    25    10     1     1 emerg  \n2     3    29 Calophyll… Calo… \"Cam… \"Gua…   200    24     8     1     1 emerg  \n3    20     8 Sapotaceae Mani… \"(Ma… \"Ma�…   338    30    20     1     1 e      \n4    20    25 Fabaceae   Pter… \"Vah… \"Pau…   163    26    10     1     1 dossel \n5    21     9 Fabaceae   Pter… \"Vah… \"Pau…   230    25     6     2     1 dossel \n6    22    17 Indet.     Inde… \"\"    \"\"      228    23    10     2     1 dossel \n# ℹ 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;\n\n\n\n\n\nFilter E"
+  },
+  {
+    "objectID": "dplyr.html#select",
+    "href": "dplyr.html#select",
+    "title": "dplyr",
+    "section": "select()",
+    "text": "select()\nA função select() é utilizada para selecionar ou remover colunas.\n\n# Seleciona apenas as colunas 'cap' e 'ht'. Note que não é preciso escrever os nomes das colunas entre aspas.\ndados %&gt;% select(cap, ht)\n\n# A tibble: 762 × 2\n     cap    ht\n   &lt;dbl&gt; &lt;dbl&gt;\n 1    82  17  \n 2    18   5.5\n 3    20   6  \n 4    57  10  \n 5    70  12  \n 6    17   8  \n 7    44  12  \n 8    33  10  \n 9    31  10  \n10    17   6  \n# ℹ 752 more rows\n\n\n\n\n\nSelect\n\n\nPara remover uma coluan do data frame, usa-se o sinal de menos ‘-’ para remover a coluna desejada.\n\ndados %&gt;% select(-par)\n\n# A tibble: 762 × 14\n     ind fam       cient autor verna   cap    ht    hc    qf    qc estrato obs  \n   &lt;int&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;\n 1     1 Euphorbi… Alch… (Spr… Tanh…    82  17       6     2     1 dossel  \"\"   \n 2     2 Meliaceae Guar… Vahl  Caf�…    18   5.5     3     1     1 sub     \"\"   \n 3     3 Lauraceae Ocot… (Nee… Cane…    20   6       4     2     1 sub     \"\"   \n 4     4 Elaeocar… Sloa… (Aub… Uruc…    57  10       7     3     2 inter   \"\"   \n 5     5 Aquifoli… Ilex… Reis… Ca�na    70  12       7     3     2 dossel  \"\"   \n 6     6 Myrtaceae Myrc… (D.L… Camb…    17   8       3     3     3 sub     \"\"   \n 7     7 Calophyl… Calo… Camb… Guan…    44  12       7     3     2 inter   \"\"   \n 8     8 Elaeocar… Sloa… (Aub… Uruc…    33  10       6     2     1 inter   \"bif\"\n 9     8 Elaeocar… Sloa… (Aub… Uruc…    31  10       6     2     1 inter   \"bif\"\n10     9 Myrtaceae Myrc… (O.B… Guam…    17   6       3     3     3 sub     \"bif\"\n# ℹ 752 more rows\n# ℹ 2 more variables: dap &lt;dbl&gt;, g &lt;dbl&gt;\n\n# Para remover mais de uma variável (coluna), basta concatenar as variáveis desejadas em um vetor.\ndados %&gt;% select(-c(par, fam, cient, autor, verna))\n\n# A tibble: 762 × 10\n     ind   cap    ht    hc    qf    qc estrato obs     dap       g\n   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt;   &lt;dbl&gt;\n 1     1    82  17       6     2     1 dossel  \"\"    26.1  0.0535 \n 2     2    18   5.5     3     1     1 sub     \"\"     5.73 0.00258\n 3     3    20   6       4     2     1 sub     \"\"     6.37 0.00318\n 4     4    57  10       7     3     2 inter   \"\"    18.1  0.0259 \n 5     5    70  12       7     3     2 dossel  \"\"    22.3  0.0390 \n 6     6    17   8       3     3     3 sub     \"\"     5.41 0.00230\n 7     7    44  12       7     3     2 inter   \"\"    14.0  0.0154 \n 8     8    33  10       6     2     1 inter   \"bif\" 10.5  0.00867\n 9     8    31  10       6     2     1 inter   \"bif\"  9.87 0.00765\n10     9    17   6       3     3     3 sub     \"bif\"  5.41 0.00230\n# ℹ 752 more rows\n\n\n\n\n\nSelect Inverso"
+  },
+  {
+    "objectID": "dplyr.html#mutate",
+    "href": "dplyr.html#mutate",
+    "title": "dplyr",
+    "section": "mutate()",
+    "text": "mutate()\nA função mutate() permite criar e adicionar novas variáveis (colunas) no dataframe, utilizando tanto variáveis externas quanto do próprio dataframe.\n\n# Carregando novamente os dados para criar variáveis\ndados &lt;- read_csv2('data/dados_dplyr.csv')\n\nℹ Using \"','\" as decimal and \"'.'\" as grouping mark. Use `read_delim()` for more control.\n\n\nRows: 762 Columns: 13\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \";\"\nchr (6): fam, cient, autor, verna, estrato, obs\ndbl (7): par, ind, cap, ht, hc, qf, qc\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n# Criando as variáveis dap e g\ndados &lt;- dados %&gt;% mutate(dap = cap/pi,\n                          g = dap^2*pi/40000)\n\nhead(dados %&gt;% select(dap, g))\n\n# A tibble: 6 × 2\n    dap       g\n  &lt;dbl&gt;   &lt;dbl&gt;\n1 26.1  0.0535 \n2  5.73 0.00258\n3  6.37 0.00318\n4 18.1  0.0259 \n5 22.3  0.0390 \n6  5.41 0.00230\n\n\nNote que, para esse caso, a variável g fez uso da variável dap recém criada. Esse recurso chamado “on the fly” é oportuno para criar de forma encadeada diversas variáveis de maneira simples e direta Além disso, também fica implícito que há uma ordem de criação das variáveis dentro da função mutate().\n\n\n\nMutate"
+  },
+  {
+    "objectID": "dplyr.html#group_by",
+    "href": "dplyr.html#group_by",
+    "title": "dplyr",
+    "section": "group_by()",
+    "text": "group_by()\nA função group_by() agrupa o data frame com base em uma variável especificada. A função não faz alterações explícitas no dataframe, apenas marca internamente os grupos para que alguma outra função seja realizada sobre esses grupos marcados.\n\n# Data frame antes da operação group_by()\nhead(tibble(dados))\n\n# A tibble: 6 × 15\n    par   ind fam        cient autor verna   cap    ht    hc    qf    qc estrato\n  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  \n1     3     1 Euphorbia… Alch… (Spr… Tanh…    82  17       6     2     1 dossel \n2     3     2 Meliaceae  Guar… Vahl  Caf�…    18   5.5     3     1     1 sub    \n3     3     3 Lauraceae  Ocot… (Nee… Cane…    20   6       4     2     1 sub    \n4     3     4 Elaeocarp… Sloa… (Aub… Uruc…    57  10       7     3     2 inter  \n5     3     5 Aquifolia… Ilex… Reis… Ca�na    70  12       7     3     2 dossel \n6     3     6 Myrtaceae  Myrc… (D.L… Camb…    17   8       3     3     3 sub    \n# ℹ 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;\n\n# Data frame após a operação group_by()\nhead(dados %&gt;% group_by(par))\n\n# A tibble: 6 × 15\n# Groups:   par [1]\n    par   ind fam        cient autor verna   cap    ht    hc    qf    qc estrato\n  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  \n1     3     1 Euphorbia… Alch… (Spr… Tanh…    82  17       6     2     1 dossel \n2     3     2 Meliaceae  Guar… Vahl  Caf�…    18   5.5     3     1     1 sub    \n3     3     3 Lauraceae  Ocot… (Nee… Cane…    20   6       4     2     1 sub    \n4     3     4 Elaeocarp… Sloa… (Aub… Uruc…    57  10       7     3     2 inter  \n5     3     5 Aquifolia… Ilex… Reis… Ca�na    70  12       7     3     2 dossel \n6     3     6 Myrtaceae  Myrc… (D.L… Camb…    17   8       3     3     3 sub    \n# ℹ 3 more variables: obs &lt;chr&gt;, dap &lt;dbl&gt;, g &lt;dbl&gt;\n\n# A função não modifica nenhuma observação ou variável do data frame\n\n\n\n\nMutate"
+  },
+  {
+    "objectID": "dplyr.html#summarise",
+    "href": "dplyr.html#summarise",
+    "title": "dplyr",
+    "section": "summarise()",
+    "text": "summarise()\nsummarise() resume cada grupo em uma menor quantidade de linhas por meio de uma função desejada, por exemplo a função média ou soma. A função aplicada deve ser capaz de receber um vetor e retornar o resultado de alguma operação aplicada sobre esse vetor. Caso o data frame não tenha grupos (sem utilização da função group_by()), o resultado será uma única linha resumindo a informação de todas as observações. summarize() e summarise() são sinônimos.\n\n# Sem a criação de grupos, a função mean() retornará a média de todas as observações\ndados %&gt;% summarise(media_dap = mean(dap))\n\n# A tibble: 1 × 1\n  media_dap\n      &lt;dbl&gt;\n1      14.5\n\n# Com a definição de grupo por família botânica, a função retornará a operação por grupo. Neste caso por família botânica.\ndados %&gt;% group_by(fam) %&gt;% summarise(media_ht = mean(ht))\n\n# A tibble: 41 × 2\n   fam            media_ht\n   &lt;chr&gt;             &lt;dbl&gt;\n 1 Anacardiaceae     13.4 \n 2 Annonaceae         9.8 \n 3 Aquifoliaceae     10.2 \n 4 Araliaceae        11.5 \n 5 Arecaceae          5.51\n 6 Bignoniaceae       5   \n 7 Boraginaceae       8.2 \n 8 Burseraceae       14.2 \n 9 Calophyllaceae    16.1 \n10 Celastraceae       9.75\n# ℹ 31 more rows\n\n\n\n\n\nSummarise"
+  },
+  {
+    "objectID": "dplyr.html#pivot_longer",
+    "href": "dplyr.html#pivot_longer",
+    "title": "dplyr",
+    "section": "pivot_longer()",
+    "text": "pivot_longer()\npivot_longer()\n\n\n\npivot_longer"
+  },
+  {
+    "objectID": "dplyr.html#tidy-select",
+    "href": "dplyr.html#tidy-select",
+    "title": "dplyr",
+    "section": "<tidy-select>",
+    "text": "&lt;tidy-select&gt;\n\n\n\ntidy-select"
   }
 ]

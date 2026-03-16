@@ -16,6 +16,14 @@ execute:
   echo: false
 ---
 
+```{r }
+#| include: false
+
+library(knitr)
+knitr::opts_chunk$set(echo=FALSE)
+
+```
+
 # AULA DE HOJE {.secao} 
 
 ## Aula de hoje
