@@ -19,8 +19,7 @@ execute:
 ```{r }
 #| include: false
 
-library(knitr)
-knitr::opts_chunk$set(echo=FALSE)
+knitr::opts_chunk$set(echo = FALSE)
 
 ```
 
