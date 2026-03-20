@@ -1130,7 +1130,7 @@ kbl(dfn,row.names=F, col.names = rep(c('Ordem', 'DAP', 'g'), 2),
 Nesse caso, a área basal é dada pela soma de todas as áreas transversais
 
 $$
-G = \displaystyle\sum_{i=1}^{`r length(d)`} g_i  = `r round(G,2)` \enspace m^3/\textcolor{#FF0000}{??}
+G = \displaystyle\sum_{i=1}^{`r length(d)`} g_i  = `r round(G,2)` \enspace m^2/\textcolor{#FF0000}{??}
 $$
 
 :::
