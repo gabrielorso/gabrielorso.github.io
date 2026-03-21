@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:200,200i,300,300i,350,350i,400,400i,500,500i,700,700i&display=swap');
+
+:root {
+  --jet: #131516;
+  --accent: #107895;
+  --accent2: #9a2515;
+  --secao-bg: #40666e;
+  --right-arrow: "\2192";
+}
+
+.reveal {
+  font-family: "Roboto", sans-serif;
+  font-size: 40px;
+  color: var(--jet);
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: "Roboto", sans-serif;
+  color: var(--jet);
+}
+
+.reveal ::selection {
+  background: #26351c;
+}
+
+/* ===== Logo como marca d’água central (sem “acumular” opacidade) ===== */
+
+.reveal .slide-background-content {
+  opacity: 1 !important;
+}
+
+.reveal .slide-background .slide-background-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/Fundo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 600px;
+  opacity: 0.035;
+  pointer-events: none;
+}
+
+/* ===== Slides de seção: sem logo e com fundo opaco ===== */
+
+.reveal .slide-background.secao .slide-background-content::before {
+  content: none !important;
+}
+
+.reveal .slide-background.secao {
+  background-color: var(--secao-bg) !important;
+  opacity: 1 !important;
+}
+
+.reveal section.secao {
+  background: transparent !important;
+}
+
+.reveal a {
+  line-height: 1.5em;
+  color: var(--accent);
+}
+
+.reveal p {
+  font-weight: 350;
+  color: #000000;
+  margin-top: 1.25em;
+}
+
+/* title and headings */
+
+#title-slide {
+  text-align: left;
+}
+
+#title-slide .title {
+  color: var(--jet);
+  font-size: 1.6em;
+  font-weight: 450;
+}
+
+#title-slide .subtitle {
+  color: var(--accent);
+  font-style: italic;
+  margin-top: 0em;
+  font-weight: lighter;
+}
+
+#title-slide .institute,
+#title-slide .quarto-title-affiliation,
+#title-slide .quarto-title-author-email {
+  font-style: italic;
+}
+
+#title-slide .author,
+#title-slide .quarto-title-author-name {
+  color: var(--jet);
+}
+
+#title-slide .quarto-title-authors {
+  display: flex;
+  justify-content: left;
+}
+
+#title-slide .quarto-title-authors .quarto-title-author {
+  padding-left: 0em;
+  padding-right: 0em;
+  width: 100%;
+}
+
+.reveal h2 {
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+.reveal h3 {
+  color: var(--accent);
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 0.95em;
+}
+
+.reveal h4 {
+  color: var(--accent2);
+  font-weight: normal;
+  margin-top: 1.25em;
+}
+
+/* alerts etc. */
+
+.alert {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.fg {
+  color: var(--col, var(--accent2));
+}
+
+.bg {
+  background-color: var(--col, var(--accent2));
+  color: var(--col, #ffffff);
+  font-weight: bold;
+  padding: 0.1em;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* lists */
+
+.reveal ul {
+  font-weight: 350;
+  padding-left: 16px;
+}
+
+.reveal ul li::marker {
+  color: #58a0b5;
+}
+
+.reveal ul ul {
+  list-style: none;
+}
+
+.reveal ul ul li::before {
+  content: "\2192";
+  color: #70aebf;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  margin-right: 0.5em;
+}
+
+.reveal ol {
+  font-weight: 350;
+  padding-left: 16px;
+}
+
+.reveal ol li::marker {
+  color: var(--accent);
+}
+
+/* Move "hamburger" menu button to top right */
+
+.reveal .slide-menu-button {
+  position: fixed;
+  top: 6px;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.reveal .slide-menu-button > * {
+  pointer-events: auto;
+}
+
+/* Same for chalkboard buttons (with an offset) */
+
+.reveal .slide-chalkboard-buttons {
+  position: fixed;
+  top: 12px;
+  right: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.reveal .slide-chalkboard-buttons > * {
+  pointer-events: auto;
+}
+
+/* Logo to the bottom-left */
+
+.slide-logo {
+  display: block !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 10px !important;
+  max-width: 150px;
+  max-height: 50px;
+  width: auto !important;
+  color: var(--jet) !important;
+}
+
+/* Also need to enforce slide numbers at bottom-right (if logo is present) */
+
+.slide-number,
+.reveal.has-logo .slide-number {
+  bottom: 6px !important;
+  right: 10px !important;
+  top: unset !important;
+  color: #777777 !important;
+}
+
+/* Beamer-style button link environment */
+
+.button {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: var(--accent);
+  border: 1px solid var(--accent);
+  color: #fff !important;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.button::before {
+  content: "▶";
+  margin-right: 5px;
+}
+
+/* tables */
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 0.8em;
+}
+
+.reveal table th,
+.reveal table td {
+  border: none;
+  padding: 0.23em;
+  text-align: left;
+  font-weight: 350;
+  color: #000000;
+}
+
+.reveal table thead th,
+.reveal .slides table tr:last-child td,
+.reveal .slides table {
+  border-bottom: 2px solid #D3D3D3;
+}
+
+.reveal table thead th {
+  font-weight: bold;
+}
+
+.reveal table caption {
+  color: #666666;
+  font-variant: small-caps;
+}
+
+.reveal .tabela-esquerda table {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* Special catch for etable environment to ensure these table images don't overflow the slide */
+
+.etable {
+  width: 100%;
+  height: calc(100% - 3em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.etable img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Change the relative widths of output-location: column */
+
+.reveal .columns3070 > div.column:first-child {
+  width: 30%;
+}
+
+.reveal .columns3070 div.column:not(:first-child) {
+  width: 70%;
+}
+
+.reveal .columns7030 > div.column:first-child {
+  width: 70%;
+}
+
+.reveal .columns7030 div.column:not(:first-child) {
+  width: 30%;
+}
+
+.reveal .columns4060 > div.column:first-child {
+  width: 40%;
+}
+
+.reveal .columns4060 div.column:not(:first-child) {
+  width: 60%;
+}
+
+.reveal .columns6040 > div.column:first-child {
+  width: 60%;
+}
+
+.reveal .columns6040 div.column:not(:first-child) {
+  width: 40%;
+}

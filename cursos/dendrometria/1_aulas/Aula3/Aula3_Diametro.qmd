@@ -3,7 +3,7 @@ title: UNIDADE 2 - DIÂMETRO
 subtitle: Diâmetro das árvores e área transversal
 format: 
   clean-revealjs:
-    css: estilo.scss
+    css: estilo.css
     embed-resources: false
     chalkboard: true
 author:
