@@ -1,0 +1,349 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f4f6f1;
+  color: #2f3a32;
+}
+
+main.content {
+  max-width: 1050px;
+}
+
+.ufsm-header {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 1.25rem;
+  align-items: center;
+  background: #ffffff;
+  border-top: 6px solid #2f5d44;
+  border-bottom: 2px solid #8b6b4a;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.ufsm-header > p {
+  margin: 0;
+}
+
+.ufsm-logo {
+  width: 120px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ufsm-header-text {
+  margin: 0;
+}
+
+.ufsm-line1 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #667068;
+  margin-bottom: 0.3rem;
+}
+
+.ufsm-line2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2f5d44;
+  line-height: 1.15;
+  margin-bottom: 0.35rem;
+}
+
+.ufsm-line3 {
+  font-size: 1rem;
+  color: #556158;
+}
+
+.disciplina-nav {
+  background: #ffffff;
+  border: 1px solid #d5ddd2;
+  border-top: 3px solid #2f5d44;
+  padding: 0.75rem 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.disciplina-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+}
+
+.disciplina-nav a {
+  display: inline-block;
+  text-decoration: none;
+  color: #2f5d44;
+  background: #ffffff;
+  border: 1px solid #cfd8cb;
+  padding: 0.5rem 0.85rem;
+  font-weight: 600;
+}
+
+.disciplina-nav a:hover {
+  background: #eef3ec;
+  border-color: #8b6b4a;
+  color: #6f4e37;
+}
+
+.disciplina-nav a.active {
+  background: #e8efe7;
+  border-color: #2f5d44;
+  color: #2f5d44;
+}
+
+.course-intro {
+  background: #ffffff;
+  border: 1px solid #d6ddd3;
+  border-left: 4px solid #2f5d44;
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.25rem;
+}
+
+.course-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.course-meta-card {
+  background: #ffffff;
+  border: 1px solid #d6ddd3;
+  padding: 0.9rem 1rem;
+}
+
+.course-meta-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6a726b;
+  margin-bottom: 0.35rem;
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #2f5d44;
+  border-bottom: 1px solid #8b6b4a;
+  padding-bottom: 0.4rem;
+}
+
+a {
+  color: #2f5d44;
+}
+
+a:hover {
+  color: #6f4e37;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cards-grid a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.page-card {
+  background: #ffffff;
+  border: 1px solid #d6ddd3;
+  border-top: 3px solid #2f5d44;
+  padding: 1rem;
+  height: 100%;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.page-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(40, 58, 44, 0.08);
+  border-color: #c4cec0;
+}
+
+.page-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.55rem;
+  font-size: 1.05rem;
+  color: #2f5d44;
+}
+
+.page-card p {
+  margin-bottom: 0;
+  color: #59645c;
+}
+
+.section-note {
+  background: #ffffff;
+  border: 1px solid #d6ddd3;
+  border-left: 4px solid #a9b6a4;
+  padding: 0.9rem 1rem;
+  color: #586259;
+  margin-bottom: 1rem;
+}
+
+.quick-list {
+  background: #ffffff;
+  border: 1px solid #d6ddd3;
+  padding: 1rem 1.2rem;
+}
+
+.quick-list li {
+  margin-bottom: 0.45rem;
+}
+
+.session-block {
+  background: #ffffff;
+  border: 1px solid #d6ddd3;
+  margin-bottom: 1rem;
+}
+
+.session-title {
+  background: #ecf2ea;
+  border-bottom: 1px solid #d6ddd3;
+  padding: 0.8rem 1rem;
+  font-weight: 700;
+  color: #2f5d44;
+}
+
+.session-body {
+  padding: 1rem;
+}
+
+.session-topic {
+  font-weight: 700;
+  color: #2f3a32;
+  margin-bottom: 0.45rem;
+}
+
+.session-topic + .materials {
+  margin-bottom: 1rem;
+}
+
+.materials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.materials a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #cfd6cc;
+  background: #fafbf9;
+  color: #2f3a32;
+  font-weight: 600;
+}
+
+.materials a:hover {
+  background: #f1f5ef;
+  border-color: #8b6b4a;
+  color: #2f3a32;
+}
+
+.materials a.html {
+  border-left: 4px solid #2f5d44;
+}
+
+.materials a.pdf {
+  border-left: 4px solid #8b6b4a;
+}
+
+.content-box {
+  background: #ffffff;
+  border: 1px solid #d6ddd3;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.content-box h3 {
+  margin-top: 0;
+  color: #2f5d44;
+}
+
+.content-box ul {
+  margin-bottom: 0;
+}
+
+.content-box li {
+  margin-bottom: 0.45rem;
+}
+
+.lit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.lit-card {
+  background: #ffffff;
+  border: 1px solid #d6ddd3;
+  border-top: 3px solid #2f5d44;
+  padding: 1rem;
+}
+
+.lit-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.55rem;
+  font-size: 1rem;
+  color: #2f5d44;
+}
+
+.lit-card p {
+  color: #5b665e;
+  margin-bottom: 0.75rem;
+}
+
+.lit-card ul {
+  margin-bottom: 0;
+  padding-left: 1.15rem;
+}
+
+.lit-card li {
+  margin-bottom: 0.4rem;
+}
+
+.muted {
+  color: #667068;
+}
+
+@media (max-width: 700px) {
+  .ufsm-header {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .ufsm-logo {
+    margin: 0 auto;
+    width: 95px;
+  }
+
+  .ufsm-line2 {
+    font-size: 1.6rem;
+  }
+
+  .disciplina-nav ul {
+    flex-direction: column;
+  }
+
+  .disciplina-nav a {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
