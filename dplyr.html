@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gabriel Orso">
 
-<title>dplyr – d2h</title>
+<title>dplyr – Gabriel Orso</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f7ac19f99b1bffdb182407b6a99bda4a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-16c66a0df26079abb374c03c6517d085.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,11 +113,12 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-THCB1Q3SM7', { 'anonymize_ip': true});
 </script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -127,7 +128,7 @@ gtag('config', 'G-THCB1Q3SM7', { 'anonymize_ip': true});
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">d2h</span>
+    <span class="navbar-title">Gabriel Orso</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -146,7 +147,7 @@ gtag('config', 'G-THCB1Q3SM7', { 'anonymize_ip': true});
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-disciplinas">    
         <li>
-    <a class="dropdown-item" href="./dendrometria.html">
+    <a class="dropdown-item" href="./cursos/dendrometria/dendrometria.html">
  <span class="dropdown-text">Dendrometria - CFL1040</span></a>
   </li>  
         <li>
@@ -193,39 +194,7 @@ gtag('config', 'G-THCB1Q3SM7', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#pacotes" id="toc-pacotes" class="nav-link active" data-scroll-target="#pacotes">Pacotes</a></li>
-  <li><a href="#carregando-dados" id="toc-carregando-dados" class="nav-link" data-scroll-target="#carregando-dados">Carregando Dados</a></li>
-  <li><a href="#introdução" id="toc-introdução" class="nav-link" data-scroll-target="#introdução">Introdução</a>
-  <ul class="collapse">
-  <li><a href="#motivação" id="toc-motivação" class="nav-link" data-scroll-target="#motivação">Motivação</a>
-  <ul class="collapse">
-  <li><a href="#usando-o-pacote-base" id="toc-usando-o-pacote-base" class="nav-link" data-scroll-target="#usando-o-pacote-base">Usando o pacote base</a></li>
-  <li><a href="#usando-o-pacote-dplyr" id="toc-usando-o-pacote-dplyr" class="nav-link" data-scroll-target="#usando-o-pacote-dplyr">Usando o pacote <code>dplyr</code></a></li>
-  </ul></li>
-  <li><a href="#pipes" id="toc-pipes" class="nav-link" data-scroll-target="#pipes">Pipes <code>%&gt;%</code></a></li>
-  </ul></li>
-  <li><a href="#funções" id="toc-funções" class="nav-link" data-scroll-target="#funções">Funções</a>
-  <ul class="collapse">
-  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><code>filter()</code></a>
-  <ul class="collapse">
-  <li><a href="#filtro-ou---união-de-condições" id="toc-filtro-ou---união-de-condições" class="nav-link" data-scroll-target="#filtro-ou---união-de-condições">Filtro OU ‘|’ - União de condições</a></li>
-  <li><a href="#filtro-e---interseção-de-condições" id="toc-filtro-e---interseção-de-condições" class="nav-link" data-scroll-target="#filtro-e---interseção-de-condições">Filtro E ‘&amp;’ - Interseção de condições</a></li>
-  </ul></li>
-  <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><code>select()</code></a></li>
-  <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate"><code>mutate()</code></a></li>
-  <li><a href="#group_by" id="toc-group_by" class="nav-link" data-scroll-target="#group_by"><code>group_by()</code></a></li>
-  <li><a href="#summarise" id="toc-summarise" class="nav-link" data-scroll-target="#summarise"><code>summarise()</code></a></li>
-  <li><a href="#pivot_longer" id="toc-pivot_longer" class="nav-link" data-scroll-target="#pivot_longer"><code>pivot_longer()</code></a></li>
-  <li><a href="#tidy-select" id="toc-tidy-select" class="nav-link" data-scroll-target="#tidy-select"><code>&lt;tidy-select&gt;</code></a></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -916,6 +885,11 @@ dbl (7): par, ind, cap, ht, hc, qf, qc
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -1230,8 +1204,22 @@ dbl (7): par, ind, cap, ht, hc, qf, qc
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Gabriel Orso · Universidade Federal de Santa Maria</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Site construído com Quarto</p>
+</div>
+  </div>
+</footer>
 
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

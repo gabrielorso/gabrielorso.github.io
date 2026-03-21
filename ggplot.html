@@ -8,7 +8,7 @@
 
 <meta name="author" content="Gabriel Orso">
 
-<title>Visualização de Dados Florestais no R – d2h</title>
+<title>Visualização de Dados Florestais no R – Gabriel Orso</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f7ac19f99b1bffdb182407b6a99bda4a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-16c66a0df26079abb374c03c6517d085.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,11 +113,12 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-THCB1Q3SM7', { 'anonymize_ip': true});
 </script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -127,7 +128,7 @@ gtag('config', 'G-THCB1Q3SM7', { 'anonymize_ip': true});
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">d2h</span>
+    <span class="navbar-title">Gabriel Orso</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -146,7 +147,7 @@ gtag('config', 'G-THCB1Q3SM7', { 'anonymize_ip': true});
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-disciplinas">    
         <li>
-    <a class="dropdown-item" href="./dendrometria.html">
+    <a class="dropdown-item" href="./cursos/dendrometria/dendrometria.html">
  <span class="dropdown-text">Dendrometria - CFL1040</span></a>
   </li>  
         <li>
@@ -193,87 +194,7 @@ gtag('config', 'G-THCB1Q3SM7', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#relação-entre-variáveis" id="toc-relação-entre-variáveis" class="nav-link active" data-scroll-target="#relação-entre-variáveis">RELAÇÃO ENTRE VARIÁVEIS</a>
-  <ul class="collapse">
-  <li><a href="#dispersão-entre-variáveis" id="toc-dispersão-entre-variáveis" class="nav-link" data-scroll-target="#dispersão-entre-variáveis">Dispersão entre variáveis</a>
-  <ul class="collapse">
-  <li><a href="#disposição-mais-simples" id="toc-disposição-mais-simples" class="nav-link" data-scroll-target="#disposição-mais-simples">Disposição mais simples</a></li>
-  <li><a href="#adicionando-uma-terceira-variável" id="toc-adicionando-uma-terceira-variável" class="nav-link" data-scroll-target="#adicionando-uma-terceira-variável">Adicionando uma terceira variável</a></li>
-  <li><a href="#adicionando-uma-quarta-variável" id="toc-adicionando-uma-quarta-variável" class="nav-link" data-scroll-target="#adicionando-uma-quarta-variável">Adicionando uma quarta variável</a></li>
-  <li><a href="#adicionando-uma-variável-contínua" id="toc-adicionando-uma-variável-contínua" class="nav-link" data-scroll-target="#adicionando-uma-variável-contínua">Adicionando uma variável contínua*</a></li>
-  <li><a href="#quando-há-muita-sobreposição-de-pontos" id="toc-quando-há-muita-sobreposição-de-pontos" class="nav-link" data-scroll-target="#quando-há-muita-sobreposição-de-pontos">Quando há muita sobreposição de pontos</a></li>
-  </ul></li>
-  <li><a href="#correlograma" id="toc-correlograma" class="nav-link" data-scroll-target="#correlograma">Correlograma</a></li>
-  </ul></li>
-  <li><a href="#distribuição" id="toc-distribuição" class="nav-link" data-scroll-target="#distribuição">DISTRIBUIÇÃO</a>
-  <ul class="collapse">
-  <li><a href="#histogramas" id="toc-histogramas" class="nav-link" data-scroll-target="#histogramas">Histogramas</a>
-  <ul class="collapse">
-  <li><a href="#apenas-uma-variável" id="toc-apenas-uma-variável" class="nav-link" data-scroll-target="#apenas-uma-variável">Apenas uma variável</a></li>
-  <li><a href="#incluindo-outra-variavel" id="toc-incluindo-outra-variavel" class="nav-link" data-scroll-target="#incluindo-outra-variavel">Incluindo outra variavel</a></li>
-  <li><a href="#histogramas-de-variáveis-categóricas" id="toc-histogramas-de-variáveis-categóricas" class="nav-link" data-scroll-target="#histogramas-de-variáveis-categóricas">Histogramas de variáveis categóricas</a></li>
-  </ul></li>
-  <li><a href="#densidade" id="toc-densidade" class="nav-link" data-scroll-target="#densidade">Densidade</a>
-  <ul class="collapse">
-  <li><a href="#versão-sem-graça" id="toc-versão-sem-graça" class="nav-link" data-scroll-target="#versão-sem-graça">Versão sem graça</a></li>
-  <li><a href="#mais-elaborado-e-dividindo-por-classe-de-sítio" id="toc-mais-elaborado-e-dividindo-por-classe-de-sítio" class="nav-link" data-scroll-target="#mais-elaborado-e-dividindo-por-classe-de-sítio">Mais elaborado, e dividindo por classe de sítio</a></li>
-  </ul></li>
-  <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot">Boxplot</a>
-  <ul class="collapse">
-  <li><a href="#forma-mais-simples" id="toc-forma-mais-simples" class="nav-link" data-scroll-target="#forma-mais-simples">Forma mais simples</a></li>
-  <li><a href="#adicionando-uma-variável-categórica" id="toc-adicionando-uma-variável-categórica" class="nav-link" data-scroll-target="#adicionando-uma-variável-categórica">Adicionando uma variável categórica</a></li>
-  <li><a href="#espessura-variável" id="toc-espessura-variável" class="nav-link" data-scroll-target="#espessura-variável">Espessura variável</a></li>
-  <li><a href="#tufte-boxplot" id="toc-tufte-boxplot" class="nav-link" data-scroll-target="#tufte-boxplot">Tufte Boxplot</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#ranking" id="toc-ranking" class="nav-link" data-scroll-target="#ranking">RANKING</a>
-  <ul class="collapse">
-  <li><a href="#barras" id="toc-barras" class="nav-link" data-scroll-target="#barras">Barras</a>
-  <ul class="collapse">
-  <li><a href="#barras-coloridas" id="toc-barras-coloridas" class="nav-link" data-scroll-target="#barras-coloridas">Barras coloridas</a></li>
-  <li><a href="#barras-ordenadas" id="toc-barras-ordenadas" class="nav-link" data-scroll-target="#barras-ordenadas">Barras ordenadas</a></li>
-  </ul></li>
-  <li><a href="#gráfico-de-pirulito" id="toc-gráfico-de-pirulito" class="nav-link" data-scroll-target="#gráfico-de-pirulito">Gráfico de Pirulito</a></li>
-  </ul></li>
-  <li><a href="#escalas" id="toc-escalas" class="nav-link" data-scroll-target="#escalas">ESCALAS</a>
-  <ul class="collapse">
-  <li><a href="#color" id="toc-color" class="nav-link" data-scroll-target="#color">Color</a>
-  <ul class="collapse">
-  <li><a href="#scale_color_brewer" id="toc-scale_color_brewer" class="nav-link" data-scroll-target="#scale_color_brewer">scale_color_brewer()</a></li>
-  <li><a href="#scale_color_gradient" id="toc-scale_color_gradient" class="nav-link" data-scroll-target="#scale_color_gradient">scale_color_gradient()</a></li>
-  <li><a href="#scale_color_manual" id="toc-scale_color_manual" class="nav-link" data-scroll-target="#scale_color_manual">scale_color_manual()</a></li>
-  <li><a href="#tudo-manual" id="toc-tudo-manual" class="nav-link" data-scroll-target="#tudo-manual">Tudo manual</a></li>
-  <li><a href="#quando-há-várias-geometrias" id="toc-quando-há-várias-geometrias" class="nav-link" data-scroll-target="#quando-há-várias-geometrias">Quando há várias geometrias</a></li>
-  </ul></li>
-  <li><a href="#fill-shape-size-linewidth-linetype" id="toc-fill-shape-size-linewidth-linetype" class="nav-link" data-scroll-target="#fill-shape-size-linewidth-linetype">Fill, Shape, Size, Linewidth, Linetype…</a></li>
-  <li><a href="#x-e-y" id="toc-x-e-y" class="nav-link" data-scroll-target="#x-e-y">X e Y</a>
-  <ul class="collapse">
-  <li><a href="#exemplos" id="toc-exemplos" class="nav-link" data-scroll-target="#exemplos">Exemplos</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#tema" id="toc-tema" class="nav-link" data-scroll-target="#tema">TEMA</a>
-  <ul class="collapse">
-  <li><a href="#a-família-element_" id="toc-a-família-element_" class="nav-link" data-scroll-target="#a-família-element_">A família element_</a>
-  <ul class="collapse">
-  <li><a href="#exemplos-1" id="toc-exemplos-1" class="nav-link" data-scroll-target="#exemplos-1">Exemplos</a></li>
-  </ul></li>
-  <li><a href="#temas-prontos" id="toc-temas-prontos" class="nav-link" data-scroll-target="#temas-prontos">Temas prontos</a></li>
-  <li><a href="#mudando-a-legenda" id="toc-mudando-a-legenda" class="nav-link" data-scroll-target="#mudando-a-legenda">Mudando a legenda</a></li>
-  </ul></li>
-  <li><a href="#exemplos-diversos" id="toc-exemplos-diversos" class="nav-link" data-scroll-target="#exemplos-diversos">EXEMPLOS DIVERSOS</a>
-  <ul class="collapse">
-  <li><a href="#análise-discriminante" id="toc-análise-discriminante" class="nav-link" data-scroll-target="#análise-discriminante">Análise discriminante</a></li>
-  <li><a href="#regressão" id="toc-regressão" class="nav-link" data-scroll-target="#regressão">Regressão</a></li>
-  <li><a href="#resíduos" id="toc-resíduos" class="nav-link" data-scroll-target="#resíduos">Resíduos</a></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -1676,6 +1597,11 @@ Classe III Classe III  77.40722</code></pre>
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -1990,8 +1916,22 @@ Classe III Classe III  77.40722</code></pre>
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Gabriel Orso · Universidade Federal de Santa Maria</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Site construído com Quarto</p>
+</div>
+  </div>
+</footer>
 
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
