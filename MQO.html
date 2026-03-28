@@ -454,7 +454,7 @@ S = \sum_{i=1}^{n} (y_i - \hat{\beta_0} - \hat{\beta_1}x_i)^2
 </div>
 </div>
 <p>Na figura acima, percebe-se que quando <span class="math inline">\(\hat{\beta_0}\)</span> é próximo de -0.5, a soma de quadrado dos resíduos é alta, assim como perto de 0.5. Entretanto, quando <span class="math inline">\(\hat{\beta_0}\)</span> é próximo de 0, S atinge os menores valores. Se fizéssemos esse procedimento com <span class="math inline">\(\hat{\beta_1}\)</span>, esse mesmo comportamento seria observado. Em outras palavras, existe um determinado valor de <span class="math inline">\(\hat{\beta_0}\)</span> e <span class="math inline">\(\hat{\beta_1}\)</span> que resultam no valor mínimo de S. Para encontrar os valores exatos, podemos fazer uso do cálculo diferencial.</p>
-<p>Analisando a figura, percebemos que o ponto que resulta no menor valor de S é um ponto de mínima, e se trassarmos uma reta tangente à curva nesse ponto, essa reta será perfeitamente horizontal.</p>
+<p>Analisando a figura, percebemos que o ponto que resulta no menor valor de S é um ponto de mínima, e se traçarmos uma reta tangente à curva nesse ponto, essa reta será perfeitamente horizontal.</p>
 <p>Uma maneira adequada para encontrar pontos críticos em uma função é utilizando cálculo diferencial, sabendo que nos pontos onde a primeira derivada for igual a zero, então a tangente da função será perfeitamente horizontal, marcando assim um ponto de máxima ou mínima.</p>
 <p>Para encontrarmos os valores de <span class="math inline">\(\hat{\beta_0}\)</span> e <span class="math inline">\(\hat{\beta_1}\)</span> que minimizam S, precisamos derivar a função S em relação a esses parâmetros. Esse procedimento é chamado de derivada parcial (denotado por <span class="math inline">\(\partial\)</span>), e em linhas gerais tudo que não possuir relação com o parâmetro alvo é considerado como constante.</p>
 <p>Primeiramente podemos abrir o polinômio da função <span class="math inline">\(S\)</span>.</p>
@@ -469,8 +469,8 @@ S = \sum_{i=1}^{n} (y_i^2 + \hat{\beta_0}^2 + \hat{\beta_1}^2x_i^2 -2y_i\hat{\be
 \]</span></p>
 <hr>
 <hr>
-<section id="derivada-parcial-em-relação-à-hatbeta_0" class="level3">
-<h3 class="anchored" data-anchor-id="derivada-parcial-em-relação-à-hatbeta_0">Derivada parcial em relação à <span class="math inline">\(\hat{\beta_0}\)</span></h3>
+<section id="derivada-parcial-em-relação-a-hatbeta_0" class="level3">
+<h3 class="anchored" data-anchor-id="derivada-parcial-em-relação-a-hatbeta_0">Derivada parcial em relação a <span class="math inline">\(\hat{\beta_0}\)</span></h3>
 <p>As regras de derivação são as mesmas de qualquer outra diferenciação. A única diferença é que, agora, a variável de interesse é <span class="math inline">\(\hat{\beta_0}\)</span>, e tudo o mais é considerado constante.</p>
 <p><span class="math display">\[
 \frac{\partial S}{\partial \hat{\beta_0}} = \sum_{i=1}^{n} (0 + \hat{\beta_0}^2 + 0 - 2y_i\hat{\beta_0} - 0 + 2\hat{\beta_0}\hat{\beta_1}x_i)
@@ -513,8 +513,8 @@ S = \sum_{i=1}^{n} (y_i^2 + \hat{\beta_0}^2 + \hat{\beta_1}^2x_i^2 -2y_i\hat{\be
 <hr>
 <hr>
 </section>
-<section id="derivada-paricla-em-relação-à-hatbeta_1" class="level3">
-<h3 class="anchored" data-anchor-id="derivada-paricla-em-relação-à-hatbeta_1">Derivada paricla em relação à <span class="math inline">\(\hat{\beta_1}\)</span></h3>
+<section id="derivada-paricla-em-relação-a-hatbeta_1" class="level3">
+<h3 class="anchored" data-anchor-id="derivada-paricla-em-relação-a-hatbeta_1">Derivada paricla em relação a <span class="math inline">\(\hat{\beta_1}\)</span></h3>
 <p>A derivada de <span class="math inline">\(S\)</span> em relação a <span class="math inline">\(\hat{\beta_1}\)</span> é</p>
 <p><span class="math display">\[
 \frac{\partial S}{\partial \hat{\beta_1}} = \sum_{i=1}^{n} (0 + 0 + \hat{\beta_1}^2 x_i^2 - 0 - 2y_i\hat{\beta_1}x_i + 2\hat{\beta_0}\hat{\beta_1}x_i)
