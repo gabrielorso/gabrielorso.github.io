@@ -265,6 +265,10 @@ a:hover {
   border-left: 4px solid #8b6b4a;
 }
 
+.materials a.zip {
+  border-left: 4px solid #b8860b;
+}
+
 .content-box {
   background: #ffffff;
   border: 1px solid #d6ddd3;
