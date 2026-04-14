@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Com carinho, mesmo à distância</title>
+    <style>
+        :root {
+            --laranja-quente: #e67e22;
+            --terracota: #d35400;
+            --fundo-creme: #fffaf5;
+            --texto-marrom: #5d4037;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--fundo-creme);
+            color: var(--texto-marrom);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            max-width: 500px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(211, 84, 0, 0.15);
+            overflow: hidden;
+            text-align: center;
+            border: 1px solid rgba(230, 126, 34, 0.1);
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            /* A imagem que você enviou entra aqui */
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        h1 {
+            font-family: 'Georgia', serif;
+            color: var(--terracota);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        p {
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .destaque {
+            color: var(--laranja-quente);
+            font-weight: 600;
+        }
+
+        .divisor {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--laranja-quente), transparent);
+            border: none;
+            margin: 30px 0;
+            opacity: 0.3;
+        }
+
+        .pix-container {
+            background-color: #fff8f0;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px dashed var(--laranja-quente);
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 15px 0;
+            border: 8px solid white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .legenda-pix {
+            font-size: 0.9rem;
+            color: var(--terracota);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .opcional {
+            font-size: 0.85rem;
+            color: #888;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="IMG_5219.jpg" alt="Nossa foto de casamento" class="hero-img">
+
+        <div class="content">
+            <h1>Com carinho, mesmo à distância</h1>
+            
+            <p class="destaque">Sentiremos sua ausência, mas compreendemos perfeitamente.</p>
+            
+            <p>Agradecemos por fazer parte da nossa história e por todo o carinho ao longo do caminho.</p>
+            
+            <p>Sua presença fará falta, mas ficamos felizes em saber que, de alguma forma, estamos conectados nesse momento tão especial.</p>
+            
+            <div class="divisor"></div>
+
+            <div class="pix-container">
+                <p style="margin-top: 0;">Caso deseje, deixamos abaixo uma forma simbólica de participação:</p>
+                
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=00020126580014BR.GOV.BCB.PIX013612846f1c-1099-4664-89c2-6ec4b332af235204000053039865802BR5921Gabriel Agostini Orso6009SAO PAULO62140510SLyuaZcbz463042585" alt="QR Code Pix para Presente" class="qr-code">
+                
+                <p class="legenda-pix">QR Code para Presente</p>
+                <p class="opcional">(Totalmente opcional)</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
