@@ -10,6 +10,7 @@
             --terracota: #d35400;
             --fundo-creme: #fffaf5;
             --texto-marrom: #5d4037;
+            --ouro-suave: #cf9a49;
         }
 
         body {
@@ -39,7 +40,6 @@
             width: 100%;
             height: 350px;
             object-fit: cover;
-            /* A imagem que você enviou entra aqui */
         }
 
         .content {
@@ -58,6 +58,7 @@
             line-height: 1.7;
             margin-bottom: 20px;
             font-size: 1.1rem;
+            margin-top: 0;
         }
 
         .destaque {
@@ -74,32 +75,40 @@
         }
 
         .pix-container {
-            background-color: #fff8f0;
+            background-color: #fffaf0;
             padding: 25px;
             border-radius: 15px;
-            border: 1px dashed var(--laranja-quente);
+            border: 1px solid rgba(230, 126, 34, 0.2);
         }
 
         .qr-code {
             width: 200px;
             height: 200px;
-            margin: 15px 0;
+            margin: 10px 0;
             border: 8px solid white;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        .legenda-pix {
-            font-size: 0.9rem;
+        .chave-pix {
+            font-size: 1.2rem;
             color: var(--terracota);
             font-weight: bold;
+            margin: 10px 0 5px 0;
+            display: block;
+        }
+
+        .legenda-pix {
+            font-size: 0.8rem;
+            color: var(--ouro-suave);
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-bottom: 5px;
         }
 
         .opcional {
             font-size: 0.85rem;
-            color: #888;
+            color: #999;
             font-style: italic;
         }
     </style>
@@ -121,12 +130,15 @@
             <div class="divisor"></div>
 
             <div class="pix-container">
-                <p style="margin-top: 0;">Caso deseje, deixamos abaixo uma forma simbólica de participação:</p>
+                <p style="font-size: 0.95rem;">Caso deseje, deixamos abaixo uma forma simbólica de participação:</p>
                 
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=00020126580014BR.GOV.BCB.PIX013612846f1c-1099-4664-89c2-6ec4b332af235204000053039865802BR5921Gabriel Agostini Orso6009SAO PAULO62140510SLyuaZcbz463042585" alt="QR Code Pix para Presente" class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=00020126580014BR.GOV.BCB.PIX013612846f1c-1099-4664-89c2-6ec4b332af235204000053039865802BR5921Gabriel Agostini Orso6009SAO PAULO62140510SLyuaZcbz463042585" alt="QR Code Pix" class="qr-code">
+                <br>
+                <span class="legenda-pix">Chave Pix (Telefone)</span>
                 
-                <p class="legenda-pix">QR Code para Presente</p>
-                <p class="opcional">(Totalmente opcional)</p>
+                <span class="chave-pix">(55) 999329806</span>
+                
+                <p class="opcional" style="margin-top: 15px;">(Totalmente opcional)</p>
             </div>
         </div>
     </div>
