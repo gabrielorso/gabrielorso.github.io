@@ -66,12 +66,12 @@
             font-weight: 600;
         }
 
-        .divisor {
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--laranja-quente), transparent);
-            border: none;
-            margin: 30px 0;
-            opacity: 0.3;
+        /* ESTILO DO LOGO ADICIONADO */
+        .logo-divisor {
+            max-width: 120px; /* Ajuste o tamanho aqui */
+            height: auto;
+            margin: 30px auto; /* Espaçamento acima e abaixo */
+            display: block;
         }
 
         .pix-container {
@@ -79,6 +79,7 @@
             padding: 25px;
             border-radius: 15px;
             border: 1px solid rgba(230, 126, 34, 0.2);
+            margin-top: 10px;
         }
 
         .qr-code {
@@ -127,7 +128,7 @@
             
             <p>Sua presença fará falta, mas ficamos felizes em saber que, de alguma forma, estamos conectados nesse momento tão especial.</p>
             
-            <div class="divisor"></div>
+            <img src="IG.png" alt="Logo I & G com Palmeira" class="logo-divisor">
 
             <div class="pix-container">
                 <p style="font-size: 0.95rem;">Caso deseje, deixamos abaixo uma forma simbólica de participação:</p>
@@ -135,7 +136,6 @@
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=00020126580014BR.GOV.BCB.PIX013612846f1c-1099-4664-89c2-6ec4b332af235204000053039865802BR5921Gabriel Agostini Orso6009SAO PAULO62140510SLyuaZcbz463042585" alt="QR Code Pix" class="qr-code">
                 <br>
                 <span class="legenda-pix">Chave Pix (Telefone)</span>
-                
                 <span class="chave-pix">(55) 999329806</span>
                 
                 <p class="opcional" style="margin-top: 15px;">(Totalmente opcional)</p>
