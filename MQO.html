@@ -268,23 +268,24 @@ window.Quarto = {
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Utilizaremos o banco de dados <strong>trees</strong>. Esse banco de dados contém informações sobre o diâmetro em polegadas, altura em pés e volume em pés³ de 31 árvores <em>black cherry</em>.</p>
-<p>Além disso, os gráficos serão gerados utilizando o pacote <code>ggplot2</code>, com comentários pertinentes sobre as funções utilizadas. Os comandos do pacote <code>ggplot2</code> são inseridos em camadas, normalmente iniciando por uma função que indica o banco de dados utilizado, e posteriormente as demais funções. As variáveis que serão utilizadas para criar os gráficos devem sempre estar “mapeadas” para serem encontradas, e a maneira de fazer isso é inserindo-as dentro do argumento <code>aes()</code>. No exemplo abaixo, o primeiro nível de comando especifica o banco de dados utilizado. O segundo indica o tipo de gráfico a ser criado e mapeia as variáveis de interesse. O terceiro comando introduz os títulos dos eixos, do gráfico, etc. E o quarto comando aplica um tema pronto ao gráfico. Para mais informações sobre pacote <code>ggplot</code>, acesse esse <a href="ggplot.html">breve tutorial</a>.</p>
+<p>Além disso, os gráficos serão gerados utilizando o pacote <code>ggplot2</code>, com comentários pertinentes sobre as funções utilizadas. Os comandos do pacote <code>ggplot2</code> são inseridos em camadas, normalmente iniciando por uma função que indica o banco de dados utilizado e, posteriormente, pelas demais funções. As variáveis utilizadas para criar os gráficos devem estar “mapeadas”, e a maneira de fazer isso é inserindo-as dentro do argumento <code>aes()</code>. No exemplo abaixo, o primeiro nível de comando especifica o banco de dados utilizado. O segundo indica o tipo de gráfico a ser criado e mapeia as variáveis de interesse. O terceiro comando introduz os títulos dos eixos, do gráfico etc. E o quarto comando aplica um tema pronto ao gráfico. Para mais informações sobre o pacote <code>ggplot2</code>, acesse este <a href="ggplot.html">breve tutorial</a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"trees"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Transforma as variáveis para unidades comumente utilizadas</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> trees<span class="sc">$</span>Girth<span class="sc">/</span><span class="fl">2.54</span>     <span class="co"># polegadas para centímetros</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>ht <span class="ot">&lt;-</span> trees<span class="sc">$</span>Height<span class="sc">/</span><span class="fl">3.281</span>  <span class="co"># pés para metros</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> trees<span class="sc">$</span>Volume<span class="sc">/</span><span class="fl">34.286</span>  <span class="co"># pés cúbicos para metros cúbicos</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>d2h <span class="ot">&lt;-</span> d<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span>ht             </span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 'd' é um vetor de diâmetros, e possui 31 elementos. Ou length(d)</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>d</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>d  <span class="ot">&lt;-</span> trees<span class="sc">$</span>Girth <span class="sc">*</span> <span class="fl">2.54</span>       <span class="co"># polegadas para centímetros</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>ht <span class="ot">&lt;-</span> trees<span class="sc">$</span>Height <span class="sc">*</span> <span class="fl">0.3048</span>    <span class="co"># pés para metros</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>v  <span class="ot">&lt;-</span> trees<span class="sc">$</span>Volume <span class="sc">/</span> <span class="fl">35.3147</span>   <span class="co"># pés cúbicos para metros cúbicos</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>d2h <span class="ot">&lt;-</span> d<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> ht</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 'd' é um vetor de diâmetros e possui 31 elementos.</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>d</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 3.267717 3.385827 3.464567 4.133858 4.212598 4.251969 4.330709 4.330709
- [9] 4.370079 4.409449 4.448819 4.488189 4.488189 4.606299 4.724409 5.078740
-[17] 5.078740 5.236220 5.393701 5.433071 5.511811 5.590551 5.708661 6.299213
-[25] 6.417323 6.811024 6.889764 7.047244 7.086614 7.086614 8.110236</code></pre>
+<pre><code> [1] 21.082 21.844 22.352 26.670 27.178 27.432 27.940 27.940 28.194 28.448
+[11] 28.702 28.956 28.956 29.718 30.480 32.766 32.766 33.782 34.798 35.052
+[21] 35.560 36.068 36.830 40.640 41.402 43.942 44.450 45.466 45.720 45.720
+[31] 52.324</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(d)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -293,19 +294,19 @@ window.Quarto = {
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O mesmo ocorre com ht, v e d2h.</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Agrupa tudo em um único data frame</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(d,ht,v,d2h)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(d, ht, v, d2h)</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>g.base <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> dados, </span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x =</span> d2h, <span class="at">y =</span> v)) <span class="sc">+</span>     <span class="co">#Introduz o dataframe utilizado</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="co">#geom_point() cria gráfico de pontos</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"d2h"</span>,          <span class="co">#Adiciona Títulos dos eixos e do gráfico</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Volume (m³)"</span>,</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Volume em função de d2h"</span>) <span class="sc">+</span> </span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()                <span class="co">#Adiciona o tema Black and White</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>g.base <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> dados,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> d2h, <span class="at">y =</span> v)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">expression</span>(d<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> h),</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Volume (m³)"</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="fu">expression</span>(<span class="st">"Volume em função de "</span> <span class="sc">*</span> d<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> h)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g.base)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
@@ -316,7 +317,11 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>A figura acima demonstra a relação entre volume e <span class="math inline">\(d^2h\)</span>. Essa relação é conhecida no meio florestal através do modelo de Spurr: <span class="math inline">\(v = \beta_0 + \beta_1.d^2h\)</span>, e evidencia a relação linear entre as duas variáveis.</p>
+<p>A figura acima demonstra a relação entre volume e <span class="math inline">\(d^2h\)</span>. Essa relação é conhecida no meio florestal pelo modelo de Spurr,</p>
+<p><span class="math display">\[
+v = \beta_0 + \beta_1d^2h,
+\]</span></p>
+<p>e evidencia uma relação aproximadamente linear entre as duas variáveis.</p>
 <p>Para encontrar os parâmetros do modelo, basta utilizar a função <code>lm()</code>.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>spurr <span class="ot">&lt;-</span> <span class="fu">lm</span>(v <span class="sc">~</span> d2h, <span class="at">data =</span> dados)</span>
@@ -328,29 +333,32 @@ Call:
 lm(formula = v ~ d2h, data = dados)
 
 Residuals:
-     Min       1Q   Median       3Q      Max 
--0.13473 -0.03209 -0.00483  0.05090  0.12243 
+      Min        1Q    Median        3Q       Max 
+-0.130808 -0.031154 -0.004689  0.049416  0.118861 
 
 Coefficients:
-               Estimate  Std. Error t value            Pr(&gt;|t|)    
-(Intercept) -0.00868224  0.02810346  -0.309                0.76    
-d2h          0.00131156  0.00003673  35.711 &lt;0.0000000000000002 ***
+                 Estimate    Std. Error t value            Pr(&gt;|t|)    
+(Intercept) -0.0084293350  0.0272848246  -0.309                0.76    
+d2h          0.0000305910  0.0000008566  35.711 &lt;0.0000000000000002 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.07271 on 29 degrees of freedom
+Residual standard error: 0.07059 on 29 degrees of freedom
 Multiple R-squared:  0.9778,    Adjusted R-squared:  0.977 
 F-statistic:  1275 on 1 and 29 DF,  p-value: &lt; 0.00000000000000022</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(spurr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> (Intercept)          d2h 
--0.008682245  0.001311559 </code></pre>
+<pre><code>   (Intercept)            d2h 
+-0.00842933501  0.00003059096 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>g.base <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Modelo de Spurr Ajustado"</span>) <span class="sc">+</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="fu">coef</span>(spurr)[<span class="dv">1</span>],  <span class="co">#Coeficiente linear  (b0)</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">slope =</span> <span class="fu">coef</span>(spurr)[<span class="dv">2</span>],      <span class="co">#Coeficiente angular (b1)</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"steelblue"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>g.base <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Modelo de Spurr ajustado"</span>) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">intercept =</span> <span class="fu">coef</span>(spurr)[<span class="dv">1</span>],  <span class="co"># coeficiente linear (b0)</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">slope =</span> <span class="fu">coef</span>(spurr)[<span class="dv">2</span>],      <span class="co"># coeficiente angular (b1)</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"steelblue"</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -359,96 +367,135 @@ F-statistic:  1275 on 1 and 29 DF,  p-value: &lt; 0.00000000000000022</code></pr
 </div>
 </div>
 </div>
-<p>Os valores de <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span> encontrados foram de -0.0087 e 0.0013, respectivamente.</p>
-<p>Agora vamos tentar chegar nos mesmos parâmetros realizando o método dos mínimos quadrados ordinários passo a passo.</p>
+<p>Os valores estimados de <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span> foram, respectivamente, -0.00843 e 0.00003059.</p>
+<p>Agora vamos chegar aos mesmos parâmetros realizando o método dos mínimos quadrados ordinários passo a passo.</p>
 <section id="mínimos-quadrados-ordinários" class="level2">
 <h2 class="anchored" data-anchor-id="mínimos-quadrados-ordinários">Mínimos Quadrados Ordinários</h2>
-<p>O método dos mínimos quadrados ordinários é o principal método de estimativa dos parâmetros para regressões lineares, e tem como objetivo encontrar os parâmetros do modelo que resultem na menor soma de quadrados dos resíduos. Sua utilização depende de pressupostos. São eles:</p>
+<p>O método dos mínimos quadrados ordinários (MQO) é o principal método de estimação dos parâmetros em modelos lineares. Seu objetivo é encontrar os valores dos parâmetros que resultam na menor soma de quadrados dos resíduos.</p>
+<p>É importante separar <strong>o cálculo dos estimadores de MQO</strong> dos <strong>pressupostos utilizados para estabelecer suas propriedades estatísticas e realizar inferência</strong>. A minimização da soma de quadrados pode ser realizada mesmo sem pressupor normalidade dos erros. No modelo linear clássico, as condições usuais incluem:</p>
 <ul>
-<li><strong>1.</strong> Resíduos com média 0 e distribuição normal;</li>
-<li><strong>2.</strong> Variância do erro constante;</li>
-<li><strong>3.</strong> Independência dos resíduos.</li>
+<li><strong>1. Média condicional do erro igual a zero:</strong> <span class="math inline">\(E(\epsilon_i \mid X) = 0\)</span>;</li>
+<li><strong>2. Homocedasticidade:</strong> <span class="math inline">\(\operatorname{Var}(\epsilon_i \mid X) = \sigma^2\)</span>;</li>
+<li><strong>3. Ausência de correlação entre os erros:</strong> <span class="math inline">\(\operatorname{Cov}(\epsilon_i,\epsilon_j \mid X)=0\)</span>, para <span class="math inline">\(i \neq j\)</span>.</li>
 </ul>
-<p>A formulação tradicional do modelo linear simples é exemplificada abaixo,</p>
+<p>Quando se deseja realizar inferência exata em amostras finitas por meio das distribuições <span class="math inline">\(t\)</span> e <span class="math inline">\(F\)</span>, é comum acrescentar a hipótese de normalidade:</p>
 <p><span class="math display">\[
-y = \beta_0 + \beta_1x + \epsilon
+\boldsymbol{\epsilon}\mid X \sim N(\mathbf{0},\sigma^2I).
 \]</span></p>
-<p>Onde <span class="math inline">\(\beta_0\)</span> é o parâmetro linear, também chamado de intercepto ou constante, pois não depende de <span class="math inline">\(x\)</span>; <span class="math inline">\(\beta_1\)</span> é o parâmetro angular ou coeficiente da variável <span class="math inline">\(x\)</span>; <span class="math inline">\(\epsilon\)</span> é o erro, e representa a variação de <span class="math inline">\(y\)</span> que não é explicada pelo modelo. Outra formulação encontrada na literatura é <span class="math inline">\(y = \alpha + \beta x + \epsilon\)</span>.</p>
-<p>Os valores estimados ou preditos da variável <span class="math inline">\(y\)</span> são denotados por <span class="math inline">\(\hat{y}\)</span>,</p>
-<p><span class="math display">\[
-\hat{y} = \hat{\beta_0} + \hat{\beta_1}x
-\]</span></p>
-<p>Os parâmetros <em>verdadeiros</em> <span class="math inline">\(\beta_i\)</span> do modelo são desconhecidos, e em vez disso se utiliza <span class="math inline">\(\hat{\beta_0}\)</span> e <span class="math inline">\(\hat{\beta_1}\)</span> para definir os parâmetros <em>estimados</em> pela regressão.</p>
-<p>O erro <span class="math inline">\(\epsilon\)</span> nada mais é que a diferença entre o valor real observado <span class="math inline">\(y\)</span>, e o valor estimado ou predito <span class="math inline">\(\hat{y}\)</span>.</p>
-<p><span class="math display">\[
-\epsilon_i = y_i - \hat{y_i}
-\]</span></p>
-<p>Como citado anteriormente, o objetivo do método é encontrar os parâmetros que resultem na menor soma de quadrados de resíduos (<span class="math inline">\(S\)</span>). Como os resíduos devem possuir média zero e distribuição normal, alguns resíduos são positivos e outros negativos. Nessa situação, a simples soma teria efeito de ‘compensação’ entre valores positivos e negativos, e o resultado final não representaria de forma apropriada o erro do modelo (o somatório seria próximo de zero). Ao elevar cada erro <span class="math inline">\(\epsilon\)</span> ao quadrado, temos uma melhor estimativa do erro a ser minimizado.</p>
 <blockquote class="blockquote">
-<p>O leitor mais rigoroso pode perceber que essa não é uma explicação suficiente para a dedução do método. Entretanto, esse pequeno texto busca atender também aqueles que estão iniciando seus estudos em estatística. Uma abordagem mais teórica pode ser obtida partindo da função de verossimilhança do modelo de regressão.</p>
+<p>A normalidade dos erros não é necessária para calcular os estimadores de MQO nem para o resultado de Gauss–Markov. Ela é uma hipótese adicional para a inferência exata no modelo linear normal.</p>
 </blockquote>
+<p>A formulação tradicional do modelo linear simples é</p>
 <p><span class="math display">\[
-S = \sum_{i=1}^{n} \epsilon_i^2
+y_i = \beta_0 + \beta_1x_i + \epsilon_i.
 \]</span></p>
-<p>Com a substituição de alguns termos com as equações apresentadas acima, temos que</p>
+<p>Onde <span class="math inline">\(\beta_0\)</span> é o intercepto ou constante; <span class="math inline">\(\beta_1\)</span> é o coeficiente angular associado à variável <span class="math inline">\(x\)</span>; e <span class="math inline">\(\epsilon_i\)</span> é o erro aleatório da <span class="math inline">\(i\)</span>-ésima observação, representando a diferença entre o valor observado e o valor esperado pelo modelo. Outra notação encontrada na literatura é <span class="math inline">\(y = \alpha + \beta x + \epsilon\)</span>.</p>
+<p>O valor esperado de <span class="math inline">\(y_i\)</span>, condicionado a <span class="math inline">\(x_i\)</span>, é</p>
 <p><span class="math display">\[
-S = \sum_{i=1}^{n} (y_i - \hat{y_i})^2
+E(Y_i\mid x_i) = \beta_0 + \beta_1x_i.
 \]</span></p>
+<p>Como os parâmetros verdadeiros <span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\beta_1\)</span> são desconhecidos, eles são estimados a partir da amostra. Os valores ajustados ou preditos são denotados por</p>
 <p><span class="math display">\[
-S = \sum_{i=1}^{n} (y_i - [\hat{\beta_0} + \hat{\beta_1}x_i])^2
+\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1x_i.
 \]</span></p>
+<p>O <strong>erro populacional</strong> é</p>
 <p><span class="math display">\[
-S = \sum_{i=1}^{n} (y_i - \hat{\beta_0} - \hat{\beta_1}x_i)^2
+\epsilon_i = y_i - (\beta_0 + \beta_1x_i),
 \]</span></p>
-<p>Agora, se atribuíssemos algum valor qualquer para os parâmetros no modelo acima e calculássemos o somatório, isso resultaria em um valor <span class="math inline">\(S\)</span> de Soma de Quadrados de Resíduos. Conforme os valores dos parâmetros mudam, então também a Soma de Quadrados de Resíduos (<span class="math inline">\(S\)</span>) irá mudar.</p>
+<p>e não é diretamente observável, pois depende dos parâmetros populacionais desconhecidos.</p>
+<p>Após o ajuste do modelo, obtém-se o <strong>resíduo</strong></p>
+<p><span class="math display">\[
+e_i = y_i - \hat{y}_i.
+\]</span></p>
+<p>Portanto, erro e resíduo não são sinônimos: <span class="math inline">\(\epsilon_i\)</span> pertence ao modelo populacional, enquanto <span class="math inline">\(e_i\)</span> é calculado após a estimação do modelo.</p>
+<p>Como citado anteriormente, o objetivo do MQO é encontrar os parâmetros que resultem na menor soma de quadrados dos resíduos. Se simplesmente somássemos os resíduos, valores positivos e negativos poderiam se compensar. Além disso, em uma regressão com intercepto ajustada por MQO, a soma dos resíduos é exatamente zero:</p>
+<p><span class="math display">\[
+\sum_{i=1}^{n}e_i = 0.
+\]</span></p>
+<p>Por isso, a soma simples dos resíduos não mede adequadamente a magnitude dos desvios. Ao elevar cada resíduo ao quadrado, eliminamos o sinal, penalizamos mais fortemente desvios grandes e obtemos uma função diferenciável com solução analítica conveniente.</p>
+<blockquote class="blockquote">
+<p>Essa ainda é uma justificativa intuitiva. Uma fundamentação probabilística adicional surge quando se assume normalidade dos erros: nesse caso, minimizar a soma de quadrados dos resíduos é equivalente a maximizar a função de verossimilhança.</p>
+</blockquote>
+<p>Para qualquer par de valores candidatos <span class="math inline">\(b_0\)</span> e <span class="math inline">\(b_1\)</span>, podemos escrever</p>
+<p><span class="math display">\[
+e_i(b_0,b_1) = y_i - b_0 - b_1x_i.
+\]</span></p>
+<p>Assim, a função a ser minimizada é</p>
+<p><span class="math display">\[
+S(b_0,b_1)
+=
+\sum_{i=1}^{n}e_i(b_0,b_1)^2
+=
+\sum_{i=1}^{n}(y_i-b_0-b_1x_i)^2.
+\]</span></p>
+<p>Os valores de <span class="math inline">\(b_0\)</span> e <span class="math inline">\(b_1\)</span> que minimizam essa função serão chamados de <span class="math inline">\(\hat{\beta}_0\)</span> e <span class="math inline">\(\hat{\beta}_1\)</span>.</p>
+<p>Agora, se atribuirmos valores quaisquer para <span class="math inline">\(b_0\)</span> e <span class="math inline">\(b_1\)</span> e calcularmos o somatório, obteremos um valor de <span class="math inline">\(S\)</span>. Conforme os valores dos parâmetros mudam, a Soma de Quadrados dos Resíduos também muda.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Cria uma função S que recebe os parâmetros x,y,a,b</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="cf">function</span>(x,y,b0,b1) {<span class="fu">sum</span>((y<span class="sc">-</span>b0<span class="sc">-</span>b1<span class="sc">*</span>x)<span class="sc">^</span><span class="dv">2</span>)}</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Essa função criada recebe 4 argumentos: um vetor x, um vetor y, um valor de b0 e um valor de b1. Como x e y são dois vetores e b0 e b1 são dois valores, o que a função fará é realizar a operação y - b0 - b1*x para os primeiros valores de x e y e elevar o resultado ao quadrado. A seguir, realiza a mesma operação para os segundos valores e eleva o resultado ao quadrado. Por fim, é requisitado por meio da função sum() que faça o somatório de todos esses resultados. Por fim, isso resultará em um único valor que é a soma do quadrado dos resíduos para aquele par de coeficientes b0 e b1 informados.</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Função que calcula a soma de quadrados dos resíduos</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>S <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, b0, b1) {</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>((y <span class="sc">-</span> b0 <span class="sc">-</span> b1 <span class="sc">*</span> x)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Cria um vetor de possíveis valores de b0 e b1</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>b_0 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">to =</span> <span class="fl">0.5</span>, <span class="at">by =</span> <span class="fl">0.01</span>)  <span class="co">#De -0.5 até 0.5, ao passo de 0.01</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>b_1 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">to =</span> <span class="fl">0.5</span>, <span class="at">by =</span> <span class="fl">0.01</span>)</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Isso resulta em 101 valores diferentes de b0 e b1.</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(b_0) ; <span class="fu">length</span>(b_1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 101</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 101</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Cria vetor que receberá o resultado de S para cada possível valor de b0 e b1. Naturalmente, deve ter o mesmo comprimento do número de possíveis valores dos coeficientes.</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>S.est <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">length =</span> <span class="fu">length</span>(b_0))  <span class="co">#Vetor de comprimento igual ao vetor b0</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Cria um loop para estimar cada valor de S baseado em cada valor de b0 e b1</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(S.est)) {</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  S.est[i] <span class="ot">&lt;-</span> <span class="fu">S</span>(<span class="at">x =</span> dados<span class="sc">$</span>d2h,  </span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> dados<span class="sc">$</span>v,</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">b0 =</span> b_0[i],</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">b1 =</span> b_1[i])</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co">#O comando acima pega a função S() criada acima, joga os primeiros valores de b0 e b1 dos vetores, calcula o valor de S e o guarda na primeira posição do vetor S.est. A seguir, pega todos valores das segundas posições dos vetores, joga na função S() criada e resgata o valor resultante, salvando na segunda posição do vetor S.est. Esse processo é repetido de 1:length(S.est), ou seja, do primeiro até o último valor dos vetores.</span></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="co">#Criando um data frame com as variáveis</span></span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">"b0"</span> <span class="ot">=</span> b_0,</span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"b1"</span> <span class="ot">=</span> b_1,</span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"S"</span> <span class="ot">=</span> S.est)</span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>g.S <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> df, <span class="fu">aes</span>(<span class="at">x =</span> b0, <span class="at">y =</span> S)) <span class="sc">+</span> </span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> S.est), <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span>  <span class="co"># Cria uma reta conectando cada observação. Como são 101 pontos, o resultado terá a forma de uma parábola.</span></span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(<span class="st">"Parâmetro "</span><span class="sc">*</span>beta[<span class="dv">0</span>]), <span class="at">y =</span> <span class="st">"S (m³)²"</span>, <span class="at">subtitle =</span> <span class="fu">expression</span>(<span class="st">"Efeito de "</span><span class="sc">*</span>beta[<span class="dv">0</span>]<span class="sc">*</span><span class="st">" na Soma de Quadrado dos Resíduos"</span>)) <span class="sc">+</span> </span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">"blue"</span>, <span class="at">high =</span> <span class="st">"red"</span>, <span class="at">name =</span> <span class="st">"S (m³)²"</span>) <span class="sc">+</span> </span>
-<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="sc">-</span><span class="fl">0.2</span>,<span class="at">xend=</span><span class="fl">0.2</span>, <span class="at">y =</span> <span class="fu">min</span>(S), <span class="at">yend =</span> <span class="fu">min</span>(S)), <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
-<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g.S)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Para visualizar apenas o efeito de b0 sobre S,</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># mantemos b1 fixo.</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>b1.fixo <span class="ot">&lt;-</span> <span class="fu">unname</span>(<span class="fu">coef</span>(spurr)[<span class="dv">2</span>])</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>b0.centro <span class="ot">&lt;-</span> <span class="fu">unname</span>(<span class="fu">coef</span>(spurr)[<span class="dv">1</span>])</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Valores candidatos de b0 ao redor da região do mínimo</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>b_0 <span class="ot">&lt;-</span> <span class="fu">seq</span>(</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">from =</span> b0.centro <span class="sc">-</span> <span class="fl">0.10</span>,</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">to   =</span> b0.centro <span class="sc">+</span> <span class="fl">0.10</span>,</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">length.out =</span> <span class="dv">201</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcula S para cada valor de b0, mantendo b1 constante</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>S.est <span class="ot">&lt;-</span> <span class="fu">vapply</span>(</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  b_0,</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">FUN =</span> <span class="cf">function</span>(b0) {</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">S</span>(</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> dados<span class="sc">$</span>d2h,</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> dados<span class="sc">$</span>v,</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">b0 =</span> b0,</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">b1 =</span> b1.fixo</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>  },</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">FUN.VALUE =</span> <span class="fu">numeric</span>(<span class="dv">1</span>)</span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">b0 =</span> b_0,</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">S =</span> S.est</span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>b0.min <span class="ot">&lt;-</span> df<span class="sc">$</span>b0[<span class="fu">which.min</span>(df<span class="sc">$</span>S)]</span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>S.min <span class="ot">&lt;-</span> <span class="fu">min</span>(df<span class="sc">$</span>S)</span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>g.S <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> b0, <span class="at">y =</span> S)) <span class="sc">+</span></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> S), <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">expression</span>(<span class="st">"Parâmetro "</span> <span class="sc">*</span> beta[<span class="dv">0</span>]),</span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="fu">expression</span>(S <span class="sc">~</span> <span class="st">"(m"</span><span class="sc">^</span><span class="dv">3</span><span class="sc">*</span><span class="st">")"</span><span class="sc">^</span><span class="dv">2</span>),</span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="fu">expression</span>(</span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Efeito de "</span> <span class="sc">*</span> beta[<span class="dv">0</span>] <span class="sc">*</span></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>      <span class="st">" na Soma de Quadrados dos Resíduos, com "</span> <span class="sc">*</span></span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>      beta[<span class="dv">1</span>] <span class="sc">*</span> <span class="st">" fixo"</span></span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(</span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">low =</span> <span class="st">"blue"</span>,</span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">high =</span> <span class="st">"red"</span>,</span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="fu">expression</span>(S <span class="sc">~</span> <span class="st">"(m"</span><span class="sc">^</span><span class="dv">3</span><span class="sc">*</span><span class="st">")"</span><span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(</span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> b0.min <span class="sc">-</span> <span class="fl">0.02</span>,</span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">xend =</span> b0.min <span class="sc">+</span> <span class="fl">0.02</span>,</span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> S.min,</span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a>    <span class="at">yend =</span> S.min,</span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">linewidth =</span> <span class="fl">0.7</span></span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g.S)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -457,226 +504,524 @@ S = \sum_{i=1}^{n} (y_i - \hat{\beta_0} - \hat{\beta_1}x_i)^2
 </div>
 </div>
 </div>
-<p>Na figura acima, percebe-se que quando <span class="math inline">\(\hat{\beta_0}\)</span> é próximo de -0.5, a soma de quadrado dos resíduos é alta, assim como perto de 0.5. Entretanto, quando <span class="math inline">\(\hat{\beta_0}\)</span> é próximo de 0, S atinge os menores valores. Se fizéssemos esse procedimento com <span class="math inline">\(\hat{\beta_1}\)</span>, esse mesmo comportamento seria observado. Em outras palavras, existe um determinado valor de <span class="math inline">\(\hat{\beta_0}\)</span> e <span class="math inline">\(\hat{\beta_1}\)</span> que resultam no valor mínimo de S. Para encontrar os valores exatos, podemos fazer uso do cálculo diferencial.</p>
-<p>Analisando a figura, percebemos que o ponto que resulta no menor valor de S é um ponto de mínima, e se traçarmos uma reta tangente à curva nesse ponto, essa reta será perfeitamente horizontal.</p>
-<p>Uma maneira adequada para encontrar pontos críticos em uma função é utilizando cálculo diferencial, sabendo que nos pontos onde a primeira derivada for igual a zero, então a tangente da função será perfeitamente horizontal, marcando assim um ponto de máxima ou mínima.</p>
-<p>Para encontrarmos os valores de <span class="math inline">\(\hat{\beta_0}\)</span> e <span class="math inline">\(\hat{\beta_1}\)</span> que minimizam S, precisamos derivar a função S em relação a esses parâmetros. Esse procedimento é chamado de derivada parcial (denotado por <span class="math inline">\(\partial\)</span>), e em linhas gerais tudo que não possuir relação com o parâmetro alvo é considerado como constante.</p>
-<p>Primeiramente podemos abrir o polinômio da função <span class="math inline">\(S\)</span>.</p>
+<p>Na figura acima, apenas <span class="math inline">\(b_0\)</span> varia, enquanto <span class="math inline">\(b_1\)</span> permanece fixo. Dessa forma, o gráfico representa um corte unidimensional da função <span class="math inline">\(S(b_0,b_1)\)</span>. Percebe-se que existe um valor de <span class="math inline">\(b_0\)</span> para o qual <span class="math inline">\(S\)</span> é mínimo. Se repetíssemos o procedimento variando apenas <span class="math inline">\(b_1\)</span>, mantendo <span class="math inline">\(b_0\)</span> fixo, observaríamos o mesmo comportamento quadrático.</p>
+<p>Na realidade, <span class="math inline">\(S\)</span> depende simultaneamente de dois parâmetros. Portanto, no caso da regressão linear simples, podemos imaginar <span class="math inline">\(S(b_0,b_1)\)</span> como uma superfície. O MQO procura o ponto mais baixo dessa superfície.</p>
+<p>Uma maneira de encontrar pontos críticos de uma função diferenciável é igualar suas derivadas a zero. Entretanto, uma derivada igual a zero, isoladamente, pode indicar um ponto de mínimo, máximo ou, em problemas multidimensionais, até um ponto de sela. No caso do MQO, a função <span class="math inline">\(S\)</span> é quadrática e convexa; portanto, sob as condições usuais de posto da matriz de regressão, o ponto crítico corresponde ao mínimo global.</p>
+<p>Para encontrarmos <span class="math inline">\(\hat{\beta}_0\)</span> e <span class="math inline">\(\hat{\beta}_1\)</span>, derivaremos <span class="math inline">\(S\)</span> em relação aos parâmetros. Esse procedimento é chamado de derivada parcial, denotada por <span class="math inline">\(\partial\)</span>.</p>
+<p>Primeiramente, podemos expandir o quadrado:</p>
 <p><span class="math display">\[
-S = \sum_{i=1}^{n} (y_i - \hat{\beta_0} - \hat{\beta_1}x_i)^2
+S(\beta_0,\beta_1)
+=
+\sum_{i=1}^{n}
+(y_i-\beta_0-\beta_1x_i)^2,
 \]</span></p>
 <p><span class="math display">\[
-S = \sum_{i=1}^{n} (y_i^2 - y_i\hat{\beta_0} - y_i\hat{\beta_i}x_i-y_i\hat{\beta_0} + \hat{\beta_0}^2 + \hat{\beta_0}\hat{\beta_1}x_i - y_i\hat{\beta_1}x_i + \hat{\beta_0}\hat{\beta_1}x_i + \hat{\beta_1}^2x_i^2)
-\]</span></p>
-<p><span class="math display">\[
-S = \sum_{i=1}^{n} (y_i^2 + \hat{\beta_0}^2 + \hat{\beta_1}^2x_i^2 -2y_i\hat{\beta_0} - 2y_i\hat{\beta_1}x_i + 2\hat{\beta_0}\hat{\beta_1}x_i)
-\]</span></p>
-<hr>
-<hr>
-<section id="derivada-parcial-em-relação-a-hatbeta_0" class="level3">
-<h3 class="anchored" data-anchor-id="derivada-parcial-em-relação-a-hatbeta_0">Derivada parcial em relação a <span class="math inline">\(\hat{\beta_0}\)</span></h3>
-<p>As regras de derivação são as mesmas de qualquer outra diferenciação. A única diferença é que, agora, a variável de interesse é <span class="math inline">\(\hat{\beta_0}\)</span>, e tudo o mais é considerado constante.</p>
-<p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_0}} = \sum_{i=1}^{n} (0 + \hat{\beta_0}^2 + 0 - 2y_i\hat{\beta_0} - 0 + 2\hat{\beta_0}\hat{\beta_1}x_i)
-\]</span></p>
-<p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_0}} = \sum_{i=1}^{n} (0 + 2\hat{\beta_0} + 0 - 2y_i - 0 + 2\hat{\beta_1}x_i)
-\]</span></p>
-<p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_0}} = \sum_{i=1}^{n} (2\hat{\beta_0} - 2y_i + 2\hat{\beta_1}x_i)
-\]</span></p>
-<p>Igualando a 0</p>
-<p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_0}} = \sum_{i=1}^{n} (2\hat{\beta_0} - 2y_i + 2\hat{\beta_1}x_i) = 0
-\]</span></p>
-<p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_0}} = 2\sum_{i=1}^{n} (\hat{\beta_0} - y_i + \hat{\beta_1}x_i) = 0
-\]</span></p>
-<p>Podemos ainda realizar algumas simplificações.</p>
-<p>Dividindo por 2 e multiplicando por -1</p>
-<p><span class="math display">\[
-\frac{\displaystyle  2\sum_{i=1}^{n} (\hat{\beta_0} - y_i + \hat{\beta_1}x_i)}{2} (-1) = \frac{0}{2}(-1)
-\]</span></p>
-<p><span class="math display">\[
-\sum_{i=1}^{n} (y_i - \hat{\beta_0} - \hat{\beta_1}x_i) = 0
-\]</span></p>
-<p><span class="math display">\[
-\sum_{i=1}^{n}y_i - n\hat{\beta_0} - n\hat{\beta_1}\sum_{i=1}^{n}x_i = 0
-\]</span></p>
-<p>Dividindo tudo por <span class="math inline">\(n\)</span></p>
-<p><span class="math display">\[
-\frac{\displaystyle  \sum_{i=1}^{n}y_i}{n} - \frac{\displaystyle  n\hat{\beta_0}}{n}-\frac{\displaystyle  n\hat{\beta_1}\sum_{i=1}^{n}x_i}{n} = \frac{0}{n}
-\]</span></p>
-<p><span class="math display">\[
-\bar{y} - \hat{\beta_0} - \hat{\beta_1}\bar{x} = 0
-\]</span></p>
-<p>Com isso descobrimos que <span class="math inline">\(\displaystyle \frac{\partial S}{\partial \hat{\beta_0}}\)</span> vale 0 quando</p>
-<p><span class="math display">\[
-\hat{\beta_0} = \bar{y} - \hat{\beta_1}\bar{x}
+S(\beta_0,\beta_1)
+=
+\sum_{i=1}^{n}
+\left(
+y_i^2
++\beta_0^2
++\beta_1^2x_i^2
+-2y_i\beta_0
+-2y_i\beta_1x_i
++2\beta_0\beta_1x_i
+\right).
 \]</span></p>
 <hr>
+<section id="derivada-parcial-em-relação-a-beta_0" class="level3">
+<h3 class="anchored" data-anchor-id="derivada-parcial-em-relação-a-beta_0">Derivada parcial em relação a <span class="math inline">\(\beta_0\)</span></h3>
+<p>As regras de derivação são as mesmas de qualquer outra diferenciação. Como a variável de interesse é <span class="math inline">\(\beta_0\)</span>, os termos que não dependem de <span class="math inline">\(\beta_0\)</span> são tratados como constantes.</p>
+<p><span class="math display">\[
+\frac{\partial S}{\partial \beta_0}
+=
+\sum_{i=1}^{n}
+\left(
+2\beta_0
+-2y_i
++2\beta_1x_i
+\right).
+\]</span></p>
+<p>No ponto que minimiza <span class="math inline">\(S\)</span>, <span class="math inline">\(\beta_0=\hat{\beta}_0\)</span> e <span class="math inline">\(\beta_1=\hat{\beta}_1\)</span>. Assim,</p>
+<p><span class="math display">\[
+\left.
+\frac{\partial S}{\partial \beta_0}
+\right|_{\hat{\beta}_0,\hat{\beta}_1}
+=
+\sum_{i=1}^{n}
+\left(
+2\hat{\beta}_0
+-2y_i
++2\hat{\beta}_1x_i
+\right)
+=
+0.
+\]</span></p>
+<p>Colocando 2 em evidência,</p>
+<p><span class="math display">\[
+2
+\sum_{i=1}^{n}
+\left(
+\hat{\beta}_0-y_i+\hat{\beta}_1x_i
+\right)
+=
+0.
+\]</span></p>
+<p>Dividindo por 2 e multiplicando por <span class="math inline">\(-1\)</span>,</p>
+<p><span class="math display">\[
+\sum_{i=1}^{n}
+\left(
+y_i-\hat{\beta}_0-\hat{\beta}_1x_i
+\right)
+=
+0.
+\]</span></p>
+<p>Observe que o termo entre parênteses é exatamente o resíduo <span class="math inline">\(e_i\)</span>. Portanto, uma consequência do MQO em modelos com intercepto é</p>
+<p><span class="math display">\[
+\sum_{i=1}^{n}e_i=0.
+\]</span></p>
+<p>Expandindo o somatório,</p>
+<p><span class="math display">\[
+\sum_{i=1}^{n}y_i
+-
+n\hat{\beta}_0
+-
+\hat{\beta}_1\sum_{i=1}^{n}x_i
+=
+0.
+\]</span></p>
+<p>Dividindo tudo por <span class="math inline">\(n\)</span>,</p>
+<p><span class="math display">\[
+\frac{\sum_{i=1}^{n}y_i}{n}
+-
+\hat{\beta}_0
+-
+\hat{\beta}_1
+\frac{\sum_{i=1}^{n}x_i}{n}
+=
+0.
+\]</span></p>
+<p>Como</p>
+<p><span class="math display">\[
+\bar{y}=\frac{\sum_{i=1}^{n}y_i}{n}
+\qquad\text{e}\qquad
+\bar{x}=\frac{\sum_{i=1}^{n}x_i}{n},
+\]</span></p>
+<p>temos</p>
+<p><span class="math display">\[
+\bar{y}
+-
+\hat{\beta}_0
+-
+\hat{\beta}_1\bar{x}
+=
+0,
+\]</span></p>
+<p>e, portanto,</p>
+<p><span class="math display">\[
+\boxed{
+\hat{\beta}_0
+=
+\bar{y}
+-
+\hat{\beta}_1\bar{x}
+}.
+\]</span></p>
 <hr>
 </section>
-<section id="derivada-paricla-em-relação-a-hatbeta_1" class="level3">
-<h3 class="anchored" data-anchor-id="derivada-paricla-em-relação-a-hatbeta_1">Derivada paricla em relação a <span class="math inline">\(\hat{\beta_1}\)</span></h3>
-<p>A derivada de <span class="math inline">\(S\)</span> em relação a <span class="math inline">\(\hat{\beta_1}\)</span> é</p>
+<section id="derivada-parcial-em-relação-a-beta_1" class="level3">
+<h3 class="anchored" data-anchor-id="derivada-parcial-em-relação-a-beta_1">Derivada parcial em relação a <span class="math inline">\(\beta_1\)</span></h3>
+<p>A derivada de <span class="math inline">\(S\)</span> em relação a <span class="math inline">\(\beta_1\)</span> é</p>
 <p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_1}} = \sum_{i=1}^{n} (0 + 0 + \hat{\beta_1}^2 x_i^2 - 0 - 2y_i\hat{\beta_1}x_i + 2\hat{\beta_0}\hat{\beta_1}x_i)
+\frac{\partial S}{\partial \beta_1}
+=
+\sum_{i=1}^{n}
+\left(
+2\beta_1x_i^2
+-2y_ix_i
++2\beta_0x_i
+\right).
 \]</span></p>
+<p>Colocando <span class="math inline">\(2x_i\)</span> em evidência,</p>
 <p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_1}} = \sum_{i=1}^{n} (0 + 0 + 2\hat{\beta_1}x_i^2 - 0 - 2y_ix_i + 2\hat{\beta_0}x_i)
+\frac{\partial S}{\partial \beta_1}
+=
+2
+\sum_{i=1}^{n}
+x_i
+\left(
+\beta_1x_i-y_i+\beta_0
+\right).
 \]</span></p>
+<p>No ponto de mínimo,</p>
 <p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_1}} = \sum_{i=1}^{n} (2\hat{\beta_1}x_i^2 - 2y_ix_i + 2\hat{\beta_0}x_i)
+\left.
+\frac{\partial S}{\partial \beta_1}
+\right|_{\hat{\beta}_0,\hat{\beta}_1}
+=
+2
+\sum_{i=1}^{n}
+x_i
+\left(
+\hat{\beta}_1x_i-y_i+\hat{\beta}_0
+\right)
+=
+0.
 \]</span></p>
+<p>Dividindo por 2,</p>
 <p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_1}} = 2\sum_{i=1}^{n} x_i(\hat{\beta_1}x_i - y_i + \hat{\beta_0})
+\sum_{i=1}^{n}
+x_i
+\left(
+-y_i+\hat{\beta}_0+\hat{\beta}_1x_i
+\right)
+=
+0.
 \]</span></p>
-<p>Essa é a derivada de S em relação a <span class="math inline">\(\hat{\beta_1}\)</span>. Agora igualamos a zero para encontrar o ponto de mínima.</p>
+<p>Expandindo,</p>
 <p><span class="math display">\[
-\frac{\partial S}{\partial \hat{\beta_1}} = 2\sum_{i=1}^{n} x_i(\hat{\beta_1}x_i - y_i + \hat{\beta_0}) = 0
+-\sum_{i=1}^{n}x_iy_i
++
+\hat{\beta}_0\sum_{i=1}^{n}x_i
++
+\hat{\beta}_1\sum_{i=1}^{n}x_i^2
+=
+0.
 \]</span></p>
-<p>Dividindo por 2 para simplificação</p>
+<p>Portanto,</p>
 <p><span class="math display">\[
-\frac{\displaystyle  2\sum_{i=1}^{n} x_i(\hat{\beta_1}x_i - y_i + \hat{\beta_0})}{2} = \frac{0}{2}
-\]</span></p>
-<p><span class="math display">\[
-\sum_{i=1}^{n} x_i(\hat{\beta_1}x_i - y_i + \hat{\beta_0}) = 0
-\]</span></p>
-<p><span class="math display">\[
-\sum_{i=1}^{n} x_i(-y_i + \hat{\beta_0} + \hat{\beta_1}x_i) = 0
-\]</span></p>
-<p><span class="math display">\[
--\sum_{i=1}^{n}x_iy_i + \hat{\beta_0} \sum_{i=1}^{n}x_i + \hat{\beta_1}\sum_{i=1}^{n}x_i^2 = 0
-\]</span></p>
-<p>Com isso descobrimos que <span class="math inline">\(\frac{\partial S}{\partial \hat{\beta_1}}\)</span> vale 0 quando</p>
-<p><span class="math display">\[
-\hat{\beta_0} \sum_{i=1}^{n}x_i + \hat{\beta_1}\sum_{i=1}^{n}x_i^2 = \sum_{i=1}^{n}x_iy_i
+\hat{\beta}_0\sum_{i=1}^{n}x_i
++
+\hat{\beta}_1\sum_{i=1}^{n}x_i^2
+=
+\sum_{i=1}^{n}x_iy_i.
 \]</span></p>
 <hr>
-<hr>
-<p>Encontradas as derivadas, ainda falta resolvermos essas equações. A derivada de <span class="math inline">\(S\)</span> em relação à <span class="math inline">\(\hat{\beta_0}\)</span> ainda precisa de <span class="math inline">\(\hat{\beta_1}\)</span> para ser resolvida, e o mesmo ocorre para <span class="math inline">\(\hat{\beta_1}\)</span>.</p>
-<p>Uma solução para isso é substituir o valor de <span class="math inline">\(\hat{\beta_0}\)</span> por <span class="math inline">\(\displaystyle \bar{y} - \hat{\beta_1}\bar{x}\)</span> na última equação apresentada acima. Essa substituição é valida pois estamos substituindo <span class="math inline">\(\hat{\beta_0}\)</span> pelo seu valor que garante um resultado 0 para sua derivada.</p>
-<p>Substituindo o valor de <span class="math inline">\(\hat{\beta_0}\)</span> por <span class="math inline">\(\displaystyle \bar{y} - \hat{\beta_1}\bar{x}\)</span></p>
+<p>Encontradas as duas equações, ainda precisamos resolvê-las simultaneamente. Uma solução é substituir</p>
 <p><span class="math display">\[
-(\bar{y}-\hat{\beta_1}\bar{x})\sum_{i=1}^{n}x_i + \hat{\beta_1}\sum_{i=1}^{n}x_i^2 = \sum_{i=1}^{n}x_iy_i
+\hat{\beta}_0
+=
+\bar{y}
+-
+\hat{\beta}_1\bar{x}
 \]</span></p>
-<p>Como <span class="math inline">\(\bar{x} =\displaystyle \frac{\displaystyle \sum_{i=1}^{n}x_i}{n}\)</span>, então <span class="math inline">\(\displaystyle \sum_{i=1}^{n}x_i = n\bar{x}\)</span>.</p>
+<p>na segunda equação normal:</p>
 <p><span class="math display">\[
-(\bar{y} - \hat{\beta_1}\bar{x}) n\bar{x} + \hat{\beta_1}\sum_{i=1}^{n}x_i^2 = \sum_{i=1}^{n}x_iy_i
+(\bar{y}-\hat{\beta}_1\bar{x})
+\sum_{i=1}^{n}x_i
++
+\hat{\beta}_1\sum_{i=1}^{n}x_i^2
+=
+\sum_{i=1}^{n}x_iy_i.
+\]</span></p>
+<p>Como</p>
+<p><span class="math display">\[
+\bar{x}
+=
+\frac{\sum_{i=1}^{n}x_i}{n},
+\]</span></p>
+<p>então</p>
+<p><span class="math display">\[
+\sum_{i=1}^{n}x_i=n\bar{x}.
+\]</span></p>
+<p>Logo,</p>
+<p><span class="math display">\[
+(\bar{y}-\hat{\beta}_1\bar{x})n\bar{x}
++
+\hat{\beta}_1\sum_{i=1}^{n}x_i^2
+=
+\sum_{i=1}^{n}x_iy_i,
 \]</span></p>
 <p><span class="math display">\[
-n\bar{x}\bar{y} - \hat{\beta_1}n\bar{x}^2 + \hat{\beta_1}\sum_{i=1}^{n}x_i^2 = \sum_{i=1}^{n}x_iy_i
+n\bar{x}\bar{y}
+-
+\hat{\beta}_1n\bar{x}^2
++
+\hat{\beta}_1\sum_{i=1}^{n}x_i^2
+=
+\sum_{i=1}^{n}x_iy_i,
 \]</span></p>
 <p><span class="math display">\[
--\hat{\beta_1}n\bar{x}^2 + \hat{\beta_1}\sum_{i=1}^{n}x_i^2 = \sum_{i=1}^{n}x_iy_i - n\bar{x}\bar{y}
+-\hat{\beta}_1n\bar{x}^2
++
+\hat{\beta}_1\sum_{i=1}^{n}x_i^2
+=
+\sum_{i=1}^{n}x_iy_i
+-
+n\bar{x}\bar{y},
 \]</span></p>
 <p><span class="math display">\[
-\hat{\beta_1}(\sum_{i=1}^{n}x_i^2 - n\bar{x}^2) = \sum_{i=1}^{n}x_iy_i - n\bar{x}\bar{y}
+\hat{\beta}_1
+\left(
+\sum_{i=1}^{n}x_i^2-n\bar{x}^2
+\right)
+=
+\sum_{i=1}^{n}x_iy_i
+-
+n\bar{x}\bar{y}.
 \]</span></p>
+<p>Assim,</p>
 <p><span class="math display">\[
-\hat{\beta_1} = \frac{\displaystyle \sum_{i=1}^{n}x_iy_i - n\bar{x}\bar{y}}{\displaystyle \sum_{i=1}^{n}x_i^2 - n\bar{x}^2} \qquad ou \qquad \hat{\beta_1} = \frac{\displaystyle \sum_{i=1}^{n}x_iy_i - \frac{\displaystyle \sum_{i=1}^{n}x_i\sum_{i=1}^{n}y_i}{n}}{\displaystyle \sum_{i=1}^{n}x_i^2 - \frac{\displaystyle (\sum_{i=1}^{n}x_i)^2}{n}}
+\boxed{
+\hat{\beta}_1
+=
+\frac{
+\displaystyle
+\sum_{i=1}^{n}x_iy_i
+-
+n\bar{x}\bar{y}
+}{
+\displaystyle
+\sum_{i=1}^{n}x_i^2
+-
+n\bar{x}^2
+}
+}
 \]</span></p>
-<p>Agora, podemos encontrar o valor de <span class="math inline">\(\hat{\beta_1}\)</span> que garante o menor valor de <span class="math inline">\(S\)</span>.</p>
+<p>ou, de forma equivalente,</p>
+<p><span class="math display">\[
+\boxed{
+\hat{\beta}_1
+=
+\frac{
+\displaystyle
+\sum_{i=1}^{n}x_iy_i
+-
+\frac{
+\left(\sum_{i=1}^{n}x_i\right)
+\left(\sum_{i=1}^{n}y_i\right)
+}{n}
+}{
+\displaystyle
+\sum_{i=1}^{n}x_i^2
+-
+\frac{
+\left(\sum_{i=1}^{n}x_i\right)^2
+}{n}
+}
+}.
+\]</span></p>
+<p>Uma forma ainda bastante comum de escrever o mesmo estimador é</p>
+<p><span class="math display">\[
+\boxed{
+\hat{\beta}_1
+=
+\frac{
+\sum_{i=1}^{n}
+(x_i-\bar{x})(y_i-\bar{y})
+}{
+\sum_{i=1}^{n}
+(x_i-\bar{x})^2
+}
+}.
+\]</span></p>
+<p>Agora podemos calcular os valores de <span class="math inline">\(\hat{\beta}_0\)</span> e <span class="math inline">\(\hat{\beta}_1\)</span> diretamente.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> d2h</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> v</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Serão chamados de b0.mqo e b1.mqo, para lembrarmos que são os valores obtido por meio das operações realizadas acima</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>b1.mqo <span class="ot">&lt;-</span> (<span class="fu">sum</span>(x<span class="sc">*</span>y)<span class="sc">-</span>(<span class="fu">sum</span>(x)<span class="sc">*</span><span class="fu">sum</span>(y))<span class="sc">/</span>n)<span class="sc">/</span>(<span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>)<span class="sc">-</span>(<span class="fu">sum</span>(x)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>n)</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>b0.mqo <span class="ot">&lt;-</span> <span class="fu">mean</span>(y) <span class="sc">-</span> b1.mqo<span class="sc">*</span><span class="fu">mean</span>(x)</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>b0.mqo</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> d2h</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> v</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimadores obtidos pelas expressões deduzidas acima</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>b1.mqo <span class="ot">&lt;-</span> (</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(x <span class="sc">*</span> y) <span class="sc">-</span> (<span class="fu">sum</span>(x) <span class="sc">*</span> <span class="fu">sum</span>(y)) <span class="sc">/</span> n</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>) <span class="sc">/</span> (</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span>) <span class="sc">-</span> (<span class="fu">sum</span>(x)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> n</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>b0.mqo <span class="ot">&lt;-</span> <span class="fu">mean</span>(y) <span class="sc">-</span> b1.mqo <span class="sc">*</span> <span class="fu">mean</span>(x)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>b0.mqo</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.008682245</code></pre>
+<pre><code>[1] -0.008429335</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>b1.mqo</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>b1.mqo</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.001311559</code></pre>
+<pre><code>[1] 0.00003059096</code></pre>
 </div>
 </div>
-<p>O caso mostrado acima foi montado com base na regressão linear simples, com somente os parâmetros <span class="math inline">\(\hat{\beta_0}\)</span> e <span class="math inline">\(\hat{\beta_1}\)</span>. O sistema de equações normais nesse caso é disposto da seguinte forma</p>
+<p>O caso mostrado acima foi montado para a regressão linear simples, com os parâmetros <span class="math inline">\(\hat{\beta}_0\)</span> e <span class="math inline">\(\hat{\beta}_1\)</span>. O sistema de equações normais é</p>
 <p><span class="math display">\[
-\begin{cases} \displaystyle  n\hat{\beta_0} \enspace \enspace \quad + \quad \hat{\beta_1}\sum_{i=1}^{n}x_i \quad = \quad \sum_{i=1}^{n}y_i \\
-\displaystyle \hat{\beta_0}\sum_{i=1}^{n}x_i \quad + \quad \hat{\beta_1}\sum_{i=1}^{n}x_i^2 \quad = \quad \sum_{i=1}^{n}y_ix_i \end{cases}
+\begin{cases}
+n\hat{\beta}_0
++
+\hat{\beta}_1\displaystyle\sum_{i=1}^{n}x_i
+=
+\displaystyle\sum_{i=1}^{n}y_i
+\\[0.5em]
+\hat{\beta}_0\displaystyle\sum_{i=1}^{n}x_i
++
+\hat{\beta}_1\displaystyle\sum_{i=1}^{n}x_i^2
+=
+\displaystyle\sum_{i=1}^{n}x_iy_i
+\end{cases}
 \]</span></p>
-<p>Para uma regressão linear múltipla, com mais de uma variável explicativa, o processo é similar, porém adicionando-se mais uma equações ao sistema.</p>
-<p>Entretanto, quando muitas variáveis são adicionadas, convém dispor por meio de cálculo matricial. Essa disposição também é muito encontrada na literatura, e é comumente chamada de método análitico de resolução da regressão linear. As variáveis X, Y e os coeficientes assumem matrizes e vetores, como a seguir.</p>
-<p><span class="math inline">\(\hat{\beta}\)</span> é o vetor de parâmetros do modelo, de dimensão <span class="math inline">\(p\times 1\)</span>. <span class="math inline">\(Y\)</span> é o vetor da variável observada. Tem dimensão <span class="math inline">\(n \times 1\)</span>. <span class="math inline">\(\epsilon\)</span> é o vetor de resíduos, de dimensão <span class="math inline">\(n \times 1\)</span>. <span class="math display">\[
-\mathbf{\hat{\beta}} = \left[\begin{array}{c}
-\hat{\beta_0} \\ \hat{\beta_1} \\ \vdots \\ \hat{\beta_p}
-\end{array}\right]_{p\times 1} \qquad \mathbf{Y} = \left[\begin{array}{c}
-y_1 \\ y_2 \\ \vdots \\ y_n
-\end{array}\right]_{n \times 1} \qquad \mathbf{\epsilon} = \left[\begin{array}{c}
-e_1 \\ e_2 \\ \vdots \\ e_n
-\end{array}\right]_{n \times 1}
-\]</span></p>
-<p><span class="math inline">\(X\)</span> é a matriz das variáveis explicativas do modelo, onde <span class="math inline">\(n\)</span> é o número de observações, e <span class="math inline">\(p\)</span> é o número de parâmetros do modelo. <span class="math display">\[
-\mathbf{X} = \left[\begin{array}
-{cccc}   
-1 &amp; X_{11} &amp; X_{12} &amp; \dots &amp; X_{1p} \\
-1 &amp; X_{21} &amp; X_{22} &amp; \dots &amp; X_{2p} \\
-\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-1 &amp; X_{n1} &amp; X_{n2} &amp; \dots &amp; X{np} \\
-\end{array}\right]_{n \times p}
-\]</span></p>
-<p>Assim como no processo anterior, é desejado determinar o menor valor da soma de quadrado dos resíduos.</p>
+<p>Para uma regressão linear múltipla, com mais de uma variável explicativa, o processo é semelhante, mas o número de equações normais aumenta com o número de parâmetros.</p>
+<p>Quando muitas variáveis são adicionadas, é mais conveniente escrever o problema por meio de álgebra matricial.</p>
+<p>Considere o modelo</p>
 <p><span class="math display">\[
-S = \sum_{i=1}^{n} e_i^2 = \epsilon^\top \epsilon
+\mathbf{Y}
+=
+\mathbf{X}\boldsymbol{\beta}
++
+\boldsymbol{\epsilon}.
+\]</span></p>
+<p>Adotaremos <span class="math inline">\(p\)</span> como o <strong>número total de parâmetros do modelo, incluindo o intercepto</strong>. Assim,</p>
+<p><span class="math display">\[
+\boldsymbol{\beta}
+=
+\begin{bmatrix}
+\beta_0\\
+\beta_1\\
+\vdots\\
+\beta_{p-1}
+\end{bmatrix}_{p\times1},
+\qquad
+\mathbf{Y}
+=
+\begin{bmatrix}
+y_1\\
+y_2\\
+\vdots\\
+y_n
+\end{bmatrix}_{n\times1},
+\qquad
+\boldsymbol{\epsilon}
+=
+\begin{bmatrix}
+\epsilon_1\\
+\epsilon_2\\
+\vdots\\
+\epsilon_n
+\end{bmatrix}_{n\times1}.
+\]</span></p>
+<p>A matriz de regressão é</p>
+<p><span class="math display">\[
+\mathbf{X}
+=
+\begin{bmatrix}
+1 &amp; x_{11} &amp; \cdots &amp; x_{1,p-1}\\
+1 &amp; x_{21} &amp; \cdots &amp; x_{2,p-1}\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+1 &amp; x_{n1} &amp; \cdots &amp; x_{n,p-1}
+\end{bmatrix}_{n\times p}.
+\]</span></p>
+<p>Após a estimação,</p>
+<p><span class="math display">\[
+\hat{\mathbf{Y}}
+=
+\mathbf{X}\hat{\boldsymbol{\beta}},
+\]</span></p>
+<p>e o vetor de resíduos é</p>
+<p><span class="math display">\[
+\mathbf{e}
+=
+\mathbf{Y}
+-
+\hat{\mathbf{Y}}
+=
+\mathbf{Y}
+-
+\mathbf{X}\hat{\boldsymbol{\beta}}.
+\]</span></p>
+<p>Assim como anteriormente, queremos minimizar a soma de quadrados dos resíduos. Para um vetor candidato de parâmetros <span class="math inline">\(\boldsymbol{\beta}\)</span>,</p>
+<p><span class="math display">\[
+S(\boldsymbol{\beta})
+=
+(\mathbf{Y}-\mathbf{X}\boldsymbol{\beta})^\top
+(\mathbf{Y}-\mathbf{X}\boldsymbol{\beta}).
+\]</span></p>
+<p>Expandindo,</p>
+<p><span class="math display">\[
+S(\boldsymbol{\beta})
+=
+\mathbf{Y}^\top\mathbf{Y}
+-
+\mathbf{Y}^\top\mathbf{X}\boldsymbol{\beta}
+-
+\boldsymbol{\beta}^\top\mathbf{X}^\top\mathbf{Y}
++
+\boldsymbol{\beta}^\top\mathbf{X}^\top\mathbf{X}\boldsymbol{\beta}.
+\]</span></p>
+<p>Como <span class="math inline">\(\mathbf{Y}^\top\mathbf{X}\boldsymbol{\beta}\)</span> é um escalar,</p>
+<p><span class="math display">\[
+\mathbf{Y}^\top\mathbf{X}\boldsymbol{\beta}
+=
+\boldsymbol{\beta}^\top\mathbf{X}^\top\mathbf{Y}.
+\]</span></p>
+<p>Portanto,</p>
+<p><span class="math display">\[
+S(\boldsymbol{\beta})
+=
+\mathbf{Y}^\top\mathbf{Y}
+-
+2\boldsymbol{\beta}^\top\mathbf{X}^\top\mathbf{Y}
++
+\boldsymbol{\beta}^\top\mathbf{X}^\top\mathbf{X}\boldsymbol{\beta}.
+\]</span></p>
+<p>O gradiente em relação a <span class="math inline">\(\boldsymbol{\beta}\)</span> é</p>
+<p><span class="math display">\[
+\nabla_{\boldsymbol{\beta}}S
+=
+-2\mathbf{X}^\top\mathbf{Y}
++
+2\mathbf{X}^\top\mathbf{X}\boldsymbol{\beta}.
+\]</span></p>
+<p>No ponto de mínimo, <span class="math inline">\(\boldsymbol{\beta}=\hat{\boldsymbol{\beta}}\)</span> e o gradiente é igual a zero:</p>
+<p><span class="math display">\[
+-2\mathbf{X}^\top\mathbf{Y}
++
+2\mathbf{X}^\top\mathbf{X}\hat{\boldsymbol{\beta}}
+=
+0,
 \]</span></p>
 <p><span class="math display">\[
-\epsilon^\top \epsilon = (Y - \hat{\beta}X)^\top (Y - X\hat{\beta})
+\mathbf{X}^\top\mathbf{X}\hat{\boldsymbol{\beta}}
+=
+\mathbf{X}^\top\mathbf{Y}.
 \]</span></p>
+<p>Essas são as <strong>equações normais</strong> em forma matricial.</p>
+<p>Se <span class="math inline">\(\mathbf{X}\)</span> possui posto completo de colunas, então <span class="math inline">\(\mathbf{X}^\top\mathbf{X}\)</span> é invertível e</p>
 <p><span class="math display">\[
-= Y^\top Y - Y^\top (X\hat{\beta}) - (X\hat{\beta})^\top Y + (X\hat{\beta})^\top (X\hat{\beta})
-\]</span> <span class="math display">\[
-= Y^\top Y - (X\hat{\beta})^\top Y - (X\hat{\beta})^\top Y + (X\hat{\beta})^\top (X\hat{\beta})
-\]</span> <span class="math display">\[
-= Y^\top Y - 2(X\hat{\beta})^\top Y + (X\hat{\beta})^\top (X\hat{\beta})
-\]</span> <span class="math display">\[
-\mathbf{S} = Y^\top Y - 2\hat{\beta}^\top X^\top Y + \hat{\beta}^\top X^\top X \hat{\beta}
+\boxed{
+\hat{\boldsymbol{\beta}}
+=
+(\mathbf{X}^\top\mathbf{X})^{-1}
+\mathbf{X}^\top\mathbf{Y}
+}.
 \]</span></p>
-<p>A derivada parcial é dada por</p>
+<p>Além disso, a matriz Hessiana da função <span class="math inline">\(S\)</span> é</p>
 <p><span class="math display">\[
-\frac{\partial}{\partial \hat{\beta}}[\epsilon^\top \epsilon] = 0 \enspace - \enspace 2\hat{\beta}^\top X^\top Y \enspace + \enspace \hat{\beta}^\top X^\top X\hat{\beta} \enspace = \enspace 0
+\mathbf{H}
+=
+2\mathbf{X}^\top\mathbf{X}.
 \]</span></p>
-<p><span class="math display">\[
-0 - 2X^\top Y + 2X^\top X\hat{\beta} = 0
-\]</span></p>
-<p><span class="math display">\[
-2X^\top X\hat{\beta} = 2X^\top Y
-\]</span></p>
-<p><span class="math display">\[
-X^\top X\hat{\beta} = X^\top Y
-\]</span></p>
-<p><span class="math display">\[
-\mathbf{\hat{\beta}} = (X^\top X)^{-1} X^\top Y
-\]</span></p>
-<p>Essa é a equação que garante o menor valor de <span class="math inline">\(S\)</span>. Também podemos utilizá-la para encontrar os parâmetros.</p>
+<p>Quando <span class="math inline">\(\mathbf{X}\)</span> possui posto completo, <span class="math inline">\(\mathbf{X}^\top\mathbf{X}\)</span> é definida positiva. Portanto, o ponto crítico encontrado acima é o único mínimo global da soma de quadrados.</p>
+<p>Também podemos utilizar a expressão matricial para encontrar os parâmetros.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(y <span class="sc">~</span> x)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>betas <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> X) <span class="sc">%*%</span> <span class="fu">t</span>(X) <span class="sc">%*%</span> y</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>betas</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(y <span class="sc">~</span> x)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>betas <span class="ot">&lt;-</span> <span class="fu">solve</span>(<span class="fu">t</span>(X) <span class="sc">%*%</span> X) <span class="sc">%*%</span> <span class="fu">t</span>(X) <span class="sc">%*%</span> y</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>betas</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                    [,1]
-(Intercept) -0.008682245
-x            0.001311559</code></pre>
+<pre><code>                      [,1]
+(Intercept) -0.00842933501
+x            0.00003059096</code></pre>
 </div>
 </div>
-<p>E só para termos certeza de que tudo foi feito corretamente.</p>
+<blockquote class="blockquote">
+<p>A expressão acima é útil para compreender a álgebra do MQO. Na prática computacional, não é recomendável formar explicitamente <span class="math inline">\((X^\top X)^{-1}\)</span> quando existem métodos numericamente mais estáveis. A função <code>lm()</code>, por exemplo, utiliza uma decomposição QR.</p>
+</blockquote>
+<p>E, para verificarmos que os cálculos coincidem:</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(<span class="fu">lm</span>(y <span class="sc">~</span> x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(<span class="fu">lm</span>(y <span class="sc">~</span> x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> (Intercept)            x 
--0.008682245  0.001311559 </code></pre>
+<pre><code>   (Intercept)              x 
+-0.00842933501  0.00003059096 </code></pre>
 </div>
 </div>
-<p>As três tentativas garantem o mesmo resultado.</p>
+<p>As três formas produzem os mesmos coeficientes, salvo diferenças numéricas de arredondamento.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="table table-condensed table-striped table-hover caption-top table-sm small">
@@ -691,15 +1036,15 @@ x            0.001311559</code></pre>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">B0</td>
-<td style="text-align: right;">-0.0086822</td>
-<td style="text-align: right;">-0.0086822</td>
-<td style="text-align: right;">-0.0086822</td>
+<td style="text-align: right;">-0.0084293</td>
+<td style="text-align: right;">-0.0084293</td>
+<td style="text-align: right;">-0.0084293</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">B1</td>
-<td style="text-align: right;">0.0013116</td>
-<td style="text-align: right;">0.0013116</td>
-<td style="text-align: right;">0.0013116</td>
+<td style="text-align: right;">0.0000306</td>
+<td style="text-align: right;">0.0000306</td>
+<td style="text-align: right;">0.0000306</td>
 </tr>
 </tbody>
 </table>
@@ -1131,22 +1476,6 @@ x            0.001311559</code></pre>
 </div>
   </div>
 </footer>
-<div style="text-align:center; font-size:0.85em; opacity:0.7; margin-top:2rem;">
-  Visitas nesta página: <span id="contador-visitas"></span>
-</div>
-
-<script data-goatcounter="https://gabrielorso.goatcounter.com/count" async="" src="//gc.zgo.at/count.js"></script>
-
-<script>
-  window.addEventListener("load", function() {
-    if (window.goatcounter) {
-      window.goatcounter.visit_count({
-        append: "#contador-visitas",
-        no_branding: true
-      });
-    }
-  });
-</script>
 
 
 
